@@ -1,0 +1,6 @@
+{
+  "name": "Die 5 Zahnradsysteme",
+  "description": "Ein interaktiver Prototyp zur Erkundung der historischen Zahnradsysteme der Furka-Oberalp-Bahn.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

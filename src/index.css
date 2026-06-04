@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-red: #f22b0d;
+  --color-swiss-orange: #FF2300;
+  --color-cement-light: #F5F5F3;
+  --color-cement-sand: #f8f6f5;
+  --color-iron-dark: #0D0D0D;
+  
+  --font-sans: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --shadow-hard: 4px 4px 0px 0px #0D0D0D;
+  --shadow-hard-lg: 6px 6px 0px 0px #0D0D0D;
+  --shadow-hard-sm: 2px 2px 0px 0px #0D0D0D;
+}
+
+@layer utilities {
+  .border-heavy {
+    border: 3px solid #0D0D0D;
+  }
+  .border-heavy-double {
+    border: 6px solid #0D0D0D;
+  }
+  .border-heavy-sm {
+    border: 2px solid #0D0D0D;
+  }
+  .border-bottom-heavy {
+    border-bottom: 3px solid #0D0D0D;
+  }
+  .text-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cement-sand);
+  color: var(--color-iron-dark);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Custom scroll bar for industrial look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8f6f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #0D0D0D;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f22b0d;
+}
