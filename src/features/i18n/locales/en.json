@@ -1,0 +1,248 @@
+{
+  "common": {
+    "back": "Back",
+    "retry": "Try Again",
+    "close": "Close",
+    "settings": "Settings"
+  },
+  "intro": {
+    "badge": "100-YEAR ANNIVERSARY EXHIBITION",
+    "title_line1": "THE 5",
+    "title_line2": "RACK SYSTEMS",
+    "description": "The precise mechanics behind the world's steepest routes – from the Riggenbach ladder to the modern Von Roll system.",
+    "stat_systems": "Systems",
+    "stat_steepest": "steepest",
+    "stat_era": "Era",
+    "explore_button": "EXPLORE SYSTEMS",
+    "error_sim_button": "SIMULATE SIGNAL ERROR"
+  },
+  "dashboard": {
+    "title": "THE 5 RACK SYSTEMS",
+    "back_label": "Back to Start",
+    "quiz_cta": "TEST YOUR KNOWLEDGE",
+    "quiz_highscore": "BEST: {{score}} / {{total}}"
+  },
+  "detail": {
+    "back_label": "Back to Selection",
+    "developed": "DEVELOPED",
+    "show_tech": "SHOW TECHNICAL DETAILS",
+    "danger_label": "THE DANGER",
+    "solution_label": "THE SOLUTION",
+    "history_label": "Historical Details",
+    "quiz_cta": "TEST YOUR KNOWLEDGE"
+  },
+  "quiz": {
+    "title": "KNOWLEDGE QUIZ",
+    "back_label": "Back",
+    "question_label": "QUESTION {{current}} OF {{total}}",
+    "result_title": "QUIZ COMPLETE",
+    "result_score": "RESULT: {{score}} / {{total}}",
+    "result_perfect": "PERFECT SCORE!",
+    "result_good": "WELL DONE!",
+    "result_ok": "KEEP PRACTISING!",
+    "restart_button": "RESTART",
+    "back_to_dashboard": "BACK TO OVERVIEW",
+    "correct_label": "CORRECT",
+    "wrong_label": "INCORRECT",
+    "explanation_prefix": "EXPLANATION:"
+  },
+  "error": {
+    "badge": "DOCUMENTATION UNSTABLE",
+    "title": "Connection Failed",
+    "error_code": "ERROR CODE: E-749 // SIGNAL LOST IN HIGH MOUNTAINS",
+    "description": "Analysis: In alpine mountain regions of the Furka mountain route, fluctuating network coverage occurs regularly.",
+    "retry_button": "TRY AGAIN",
+    "reconnecting_title": "RECONNECTING...",
+    "reconnecting_info": "SCANNING ALPINE FREQUENCIES..."
+  },
+  "settings": {
+    "subtitle": "PREFERENCES",
+    "title": "APP SETTINGS",
+    "language_section": "DISPLAY LANGUAGE",
+    "theme_section": "APPEARANCE",
+    "theme_light": "LIGHT",
+    "theme_dark": "DARK",
+    "save_button": "CONFIRM",
+    "onboarding_subtitle": "WELCOME",
+    "onboarding_title": "SELECT YOUR PREFERENCES"
+  },
+  "systems": {
+    "locher": {
+      "name": "Locher System",
+      "type": "Horizontal Rack Engagement",
+      "tagline": "World's steepest railway",
+      "famousLine": "Pilatus Railway",
+      "explanationShort": "The system developed by Eduard Locher was specially constructed for the Pilatus railway, the world's steepest rack railway (up to 48% gradient).",
+      "steepDangerText": "At this extreme gradient, there was a danger that the gear wheels of conventional systems would jump off the rack due to enormous pressure.",
+      "solutionText": "Locher's ingenious solution: Two horizontally rotating gear wheels that engage laterally into a rack with teeth on both sides. Guide rollers below the rack lock the vehicle securely to the track.",
+      "historyAndPurpose": "Eduard Locher was a renowned Zurich engineer. The Pilatus railway was considered absolutely impossible to build at the time. Conventional systems like Riggenbach or Abt failed at the extreme slope: vertical gear wheels would have simply jumped over the teeth at 48%. Locher's unconventional horizontal idea revolutionised alpine rail transport.",
+      "stats": {
+        "max_gradient": "Max. Gradient",
+        "tooth_pitch": "Tooth Pitch",
+        "rack_material": "Rack Material",
+        "gauge": "Gauge",
+        "max_gradient_value": "480 ‰ (48 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "Cast Steel",
+        "gauge_value": "800 mm"
+      },
+      "hotspots": {
+        "zahnstange_title": "Double-Sided Rack",
+        "zahnstange_desc": "A flat steel rail with right-angled teeth on both sides. Since it is laid in the middle, it enables the use of two symmetrically arranged gearboxes.",
+        "treibraeder_title": "Horizontal Drive Wheels",
+        "treibraeder_desc": "Two gear wheels rotate flat over the rails and engage from the sides. This mechanically cancels out the lateral thrust forces and prevents climbing.",
+        "fuehrung_title": "Safety Guide Rollers",
+        "fuehrung_desc": "Lower flange rollers physically grip under the head of the Locher rack. Even in extreme gusts of wind, lifting or derailment of the locomotive is impossible."
+      }
+    },
+    "abt": {
+      "name": "Abt System",
+      "type": "Multi-Lamella Rack",
+      "tagline": "Smooth-running & curve-friendly",
+      "famousLine": "Furka-Oberalp Railway",
+      "explanationShort": "System invented by Roman Abt, using two or three offset, narrow rack plates. It runs extremely smoothly and provides continuous tooth contact.",
+      "steepDangerText": "With simple racks, tooth transitions often cause jolting, loud impacts and increased wear on the locomotive gear wheels.",
+      "solutionText": "Abt's ingenious answer: Offset thinner lamellae. While one gear wheel is just leaving a gap, the second gear wheel, offset slightly, is already fully engaging in the adjacent lamella.",
+      "historyAndPurpose": "Roman Abt was a student of Riggenbach. He designed this innovation to reduce the cost of manufacturing heavy solid rails. The Abt rack can be bent wonderfully, making it ideal for tight curve radii as well. It is the backbone of the historic Furka-Oberalp mountain route.",
+      "stats": {
+        "max_gradient": "Max. Gradient",
+        "tooth_pitch": "Tooth Pitch",
+        "rack_material": "Rack Material",
+        "gauge": "Gauge",
+        "max_gradient_value": "110 ‰ (11 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "Special Rolled Steel",
+        "gauge_value": "1000 mm (Metre Gauge)"
+      },
+      "hotspots": {
+        "lamellen_title": "Offset Lamella Bars",
+        "lamellen_desc": "Two (or three) thin, vertically standing tooth plates are mounted in parallel. Their teeth are arranged offset by half a tooth pitch.",
+        "geteiltes_zahnrad_title": "Split Drive Gear Wheels",
+        "geteiltes_zahnrad_desc": "The locomotive's drive gear wheel also consists of two physically offset gear rings that precisely match the offset rail lamellae.",
+        "laufruhe_title": "Uninterrupted Power Flow",
+        "laufruhe_desc": "Due to the offset, at every millisecond of travel, at least one drive tooth is fully loaded in engagement. This eliminates vibrations almost completely."
+      }
+    },
+    "strub": {
+      "name": "Strub System",
+      "type": "Monorail Head Rack",
+      "tagline": "Simple & winter-proof",
+      "famousLine": "Jungfrau Railway",
+      "explanationShort": "Emil Strub developed this minimalist and highly economical single-head system, which is simpler to ballast and clean.",
+      "steepDangerText": "Complicated rack ladder constructions tend to become completely snowbound or iced over in icy winters, making journeys highly dangerous.",
+      "solutionText": "Strub's simple approach: The teeth are milled directly into the wide, solid head of a rolled broad-foot rail. On the sides, the rail head has a conical profile for safety clamps.",
+      "historyAndPurpose": "Emil Strub focused on economic efficiency and high-altitude suitability. The system celebrated its premiere on the legendary Jungfrau Railway. Since the snow can be easily swept away due to the open surface design, it is ideal for year-round tourism.",
+      "stats": {
+        "max_gradient": "Max. Gradient",
+        "tooth_pitch": "Tooth Pitch",
+        "rack_material": "Rack Material",
+        "gauge": "Gauge",
+        "max_gradient_value": "250 ‰ (25 %)",
+        "tooth_pitch_value": "100 mm",
+        "rack_material_value": "Fully Rolled Steel",
+        "gauge_value": "1000 mm"
+      },
+      "hotspots": {
+        "konischer_kopf_title": "Wide Rail Head with Teeth",
+        "konischer_kopf_desc": "A solid, wedge-shaped rail profile. The teeth are thermally precision-milled on top, while the flanks remain smooth for mechanical clamp brakes.",
+        "einfache_verlegung_title": "Precision Monoblock",
+        "einfache_verlegung_desc": "The Strub rail is wedged onto conventional steel sleepers. It requires fewer individual parts than all other historical predecessors.",
+        "sicherheit_title": "Clamp Access",
+        "sicherheit_desc": "Safety emergency clamps of the carriages grip around the conical rail head in case of danger and wedge themselves bomb-proof, preventing tipping."
+      }
+    },
+    "riggenbach": {
+      "name": "Riggenbach System",
+      "type": "Rung Rack (Ladder System)",
+      "tagline": "Europe's first mountain railway",
+      "famousLine": "Rigi Railway",
+      "explanationShort": "The oldest European system, invented by Niklaus Riggenbach. It resembles a ladder where the teeth consist of round metal bolts.",
+      "steepDangerText": "Early rail tracks were subjected to extreme bending forces and racks broke or bent easily under the ton-heavy weight of steam locomotives.",
+      "solutionText": "Riggenbach's ingenious invention: Two U-iron profiles are riveted together at a constant distance with high-strength, round steel bars (rungs). A robust, durable lattice bed is created.",
+      "historyAndPurpose": "Niklaus Riggenbach, the brilliant operations manager of the Centralbahn in Basel, had this technique patented when he wanted to conquer Mount Rigi. In 1871, the first mountain railway in Europe ran there. It was the absolute milestone of Swiss railway history.",
+      "stats": {
+        "max_gradient": "Max. Gradient",
+        "tooth_pitch": "Tooth Pitch",
+        "rack_material": "Rack Material",
+        "gauge": "Gauge",
+        "max_gradient_value": "250 ‰ (25 %)",
+        "tooth_pitch_value": "100 mm",
+        "rack_material_value": "Wrought Iron / Steel",
+        "gauge_value": "1435 mm / 1000 mm"
+      },
+      "hotspots": {
+        "U_profile_title": "U-Shaped Side Beams",
+        "U_profile_desc": "Two thick, hot-rolled C-profiles hold the construction together and support the sleeper attachment against lateral forces.",
+        "sprossen_title": "Round Bolt Rungs",
+        "sprossen_desc": "Solid forged round steel bolts, precisely fitted horizontally at the tooth spacing. The locomotive gear wheel rolls extremely smoothly on these round pins.",
+        "durchlass_title": "Self-Cleaning Ballast Bed",
+        "durchlass_desc": "Since the ladder is hollow at the bottom, loose pebbles and sticky mud simply fall through the tooth bed. This prevents tooth jams."
+      }
+    },
+    "von_roll": {
+      "name": "Von Roll System",
+      "type": "Monoblock Solid Steel Profile",
+      "tagline": "Seamless solid steel",
+      "famousLine": "Modern Mountain Railways",
+      "explanationShort": "A modern and highly developed optimisation for today's mountain railways. It is fully compatible with Abt, but consists of a single monolithic cast element.",
+      "steepDangerText": "The advent of the heaviest freight and passenger flows stresses the historical multi-part slide ladders so massively that maintenance costs explode.",
+      "solutionText": "Von Roll's Swiss engineering achievement: A completely mill-cast single rail with vertical milled teeth. No welds, no rivets, no loosening.",
+      "historyAndPurpose": "The Von Roll company (now Tenconi) standardised this system to bring Swiss mountain railways into the 21st century. It can be laid extremely quickly, easily withstands the most modern 100-tonne trains and is today the most widely installed rack modernisation kit.",
+      "stats": {
+        "max_gradient": "Max. Gradient",
+        "tooth_pitch": "Tooth Pitch",
+        "rack_material": "Rack Material",
+        "gauge": "Gauge",
+        "max_gradient_value": "150 ‰ (15 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "High-Strength Tempered Steel",
+        "gauge_value": "1000 mm"
+      },
+      "hotspots": {
+        "monoblock_title": "Seamless Solid Steel Rail",
+        "monoblock_desc": "There are no longer individual plates or bolts. The teeth are CNC-precision milled directly from an extremely hard cast steel rail.",
+        "abt_kompatibel_title": "Universal Gear Profile",
+        "abt_kompatibel_desc": "Through sophisticated dimensions, locomotives with Abt gear wheels can easily traverse this modern Von Roll rack. Perfect for partial track renewals.",
+        "lange_lebensdauer_title": "Wear-Resistant Alloy",
+        "lange_lebensdauer_desc": "Thanks to the most modern surface hardening, this system withstands extreme braking friction heat without thermal shock or geometric distortion."
+      }
+    }
+  },
+  "quiz_questions": {
+    "q1": {
+      "question": "Which system overcomes the greatest gradient in the Alpine region?",
+      "options": ["Strub System", "Locher System", "Abt System", "Riggenbach System"],
+      "explanation": "The Locher System holds the absolute world record with a dizzying 48% (480 ‰) gradient on the world-famous Pilatus Railway!"
+    },
+    "q2": {
+      "question": "How do the gear wheels engage in the legendary Locher System?",
+      "options": ["Vertically from above", "Diagonally at 45° angle", "Horizontally from the sides", "Not at all, it works magnetically"],
+      "explanation": "Two horizontally mounted gear wheels engage from left and right into the central rack. This absolutely prevents the gear wheel from jumping out."
+    },
+    "q3": {
+      "question": "Which rack system is known for its ladder-like form with round bolts?",
+      "options": ["Riggenbach System", "Von Roll System", "Strub System", "Abt System"],
+      "explanation": "Niklaus Riggenbach's system uses an open steel bed with round rung bolts, through which snow and scree can fall through undisturbed."
+    },
+    "q4": {
+      "question": "Why did Roman Abt develop the system with several offset lamella plates?",
+      "options": [
+        "To save weight in the locomotive boiler",
+        "So that a tooth is always fully engaged and extreme smoothness results",
+        "Solely to eliminate switches",
+        "To save lubricating oil on the drive axles"
+      ],
+      "explanation": "The offset of the rail lamellae ensures that gear wheel transitions happen continuously and smoothly without jerky idle strokes. A milestone in ergonomics!"
+    },
+    "q5": {
+      "question": "Which criterion characterises the modern Von Roll rail?",
+      "options": [
+        "It consists of elastic hard rubber",
+        "It is a CNC-milled, monolithic solid steel profile without rivets",
+        "It must be manually sanded daily",
+        "It requires three gear wheels stacked on top of each other"
+      ],
+      "explanation": "The modern Von Roll system maximises reliability by eliminating gaps and rivets. A high-strength single block of steel is directly pre-milled."
+    }
+  }
+}
