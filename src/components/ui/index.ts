@@ -4,3 +4,6 @@ export { default as Badge } from './Badge';
 export { default as IconBox } from './IconBox';
 export { default as Modal } from './Modal';
 export { default as ProgressBar } from './ProgressBar';
+export { default as SystemIcon } from './SystemIcon';
+export { default as InclineGauge } from './InclineGauge';
+export { default as StatTile } from './StatTile';

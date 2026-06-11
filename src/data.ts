@@ -38,7 +38,11 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         left: '78%'
       }
     ],
-    historyAndPurpose: 'Eduard Locher war ein renommierter Zürcher Ingenieur. Die Pilatusbahn galt damals als absolut unbaubar. Herkömmliche Systeme wie Riggenbach oder Abt scheiterten an der extremen Hangneigung: vertikale Zahnräder wären bei 48% einfach über die Zähne gesprungen. Lochers unkonventionelle horizontale Idee revolutionierte den alpinen Schienentransport.'
+    historyAndPurpose: 'Eduard Locher war ein renommierter Zürcher Ingenieur. Die Pilatusbahn galt damals als absolut unbaubar. Herkömmliche Systeme wie Riggenbach oder Abt scheiterten an der extremen Hangneigung: vertikale Zahnräder wären bei 48% einfach über die Zähne gesprungen. Lochers unkonventionelle horizontale Idee revolutionierte den alpinen Schienentransport.',
+    maxGradientPercent: 48,
+    famousLine: 'Pilatusbahn',
+    tagline: 'Steilste Bahn der Welt',
+    iconKey: 'horizontal'
   },
   {
     id: 'abt',
@@ -77,7 +81,11 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         left: '72%'
       }
     ],
-    historyAndPurpose: 'Roman Abt war Schüler von Riggenbach. Er entwarf diese Innovation, um die Kosten für die Herstellung schwerer massiver Schienen zu senken. Die Abt-Zahnstange lässt sich wunderbar biegen, wodurch sie sich auch für enge Kurvenradien hervorragend eignet. Sie ist das Rückgrat der historischen Furka-Oberalp-Bergstrecke.'
+    historyAndPurpose: 'Roman Abt war Schüler von Riggenbach. Er entwarf diese Innovation, um die Kosten für die Herstellung schwerer massiver Schienen zu senken. Die Abt-Zahnstange lässt sich wunderbar biegen, wodurch sie sich auch für enge Kurvenradien hervorragend eignet. Sie ist das Rückgrat der historischen Furka-Oberalp-Bergstrecke.',
+    maxGradientPercent: 11,
+    famousLine: 'Furka-Oberalp-Bahn',
+    tagline: 'Laufruhig & kurvenfreudig',
+    iconKey: 'layers'
   },
   {
     id: 'strub',
@@ -116,7 +124,11 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         left: '70%'
       }
     ],
-    historyAndPurpose: 'Emil Strub legte den Fokus auf Wirtschaftlichkeit und Hochgebirgstauglichkeit. Das System feierte seine Premiere an der legendären Jungfraubahn. Da der Schnee durch die offene Oberflächenform leicht abgekehrt werden kann, eignet es sich hervorragend für ganzjährigen Tourismus.'
+    historyAndPurpose: 'Emil Strub legte den Fokus auf Wirtschaftlichkeit und Hochgebirgstauglichkeit. Das System feierte seine Premiere an der legendären Jungfraubahn. Da der Schnee durch die offene Oberflächenform leicht abgekehrt werden kann, eignet es sich hervorragend für ganzjährigen Tourismus.',
+    maxGradientPercent: 25,
+    famousLine: 'Jungfraubahn',
+    tagline: 'Einfach & wintertauglich',
+    iconKey: 'monohead'
   },
   {
     id: 'riggenbach',
@@ -155,7 +167,11 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         left: '75%'
       }
     ],
-    historyAndPurpose: 'Niklaus Riggenbach, der geniale Betriebsleiter der Centralbahn in Basel, liess sich diese Technik patentieren, als er den Rigi-Berg bezwingen wollte. 1871 fuhr dort die erste Bergbahn Europas. Es war der absolute Meilenstein der Schweizer Eisenbahngeschichte.'
+    historyAndPurpose: 'Niklaus Riggenbach, der geniale Betriebsleiter der Centralbahn in Basel, liess sich diese Technik patentieren, als er den Rigi-Berg bezwingen wollte. 1871 fuhr dort die erste Bergbahn Europas. Es war der absolute Meilenstein der Schweizer Eisenbahngeschichte.',
+    maxGradientPercent: 25,
+    famousLine: 'Rigibahn',
+    tagline: 'Europas erste Bergbahn',
+    iconKey: 'ladder'
   },
   {
     id: 'von_roll',
@@ -194,7 +210,11 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         left: '75%'
       }
     ],
-    historyAndPurpose: 'Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen. Es lässt sich extrem schnell verlegen, widersteht modernsten 100-Tonnen-Triebzügen spielend und ist heute das am häufigsten verbaute Zahnstangen-Modernisierungskit.'
+    historyAndPurpose: 'Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen. Es lässt sich extrem schnell verlegen, widersteht modernsten 100-Tonnen-Triebzügen spielend und ist heute das am häufigsten verbaute Zahnstangen-Modernisierungskit.',
+    maxGradientPercent: 15,
+    famousLine: 'Moderne Bergbahnen',
+    tagline: 'Fugenloser Vollstahl',
+    iconKey: 'monoblock'
   }
 ];
 

@@ -7,7 +7,16 @@
   --color-cement-light: #F5F5F3;
   --color-cement-sand: #f8f6f5;
   --color-iron-dark: #0D0D0D;
-  
+
+  /* Alpine accent palette — layered UNDER the red railway signal accent */
+  --color-pine: #1f4d3a;       /* deep forest green */
+  --color-pine-light: #2f6b50;
+  --color-glacier: #2b6f8c;    /* cold alpine lake / sky blue */
+  --color-glacier-light: #d7ecf2;
+  --color-snow: #eef3f5;       /* cold snow white */
+  --color-slate-stone: #5b6670;/* weathered stone gray */
+  --color-amber-wood: #b5751f; /* warm timber / chalet accent */
+
   --font-sans: "Space Grotesk", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
