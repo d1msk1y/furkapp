@@ -93,7 +93,10 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
       />
 
       {/* Toggle Bar */}
-      <section className="bg-cement-sand border-b-[3px] border-iron-dark p-4 sticky top-0 z-10 flex justify-between items-center">
+      <section
+        className="bg-cement-sand border-b-[3px] border-iron-dark p-4 sticky top-0 z-10 flex justify-between items-center cursor-pointer"
+        onClick={() => setShowTechDetails(!showTechDetails)}
+      >
         <span className="text-sm font-black uppercase tracking-wider text-iron-dark flex items-center gap-1.5">
           <Info size={16} className="text-primary-red" />
           {t('detail.show_tech')}
@@ -106,11 +109,13 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             id="tech-toggle"
             checked={showTechDetails}
             onChange={(e) => setShowTechDetails(e.target.checked)}
+            onClick={(e) => e.stopPropagation()}
             className="absolute block w-8 h-8 rounded-none border-[3px] border-iron-dark bg-cement-light appearance-none cursor-pointer z-20 checked:translate-x-6.5 transition-transform duration-100 ease-out"
           />
           <label
             htmlFor="tech-toggle"
             aria-label={t('detail.show_tech')}
+            onClick={(e) => e.stopPropagation()}
             className={`block overflow-hidden h-8 rounded-none border-[3px] border-iron-dark cursor-pointer transition-colors duration-100 ${
               showTechDetails ? 'bg-ink' : 'bg-cement-light'
             }`}
