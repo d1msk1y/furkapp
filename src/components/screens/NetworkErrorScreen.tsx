@@ -5,6 +5,7 @@ import Button from '../ui/Button';
 import IconBox from '../ui/IconBox';
 import Card from '../ui/Card';
 import Badge from '../ui/Badge';
+import Ridgeline from '../diagrams/Ridgeline';
 
 interface NetworkErrorScreenProps {
   readonly onResolveSuccess: () => void;
@@ -22,12 +23,9 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
 
   return (
     <div className="min-h-screen bg-cement-sand flex flex-col justify-center items-center p-6 select-none relative w-full">
-      {/* Background mountains */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none select-none flex items-end justify-center overflow-hidden">
-        <svg className="w-full h-1/2" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <polygon points="0,100 30,20 60,100" fill="#f22b0d" />
-          <polygon points="40,100 70,40 100,100" fill="#f22b0d" />
-        </svg>
+      {/* Alpine ridgeline silhouette — "lost signal in the mountains" */}
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none select-none">
+        <Ridgeline className="text-slate-stone opacity-15" height={140} withTrack />
       </div>
 
       <main className="w-full max-w-md flex flex-col gap-8 z-10">
@@ -53,11 +51,11 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
 
               <div className="w-16 h-1.5 bg-primary-red my-4" />
 
-              <p className="text-xs sm:text-sm text-iron-dark/80 font-mono font-bold uppercase tracking-wider leading-relaxed">
+              <p className="text-sm text-iron-dark/80 font-mono font-bold uppercase tracking-wider leading-relaxed">
                 FEHLERCODE: E-749 // SIGNAL IM HOCHGEBIRGE VERLOREN
               </p>
 
-              <p className="text-[11px] text-neutral-400 font-mono mt-3 leading-tight uppercase">
+              <p className="text-sm text-neutral-400 font-mono mt-3 leading-tight uppercase">
                 Analyse: In alpinen Bergregionen der Furka-Bergstrecke kommt es regelmässig zu schwankenden Netzabdeckungen.
               </p>
             </Card>
@@ -91,11 +89,11 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
 
               <div className="w-16 h-1.5 bg-iron-dark my-4 animate-bounce" />
 
-              <p className="text-xs sm:text-sm text-iron-dark/80 font-mono font-bold uppercase tracking-wider">
+              <p className="text-sm text-iron-dark/80 font-mono font-bold uppercase tracking-wider">
                 Telemetrie wird synchronisiert
               </p>
 
-              <p className="text-[11px] text-neutral-400 font-mono mt-3 uppercase">
+              <p className="text-sm text-neutral-400 font-mono mt-3 uppercase">
                 PINGE BASISSTATION MUTTHORNHOF // BANDBREITE OPTIMIERT
               </p>
             </Card>

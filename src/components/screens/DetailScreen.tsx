@@ -1,13 +1,36 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { HelpCircle, Info } from 'lucide-react';
+import {
+  HelpCircle,
+  Info,
+  AlertTriangle,
+  Wrench,
+  ArrowDown,
+  ChevronDown,
+  ChevronLeft,
+  Mountain,
+  TrendingUp,
+  Ruler,
+  Layers,
+  MoveHorizontal,
+} from 'lucide-react';
 import { ZahnradSystem, Hotspot } from '../../types';
 import ScreenContainer from '../layout/ScreenContainer';
-import Header from '../layout/Header';
 import Button from '../ui/Button';
-import Card from '../ui/Card';
 import Modal from '../ui/Modal';
+import Badge from '../ui/Badge';
+import InclineGauge from '../ui/InclineGauge';
+import StatTile from '../ui/StatTile';
 import SystemBlueprint from '../diagrams/SystemBlueprint';
+
+function statIcon(label: string) {
+  const l = label.toLowerCase();
+  if (l.includes('steigung')) return <TrendingUp size={16} strokeWidth={2.5} />;
+  if (l.includes('teilung')) return <Ruler size={16} strokeWidth={2.5} />;
+  if (l.includes('material')) return <Layers size={16} strokeWidth={2.5} />;
+  if (l.includes('spur')) return <MoveHorizontal size={16} strokeWidth={2.5} />;
+  return <Info size={16} strokeWidth={2.5} />;
+}
 
 interface DetailScreenProps {
   readonly system: ZahnradSystem;
@@ -17,27 +40,45 @@ interface DetailScreenProps {
 
 export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }: Readonly<DetailScreenProps>) {
   const [showTechDetails, setShowTechDetails] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
   const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null);
 
   return (
     <ScreenContainer className="overflow-x-hidden relative pb-28">
-      {/* Header */}
-      <Header
-        title="SYSTEM-DETAIL"
-        onBack={onBackToDashboard}
-        backLabel="Zurück zur Auswahl"
-        sticky
-        className="h-auto"
-      />
-
       {/* Title Block */}
       <section className="bg-white p-6 border-b-[3px] border-iron-dark">
-        <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-iron-dark">
-          {system.name}
-        </h2>
-        <p className="text-xs sm:text-sm font-mono font-bold uppercase tracking-widest text-primary-red mt-2.5">
-          ENTWICKELT {system.developed} • {system.type.toUpperCase()}
-        </p>
+        <div className="flex items-start gap-4">
+          <Button
+            variant="icon"
+            size="sm"
+            onClick={onBackToDashboard}
+            aria-label="Zurück zur Auswahl"
+            className="shrink-0"
+          >
+            <ChevronLeft size={22} strokeWidth={3} className="text-iron-dark" />
+          </Button>
+          <div className="flex-1 min-w-0">
+            <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-iron-dark leading-none">
+              {system.name}
+            </h2>
+            <p className="text-sm font-mono font-bold uppercase tracking-widest text-primary-red mt-1">
+              ENTWICKELT {system.developed} • {system.type.toUpperCase()}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 mt-4">
+          <Badge variant="pine" className="px-2 py-1">
+            <Mountain size={11} strokeWidth={2.5} />
+            {system.famousLine.toUpperCase()}
+          </Badge>
+          <Badge variant="glacier" className="px-2 py-1">
+            {system.tagline.toUpperCase()}
+          </Badge>
+        </div>
+
+        {/* Incline gauge — turns the gradient into a real slope */}
+        <InclineGauge percent={system.maxGradientPercent} className="mt-5" />
       </section>
 
       {/* Blueprint Diagram */}
@@ -48,8 +89,8 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
       />
 
       {/* Toggle Bar */}
-      <section className="bg-[#E8E8E8] border-b-[3px] border-iron-dark p-4 sticky top-20.75 z-10 flex justify-between items-center">
-        <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-iron-dark flex items-center gap-1.5">
+      <section className="bg-[#E8E8E8] border-b-[3px] border-iron-dark p-4 sticky top-0 z-10 flex justify-between items-center">
+        <span className="text-sm font-black uppercase tracking-wider text-iron-dark flex items-center gap-1.5">
           <Info size={16} className="text-primary-red" />
           TECHNISCHE DETAILS ANZEIGEN
         </span>
@@ -77,31 +118,80 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
       <main className="grow bg-cement-sand p-6">
         {!showTechDetails && (
           <motion.div
-            className="space-y-6 text-base sm:text-lg font-medium leading-[145%] text-iron-dark"
+            className="space-y-5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <p className="first-letter:text-4xl first-letter:font-black first-letter:text-primary-red first-letter:mr-2 first-letter:float-left">
+            {/* Lead sentence */}
+            <p className="text-base sm:text-lg font-bold leading-[140%] text-iron-dark">
               {system.explanationShort}
             </p>
 
-            <div className="border-l-[6px] border-iron-dark pl-4 py-2 bg-white/50 pr-2">
-              <p className="text-md sm:text-lg font-bold leading-[140%] text-iron-dark italic">
-                {system.steepDangerText}
-              </p>
+            {/* Visual Gefahr -> Lösung panel */}
+            <div className="space-y-3">
+              <div className="bg-white border-[3px] border-iron-dark shadow-hard-sm p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="flex items-center justify-center h-8 w-8 bg-primary-red border-2 border-iron-dark shrink-0">
+                    <AlertTriangle size={18} strokeWidth={2.5} className="text-white" />
+                  </span>
+                  <span className="text-sm font-black uppercase tracking-widest text-primary-red">
+                    Die Gefahr
+                  </span>
+                </div>
+                <p className="text-sm sm:text-base font-medium leading-[145%] text-iron-dark">
+                  {system.steepDangerText}
+                </p>
+              </div>
+
+              <div className="flex justify-center">
+                <span className="flex items-center justify-center h-8 w-8 bg-iron-dark rounded-full">
+                  <ArrowDown size={18} strokeWidth={3} className="text-white" />
+                </span>
+              </div>
+
+              <div className="bg-white border-[3px] border-iron-dark shadow-hard-sm p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="flex items-center justify-center h-8 w-8 bg-pine border-2 border-iron-dark shrink-0">
+                    <Wrench size={18} strokeWidth={2.5} className="text-white" />
+                  </span>
+                  <span className="text-sm font-black uppercase tracking-widest text-pine">
+                    Die Lösung
+                  </span>
+                </div>
+                <p className="text-sm sm:text-base font-medium leading-[145%] text-iron-dark">
+                  {system.solutionText}
+                </p>
+              </div>
             </div>
 
-            <p>{system.solutionText}</p>
-
-            <Card shadow="sm" className="p-5">
-              <span className="block text-xs font-mono font-bold uppercase text-primary-red mb-2 tracking-wider">
-                HISTORISCHE ANALYSE M322
-              </span>
-              <p className="text-xs sm:text-sm leading-relaxed text-neutral-600 font-normal">
-                {system.historyAndPurpose}
-              </p>
-            </Card>
+            {/* Collapsible history */}
+            <div className="border-[3px] border-iron-dark bg-white shadow-hard-sm">
+              <button
+                type="button"
+                onClick={() => setShowHistory((v) => !v)}
+                aria-expanded={showHistory}
+                className="w-full flex items-center justify-between px-4 py-3 cursor-pointer"
+              >
+                <span className="text-sm font-mono font-black uppercase text-primary-red tracking-wider">
+                  Historische Details
+                </span>
+                <ChevronDown
+                  size={18}
+                  strokeWidth={3}
+                  className={`text-iron-dark transition-transform duration-150 ${showHistory ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {showHistory && (
+                <motion.p
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  className="px-4 pb-4 text-sm leading-relaxed text-neutral-600 font-normal border-t-2 border-iron-dark pt-3"
+                >
+                  {system.historyAndPurpose}
+                </motion.p>
+              )}
+            </div>
           </motion.div>
         )}
 
@@ -113,17 +203,15 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             transition={{ duration: 0.15 }}
           >
             {system.techStats.map((stat) => (
-              <Card key={stat.label} className="p-4 flex flex-col justify-between h-28">
-                <span className="block text-[10px] sm:text-xs font-mono font-black uppercase text-neutral-500 tracking-wider">
-                  {stat.label}
-                </span>
-                <span className="block text-xl sm:text-2xl font-black uppercase text-primary-red tracking-tight leading-none mt-2">
-                  {stat.value}
-                </span>
-              </Card>
+              <StatTile
+                key={stat.label}
+                icon={statIcon(stat.label)}
+                label={stat.label}
+                value={stat.value}
+              />
             ))}
 
-            <div className="col-span-2 bg-[#E8E8E8] border-[3px] border-iron-dark p-4 text-xs font-mono tracking-wide leading-relaxed font-bold text-neutral-600">
+            <div className="col-span-2 bg-[#E8E8E8] border-[3px] border-iron-dark p-4 text-sm font-mono tracking-wide leading-relaxed font-bold text-neutral-600">
               HINWEIS: Alle Toleranz-Angaben basieren auf den Originalzeichnungen und Archivbeständen der Furka-Oberalp-Bahngesellschaft aus dem späten 19. Jahrhundert.
             </div>
           </motion.div>
@@ -153,7 +241,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
         footerAction={
           <button
             onClick={() => setSelectedHotspot(null)}
-            className="px-5 py-2.5 bg-iron-dark text-white font-mono text-xs uppercase font-extrabold tracking-wider transition-colors hover:bg-neutral-800"
+            className="px-5 py-2.5 bg-iron-dark text-white font-mono text-sm uppercase font-extrabold tracking-wider transition-colors hover:bg-neutral-800"
           >
             INSPEKTION SCHLIESSEN
           </button>

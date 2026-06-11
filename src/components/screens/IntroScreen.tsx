@@ -1,8 +1,9 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Train, HardHat } from 'lucide-react';
+import { ArrowRight, HardHat, Layers, TrendingUp, History } from 'lucide-react';
 import ScreenContainer from '../layout/ScreenContainer';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
+import Ridgeline from '../diagrams/Ridgeline';
 
 interface IntroScreenProps {
   readonly onExplore: () => void;
@@ -12,18 +13,6 @@ interface IntroScreenProps {
 export default function IntroScreen({ onExplore, onSimulateError }: Readonly<IntroScreenProps>) {
   return (
     <ScreenContainer className="overflow-x-hidden relative">
-      {/* Error simulation button */}
-      <div className="absolute top-4 right-4 z-40 flex items-center gap-2">
-        <button
-          onClick={onSimulateError}
-          title="Netzabfall im Hochgebirge simulieren"
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-cement-light border-2 border-iron-dark text-xs font-mono font-bold uppercase cursor-pointer hover:bg-primary-red hover:text-white transition-colors"
-          style={{ boxShadow: '3px 3px 0px #0D0D0D' }}
-        >
-          <span className="w-2.5 h-2.5 rounded-full bg-primary-red animate-pulse" />{' '}
-          OFFLINE SIMULIEREN
-        </button>
-      </div>
 
       <div className="flex-1 flex flex-col">
         {/* Hero Image */}
@@ -59,22 +48,14 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
             </g>
           </svg>
 
-          {/* Catalog plate overlay */}
-          <div className="absolute top-6 left-6 z-10 flex flex-col bg-iron-dark border-2 border-white text-white p-3 font-mono text-[9px] uppercase tracking-wider shadow-hard gap-0.5">
-            <div className="flex items-center gap-1.5 font-bold text-primary-red">
-              <Train size={12} />
-              <span>FURKA-OBERALP-BAHN M322</span>
-            </div>
-            <span>PLATTE: EXPOSITION ALPHA 1.0</span>
-            <span className="text-gray-400">KOORDINATEN: 46°35&apos;N 8°25&apos;E</span>
-            <span className="text-gray-400">NETZBANDBREITE: SEHR SCHWACH</span>
-          </div>
-
           <div className="w-full h-1/4 bg-linear-to-t from-black to-transparent absolute bottom-0 left-0" />
         </div>
 
+        {/* Alpine ridgeline divider */}
+        <Ridgeline className="text-iron-dark -mt-px" height={40} withTrack />
+
         {/* Text Area */}
-        <div className="p-8 bg-white flex-1 flex flex-col justify-center">
+        <div className="p-8 pt-4 bg-white flex-1 flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,23 +67,46 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
             </Badge>
 
             <h1 className="text-4xl xs:text-5xl font-extrabold tracking-tighter uppercase leading-[0.95] text-iron-dark mb-6">
-              DIES 5 <br />
+              DIE 5 <br />
               <span className="text-primary-red">ZAHNRADSYSTEME</span>
             </h1>
           </motion.div>
 
-          <motion.div
-            className="space-y-4 text-base md:text-lg text-neutral-800 font-medium leading-[140%]"
+          <motion.p
+            className="text-base md:text-lg text-neutral-800 font-medium leading-[140%] mb-6"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.15 }}
           >
-            <p>
-              Analysieren Sie die fünf bahnbrechenden Zahnradsysteme, welche die alpine Erschliessung ermöglichten. Von der Riggenbach-Leiter bis zum modernen Von Roll System – entdecken Sie die präzise Mechanik hinter den steilsten Strecken der Welt.
-            </p>
-            <p className="text-neutral-500 text-sm xs:text-base border-l-4 border-iron-dark pl-3 py-1 font-sans">
-              Diese Dokumentation konzentriert sich auf die spezifischen Toleranzen, Profile und Antriebstechnologien dieser fünf historischen Meisterwerke der Ingenieurskunst. Bereit für die technische Inspektion?
-            </p>
+            Die präzise Mechanik hinter den steilsten Strecken der Welt – von der
+            Riggenbach-Leiter bis zum modernen Von Roll System.
+          </motion.p>
+
+          {/* Visual stat tiles */}
+          <motion.div
+            className="grid grid-cols-3 gap-3"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.25 }}
+          >
+            {[
+              { icon: Layers, value: '5', label: 'Systeme' },
+              { icon: TrendingUp, value: '48%', label: 'steilste' },
+              { icon: History, value: "1863\u2013heute", label: 'Epoche' },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center text-center bg-cement-light border-[3px] border-iron-dark shadow-hard-sm p-3"
+              >
+                <stat.icon size={20} strokeWidth={2.5} className="text-primary-red mb-2" />
+                <span className="text-xl xs:text-2xl font-black tracking-tighter leading-none text-iron-dark">
+                  {stat.value}
+                </span>
+                <span className="text-xs font-mono font-black uppercase tracking-widest text-slate-stone mt-1">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
           </motion.div>
         </div>
       </div>
