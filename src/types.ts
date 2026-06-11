@@ -22,6 +22,14 @@ export interface ZahnradSystem {
   solutionText: string;
   techStats: TechStat[];
   hotspots: Hotspot[];
+  /** Max gradient as a plain number in percent — drives the InclineGauge visual. */
+  maxGradientPercent: number;
+  /** Famous Swiss railway line the system is associated with (e.g. "Pilatusbahn"). */
+  famousLine: string;
+  /** Short 3–5 word visual headline. */
+  tagline: string;
+  /** Identity icon key consumed by SystemIcon. */
+  iconKey: 'horizontal' | 'layers' | 'monohead' | 'ladder' | 'monoblock';
 }
 
 export interface QuizQuestion {

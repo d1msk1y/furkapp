@@ -10,6 +10,7 @@ import Card from '../ui/Card';
 import Badge from '../ui/Badge';
 import IconBox from '../ui/IconBox';
 import ProgressBar from '../ui/ProgressBar';
+import Ridgeline from '../diagrams/Ridgeline';
 
 interface QuizScreenProps {
   readonly onGoBackToDashboard: () => void;
@@ -103,8 +104,15 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-full max-w-md bg-white border-heavy p-6 sm:p-8 shadow-hard text-center flex flex-col items-center relative"
+            className="w-full max-w-md bg-white border-heavy p-6 sm:p-8 shadow-hard text-center flex flex-col items-center relative overflow-hidden"
           >
+            {/* Alpine summit accent */}
+            <Ridgeline
+              className={`${score >= 3 ? 'text-pine' : 'text-primary-red'} -mx-6 sm:-mx-8 -mt-6 sm:-mt-8 w-[calc(100%+3rem)] sm:w-[calc(100%+4rem)] mb-6`}
+              height={36}
+              flip
+            />
+
             <IconBox size="md" className="mb-6 border-2 border-white">
               <Award size={32} className="text-primary-red animate-pulse" />
             </IconBox>
@@ -113,20 +121,20 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
               PRÜFUNG BEENDET
             </h2>
 
-            <Badge variant="light" className="mb-6 text-[10px] px-2.5 py-1">
+            <Badge variant="light" className="mb-6 px-2.5 py-1">
               EXP_RESULT_LOG_M322
             </Badge>
 
             {/* Score block */}
             <div className="border-heavy-double bg-cement-light p-6 w-full max-w-xs shadow-hard-sm mb-6 flex flex-col items-center justify-center">
-              <span className="block text-xs font-mono font-black text-neutral-500 uppercase">
+              <span className="block text-sm font-mono font-black text-neutral-500 uppercase">
                 IHRE PUNKTZAHL
               </span>
               <span className="block text-6xl font-black text-primary-red tracking-tighter mt-1 mb-1">
                 {score} / 5
               </span>
               <span
-                className="block text-[11px] font-black text-iron-dark tracking-widest uppercase font-mono bg-white border-2 border-iron-dark px-3 py-1 mt-2"
+                className="block text-sm font-black text-iron-dark tracking-widest uppercase font-mono bg-white border-2 border-iron-dark px-3 py-1 mt-2"
                 style={{ boxShadow: '2px 2px 0px #0D0D0D' }}
               >
                 {Math.round((score / 5) * 100)}% RICHTIG
@@ -158,7 +166,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
           <div className="flex flex-col p-6 pb-2">
             <ProgressBar total={QUIZ_QUESTIONS.length} current={currentQuestionIndex} />
 
-            <div className="text-right font-mono text-[9px] font-black uppercase text-neutral-400 mb-2 mt-8">
+            <div className="text-right font-mono text-xs font-black uppercase text-neutral-400 mb-2 mt-8">
               PRÜFUNGSFRAGE {currentQuestionIndex + 1} VON {QUIZ_QUESTIONS.length}
             </div>
 
@@ -167,7 +175,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
               <h2 className="font-sans font-black text-2xl sm:text-3xl leading-[1.1] text-center uppercase tracking-tight text-iron-dark overflow-wrap-break-word">
                 {currentQuestion.question}
               </h2>
-              <div className="absolute -top-3.5 -left-3 px-2 py-0.5 bg-iron-dark text-white font-mono text-[8px] tracking-wider uppercase border border-white">
+              <div className="absolute -top-3.5 -left-3 px-2 py-0.5 bg-iron-dark text-white font-mono text-[11px] tracking-wider uppercase border border-white">
                 EXAM_SYS_M322
               </div>
             </Card>
@@ -194,7 +202,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
                   <span className={`font-mono font-black text-lg sm:text-xl mr-5 shrink-0 transition-colors ${numStyle}`}>
                     {labelNum}
                   </span>
-                  <span className="font-sans font-black text-sm sm:text-base tracking-wide uppercase truncate">
+                  <span className="font-sans font-black text-base tracking-wide uppercase truncate">
                     {option}
                   </span>
 
@@ -217,7 +225,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
           </div>
 
           {/* Evaluation hint */}
-          <div className="h-6 px-6 font-mono text-center text-[10px] text-neutral-400 uppercase font-bold">
+          <div className="h-8 px-6 font-mono text-center text-sm text-neutral-400 uppercase font-bold flex items-center justify-center">
             {isFrozen && 'Evaluierung läuft... Bereite Folgeschritt vor.'}
           </div>
         </main>
