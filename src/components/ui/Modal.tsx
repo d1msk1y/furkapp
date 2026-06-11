@@ -43,7 +43,7 @@ export default function Modal({
               <div className="flex justify-between items-start mb-4">
                 <div>
                   {subtitle && (
-                    <span className="block text-[10px] font-mono tracking-widest uppercase font-extrabold text-primary-red mb-1">
+                    <span className="block text-xs font-mono tracking-widest uppercase font-extrabold text-primary-red mb-1">
                       {subtitle}
                     </span>
                   )}
