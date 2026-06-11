@@ -18,6 +18,9 @@ import QuizScreen from './components/screens/QuizScreen';
 import NetworkErrorScreen from './components/screens/NetworkErrorScreen';
 import ThemeModeToggleButton from './features/theme/ThemeModeToggleButton';
 import { useThemeMode } from './features/theme/useThemeMode';
+import SettingsModal from './components/ui/SettingsModal';
+import Button from './components/ui/Button';
+import { SlidersHorizontal } from 'lucide-react';
 
 type ScreenType = 'intro' | 'dashboard' | 'detail' | 'quiz' | 'error';
 
@@ -25,7 +28,11 @@ export default function App() {
   const [screen, setScreen] = useState<ScreenType>('intro');
   const [selectedSystemId, setSelectedSystemId] = useState<ZahnradSystem['id'] | null>(null);
   const { isDarkMode, toggleTheme } = useThemeMode();
-  
+
+  // Settings modal state
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [isOnboarding, setIsOnboarding] = useState(false);
+
   // Persistence for user score state
   const [quizHighScore, setQuizHighScore] = useState<number | null>(null);
 
@@ -43,6 +50,31 @@ export default function App() {
       console.warn('Storage-Zugriff nicht verfügbar:', e);
     }
   }, []);
+
+  // Show onboarding modal on first visit
+  useEffect(() => {
+    try {
+      const seen = localStorage.getItem('fo_seen_settings');
+      if (!seen) {
+        setIsOnboarding(true);
+        setSettingsOpen(true);
+      }
+    } catch (e) {
+      console.warn('Storage access unavailable:', e);
+    }
+  }, []);
+
+  const handleSettingsClose = () => {
+    if (isOnboarding) {
+      try {
+        localStorage.setItem('fo_seen_settings', '1');
+      } catch (e) {
+        console.warn('Storage access unavailable:', e);
+      }
+      setIsOnboarding(false);
+    }
+    setSettingsOpen(false);
+  };
 
   const handleQuizFinished = (score: number) => {
     setQuizHighScore((prev) => {
@@ -95,6 +127,7 @@ export default function App() {
             <IntroScreen 
               onExplore={() => navigateTo('dashboard')}
               onSimulateError={() => triggerSimulationError('intro')}
+              onOpenSettings={() => setSettingsOpen(true)}
             />
           )}
 
@@ -104,7 +137,19 @@ export default function App() {
               onGoBackToIntro={() => navigateTo('intro')}
               onStartQuiz={() => navigateTo('quiz')}
               quizHighScore={quizHighScore}
-              headerRightAction={<ThemeModeToggleButton isDarkMode={isDarkMode} onToggle={toggleTheme} />}
+              headerRightAction={
+                <div className="flex items-center gap-1">
+                  <ThemeModeToggleButton isDarkMode={isDarkMode} onToggle={toggleTheme} />
+                  <Button
+                    variant="icon"
+                    size="sm"
+                    onClick={() => setSettingsOpen(true)}
+                    aria-label="Settings"
+                  >
+                    <SlidersHorizontal size={18} strokeWidth={3} className="text-iron-dark" />
+                  </Button>
+                </div>
+              }
             />
           )}
 
@@ -130,6 +175,12 @@ export default function App() {
           )}
         </motion.div>
       </AnimatePresence>
+
+      <SettingsModal
+        isOpen={settingsOpen}
+        onClose={handleSettingsClose}
+        isOnboarding={isOnboarding}
+      />
     </div>
   );
 }
