@@ -46,7 +46,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
   return (
     <ScreenContainer className="overflow-x-hidden relative pb-28">
       {/* Title Block */}
-      <section className="bg-white p-6 border-b-[3px] border-iron-dark">
+      <section className="bg-cement-light p-6 border-b-[3px] border-iron-dark">
         <div className="flex items-start gap-4">
           <Button
             variant="icon"
@@ -89,7 +89,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
       />
 
       {/* Toggle Bar */}
-      <section className="bg-[#E8E8E8] border-b-[3px] border-iron-dark p-4 sticky top-0 z-10 flex justify-between items-center">
+      <section className="bg-cement-sand border-b-[3px] border-iron-dark p-4 sticky top-0 z-10 flex justify-between items-center">
         <span className="text-sm font-black uppercase tracking-wider text-iron-dark flex items-center gap-1.5">
           <Info size={16} className="text-primary-red" />
           TECHNISCHE DETAILS ANZEIGEN
@@ -102,13 +102,13 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             id="tech-toggle"
             checked={showTechDetails}
             onChange={(e) => setShowTechDetails(e.target.checked)}
-            className="absolute block w-8 h-8 rounded-none border-[3px] border-iron-dark bg-white appearance-none cursor-pointer z-20 checked:translate-x-6.5 transition-transform duration-100 ease-out"
+            className="absolute block w-8 h-8 rounded-none border-[3px] border-iron-dark bg-cement-light appearance-none cursor-pointer z-20 checked:translate-x-6.5 transition-transform duration-100 ease-out"
           />
           <label
             htmlFor="tech-toggle"
             aria-label="Technische Details umschalten"
             className={`block overflow-hidden h-8 rounded-none border-[3px] border-iron-dark cursor-pointer transition-colors duration-100 ${
-              showTechDetails ? 'bg-iron-dark' : 'bg-white'
+              showTechDetails ? 'bg-ink' : 'bg-cement-light'
             }`}
           />
         </div>
@@ -130,7 +130,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
 
             {/* Visual Gefahr -> Lösung panel */}
             <div className="space-y-3">
-              <div className="bg-white border-[3px] border-iron-dark shadow-hard-sm p-4">
+              <div className="bg-cement-light border-[3px] border-iron-dark shadow-hard-sm p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="flex items-center justify-center h-8 w-8 bg-primary-red border-2 border-iron-dark shrink-0">
                     <AlertTriangle size={18} strokeWidth={2.5} className="text-white" />
@@ -145,12 +145,12 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
               </div>
 
               <div className="flex justify-center">
-                <span className="flex items-center justify-center h-8 w-8 bg-iron-dark rounded-full">
+                <span className="flex items-center justify-center h-8 w-8 bg-ink rounded-full">
                   <ArrowDown size={18} strokeWidth={3} className="text-white" />
                 </span>
               </div>
 
-              <div className="bg-white border-[3px] border-iron-dark shadow-hard-sm p-4">
+              <div className="bg-cement-light border-[3px] border-iron-dark shadow-hard-sm p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="flex items-center justify-center h-8 w-8 bg-pine border-2 border-iron-dark shrink-0">
                     <Wrench size={18} strokeWidth={2.5} className="text-white" />
@@ -166,7 +166,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             </div>
 
             {/* Collapsible history */}
-            <div className="border-[3px] border-iron-dark bg-white shadow-hard-sm">
+            <div className="border-[3px] border-iron-dark bg-cement-light shadow-hard-sm">
               <button
                 type="button"
                 onClick={() => setShowHistory((v) => !v)}
@@ -211,7 +211,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
               />
             ))}
 
-            <div className="col-span-2 bg-[#E8E8E8] border-[3px] border-iron-dark p-4 text-sm font-mono tracking-wide leading-relaxed font-bold text-neutral-600">
+            <div className="col-span-2 bg-cement-sand border-[3px] border-iron-dark p-4 text-sm font-mono tracking-wide leading-relaxed font-bold text-neutral-600">
               HINWEIS: Alle Toleranz-Angaben basieren auf den Originalzeichnungen und Archivbeständen der Furka-Oberalp-Bahngesellschaft aus dem späten 19. Jahrhundert.
             </div>
           </motion.div>
@@ -241,7 +241,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
         footerAction={
           <button
             onClick={() => setSelectedHotspot(null)}
-            className="px-5 py-2.5 bg-iron-dark text-white font-mono text-sm uppercase font-extrabold tracking-wider transition-colors hover:bg-neutral-800"
+            className="px-5 py-2.5 bg-ink text-white font-mono text-sm uppercase font-extrabold tracking-wider transition-colors hover:bg-neutral-800"
           >
             INSPEKTION SCHLIESSEN
           </button>

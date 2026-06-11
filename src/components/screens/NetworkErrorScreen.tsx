@@ -87,7 +87,7 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
                 System Lädt...
               </h1>
 
-              <div className="w-16 h-1.5 bg-iron-dark my-4 animate-bounce" />
+              <div className="w-16 h-1.5 bg-ink my-4 animate-bounce" />
 
               <p className="text-sm text-iron-dark/80 font-mono font-bold uppercase tracking-wider">
                 Telemetrie wird synchronisiert
@@ -99,7 +99,7 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
             </Card>
 
             <div className="w-full mt-4 opacity-50 pointer-events-none cursor-not-allowed">
-              <div className="w-full h-16 bg-white border-3 border-neutral-300 text-neutral-400 flex items-center justify-center uppercase font-bold text-xl tracking-wide rounded-sm select-none">
+              <div className="w-full h-16 bg-cement-light border-3 border-neutral-300 text-neutral-400 flex items-center justify-center uppercase font-bold text-xl tracking-wide rounded-sm select-none">
                 VERBINDUNG WIRD AUFGEBAUT...
               </div>
             </div>

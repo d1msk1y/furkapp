@@ -7,9 +7,9 @@ type CardProps = ComponentProps<'div'> & {
 };
 
 const shadowStyles = {
-  sm: '2px 2px 0px 0px #0D0D0D',
-  md: '4px 4px 0px 0px #0D0D0D',
-  lg: '6px 6px 0px 0px #0D0D0D',
+  sm: '2px 2px 0px 0px var(--app-shadow-color)',
+  md: '4px 4px 0px 0px var(--app-shadow-color)',
+  lg: '6px 6px 0px 0px var(--app-shadow-color)',
   none: 'none',
 };
 
@@ -23,7 +23,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      className={`bg-white ${border ? 'border-[3px] border-iron-dark' : ''} ${className}`}
+      className={`bg-cement-light ${border ? 'border-[3px] border-iron-dark' : ''} ${className}`}
       style={{ boxShadow: shadowStyles[shadow], ...style }}
       {...props}
     >

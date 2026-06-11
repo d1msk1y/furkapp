@@ -6,7 +6,7 @@ interface ProgressBarProps {
 export default function ProgressBar({ total, current }: Readonly<ProgressBarProps>) {
   const steps = Array.from({ length: total }, (_, i) => ({
     id: `step-${i}`,
-    bg: i === current ? 'bg-primary-red' : i < current ? 'bg-iron-dark' : 'bg-white',
+    bg: i === current ? 'bg-primary-red' : i < current ? 'bg-ink' : 'bg-cement-light',
   }));
 
   return (
