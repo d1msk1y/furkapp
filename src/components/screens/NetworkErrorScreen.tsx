@@ -6,6 +6,7 @@ import IconBox from '../ui/IconBox';
 import Card from '../ui/Card';
 import Badge from '../ui/Badge';
 import Ridgeline from '../diagrams/Ridgeline';
+import { useLanguage } from '../../features/i18n/useLanguage';
 
 interface NetworkErrorScreenProps {
   readonly onResolveSuccess: () => void;
@@ -13,6 +14,7 @@ interface NetworkErrorScreenProps {
 
 export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<NetworkErrorScreenProps>) {
   const [loadingState, setLoadingState] = useState<'error' | 'reconnecting'>('error');
+  const { t } = useLanguage();
 
   const handleRetry = () => {
     setLoadingState('reconnecting');
@@ -42,21 +44,21 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
             <Card className="p-6 border-primary-red flex flex-col items-center">
               <Badge variant="outline" className="mb-3">
                 <Radio size={12} className="animate-pulse" />
-                DOKUMENTATION INSTABIL
+                {t('error.badge')}
               </Badge>
 
               <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-iron-dark leading-tight font-sans">
-                Verbindung Fehlgeschlagen
+                {t('error.title')}
               </h1>
 
               <div className="w-16 h-1.5 bg-primary-red my-4" />
 
               <p className="text-sm text-iron-dark/80 font-mono font-bold uppercase tracking-wider leading-relaxed">
-                FEHLERCODE: E-749 // SIGNAL IM HOCHGEBIRGE VERLOREN
+                {t('error.error_code')}
               </p>
 
               <p className="text-sm text-neutral-400 font-mono mt-3 leading-tight uppercase">
-                Analyse: In alpinen Bergregionen der Furka-Bergstrecke kommt es regelmässig zu schwankenden Netzabdeckungen.
+                {t('error.description')}
               </p>
             </Card>
 
@@ -66,7 +68,7 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
                 className="w-full h-16 text-xl tracking-wide rounded-sm"
                 onClick={handleRetry}
               >
-                ERNEUT VERSUCHEN
+                {t('error.retry_button')}
               </Button>
             </div>
           </motion.div>
@@ -84,13 +86,13 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
 
             <Card className="p-6 flex flex-col items-center">
               <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-iron-dark leading-tight">
-                System Lädt...
+                {t('error.reconnecting_title')}
               </h1>
 
               <div className="w-16 h-1.5 bg-ink my-4 animate-bounce" />
 
               <p className="text-sm text-iron-dark/80 font-mono font-bold uppercase tracking-wider">
-                Telemetrie wird synchronisiert
+                {t('error.reconnecting_info')}
               </p>
 
               <p className="text-sm text-neutral-400 font-mono mt-3 uppercase">
@@ -100,7 +102,7 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
 
             <div className="w-full mt-4 opacity-50 pointer-events-none cursor-not-allowed">
               <div className="w-full h-16 bg-cement-light border-3 border-neutral-300 text-neutral-400 flex items-center justify-center uppercase font-bold text-xl tracking-wide rounded-sm select-none">
-                VERBINDUNG WIRD AUFGEBAUT...
+                {t('error.reconnecting_title')}
               </div>
             </div>
           </motion.div>

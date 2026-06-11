@@ -7,6 +7,7 @@ import Header from '../layout/Header';
 import Button from '../ui/Button';
 import SystemIcon from '../ui/SystemIcon';
 import InclineGauge from '../ui/InclineGauge';
+import { useLanguage } from '../../features/i18n/useLanguage';
 
 interface DashboardScreenProps {
   readonly onSelectSystem: (id: ZahnradSystem['id']) => void;
@@ -24,6 +25,7 @@ export default function DashboardScreen({
   headerRightAction,
 }: Readonly<DashboardScreenProps>) {
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
+  const { t } = useLanguage();
 
   const handleCardClick = (systemId: ZahnradSystem['id']) => {
     setActiveCardId(systemId);
@@ -38,9 +40,9 @@ export default function DashboardScreen({
       <div className="flex flex-col">
         {/* Header with optional right action */}
         <Header
-          title="DIE 5 ZAHNRADSYSTEME"
+          title={t('dashboard.title')}
           onBack={onGoBackToIntro}
-          backLabel="Zurück zur Startseite"
+          backLabel={t('dashboard.back_label')}
           rightAction={headerRightAction}
           className="p-5"
         />
@@ -83,7 +85,7 @@ export default function DashboardScreen({
                       isFlashing ? 'text-white' : 'text-iron-dark'
                     }`}
                   >
-                    {system.tagline}
+                    {t(`systems.${system.id}.tagline`)}
                   </span>
                   <span
                     className={`text-xs font-mono uppercase tracking-wider font-extrabold mt-1 flex items-center gap-1 truncate ${
@@ -91,7 +93,7 @@ export default function DashboardScreen({
                     }`}
                   >
                     <Mountain size={10} strokeWidth={2.5} className={isFlashing ? 'text-white' : 'text-primary-red'} />
-                    {system.famousLine} • {system.developed}
+                    {t(`systems.${system.id}.famousLine`)} • {system.developed}
                   </span>
                 </div>
 
@@ -124,9 +126,8 @@ export default function DashboardScreen({
           <div className="flex items-center justify-between border-2 border-primary-red bg-neutral-900 px-4 py-2 text-white font-mono text-sm uppercase">
             <span className="flex items-center gap-2">
               <Trophy size={14} className="text-primary-red" />
-              Letzte Prüfung
+              {t('dashboard.quiz_highscore', { score: quizHighScore, total: 5 })}
             </span>
-            <span className="font-extrabold">{quizHighScore} / 5 RICHTIG</span>
           </div>
         )}
 
@@ -138,7 +139,7 @@ export default function DashboardScreen({
         >
           <span className="flex items-center gap-2">
             <BookOpen size={24} strokeWidth={3} className="text-primary-red" />
-            WISSENS-CHECK
+            {t('dashboard.quiz_cta')}
           </span>
           <ArrowRight size={26} strokeWidth={3} />
         </Button>

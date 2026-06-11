@@ -138,8 +138,7 @@ export default function App() {
               onStartQuiz={() => navigateTo('quiz')}
               quizHighScore={quizHighScore}
               headerRightAction={
-                <div className="flex items-center gap-1">
-                  <ThemeModeToggleButton isDarkMode={isDarkMode} onToggle={toggleTheme} />
+                <div className="flex items-center gap-1">              
                   <Button
                     variant="icon"
                     size="sm"

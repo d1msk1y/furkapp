@@ -22,13 +22,14 @@ import Badge from '../ui/Badge';
 import InclineGauge from '../ui/InclineGauge';
 import StatTile from '../ui/StatTile';
 import SystemBlueprint from '../diagrams/SystemBlueprint';
+import { useLanguage } from '../../features/i18n/useLanguage';
 
 function statIcon(label: string) {
   const l = label.toLowerCase();
-  if (l.includes('steigung')) return <TrendingUp size={16} strokeWidth={2.5} />;
-  if (l.includes('teilung')) return <Ruler size={16} strokeWidth={2.5} />;
-  if (l.includes('material')) return <Layers size={16} strokeWidth={2.5} />;
-  if (l.includes('spur')) return <MoveHorizontal size={16} strokeWidth={2.5} />;
+  if (l.includes('steigung') || l.includes('gradient') || l.includes('pente')) return <TrendingUp size={16} strokeWidth={2.5} />;
+  if (l.includes('teilung') || l.includes('pitch') || l.includes('pas')) return <Ruler size={16} strokeWidth={2.5} />;
+  if (l.includes('material') || l.includes('matériau')) return <Layers size={16} strokeWidth={2.5} />;
+  if (l.includes('spur') || l.includes('gauge') || l.includes('écartement')) return <MoveHorizontal size={16} strokeWidth={2.5} />;
   return <Info size={16} strokeWidth={2.5} />;
 }
 
@@ -42,6 +43,9 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
   const [showTechDetails, setShowTechDetails] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null);
+  const { t } = useLanguage();
+
+  const STAT_KEYS = ['max_gradient', 'tooth_pitch', 'rack_material', 'gauge'] as const;
 
   return (
     <ScreenContainer className="overflow-x-hidden relative pb-28">
@@ -52,17 +56,17 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             variant="icon"
             size="sm"
             onClick={onBackToDashboard}
-            aria-label="Zurück zur Auswahl"
+            aria-label={t('detail.back_label')}
             className="shrink-0"
           >
             <ChevronLeft size={22} strokeWidth={3} className="text-iron-dark" />
           </Button>
           <div className="flex-1 min-w-0">
             <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter text-iron-dark leading-none">
-              {system.name}
+              {t(`systems.${system.id}.name`)}
             </h2>
             <p className="text-sm font-mono font-bold uppercase tracking-widest text-primary-red mt-1">
-              ENTWICKELT {system.developed} • {system.type.toUpperCase()}
+              {t('detail.developed')} {system.developed} • {t(`systems.${system.id}.type`).toUpperCase()}
             </p>
           </div>
         </div>
@@ -70,10 +74,10 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
         <div className="flex flex-wrap items-center gap-2 mt-4">
           <Badge variant="pine" className="px-2 py-1">
             <Mountain size={11} strokeWidth={2.5} />
-            {system.famousLine.toUpperCase()}
+            {t(`systems.${system.id}.famousLine`).toUpperCase()}
           </Badge>
           <Badge variant="glacier" className="px-2 py-1">
-            {system.tagline.toUpperCase()}
+            {t(`systems.${system.id}.tagline`).toUpperCase()}
           </Badge>
         </div>
 
@@ -92,7 +96,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
       <section className="bg-cement-sand border-b-[3px] border-iron-dark p-4 sticky top-0 z-10 flex justify-between items-center">
         <span className="text-sm font-black uppercase tracking-wider text-iron-dark flex items-center gap-1.5">
           <Info size={16} className="text-primary-red" />
-          TECHNISCHE DETAILS ANZEIGEN
+          {t('detail.show_tech')}
         </span>
 
         <div className="relative inline-block w-16 h-8 align-middle select-none">
@@ -106,7 +110,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
           />
           <label
             htmlFor="tech-toggle"
-            aria-label="Technische Details umschalten"
+            aria-label={t('detail.show_tech')}
             className={`block overflow-hidden h-8 rounded-none border-[3px] border-iron-dark cursor-pointer transition-colors duration-100 ${
               showTechDetails ? 'bg-ink' : 'bg-cement-light'
             }`}
@@ -125,7 +129,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
           >
             {/* Lead sentence */}
             <p className="text-base sm:text-lg font-bold leading-[140%] text-iron-dark">
-              {system.explanationShort}
+              {t(`systems.${system.id}.explanationShort`)}
             </p>
 
             {/* Visual Gefahr -> Lösung panel */}
@@ -136,11 +140,11 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
                     <AlertTriangle size={18} strokeWidth={2.5} className="text-white" />
                   </span>
                   <span className="text-sm font-black uppercase tracking-widest text-primary-red">
-                    Die Gefahr
+                    {t('detail.danger_label')}
                   </span>
                 </div>
                 <p className="text-sm sm:text-base font-medium leading-[145%] text-iron-dark">
-                  {system.steepDangerText}
+                  {t(`systems.${system.id}.steepDangerText`)}
                 </p>
               </div>
 
@@ -156,11 +160,11 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
                     <Wrench size={18} strokeWidth={2.5} className="text-white" />
                   </span>
                   <span className="text-sm font-black uppercase tracking-widest text-pine">
-                    Die Lösung
+                    {t('detail.solution_label')}
                   </span>
                 </div>
                 <p className="text-sm sm:text-base font-medium leading-[145%] text-iron-dark">
-                  {system.solutionText}
+                  {t(`systems.${system.id}.solutionText`)}
                 </p>
               </div>
             </div>
@@ -174,7 +178,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
                 className="w-full flex items-center justify-between px-4 py-3 cursor-pointer"
               >
                 <span className="text-sm font-mono font-black uppercase text-primary-red tracking-wider">
-                  Historische Details
+                  {t('detail.history_label')}
                 </span>
                 <ChevronDown
                   size={18}
@@ -188,7 +192,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
                   animate={{ opacity: 1, height: 'auto' }}
                   className="px-4 pb-4 text-sm leading-relaxed text-neutral-600 font-normal border-t-2 border-iron-dark pt-3"
                 >
-                  {system.historyAndPurpose}
+                  {t(`systems.${system.id}.historyAndPurpose`)}
                 </motion.p>
               )}
             </div>
@@ -202,14 +206,19 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.15 }}
           >
-            {system.techStats.map((stat) => (
-              <StatTile
-                key={stat.label}
-                icon={statIcon(stat.label)}
-                label={stat.label}
-                value={stat.value}
-              />
-            ))}
+            {system.techStats.map((stat, i) => {
+              const statKey = STAT_KEYS[i] ?? 'max_gradient';
+              const label = t(`systems.${system.id}.stats.${statKey}`);
+              const value = t(`systems.${system.id}.stats.${statKey}_value`);
+              return (
+                <StatTile
+                  key={stat.label}
+                  icon={statIcon(label)}
+                  label={label}
+                  value={value}
+                />
+              );
+            })}
 
             <div className="col-span-2 bg-cement-sand border-[3px] border-iron-dark p-4 text-sm font-mono tracking-wide leading-relaxed font-bold text-neutral-600">
               HINWEIS: Alle Toleranz-Angaben basieren auf den Originalzeichnungen und Archivbeständen der Furka-Oberalp-Bahngesellschaft aus dem späten 19. Jahrhundert.
@@ -227,7 +236,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             onClick={onStartQuiz}
           >
             <HelpCircle size={22} strokeWidth={3} />
-            WISSEN TESTEN
+            {t('detail.quiz_cta')}
           </Button>
         </div>
       </div>
@@ -236,19 +245,19 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
       <Modal
         isOpen={!!selectedHotspot}
         onClose={() => setSelectedHotspot(null)}
-        title={selectedHotspot?.title || ''}
-        subtitle="GEBAUT FÜR STEILSTRECKEN"
+        title={selectedHotspot ? t(`systems.${system.id}.hotspots.${selectedHotspot.id}_title`) : ''}
+        subtitle="BUILT FOR STEEP ROUTES"
         footerAction={
           <button
             onClick={() => setSelectedHotspot(null)}
             className="px-5 py-2.5 bg-ink text-white font-mono text-sm uppercase font-extrabold tracking-wider transition-colors hover:bg-neutral-800"
           >
-            INSPEKTION SCHLIESSEN
+            {t('common.close')}
           </button>
         }
       >
         <p className="text-base sm:text-lg font-medium leading-[145%] text-iron-dark mb-4">
-          {selectedHotspot?.description}
+          {selectedHotspot ? t(`systems.${system.id}.hotspots.${selectedHotspot.id}_desc`) : ''}
         </p>
       </Modal>
     </ScreenContainer>
