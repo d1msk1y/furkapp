@@ -1,0 +1,248 @@
+{
+  "common": {
+    "back": "Zurück",
+    "retry": "Erneut versuchen",
+    "close": "Schließen",
+    "settings": "Einstellungen"
+  },
+  "intro": {
+    "badge": "100-JAHRE-FEST JUBILÄUMSEXPOSITION",
+    "title_line1": "DIE 5",
+    "title_line2": "ZAHNRADSYSTEME",
+    "description": "Die präzise Mechanik hinter den steilsten Strecken der Welt – von der Riggenbach-Leiter bis zum modernen Von Roll System.",
+    "stat_systems": "Systeme",
+    "stat_steepest": "steilste",
+    "stat_era": "Epoche",
+    "explore_button": "SYSTEME ERKUNDEN",
+    "error_sim_button": "SIGNALFEHLER SIMULIEREN"
+  },
+  "dashboard": {
+    "title": "DIE 5 ZAHNRADSYSTEME",
+    "back_label": "Zurück zur Startseite",
+    "quiz_cta": "WISSEN TESTEN",
+    "quiz_highscore": "BEST: {{score}} / {{total}}"
+  },
+  "detail": {
+    "back_label": "Zurück zur Auswahl",
+    "developed": "ENTWICKELT",
+    "show_tech": "TECHNISCHE DETAILS ANZEIGEN",
+    "danger_label": "Die Gefahr",
+    "solution_label": "Die Lösung",
+    "history_label": "Historische Details",
+    "quiz_cta": "WISSEN TESTEN"
+  },
+  "quiz": {
+    "title": "WISSENSQUIZ",
+    "back_label": "Zurück",
+    "question_label": "FRAGE {{current}} VON {{total}}",
+    "result_title": "QUIZ ABGESCHLOSSEN",
+    "result_score": "ERGEBNIS: {{score}} / {{total}}",
+    "result_perfect": "PERFEKTES ERGEBNIS!",
+    "result_good": "GUT GEMACHT!",
+    "result_ok": "WEITER ÜBEN!",
+    "restart_button": "NEU STARTEN",
+    "back_to_dashboard": "ZURÜCK ZUR ÜBERSICHT",
+    "correct_label": "RICHTIG",
+    "wrong_label": "FALSCH",
+    "explanation_prefix": "ERKLÄRUNG:"
+  },
+  "error": {
+    "badge": "DOKUMENTATION INSTABIL",
+    "title": "Verbindung Fehlgeschlagen",
+    "error_code": "FEHLERCODE: E-749 // SIGNAL IM HOCHGEBIRGE VERLOREN",
+    "description": "Analyse: In alpinen Bergregionen der Furka-Bergstrecke kommt es regelmässig zu schwankenden Netzabdeckungen.",
+    "retry_button": "ERNEUT VERSUCHEN",
+    "reconnecting_title": "VERBINDUNG WIRD HERGESTELLT...",
+    "reconnecting_info": "ALPINE FREQUENZEN WERDEN GESCANNT..."
+  },
+  "settings": {
+    "subtitle": "EINSTELLUNGEN",
+    "title": "APP-EINSTELLUNGEN",
+    "language_section": "ANZEIGESPRACHE",
+    "theme_section": "ERSCHEINUNGSBILD",
+    "theme_light": "HELL",
+    "theme_dark": "DUNKEL",
+    "save_button": "BESTÄTIGEN",
+    "onboarding_subtitle": "WILLKOMMEN",
+    "onboarding_title": "EINSTELLUNGEN WÄHLEN"
+  },
+  "systems": {
+    "locher": {
+      "name": "Locher System",
+      "type": "Horizontale Eingriffe",
+      "tagline": "Steilste Bahn der Welt",
+      "famousLine": "Pilatusbahn",
+      "explanationShort": "Das von Eduard Locher entwickelte System wurde speziell für die Pilatusbahn konstruiert, die steilste Zahnradbahn der Welt (bis zu 48% Neigung).",
+      "steepDangerText": "Bei dieser extremen Steigung bestand die Gefahr, dass die Zahnräder herkömmlicher Systeme durch den enormen Druck aus der Zahnstange springen.",
+      "solutionText": "Lochers geniale Lösung: Zwei horizontal rotierende Zahnräder, die seitlich in eine Zahnstange mit beidseitiger Verzahnung eingreifen. Führungsrollen unterhalb der Zahnstange verriegeln das Fahrzeug sicher mit dem Gleis.",
+      "historyAndPurpose": "Eduard Locher war ein renommierter Zürcher Ingenieur. Die Pilatusbahn galt damals als absolut unbaubar. Herkömmliche Systeme wie Riggenbach oder Abt scheiterten an der extremen Hangneigung: vertikale Zahnräder wären bei 48% einfach über die Zähne gesprungen. Lochers unkonventionelle horizontale Idee revolutionierte den alpinen Schienentransport.",
+      "stats": {
+        "max_gradient": "Max. Steigung",
+        "tooth_pitch": "Zahnteilung",
+        "rack_material": "Material Zahnstange",
+        "gauge": "Spurweite",
+        "max_gradient_value": "480 ‰ (48 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "Gegossener Stahl",
+        "gauge_value": "800 mm"
+      },
+      "hotspots": {
+        "zahnstange_title": "Doppelseitige Zahnstange",
+        "zahnstange_desc": "Eine flach liegende Stahlschiene mit rechtwinkligen Zähnen auf beiden Seiten. Da sie in der Mitte verlegt ist, ermöglicht sie die Nutzung von zwei symmetrisch angeordneten Getrieben.",
+        "treibraeder_title": "Horizontale Treibräder",
+        "treibraeder_desc": "Zwei Getriebezahnräder drehen sich flach über den Schienen und greifen von den Seiten her zu. Dadurch heben sich die seitlichen Abdrängkräfte mechanisch auf und verhindern ein Klettern.",
+        "fuehrung_title": "Sicherheits-Führungsrollen",
+        "fuehrung_desc": "Untere Flanschrollen greifen physisch unter den Kopf der Locher-Zahnstange. Selbst bei extremen Erschütterungen im Wind ist ein Abheben oder Entgleisen der Lok unmöglich."
+      }
+    },
+    "abt": {
+      "name": "Abt System",
+      "type": "Mehrlamellige Steilbahnstange",
+      "tagline": "Laufruhig & kurvenfreudig",
+      "famousLine": "Furka-Oberalp-Bahn",
+      "explanationShort": "Von Roman Abt erfundenes System, das zwei oder drei versetzte, schmale Zahnstangenplatten nutzt. Es läuft extrem laufruhig und bietet stetigen Zahnkontakt.",
+      "steepDangerText": "Bei einfachen Zahnstangen kommt es bei Zahnübergängen oft zu Ruckeln, lauten Schlägen und erhöhtem Verschleiss an den Zahnrädern der Lok.",
+      "solutionText": "Abts geniale Antwort: Versetzte dünnere Lamellen. Während das eine Zahnrad gerade eine Lücke verlässt, greift das zweite Zahnrad ein Stück versetzt bereits voll in die Nachbarlamelle.",
+      "historyAndPurpose": "Roman Abt war Schüler von Riggenbach. Er entwarf diese Innovation, um die Kosten für die Herstellung schwerer massiver Schienen zu senken. Die Abt-Zahnstange lässt sich wunderbar biegen, wodurch sie sich auch für enge Kurvenradien hervorragend eignet. Sie ist das Rückgrat der historischen Furka-Oberalp-Bergstrecke.",
+      "stats": {
+        "max_gradient": "Max. Steigung",
+        "tooth_pitch": "Zahnteilung",
+        "rack_material": "Material Zahnstange",
+        "gauge": "Spurweite",
+        "max_gradient_value": "110 ‰ (11 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "Spezial-Walzstahl",
+        "gauge_value": "1000 mm (Meterspur)"
+      },
+      "hotspots": {
+        "lamellen_title": "Versetzte Lamellenstangen",
+        "lamellen_desc": "Zwei (oder drei) dünne, vertikal stehende Zahnplatten sind parallel montiert. Ihre Zähne sind um eine halbe Zahnteilung versetzt angeordnet.",
+        "geteiltes_zahnrad_title": "Geteilte Antriebszahnräder",
+        "geteiltes_zahnrad_desc": "Das Antriebszahnrad der Lokomotive besteht ebenfalls aus zwei physisch versetzten Zahnkränzen, die präzise zu den versetzten Schienenlamellen passen.",
+        "laufruhe_title": "Ununterbrochener Kraftfluss",
+        "laufruhe_desc": "Durch den Versatz ist zu jeder Millisekunden-Fahrtzeit immer mindestens ein Triebzahn voll belastet im Eingriff. Das eleminiert Vibrationen fast vollständig."
+      }
+    },
+    "strub": {
+      "name": "Strub System",
+      "type": "Monorail-Kopfzahnstange",
+      "tagline": "Einfach & wintertauglich",
+      "famousLine": "Jungfraubahn",
+      "explanationShort": "Emil Strub entwickelte dieses minimalistische und äusserst wirtschaftliche Einkopfsystem, das einfacher zu schottern und zu reinigen ist.",
+      "steepDangerText": "Komplizierte Zahnleiterkonstruktionen neigen im eisigen Winter dazu, komplett mit Schnee zuzuwehen oder zu vereisen, was Fahrten hochgradig gefährdet.",
+      "solutionText": "Strubs simpler Ansatz: Die Zähne werden direkt in den breiten, massiven Kopf einer gewalzten Breitfußschiene gefräst. An den Seiten hat der Schienenkopf ein konisches Profil für Sicherheitszangen.",
+      "historyAndPurpose": "Emil Strub legte den Fokus auf Wirtschaftlichkeit und Hochgebirgstauglichkeit. Das System feierte seine Premiere an der legendären Jungfraubahn. Da der Schnee durch die offene Oberflächenform leicht abgekehrt werden kann, eignet es sich hervorragend für ganzjährigen Tourismus.",
+      "stats": {
+        "max_gradient": "Max. Steigung",
+        "tooth_pitch": "Zahnteilung",
+        "rack_material": "Material Zahnstange",
+        "gauge": "Spurweite",
+        "max_gradient_value": "250 ‰ (25 %)",
+        "tooth_pitch_value": "100 mm",
+        "rack_material_value": "Vollgewalzter Stahl",
+        "gauge_value": "1000 mm"
+      },
+      "hotspots": {
+        "konischer_kopf_title": "Breitschienenkopf mit Zähnen",
+        "konischer_kopf_desc": "Ein massives, keilförmiges Schienenprofil. Die Zähne sind thermisch präzise oben eingefräst, während die Flanken glatt für mechanische Zangenbremsen bleiben.",
+        "einfache_verlegung_title": "Präziser Monoblock",
+        "einfache_verlegung_desc": "Die Strub-Schiene wird auf herkömmlichen Stahlschwellen verkeilt. Sie erfordert weniger Einzelteile als alle anderen historischen Vorgänger.",
+        "sicherheit_title": "Zangenzugriff",
+        "sicherheit_desc": "Sicherheits-Notzangen der Zugwagen greifen bei Gefahr um den konischen Schienenkopf und verkeilen sich bombenfest, was ein Umstürzen verhindert."
+      }
+    },
+    "riggenbach": {
+      "name": "Riggenbach System",
+      "type": "Sprossenstange (Leitersystem)",
+      "tagline": "Europas erste Bergbahn",
+      "famousLine": "Rigibahn",
+      "explanationShort": "Das älteste europäische System, erfunden von Niklaus Riggenbach. Es ähnelt einer Leiter, bei der die Zähne aus runden Metallbolzen bestehen.",
+      "steepDangerText": "Frühe Schienenwege waren extremen Biegekräften ausgesetzt und Zahnstangen brachen oder verbogen sich leicht unter dem tonnenschweren Gewicht der Dampfloks.",
+      "solutionText": "Riggenbachs geniale Erfindung: Zwei U-Eisen-Profile werden in konstantem Abstand mit hochfesten, runden Stahlriegeln (Sprossen) vernietet. Ein robustes, langlebiges Gitterbett entsteht.",
+      "historyAndPurpose": "Niklaus Riggenbach, der geniale Betriebsleiter der Centralbahn in Basel, liess sich diese Technik patentieren, als er den Rigi-Berg bezwingen wollte. 1871 fuhr dort die erste Bergbahn Europas. Es war der absolute Meilenstein der Schweizer Eisenbahngeschichte.",
+      "stats": {
+        "max_gradient": "Max. Steigung",
+        "tooth_pitch": "Zahnteilung",
+        "rack_material": "Material Zahnstange",
+        "gauge": "Spurweite",
+        "max_gradient_value": "250 ‰ (25 %)",
+        "tooth_pitch_value": "100 mm",
+        "rack_material_value": "Schmiedeeisen / Stahl",
+        "gauge_value": "1435 mm / 1000 mm"
+      },
+      "hotspots": {
+        "U_profile_title": "U-förmige Seitenträger",
+        "U_profile_desc": "Zwei dicke, warmgewalzte C-Profile halten die Konstruktion zusammen und stützen die Schwellenbefestigung vor Querkräften.",
+        "sprossen_title": "Rundbolzen-Sprossen",
+        "sprossen_desc": "Solide geschmiedete Rundstahlbolzen, die exakt im Zahnabstand horizontal eingepasst sind. Das Lok-Zahnrad wälzt sich äusserst geschmeidig auf diesen runden Pins ab.",
+        "durchlass_title": "Selbstreinigendes Schotterbett",
+        "durchlass_desc": "Da die Leiter unten hohl ist, fallen lose Kieselsteine und klebriger Matsch einfach durch das Zahnbett hindurch ab. Das verhindert Zahnsperren."
+      }
+    },
+    "von_roll": {
+      "name": "Von Roll System",
+      "type": "Monoblock-Vollstahlprofil",
+      "tagline": "Fugenloser Vollstahl",
+      "famousLine": "Moderne Bergbahnen",
+      "explanationShort": "Eine moderne und hochentwickelte Optimierung für heutige Bergbahnen. Es ist voll kompatibel zu Abt, besteht aber aus einem einzigen monolithischen Gusselement.",
+      "steepDangerText": "Das Aufkommen schwerster Güter- und Personenströme beansprucht die historischen, mehrteiligen Schiebeleitern so massiv, dass der Wartungsaufwand explodiert.",
+      "solutionText": "Von Rolls Schweizer Ingenieursleistung: Eine komplett im Walzwerk gegossene massive Einzelschiene mit vertikaler Fräsverzahnung. Keine Schweissnähte, keine Nieten, kein Lockern.",
+      "historyAndPurpose": "Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen. Es lässt sich extrem schnell verlegen, widersteht modernsten 100-Tonnen-Triebzügen spielend und ist heute das am häufigsten verbaute Zahnstangen-Modernisierungskit.",
+      "stats": {
+        "max_gradient": "Max. Steigung",
+        "tooth_pitch": "Zahnteilung",
+        "rack_material": "Material Zahnstange",
+        "gauge": "Spurweite",
+        "max_gradient_value": "150 ‰ (15 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "Hochfester Vergütungsstahl",
+        "gauge_value": "1000 mm"
+      },
+      "hotspots": {
+        "monoblock_title": "Fugenlose Vollstahlschiene",
+        "monoblock_desc": "Es gibt keine einzelnen Platten oder Bolzen mehr. Die Zähne sind mit CNC-Präzision direkt aus einer extrem harten, gegossenen Stahlschiene gefräst.",
+        "abt_kompatibel_title": "Universal-Verzahnung",
+        "abt_kompatibel_desc": "Durch ausgeklügelte Abmessungen können Loks mit Abt-Zahnrädern diese moderne Von-Roll-Zahnstange anstandslos befahren. Perfekt für Strecken-Teilerneuerungen.",
+        "lange_lebensdauer_title": "Verschleissfreie Legierung",
+        "lange_lebensdauer_desc": "Dank modernster Oberflächenhärtung trotzt dieses System extremsten Bremsreibungswärmen ohne thermischen Schock oder Geometrieverzug."
+      }
+    }
+  },
+  "quiz_questions": {
+    "q1": {
+      "question": "Welches System überwindet die grösste Steigung im Alpenraum?",
+      "options": ["System Strub", "System Locher", "System Abt", "System Riggenbach"],
+      "explanation": "Das System Locher hält mit schwindelerregenden 48% (480 ‰) Steigung an der weltberühmten Pilatusbahn den absoluten Weltrekord!"
+    },
+    "q2": {
+      "question": "Wie greifen die Zahnräder beim legendären System Locher ein?",
+      "options": ["Vertikal von oben", "Schräg im 45°-Winkel", "Horizontal von den Seiten", "Gar nicht, es funktioniert magnetisch"],
+      "explanation": "Zwei horizontal montierte Zahnräder greifen von links und rechts in die mittlere Zahnstange. Das verhindert das Herausspringen des Zahnrads absolut."
+    },
+    "q3": {
+      "question": "Welches Zahnradsystem ist wegen seiner leiterähnlichen Form mit Rundbolzen bekannt?",
+      "options": ["System Riggenbach", "System Von Roll", "System Strub", "System Abt"],
+      "explanation": "Niklaus Riggenbachs System nutzt ein offenes Stahlbett mit runden Sprossenbolzen, durch das Schnee und Geröll ungestört hindurchfallen können."
+    },
+    "q4": {
+      "question": "Warum entwickelte Roman Abt das System mit mehreren versetzten Lamellenplatten?",
+      "options": [
+        "Um Gewicht im Lokomotivkessel einzusparen",
+        "Damit immer ein Zahn voll eingreift und extreme Laufruhe entsteht",
+        "Ausschliesslich um Weichen wegzulassen",
+        "Um Schmieröl an den Triebachsen einzusparen"
+      ],
+      "explanation": "Der Versatz der Schienenlamellen sorgt dafür, dass die Zahnradübergänge kontinuierlich fliessend ohne ruckelnde Leerläufe stattfinden. Ein Meilenstein der Ergonomie!"
+    },
+    "q5": {
+      "question": "Welches Kriterium charakterisiert die moderne Schiene von Von Roll?",
+      "options": [
+        "Sie besteht aus elastischem Hartgummi",
+        "Sie ist ein CNC-gefrästes, monolithisches Funder-Vollstahlprofil ohne Nieten",
+        "Sie muss täglich manuell mit Sand bestreut werden",
+        "Sie benötigt drei Zahnräder übereinander"
+      ],
+      "explanation": "Das moderne Von Roll System maximiert die Zuverlässigkeit, indem es Fugen und Nieten eliminiert. Ein hochfester Einblockstahl wird direkt vorgefräst."
+    }
+  }
+}

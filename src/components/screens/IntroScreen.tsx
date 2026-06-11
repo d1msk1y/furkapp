@@ -1,15 +1,18 @@
 import { motion } from 'motion/react';
-import { ArrowRight, HardHat, Layers, TrendingUp, History } from 'lucide-react';
+import { ArrowRight, HardHat, Layers, TrendingUp, History, SlidersHorizontal } from 'lucide-react';
 import ScreenContainer from '../layout/ScreenContainer';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
+import { useLanguage } from '../../features/i18n/useLanguage';
 
 interface IntroScreenProps {
   readonly onExplore: () => void;
   readonly onSimulateError: () => void;
+  readonly onOpenSettings: () => void;
 }
 
-export default function IntroScreen({ onExplore, onSimulateError }: Readonly<IntroScreenProps>) {
+export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings }: Readonly<IntroScreenProps>) {
+  const { t } = useLanguage();
   return (
     <ScreenContainer className="overflow-x-hidden relative">
 
@@ -59,12 +62,12 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
           >
             <Badge variant="dark" className="mb-4 text-[11px] px-2 py-1">
               <HardHat size={12} className="text-primary-red" />
-              100-JAHRE-FEST JUBILÄUMSEXPOSITION
+              {t('intro.badge')}
             </Badge>
 
             <h1 className="text-4xl xs:text-5xl font-extrabold tracking-tighter uppercase leading-[0.95] text-iron-dark mb-6">
-              DIE 5 <br />
-              <span className="text-primary-red">ZAHNRADSYSTEME</span>
+              {t('intro.title_line1')} <br />
+              <span className="text-primary-red">{t('intro.title_line2')}</span>
             </h1>
           </motion.div>
 
@@ -74,8 +77,7 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.15 }}
           >
-            Die präzise Mechanik hinter den steilsten Strecken der Welt – von der
-            Riggenbach-Leiter bis zum modernen Von Roll System.
+            {t('intro.description')}
           </motion.p>
 
           {/* Visual stat tiles */}
@@ -86,12 +88,12 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
             transition={{ duration: 0.4, delay: 0.25 }}
           >
             {[
-              { icon: Layers, value: '5', label: 'Systeme' },
-              { icon: TrendingUp, value: '48%', label: 'steilste' },
-              { icon: History, value: "1863\u2013heute", label: 'Epoche' },
+              { icon: Layers, value: '5', labelKey: 'intro.stat_systems' },
+              { icon: TrendingUp, value: '48%', labelKey: 'intro.stat_steepest' },
+              { icon: History, value: "1863\u2013heute", labelKey: 'intro.stat_era' },
             ].map((stat) => (
               <div
-                key={stat.label}
+                key={stat.labelKey}
                 className="flex flex-col items-center text-center bg-cement-light border-[3px] border-iron-dark shadow-hard-sm p-3"
               >
                 <stat.icon size={20} strokeWidth={2.5} className="text-primary-red mb-2" />
@@ -99,7 +101,7 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
                   {stat.value}
                 </span>
                 <span className="text-xs font-mono font-black uppercase tracking-widest text-slate-stone mt-1">
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </span>
               </div>
             ))}
@@ -109,10 +111,21 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
 
       {/* CTA Footer */}
       <div className="p-6 bg-cement-light border-t-[3px] border-iron-dark sticky bottom-0 z-10">
-        <Button variant="cta" className="bg-primary-red text-white hover:bg-swiss-orange" onClick={onExplore}>
-          <span>SYSTEME ERKUNDEN</span>
-          <ArrowRight size={28} strokeWidth={3} className="animate-pulse" />
-        </Button>
+        <div className="flex gap-3 items-stretch">
+          <Button variant="cta" className="bg-primary-red text-white hover:bg-swiss-orange flex-1" onClick={onExplore}>
+            <span>{t('intro.explore_button')}</span>
+            <ArrowRight size={28} strokeWidth={3} className="animate-pulse" />
+          </Button>
+          <button
+            type="button"
+            onClick={onOpenSettings}
+            aria-label={t('common.settings')}
+            className="aspect-square h-16 shrink-0 flex items-center justify-center border-[3px] border-iron-dark bg-cement-light hover:bg-cement-sand active:translate-x-[4px] active:translate-y-[4px] transition-all duration-75 cursor-pointer"
+            style={{ boxShadow: '4px 4px 0px var(--app-shadow-color)' }}
+          >
+            <SlidersHorizontal size={22} strokeWidth={3} className="text-iron-dark" />
+          </button>
+        </div>
       </div>
     </ScreenContainer>
   );

@@ -1,0 +1,248 @@
+{
+  "common": {
+    "back": "Retour",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "settings": "Paramètres"
+  },
+  "intro": {
+    "badge": "EXPOSITION DU CENTENAIRE",
+    "title_line1": "LES 5",
+    "title_line2": "SYSTÈMES À CRÉMAILLÈRE",
+    "description": "La mécanique précise derrière les itinéraires les plus escarpés du monde – de l'échelle Riggenbach au système moderne Von Roll.",
+    "stat_systems": "Systèmes",
+    "stat_steepest": "le plus raide",
+    "stat_era": "Époque",
+    "explore_button": "EXPLORER LES SYSTÈMES",
+    "error_sim_button": "SIMULER ERREUR SIGNAL"
+  },
+  "dashboard": {
+    "title": "LES 5 SYSTÈMES À CRÉMAILLÈRE",
+    "back_label": "Retour au départ",
+    "quiz_cta": "TESTER SES CONNAISSANCES",
+    "quiz_highscore": "MEILLEUR: {{score}} / {{total}}"
+  },
+  "detail": {
+    "back_label": "Retour à la sélection",
+    "developed": "DÉVELOPPÉ",
+    "show_tech": "AFFICHER LES DÉTAILS TECHNIQUES",
+    "danger_label": "LE DANGER",
+    "solution_label": "LA SOLUTION",
+    "history_label": "Détails historiques",
+    "quiz_cta": "TESTER SES CONNAISSANCES"
+  },
+  "quiz": {
+    "title": "QUIZ DE CONNAISSANCES",
+    "back_label": "Retour",
+    "question_label": "QUESTION {{current}} SUR {{total}}",
+    "result_title": "QUIZ TERMINÉ",
+    "result_score": "RÉSULTAT: {{score}} / {{total}}",
+    "result_perfect": "SCORE PARFAIT!",
+    "result_good": "BIEN JOUÉ!",
+    "result_ok": "CONTINUEZ À PRATIQUER!",
+    "restart_button": "RECOMMENCER",
+    "back_to_dashboard": "RETOUR À L'APERÇU",
+    "correct_label": "CORRECT",
+    "wrong_label": "INCORRECT",
+    "explanation_prefix": "EXPLICATION:"
+  },
+  "error": {
+    "badge": "DOCUMENTATION INSTABLE",
+    "title": "Connexion Échouée",
+    "error_code": "CODE ERREUR: E-749 // SIGNAL PERDU EN HAUTE MONTAGNE",
+    "description": "Analyse: Dans les régions montagneuses alpines de la ligne de montagne Furka, des variations de couverture réseau se produisent régulièrement.",
+    "retry_button": "RÉESSAYER",
+    "reconnecting_title": "RECONNEXION EN COURS...",
+    "reconnecting_info": "SCAN DES FRÉQUENCES ALPINES..."
+  },
+  "settings": {
+    "subtitle": "PRÉFÉRENCES",
+    "title": "PARAMÈTRES",
+    "language_section": "LANGUE D'AFFICHAGE",
+    "theme_section": "APPARENCE",
+    "theme_light": "CLAIR",
+    "theme_dark": "SOMBRE",
+    "save_button": "CONFIRMER",
+    "onboarding_subtitle": "BIENVENUE",
+    "onboarding_title": "CHOISISSEZ VOS PRÉFÉRENCES"
+  },
+  "systems": {
+    "locher": {
+      "name": "Système Locher",
+      "type": "Engrènement horizontal",
+      "tagline": "Le chemin de fer le plus raide du monde",
+      "famousLine": "Chemin de fer du Pilate",
+      "explanationShort": "Le système développé par Eduard Locher a été spécialement construit pour le chemin de fer du Pilate, le chemin de fer à crémaillère le plus raide du monde (jusqu'à 48% de pente).",
+      "steepDangerText": "À cette pente extrême, il existait un risque que les roues dentées des systèmes conventionnels sautent de la crémaillère sous l'énorme pression.",
+      "solutionText": "La solution ingénieuse de Locher: Deux roues dentées à rotation horizontale qui s'engagent latéralement dans une crémaillère à denture des deux côtés. Des galets guides sous la crémaillère verrouillent le véhicule en sécurité sur le rail.",
+      "historyAndPurpose": "Eduard Locher était un ingénieur zurichois réputé. Le chemin de fer du Pilate était considéré à l'époque comme absolument impossible à construire. Les systèmes conventionnels comme Riggenbach ou Abt ont échoué face à la pente extrême: les roues dentées verticales auraient simplement sauté par-dessus les dents à 48%. L'idée horizontale non conventionnelle de Locher a révolutionné le transport ferroviaire alpin.",
+      "stats": {
+        "max_gradient": "Pente max.",
+        "tooth_pitch": "Pas de dent",
+        "rack_material": "Matériau crémaillère",
+        "gauge": "Écartement",
+        "max_gradient_value": "480 ‰ (48 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "Acier coulé",
+        "gauge_value": "800 mm"
+      },
+      "hotspots": {
+        "zahnstange_title": "Crémaillère double face",
+        "zahnstange_desc": "Un rail en acier plat avec des dents rectangulaires des deux côtés. Posé au centre, il permet l'utilisation de deux boîtes de vitesses disposées symétriquement.",
+        "treibraeder_title": "Roues motrices horizontales",
+        "treibraeder_desc": "Deux pignons tournent à plat sur les rails et s'engagent par les côtés. Cela annule mécaniquement les forces de poussée latérales et empêche la montée.",
+        "fuehrung_title": "Galets de guidage de sécurité",
+        "fuehrung_desc": "Des galets à bride inférieurs s'accrochent physiquement sous la tête de la crémaillère Locher. Même lors d'ébranlements extrêmes dans le vent, il est impossible que la locomotive se soulève ou déraille."
+      }
+    },
+    "abt": {
+      "name": "Système Abt",
+      "type": "Crémaillère multilame",
+      "tagline": "Silencieux & adaptable aux courbes",
+      "famousLine": "Chemin de fer Furka-Oberalp",
+      "explanationShort": "Système inventé par Roman Abt, utilisant deux ou trois plaques de crémaillère étroites décalées. Il fonctionne de manière extrêmement fluide et offre un contact dentaire continu.",
+      "steepDangerText": "Avec des crémaillères simples, les transitions de dents provoquent souvent des secousses, des chocs bruyants et une usure accrue des roues dentées de la locomotive.",
+      "solutionText": "La réponse ingénieuse d'Abt: Des lamelles plus minces décalées. Pendant qu'une roue dentée quitte un espace, la deuxième roue dentée, légèrement décalée, s'engage déjà complètement dans la lamelle adjacente.",
+      "historyAndPurpose": "Roman Abt était l'élève de Riggenbach. Il a conçu cette innovation pour réduire les coûts de fabrication des rails massifs lourds. La crémaillère Abt peut être magnifiquement courbée, ce qui la rend idéale pour les rayons de courbure serrés. Elle est l'épine dorsale de la ligne historique de montagne Furka-Oberalp.",
+      "stats": {
+        "max_gradient": "Pente max.",
+        "tooth_pitch": "Pas de dent",
+        "rack_material": "Matériau crémaillère",
+        "gauge": "Écartement",
+        "max_gradient_value": "110 ‰ (11 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "Acier laminé spécial",
+        "gauge_value": "1000 mm (voie métrique)"
+      },
+      "hotspots": {
+        "lamellen_title": "Barres lamellaires décalées",
+        "lamellen_desc": "Deux (ou trois) plaques dentées minces et verticales sont montées en parallèle. Leurs dents sont arrangées avec un décalage d'un demi-pas de dent.",
+        "geteiltes_zahnrad_title": "Roues dentées motrices fractionnées",
+        "geteiltes_zahnrad_desc": "La roue dentée motrice de la locomotive est également composée de deux couronnes dentées physiquement décalées qui correspondent précisément aux lamelles de rail décalées.",
+        "laufruhe_title": "Flux de puissance ininterrompu",
+        "laufruhe_desc": "Grâce au décalage, à chaque milliseconde de trajet, au moins une dent motrice est pleinement en prise. Cela élimine presque complètement les vibrations."
+      }
+    },
+    "strub": {
+      "name": "Système Strub",
+      "type": "Crémaillère à tête monoplan",
+      "tagline": "Simple & résistant à l'hiver",
+      "famousLine": "Chemin de fer de la Jungfrau",
+      "explanationShort": "Emil Strub a développé ce système minimaliste et très économique à tête unique, plus facile à ballaster et à nettoyer.",
+      "steepDangerText": "Les constructions complexes de crémaillères en échelle ont tendance à être complètement enneigées ou gelées en hiver glacial, ce qui rend les trajets très dangereux.",
+      "solutionText": "L'approche simple de Strub: Les dents sont fraisées directement dans la tête large et massive d'un rail à semelle laminé. Sur les côtés, la tête du rail a un profil conique pour les pinces de sécurité.",
+      "historyAndPurpose": "Emil Strub s'est concentré sur l'efficacité économique et l'aptitude aux hautes altitudes. Le système a fait ses débuts sur le légendaire chemin de fer de la Jungfrau. Comme la neige peut être facilement balayée grâce à la forme de surface ouverte, il est idéal pour le tourisme toute l'année.",
+      "stats": {
+        "max_gradient": "Pente max.",
+        "tooth_pitch": "Pas de dent",
+        "rack_material": "Matériau crémaillère",
+        "gauge": "Écartement",
+        "max_gradient_value": "250 ‰ (25 %)",
+        "tooth_pitch_value": "100 mm",
+        "rack_material_value": "Acier entièrement laminé",
+        "gauge_value": "1000 mm"
+      },
+      "hotspots": {
+        "konischer_kopf_title": "Tête de rail large avec dents",
+        "konischer_kopf_desc": "Un profil de rail massif en forme de coin. Les dents sont fraisées thermiquement avec précision sur le dessus, tandis que les flancs restent lisses pour les freins à mâchoires mécaniques.",
+        "einfache_verlegung_title": "Monobloc de précision",
+        "einfache_verlegung_desc": "Le rail Strub est calé sur des traverses en acier conventionnelles. Il nécessite moins de pièces individuelles que tous les autres prédécesseurs historiques.",
+        "sicherheit_title": "Accès par pince",
+        "sicherheit_desc": "Les pinces d'urgence de sécurité des wagons saisissent la tête de rail conique en cas de danger et se coincent de manière bombproof, empêchant le basculement."
+      }
+    },
+    "riggenbach": {
+      "name": "Système Riggenbach",
+      "type": "Crémaillère à barreaux (système en échelle)",
+      "tagline": "Premier chemin de fer de montagne d'Europe",
+      "famousLine": "Chemin de fer du Rigi",
+      "explanationShort": "Le plus ancien système européen, inventé par Niklaus Riggenbach. Il ressemble à une échelle dont les dents sont des boulons métalliques ronds.",
+      "steepDangerText": "Les premières voies ferrées étaient soumises à des forces de flexion extrêmes et les crémaillères se cassaient ou se tordaient facilement sous le poids des locomotives à vapeur.",
+      "solutionText": "L'invention ingénieuse de Riggenbach: Deux profilés en U sont rivetés à distance constante avec des barres d'acier rondes (barreaux) à haute résistance. Un lit en treillis robuste et durable est créé.",
+      "historyAndPurpose": "Niklaus Riggenbach, le brillant directeur d'exploitation de la Centralbahn à Bâle, a fait breveter cette technique lorsqu'il voulait conquérir le mont Rigi. En 1871, le premier chemin de fer de montagne d'Europe y circulait. C'était le jalon absolu de l'histoire ferroviaire suisse.",
+      "stats": {
+        "max_gradient": "Pente max.",
+        "tooth_pitch": "Pas de dent",
+        "rack_material": "Matériau crémaillère",
+        "gauge": "Écartement",
+        "max_gradient_value": "250 ‰ (25 %)",
+        "tooth_pitch_value": "100 mm",
+        "rack_material_value": "Fer forgé / Acier",
+        "gauge_value": "1435 mm / 1000 mm"
+      },
+      "hotspots": {
+        "U_profile_title": "Poutres latérales en U",
+        "U_profile_desc": "Deux épais profilés en C laminés à chaud maintiennent la construction ensemble et supportent la fixation des traverses contre les forces transversales.",
+        "sprossen_title": "Barreaux à boulons ronds",
+        "sprossen_desc": "Des boulons d'acier ronds forgés solides, ajustés horizontalement avec précision à l'espacement des dents. La roue dentée de la locomotive roule de manière extrêmement fluide sur ces chevilles rondes.",
+        "durchlass_title": "Lit de ballast autonettoyant",
+        "durchlass_desc": "Comme l'échelle est creuse en bas, les cailloux détachés et la boue collante tombent simplement à travers le lit de dents. Cela empêche les blocages de dents."
+      }
+    },
+    "von_roll": {
+      "name": "Système Von Roll",
+      "type": "Profil en acier massif monobloc",
+      "tagline": "Acier massif sans joints",
+      "famousLine": "Chemins de fer de montagne modernes",
+      "explanationShort": "Une optimisation moderne et très développée pour les chemins de fer de montagne actuels. Il est entièrement compatible avec Abt, mais se compose d'un seul élément coulé monolithique.",
+      "steepDangerText": "L'avènement des flux de marchandises et de passagers les plus lourds sollicite tellement les échelles coulissantes historiques à plusieurs parties que les coûts de maintenance explosent.",
+      "solutionText": "La réalisation d'ingénierie suisse de Von Roll: Un rail unique massif entièrement coulé en laminoir avec une denture verticale fraisée. Pas de soudures, pas de rivets, pas de desserrement.",
+      "historyAndPurpose": "La société Von Roll (aujourd'hui Tenconi) a standardisé ce système pour amener les chemins de fer de montagne suisses au 21e siècle. Il peut être posé extrêmement rapidement, résiste facilement aux trains les plus modernes de 100 tonnes et est aujourd'hui le kit de modernisation de crémaillère le plus installé.",
+      "stats": {
+        "max_gradient": "Pente max.",
+        "tooth_pitch": "Pas de dent",
+        "rack_material": "Matériau crémaillère",
+        "gauge": "Écartement",
+        "max_gradient_value": "150 ‰ (15 %)",
+        "tooth_pitch_value": "120 mm",
+        "rack_material_value": "Acier trempé haute résistance",
+        "gauge_value": "1000 mm"
+      },
+      "hotspots": {
+        "monoblock_title": "Rail en acier massif sans joints",
+        "monoblock_desc": "Il n'y a plus de plaques ou de boulons individuels. Les dents sont fraisées avec précision CNC directement à partir d'un rail en acier coulé extrêmement dur.",
+        "abt_kompatibel_title": "Profil denté universel",
+        "abt_kompatibel_desc": "Grâce à des dimensions sophistiquées, les locomotives avec roues dentées Abt peuvent facilement circuler sur cette crémaillère Von Roll moderne. Parfait pour les renouvellements partiels de voie.",
+        "lange_lebensdauer_title": "Alliage résistant à l'usure",
+        "lange_lebensdauer_desc": "Grâce à la durcissement de surface le plus moderne, ce système résiste aux chaleurs de friction de freinage les plus extrêmes sans choc thermique ni distorsion géométrique."
+      }
+    }
+  },
+  "quiz_questions": {
+    "q1": {
+      "question": "Quel système surmonte la plus grande pente dans la région alpine?",
+      "options": ["Système Strub", "Système Locher", "Système Abt", "Système Riggenbach"],
+      "explanation": "Le Système Locher détient le record mondial absolu avec une pente vertigineuse de 48% (480 ‰) sur le célèbre chemin de fer du Pilate!"
+    },
+    "q2": {
+      "question": "Comment les roues dentées s'engagent-elles dans le légendaire Système Locher?",
+      "options": ["Verticalement par le haut", "En diagonale à 45°", "Horizontalement par les côtés", "Pas du tout, ça fonctionne magnétiquement"],
+      "explanation": "Deux roues dentées montées horizontalement s'engagent de gauche et de droite dans la crémaillère centrale. Cela empêche absolument la roue dentée de sauter."
+    },
+    "q3": {
+      "question": "Quel système à crémaillère est connu pour sa forme en échelle avec des boulons ronds?",
+      "options": ["Système Riggenbach", "Système Von Roll", "Système Strub", "Système Abt"],
+      "explanation": "Le système de Niklaus Riggenbach utilise un lit en acier ouvert avec des boulons à barreaux ronds, à travers lequel la neige et les débris peuvent tomber librement."
+    },
+    "q4": {
+      "question": "Pourquoi Roman Abt a-t-il développé le système avec plusieurs plaques lamellaires décalées?",
+      "options": [
+        "Pour économiser du poids dans la chaudière de la locomotive",
+        "Pour qu'une dent soit toujours pleinement engagée et une extrême fluidité en résulte",
+        "Uniquement pour éliminer les aiguillages",
+        "Pour économiser l'huile lubrifiante sur les essieux moteurs"
+      ],
+      "explanation": "Le décalage des lamelles de rail garantit que les transitions de roues dentées se font de manière continue et fluide sans marche à vide saccadée. Une étape importante en ergonomie!"
+    },
+    "q5": {
+      "question": "Quel critère caractérise le rail moderne Von Roll?",
+      "options": [
+        "Il est composé de caoutchouc dur élastique",
+        "C'est un profil en acier massif monolithique fraisé CNC sans rivets",
+        "Il doit être sablé manuellement quotidiennement",
+        "Il nécessite trois roues dentées empilées les unes sur les autres"
+      ],
+      "explanation": "Le système moderne Von Roll maximise la fiabilité en éliminant les joints et les rivets. Un bloc d'acier haute résistance est directement pré-fraisé."
+    }
+  }
+}

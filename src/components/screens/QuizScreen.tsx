@@ -11,6 +11,7 @@ import Badge from '../ui/Badge';
 import IconBox from '../ui/IconBox';
 import ProgressBar from '../ui/ProgressBar';
 import Ridgeline from '../diagrams/Ridgeline';
+import { useLanguage } from '../../features/i18n/useLanguage';
 
 interface QuizScreenProps {
   readonly onGoBackToDashboard: () => void;
@@ -24,8 +25,16 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
   const [score, setScore] = useState(0);
   const [quizComplete, setQuizComplete] = useState(false);
   const [flashScreen, setFlashScreen] = useState(false);
+  const { t } = useLanguage();
 
-  const currentQuestion: QuizQuestion = QUIZ_QUESTIONS[currentQuestionIndex];
+  const rawQuestion: QuizQuestion = QUIZ_QUESTIONS[currentQuestionIndex];
+  const qKey = `q${rawQuestion.id}`;
+  const currentQuestion = {
+    ...rawQuestion,
+    question: t(`quiz_questions.${qKey}.question`),
+    options: (t(`quiz_questions.${qKey}.options`, { returnObjects: true }) as string[]),
+    explanation: t(`quiz_questions.${qKey}.explanation`),
+  };
 
   const handleOptionClick = (optionIndex: number) => {
     if (isFrozen || quizComplete) return;
@@ -96,7 +105,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
     <ScreenContainer
       className={`overflow-hidden transition-opacity duration-150 ${flashScreen ? 'opacity-20' : 'opacity-100'}`}
     >
-      <Header title="WISSENS-CHECK" onBack={onGoBackToDashboard} backLabel="Zurück zur Übersicht" />
+      <Header title={t('quiz.title')} onBack={onGoBackToDashboard} backLabel={t('quiz.back_label')} />
 
       {quizComplete ? (
         /* Results screen */
@@ -118,7 +127,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
             </IconBox>
 
             <h2 className="text-3xl font-black uppercase tracking-tight text-iron-dark mb-2 leading-none">
-              PRÜFUNG BEENDET
+              {t('quiz.result_title')}
             </h2>
 
             <Badge variant="light" className="mb-6 px-2.5 py-1">
@@ -128,7 +137,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
             {/* Score block */}
             <div className="border-heavy-double bg-cement-light p-6 w-full max-w-xs shadow-hard-sm mb-6 flex flex-col items-center justify-center">
               <span className="block text-sm font-mono font-black text-neutral-500 uppercase">
-                IHRE PUNKTZAHL
+                {t('quiz.result_score', { score, total: 5 })}
               </span>
               <span className="block text-6xl font-black text-primary-red tracking-tighter mt-1 mb-1">
                 {score} / 5
@@ -137,25 +146,25 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
                 className="block text-sm font-black text-iron-dark tracking-widest uppercase font-mono bg-cement-sand border-2 border-iron-dark px-3 py-1 mt-2"
                 style={{ boxShadow: '2px 2px 0px var(--app-shadow-color)' }}
               >
-                {Math.round((score / 5) * 100)}% RICHTIG
+                {Math.round((score / 5) * 100)}%
               </span>
             </div>
 
             <p className="text-sm font-bold tracking-tight uppercase leading-[140%] text-neutral-700 mb-8 max-w-xs">
-              {score === 5 && 'AUSGEZEICHNET! SIE SIND EIN GESTANDENER EXPERTE DER SCHWEIZERISCHEN BERGBAHNMECHANIK.'}
-              {score >= 3 && score < 5 && 'GUT BESTANDEN! SOLIDES TECHNISCHES FACHWISSEN IST EINDEUTIG VORHANDEN.'}
-              {score < 3 && 'PRÜFUNG LEIDER NICHT BESTANDEN. TEXTE UND COGWHEEL-SCHEMATA ERNEUT DURCHLESEN!'}
+              {score === 5 && t('quiz.result_perfect')}
+              {score >= 3 && score < 5 && t('quiz.result_good')}
+              {score < 3 && t('quiz.result_ok')}
             </p>
 
             {/* Action buttons */}
             <div className="w-full flex flex-col gap-3">
               <Button variant="secondary" className="w-full h-14 text-lg flex items-center justify-center gap-2" onClick={handleRestart}>
                 <RotateCcw size={18} strokeWidth={3} />
-                PRÜFUNG ERNEUT VERSUCHEN
+                {t('quiz.restart_button')}
               </Button>
 
               <Button variant="ghost" className="w-full h-14 text-lg flex items-center justify-center" onClick={onGoBackToDashboard}>
-                ZUR SYSTEM-AUSWAHL
+                {t('quiz.back_to_dashboard')}
               </Button>
             </div>
           </motion.div>
@@ -167,7 +176,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
             <ProgressBar total={QUIZ_QUESTIONS.length} current={currentQuestionIndex} />
 
             <div className="text-right font-mono text-xs font-black uppercase text-neutral-400 mb-2 mt-8">
-              PRÜFUNGSFRAGE {currentQuestionIndex + 1} VON {QUIZ_QUESTIONS.length}
+              {t('quiz.question_label', { current: currentQuestionIndex + 1, total: QUIZ_QUESTIONS.length })}
             </div>
 
             {/* Question banner */}
@@ -218,8 +227,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
                         </div>
                       )}
                     </div>
-                  )}
-                </button>
+                  )}                </button>
               );
             })}
           </div>
