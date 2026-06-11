@@ -3,7 +3,6 @@ import { ArrowRight, HardHat, Layers, TrendingUp, History } from 'lucide-react';
 import ScreenContainer from '../layout/ScreenContainer';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
-import Ridgeline from '../diagrams/Ridgeline';
 
 interface IntroScreenProps {
   readonly onExplore: () => void;
@@ -50,9 +49,6 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
 
           <div className="w-full h-1/4 bg-linear-to-t from-black to-transparent absolute bottom-0 left-0" />
         </div>
-
-        {/* Alpine ridgeline divider */}
-        <Ridgeline className="text-iron-dark -mt-px" height={40} withTrack />
 
         {/* Text Area */}
         <div className="p-8 pt-4 bg-white flex-1 flex flex-col justify-center">
