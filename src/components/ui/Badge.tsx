@@ -7,7 +7,7 @@ interface BadgeProps {
 }
 
 const variantStyles = {
-  dark: 'bg-iron-dark text-white',
+  dark: 'bg-ink text-white',
   light: 'bg-cement-light border border-iron-dark text-neutral-600',
   outline: 'bg-red-50 border border-primary-red text-primary-red',
   pine: 'bg-pine text-white border border-iron-dark',

@@ -68,13 +68,13 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
     const isSelected = selectedOptionIndex === index;
     const isCorrectTarget = index === currentQuestion.correctOptionIndex;
 
-    let blockStyle = 'bg-white text-iron-dark border-iron-dark';
+    let blockStyle = 'bg-cement-light text-iron-dark border-iron-dark';
     let numStyle = 'text-neutral-400 group-hover:text-primary-red';
 
     if (isFrozen) {
       if (isSelected) {
         if (isCorrectTarget) {
-          blockStyle = 'bg-iron-dark text-white border-2 border-white translate-x-[4px] translate-y-[4px] shadow-none';
+          blockStyle = 'bg-ink text-white border-2 border-cement-light translate-x-[4px] translate-y-[4px] shadow-none';
           numStyle = 'text-primary-red';
         } else {
           blockStyle = 'bg-primary-red text-iron-dark translate-x-[4px] translate-y-[4px] shadow-none';
@@ -84,7 +84,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
         blockStyle = 'bg-[#EBF7EE] text-green-800 border-green-700 animate-pulse border-dashed';
         numStyle = 'text-green-700';
       } else {
-        blockStyle = 'bg-white text-neutral-400 border-neutral-300 shadow-none opacity-40';
+        blockStyle = 'bg-cement-light text-neutral-400 border-neutral-300 shadow-none opacity-40';
         numStyle = 'text-neutral-300';
       }
     }
@@ -104,7 +104,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="w-full max-w-md bg-white border-heavy p-6 sm:p-8 shadow-hard text-center flex flex-col items-center relative overflow-hidden"
+            className="w-full max-w-md bg-cement-light border-heavy p-6 sm:p-8 shadow-hard text-center flex flex-col items-center relative overflow-hidden"
           >
             {/* Alpine summit accent */}
             <Ridgeline
@@ -113,7 +113,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
               flip
             />
 
-            <IconBox size="md" className="mb-6 border-2 border-white">
+            <IconBox size="md" className="mb-6 border-2 border-cement-sand">
               <Award size={32} className="text-primary-red animate-pulse" />
             </IconBox>
 
@@ -134,8 +134,8 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
                 {score} / 5
               </span>
               <span
-                className="block text-sm font-black text-iron-dark tracking-widest uppercase font-mono bg-white border-2 border-iron-dark px-3 py-1 mt-2"
-                style={{ boxShadow: '2px 2px 0px #0D0D0D' }}
+                className="block text-sm font-black text-iron-dark tracking-widest uppercase font-mono bg-cement-sand border-2 border-iron-dark px-3 py-1 mt-2"
+                style={{ boxShadow: '2px 2px 0px var(--app-shadow-color)' }}
               >
                 {Math.round((score / 5) * 100)}% RICHTIG
               </span>
@@ -175,7 +175,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
               <h2 className="font-sans font-black text-2xl sm:text-3xl leading-[1.1] text-center uppercase tracking-tight text-iron-dark overflow-wrap-break-word">
                 {currentQuestion.question}
               </h2>
-              <div className="absolute -top-3.5 -left-3 px-2 py-0.5 bg-iron-dark text-white font-mono text-[11px] tracking-wider uppercase border border-white">
+              <div className="absolute -top-3.5 -left-3 px-2 py-0.5 bg-ink text-white font-mono text-[11px] tracking-wider uppercase border border-white">
                 EXAM_SYS_M322
               </div>
             </Card>
@@ -196,7 +196,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
                   disabled={isFrozen}
                   aria-label={`Auswahl ${index + 1}: ${option}`}
                   className={`group relative flex items-center w-full h-19 sm:h-21 text-left px-5 cursor-pointer border-[3px] transition-all duration-75 ${blockStyle} ${
-                    isFrozen ? '' : 'shadow-hard active:translate-x-1 active:translate-y-1 active:shadow-none bg-white hover:border-primary-red'
+                    isFrozen ? '' : 'shadow-hard active:translate-x-1 active:translate-y-1 active:shadow-none bg-cement-light hover:border-primary-red'
                   }`}
                 >
                   <span className={`font-mono font-black text-lg sm:text-xl mr-5 shrink-0 transition-colors ${numStyle}`}>
@@ -209,11 +209,11 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
                   {isFrozen && isSelected && (
                     <div className="absolute right-5 shrink-0">
                       {isCorrectTarget ? (
-                        <div className="bg-white text-iron-dark border-2 border-iron-dark p-1 rounded-sm">
+                        <div className="bg-cement-light text-iron-dark border-2 border-iron-dark p-1 rounded-sm">
                           <Check size={16} strokeWidth={3} className="text-green-600" />
                         </div>
                       ) : (
-                        <div className="bg-white border-2 border-iron-dark p-1 rounded-sm">
+                        <div className="bg-cement-light border-2 border-iron-dark p-1 rounded-sm">
                           <AlertTriangle size={16} strokeWidth={3} className="text-primary-red animate-bounce" />
                         </div>
                       )}

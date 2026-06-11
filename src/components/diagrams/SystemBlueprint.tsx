@@ -174,7 +174,7 @@ export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: 
       ))}
 
       {/* Hotspot hint */}
-      <div className="absolute bottom-4 right-4 z-10 bg-iron-dark text-white font-mono text-[8px] tracking-wider px-2 py-1 uppercase border border-white flex items-center gap-1 opacity-75">
+      <div className="absolute bottom-4 right-4 z-10 bg-ink text-white font-mono text-[8px] tracking-wider px-2 py-1 uppercase border border-white flex items-center gap-1 opacity-75">
         <span className="w-1.5 h-1.5 rounded-full bg-primary-red animate-ping" />{' '}
         ROTE HOTSPOTS TIPPFÄHIG
       </div>

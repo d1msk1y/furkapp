@@ -14,11 +14,11 @@ const variantStyles: Record<ButtonVariant, string> = {
   primary:
     'bg-primary-red text-white border-[3px] border-iron-dark font-bold uppercase tracking-wider hover:bg-swiss-orange active:translate-x-[4px] active:translate-y-[4px] active:shadow-none',
   secondary:
-    'bg-white text-iron-dark border-[3px] border-iron-dark font-bold uppercase tracking-wider hover:bg-cement-light active:translate-x-[4px] active:translate-y-[4px] active:shadow-none',
+    'bg-cement-light text-iron-dark border-[3px] border-iron-dark font-bold uppercase tracking-wider hover:bg-cement-sand active:translate-x-[4px] active:translate-y-[4px] active:shadow-none',
   icon:
-    'border-3 border-iron-dark bg-white hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] active:shadow-none flex items-center justify-center',
+    'border-3 border-iron-dark bg-cement-light hover:bg-cement-sand active:translate-x-[2px] active:translate-y-[2px] active:shadow-none flex items-center justify-center',
   ghost:
-    'bg-iron-dark text-white font-bold uppercase hover:bg-neutral-800 transition-colors',
+    'bg-ink text-white font-bold uppercase hover:bg-neutral-800 transition-colors',
   cta:
     'w-full h-16 border-[3px] border-iron-dark font-bold uppercase tracking-wider text-xl flex items-center justify-between px-6 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none',
 };
@@ -30,11 +30,11 @@ const sizeStyles: Record<ButtonSize, string> = {
 };
 
 const shadowMap: Record<ButtonVariant, string> = {
-  primary: '4px 4px 0px #0D0D0D',
-  secondary: '4px 4px 0px #0D0D0D',
-  icon: '2px 2px 0px #0D0D0D',
+  primary: '4px 4px 0px var(--app-shadow-color)',
+  secondary: '4px 4px 0px var(--app-shadow-color)',
+  icon: '2px 2px 0px var(--app-shadow-color)',
   ghost: 'none',
-  cta: '4px 4px 0px #0D0D0D',
+  cta: '4px 4px 0px var(--app-shadow-color)',
 };
 
 export default function Button({
@@ -52,7 +52,7 @@ export default function Button({
 
   return (
     <button
-      className={`transition-all duration-75 cursor-pointer active:![box-shadow:none] ${variantStyles[variant]} ${size ? sizeStyles[size] : ''} ${className}`}
+      className={`transition-all duration-75 cursor-pointer active:[box-shadow:none]! ${variantStyles[variant]} ${size ? sizeStyles[size] : ''} ${className}`}
       style={{ boxShadow: shadow, ...style }}
       {...props}
     >

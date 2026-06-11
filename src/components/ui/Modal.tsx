@@ -29,7 +29,7 @@ export default function Modal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-iron-dark/55 z-40 cursor-pointer"
+            className="fixed inset-0 bg-ink/55 z-40 cursor-pointer"
           />
 
           <motion.div
@@ -37,7 +37,7 @@ export default function Modal({
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 220 }}
-            className="fixed bottom-0 left-0 w-full bg-white border-t-[6px] border-iron-dark z-50 p-6 flex flex-col shadow-[0px_-8px_0px_0px_rgba(0,0,0,0.15)] items-center"
+            className="fixed bottom-0 left-0 w-full bg-cement-light border-t-[6px] border-iron-dark z-50 p-6 flex flex-col shadow-[0px_-8px_0px_0px_rgba(0,0,0,0.15)] items-center"
           >
             <div className="w-full max-w-2xl flex flex-col">
               <div className="flex justify-between items-start mb-4">
@@ -57,7 +57,7 @@ export default function Modal({
                 </Button>
               </div>
 
-              <div className="w-full h-0.75 bg-iron-dark mb-4" />
+              <div className="w-full h-0.75 bg-ink mb-4" />
 
               {children}
 

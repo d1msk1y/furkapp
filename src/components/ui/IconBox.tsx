@@ -16,7 +16,7 @@ const sizeStyles = {
 export default function IconBox({
   children,
   size = 'lg',
-  bg = 'bg-iron-dark',
+  bg = 'bg-ink',
   className = '',
 }: IconBoxProps) {
   return (

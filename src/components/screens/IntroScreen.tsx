@@ -51,7 +51,7 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
         </div>
 
         {/* Text Area */}
-        <div className="p-8 pt-4 bg-white flex-1 flex flex-col justify-center">
+        <div className="p-8 pt-4 bg-cement-light flex-1 flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export default function IntroScreen({ onExplore, onSimulateError }: Readonly<Int
           </motion.div>
 
           <motion.p
-            className="text-base md:text-lg text-neutral-800 font-medium leading-[140%] mb-6"
+            className="text-base md:text-lg text-iron-dark font-medium leading-[140%] mb-6"
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.15 }}

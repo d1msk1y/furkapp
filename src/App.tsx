@@ -16,12 +16,15 @@ import DashboardScreen from './components/screens/DashboardScreen';
 import DetailScreen from './components/screens/DetailScreen';
 import QuizScreen from './components/screens/QuizScreen';
 import NetworkErrorScreen from './components/screens/NetworkErrorScreen';
+import ThemeModeToggleButton from './features/theme/ThemeModeToggleButton';
+import { useThemeMode } from './features/theme/useThemeMode';
 
 type ScreenType = 'intro' | 'dashboard' | 'detail' | 'quiz' | 'error';
 
 export default function App() {
   const [screen, setScreen] = useState<ScreenType>('intro');
   const [selectedSystemId, setSelectedSystemId] = useState<ZahnradSystem['id'] | null>(null);
+  const { isDarkMode, toggleTheme } = useThemeMode();
   
   // Persistence for user score state
   const [quizHighScore, setQuizHighScore] = useState<number | null>(null);
@@ -78,7 +81,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-cement-sand text-iron-dark select-none selection:bg-primary-red selection:text-white flex flex-col items-center">
-      
       {/* Absolute parent grid with simple screen routing logic */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -101,8 +103,8 @@ export default function App() {
               onSelectSystem={(id) => navigateTo('detail', id)}
               onGoBackToIntro={() => navigateTo('intro')}
               onStartQuiz={() => navigateTo('quiz')}
-              onSimulateError={() => triggerSimulationError('dashboard')}
               quizHighScore={quizHighScore}
+              headerRightAction={<ThemeModeToggleButton isDarkMode={isDarkMode} onToggle={toggleTheme} />}
             />
           )}
 

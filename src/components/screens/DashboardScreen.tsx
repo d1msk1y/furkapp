@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import { ArrowRight, BookOpen, Trophy, RefreshCw, Mountain } from 'lucide-react';
+import { ReactNode, useState } from 'react';
+import { ArrowRight, BookOpen, Trophy, Mountain } from 'lucide-react';
 import { SYSTEM_DATA } from '../../data';
 import { ZahnradSystem } from '../../types';
 import ScreenContainer from '../layout/ScreenContainer';
 import Header from '../layout/Header';
-import StatusBar from '../layout/StatusBar';
 import Button from '../ui/Button';
 import SystemIcon from '../ui/SystemIcon';
 import InclineGauge from '../ui/InclineGauge';
@@ -13,16 +12,16 @@ interface DashboardScreenProps {
   readonly onSelectSystem: (id: ZahnradSystem['id']) => void;
   readonly onGoBackToIntro: () => void;
   readonly onStartQuiz: () => void;
-  readonly onSimulateError: () => void;
   readonly quizHighScore: number | null;
+  readonly headerRightAction?: ReactNode;
 }
 
 export default function DashboardScreen({
   onSelectSystem,
   onGoBackToIntro,
   onStartQuiz,
-  onSimulateError,
   quizHighScore,
+  headerRightAction,
 }: Readonly<DashboardScreenProps>) {
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
 
@@ -37,22 +36,12 @@ export default function DashboardScreen({
   return (
     <ScreenContainer>
       <div className="flex flex-col">
-        {/* Header with error simulation button */}
+        {/* Header with optional right action */}
         <Header
           title="DIE 5 ZAHNRADSYSTEME"
           onBack={onGoBackToIntro}
           backLabel="Zurück zur Startseite"
-          rightAction={
-            <Button
-              variant="icon"
-              size="sm"
-              onClick={onSimulateError}
-              title="Signalunterbruch simulieren"
-              className="text-primary-red"
-            >
-              <RefreshCw size={18} strokeWidth={3} className="animate-spin" style={{ animationDuration: '4s' }} />
-            </Button>
-          }
+          rightAction={headerRightAction}
           className="p-5"
         />
 
@@ -64,8 +53,8 @@ export default function DashboardScreen({
 
             const getCardBg = () => {
               if (isFlashing) return 'bg-primary-red text-white';
-              if (isAlternateBg) return 'bg-[#F2F2ED] hover:bg-[#eaeae4]';
-              return 'bg-white hover:bg-[#F9F9F7]';
+              if (isAlternateBg) return 'bg-cement-sand hover:bg-cement-light';
+              return 'bg-cement-light hover:bg-cement-sand';
             };
 
             return (
@@ -78,7 +67,7 @@ export default function DashboardScreen({
                 {/* Identity icon */}
                 <div
                   className={`shrink-0 h-14 w-14 flex items-center justify-center border-heavy-sm rounded-sm transition-colors ${
-                    isFlashing ? 'bg-white text-iron-dark' : 'bg-cement-light text-iron-dark'
+                    isFlashing ? 'bg-cement-light text-iron-dark' : 'bg-cement-sand text-iron-dark'
                   }`}
                 >
                   <SystemIcon iconKey={system.iconKey} size={26} strokeWidth={2.5} />
@@ -117,8 +106,8 @@ export default function DashboardScreen({
                 <div
                   className={`shrink-0 h-12 w-12 flex items-center justify-center border-heavy rounded-sm transition-all duration-75 ${
                     isFlashing
-                      ? 'bg-white shadow-none translate-x-1 translate-y-1'
-                      : 'bg-white shadow-[4px_4px_0px_#0D0D0D]'
+                      ? 'bg-cement-light shadow-none translate-x-1 translate-y-1'
+                      : 'bg-cement-light shadow-hard'
                   }`}
                 >
                   <ArrowRight size={26} strokeWidth={3} className="text-primary-red" />
@@ -130,7 +119,7 @@ export default function DashboardScreen({
       </div>
 
       {/* Quiz launch footer */}
-      <footer className="p-6 bg-iron-dark border-t-[3px] border-iron-dark flex flex-col gap-4">
+      <footer className="p-6 bg-ink border-t-[3px] border-iron-dark flex flex-col gap-4">
         {quizHighScore !== null && (
           <div className="flex items-center justify-between border-2 border-primary-red bg-neutral-900 px-4 py-2 text-white font-mono text-sm uppercase">
             <span className="flex items-center gap-2">
@@ -143,7 +132,7 @@ export default function DashboardScreen({
 
         <Button
           variant="cta"
-          className="bg-white text-iron-dark hover:bg-cement-light border-white"
+          className="bg-cement-light text-iron-dark hover:bg-cement-sand border-iron-dark"
           shadowColor="#f22b0d"
           onClick={onStartQuiz}
         >
