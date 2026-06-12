@@ -226,7 +226,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             })}
 
             <div className="col-span-2 bg-cement-sand border-[3px] border-iron-dark p-4 text-sm font-mono tracking-wide leading-relaxed font-bold text-neutral-600">
-              HINWEIS: Alle Toleranz-Angaben basieren auf den Originalzeichnungen und Archivbeständen der Furka-Oberalp-Bahngesellschaft aus dem späten 19. Jahrhundert.
+              {t('detail.stats_note')}
             </div>
           </motion.div>
         )}

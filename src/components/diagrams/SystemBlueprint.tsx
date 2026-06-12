@@ -1,6 +1,7 @@
 import { Info } from 'lucide-react';
 import type { FC } from 'react';
 import { Hotspot } from '../../types';
+import { useLanguage } from '../../features/i18n/useLanguage';
 
 interface SystemBlueprintProps {
   readonly systemId: string;
@@ -126,6 +127,7 @@ const blueprintMap: Record<string, FC> = {
 };
 
 export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: Readonly<SystemBlueprintProps>) {
+  const { t } = useLanguage();
   const BlueprintSVG = blueprintMap[systemId];
 
   return (
@@ -176,7 +178,7 @@ export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: 
       {/* Hotspot hint */}
       <div className="absolute bottom-4 right-4 z-10 bg-ink text-white font-mono text-[8px] tracking-wider px-2 py-1 uppercase border border-white flex items-center gap-1 opacity-75">
         <span className="w-1.5 h-1.5 rounded-full bg-primary-red animate-ping" />{' '}
-        ROTE HOTSPOTS TIPPFÄHIG
+        {t('detail.hotspot_hint')}
       </div>
     </section>
   );
