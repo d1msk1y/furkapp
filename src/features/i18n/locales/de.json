@@ -29,12 +29,15 @@
     "danger_label": "Die Gefahr",
     "solution_label": "Die Lösung",
     "history_label": "Historische Details",
-    "quiz_cta": "WISSEN TESTEN"
+    "quiz_cta": "WISSEN TESTEN",
+    "stats_note": "HINWEIS: Alle Toleranz-Angaben basieren auf den Originalzeichnungen und Archivbeständen der Furka-Oberalp-Bahngesellschaft aus dem späten 19. Jahrhundert.",
+    "hotspot_hint": "ROTE HOTSPOTS TIPPFÄHIG"
   },
   "quiz": {
     "title": "WISSENSQUIZ",
     "back_label": "Zurück",
     "question_label": "FRAGE {{current}} VON {{total}}",
+    "evaluating": "Evaluierung läuft... Bereite Folgeschritt vor.",
     "result_title": "QUIZ ABGESCHLOSSEN",
     "result_score": "ERGEBNIS: {{score}} / {{total}}",
     "result_perfect": "PERFEKTES ERGEBNIS!",

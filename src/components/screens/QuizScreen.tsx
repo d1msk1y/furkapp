@@ -234,7 +234,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
 
           {/* Evaluation hint */}
           <div className="h-8 px-6 font-mono text-center text-sm text-neutral-400 uppercase font-bold flex items-center justify-center">
-            {isFrozen && 'Evaluierung läuft... Bereite Folgeschritt vor.'}
+            {isFrozen && t('quiz.evaluating')}
           </div>
         </main>
       )}

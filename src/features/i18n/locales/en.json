@@ -29,12 +29,15 @@
     "danger_label": "THE DANGER",
     "solution_label": "THE SOLUTION",
     "history_label": "Historical Details",
-    "quiz_cta": "TEST YOUR KNOWLEDGE"
+    "quiz_cta": "TEST YOUR KNOWLEDGE",
+    "stats_note": "NOTE: All tolerance figures are based on the original drawings and archive holdings of the Furka-Oberalp Railway Company from the late 19th century.",
+    "hotspot_hint": "RED HOTSPOTS TAPPABLE"
   },
   "quiz": {
     "title": "KNOWLEDGE QUIZ",
     "back_label": "Back",
     "question_label": "QUESTION {{current}} OF {{total}}",
+    "evaluating": "Evaluating... Preparing next step.",
     "result_title": "QUIZ COMPLETE",
     "result_score": "RESULT: {{score}} / {{total}}",
     "result_perfect": "PERFECT SCORE!",

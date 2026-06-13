@@ -29,12 +29,15 @@
     "danger_label": "LE DANGER",
     "solution_label": "LA SOLUTION",
     "history_label": "Détails historiques",
-    "quiz_cta": "TESTER SES CONNAISSANCES"
+    "quiz_cta": "TESTER SES CONNAISSANCES",
+    "stats_note": "NOTE: Toutes les données de tolérance sont basées sur les dessins originaux et les fonds d'archives de la Compagnie du chemin de fer Furka-Oberalp de la fin du 19e siècle.",
+    "hotspot_hint": "POINTS CHAUDS ROUGES CLIQUABLES"
   },
   "quiz": {
     "title": "QUIZ DE CONNAISSANCES",
     "back_label": "Retour",
     "question_label": "QUESTION {{current}} SUR {{total}}",
+    "evaluating": "Évaluation en cours... Préparation de l'étape suivante.",
     "result_title": "QUIZ TERMINÉ",
     "result_score": "RÉSULTAT: {{score}} / {{total}}",
     "result_perfect": "SCORE PARFAIT!",
