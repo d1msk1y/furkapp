@@ -14,6 +14,7 @@ const photoMap: Record<string, string> = {
   locher: '/systemPictures/locher.png',
   strub: '/systemPictures/strub.png',
   riggenbach: '/systemPictures/rigenbach.png',
+  von_roll: '/systemPictures/vonroll.png',
 };
 
 export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: Readonly<SystemBlueprintProps>) {

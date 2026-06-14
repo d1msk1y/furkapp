@@ -12,6 +12,7 @@ import IconBox from '../ui/IconBox';
 import ProgressBar from '../ui/ProgressBar';
 import Ridgeline from '../diagrams/Ridgeline';
 import { useLanguage } from '../../features/i18n/useLanguage';
+import { useChildMode } from '../../features/childMode/useChildMode';
 
 interface QuizScreenProps {
   readonly onGoBackToDashboard: () => void;
@@ -26,14 +27,16 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
   const [quizComplete, setQuizComplete] = useState(false);
   const [flashScreen, setFlashScreen] = useState(false);
   const { t } = useLanguage();
+  const { isChildMode } = useChildMode();
 
   const rawQuestion: QuizQuestion = QUIZ_QUESTIONS[currentQuestionIndex];
   const qKey = `q${rawQuestion.id}`;
+  const quizNs = isChildMode ? 'child_mode.quiz_questions' : 'quiz_questions';
   const currentQuestion = {
     ...rawQuestion,
-    question: t(`quiz_questions.${qKey}.question`),
-    options: (t(`quiz_questions.${qKey}.options`, { returnObjects: true }) as string[]),
-    explanation: t(`quiz_questions.${qKey}.explanation`),
+    question: t(`${quizNs}.${qKey}.question`),
+    options: (t(`${quizNs}.${qKey}.options`, { returnObjects: true }) as string[]),
+    explanation: t(`${quizNs}.${qKey}.explanation`),
   };
 
   const handleOptionClick = (optionIndex: number) => {

@@ -65,6 +65,10 @@
     "theme_section": "ERSCHEINUNGSBILD",
     "theme_light": "HELL",
     "theme_dark": "DUNKEL",
+    "child_mode_section": "KINDERMODUS",
+    "child_mode_title": "KINDERMODUS AKTIVIEREN",
+    "status_on": "AN",
+    "status_off": "AUS",
     "save_button": "BESTÄTIGEN",
     "onboarding_subtitle": "WILLKOMMEN",
     "onboarding_title": "EINSTELLUNGEN WÄHLEN"
@@ -101,18 +105,18 @@
     "abt": {
       "name": "Abt System",
       "type": "Mehrlamellige Steilbahnstange",
-      "tagline": "Laufruhig & kurvenfreudig",
-      "famousLine": "Furka-Oberalp-Bahn",
+      "tagline": "Stets im optimalen Eingriff",
+      "famousLine": "Brienz-Rothorn-Bahn",
       "explanationShort": "Von Roman Abt erfundenes System, das zwei oder drei versetzte, schmale Zahnstangenplatten nutzt. Es läuft extrem laufruhig und bietet stetigen Zahnkontakt.",
-      "steepDangerText": "Bei einfachen Zahnstangen kommt es bei Zahnübergängen oft zu Ruckeln, lauten Schlägen und erhöhtem Verschleiss an den Zahnrädern der Lok.",
+      "steepDangerText": "Bei einfachen Zahnstangen in steilen Abschnitten neigte das Zahnrad dazu, auf die Zahnstange aufzuklettern und dann wieder einzugreifen. Die Folgen waren grosse Schäden an Zahnstange und Zahnrad.",
       "solutionText": "Abts geniale Antwort: Versetzte dünnere Lamellen. Während das eine Zahnrad gerade eine Lücke verlässt, greift das zweite Zahnrad ein Stück versetzt bereits voll in die Nachbarlamelle.",
-      "historyAndPurpose": "Roman Abt war Schüler von Riggenbach. Er entwarf diese Innovation, um die Kosten für die Herstellung schwerer massiver Schienen zu senken. Die Abt-Zahnstange lässt sich wunderbar biegen, wodurch sie sich auch für enge Kurvenradien hervorragend eignet. Sie ist das Rückgrat der historischen Furka-Oberalp-Bergstrecke.",
+      "historyAndPurpose": "Roman Abt war Schüler von Riggenbach und lernte sein Handwerk in dessen Werkstätten in Olten. Er entwarf die versetzten Lamellen, um das gefürchtete Aufklettern des Zahnrades zu verhindern. Das System wurde bei vielen Schweizer Bergbahnen und sogar auf Breitspurbahnen in Südamerika eingesetzt. In der Schweiz wird ausschliesslich die zweilamellige Ausführung verwendet. Die Brienz-Rothorn-Bahn erreicht als einzige Bahn die maximale Steigung von durchschnittlich 250 ‰.",
       "stats": {
         "max_gradient": "Max. Steigung",
         "tooth_pitch": "Zahnteilung",
         "rack_material": "Material Zahnstange",
         "gauge": "Spurweite",
-        "max_gradient_value": "110 ‰ (11 %)",
+        "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
         "rack_material_value": "Spezial-Walzstahl",
         "gauge_value": "1000 mm (Meterspur)"
@@ -246,6 +250,80 @@
         "Sie benötigt drei Zahnräder übereinander"
       ],
       "explanation": "Das moderne Von Roll System maximiert die Zuverlässigkeit, indem es Fugen und Nieten eliminiert. Ein hochfester Einblockstahl wird direkt vorgefräst."
+    }
+  },
+  "child_mode": {
+    "badge": "🚂 FÜR JUNGE ENTDECKER",
+    "detail_danger_label": "DAS PROBLEM",
+    "detail_solution_label": "DER CLEVERE TRICK",
+    "systems": {
+      "locher": {
+        "explanationShort": "Das ist das coolste Zugsystem überhaupt! Es fährt den supersteilen Pilatus hinauf – fast wie eine Wand hochklettern! 🏔️",
+        "steepDangerText": "Der Berg ist SO steil, dass normale Zugräder einfach abrutschen würden. Stell dir vor, du versuchst eine supersteile Rutschbahn hochzuklettern!",
+        "solutionText": "Der clevere Trick: Statt Rädern oben drauf hat dieser Zug seitliche Räder, die die Schiene von beiden Seiten packen – wie deine Hände an einer Stange! Er kann nie abfallen! 🎉",
+        "tagline": "Der steilste Zug! 🏔️"
+      },
+      "abt": {
+        "explanationShort": "Dieses schlaue System benutzt zwei Zahnstangen nebeneinander, leicht versetzt. So hat der Zug immer festen Halt! 💪",
+        "steepDangerText": "Bei alten einfachen Zahnstangen sprang das Zahnrad manchmal hoch und machte Sachen kaputt. Das war richtig gefährlich!",
+        "solutionText": "Roman Abts schlaue Idee: ZWEI Zahnstangen nebeneinander, ein kleines Stückchen versetzt. Wenn ein Rad eine Lücke verlässt, greift das andere schon fest zu! 🧩",
+        "tagline": "Doppelter Halt! 💪"
+      },
+      "strub": {
+        "explanationShort": "Dieses System ist super einfach und funktioniert toll im Winterschnee! Die Zähne sind direkt in eine starke Schiene geschnitzt. ❄️",
+        "steepDangerText": "Im Winter füllen sich komplizierte Schienensysteme mit Schnee und Eis. Der Zug kann nicht mehr sicher fahren! ⛄",
+        "solutionText": "Emil Strub machte es einfach: nur eine starke Schiene mit Zähnen oben drauf. Schnee rutscht einfach ab! Leicht zu putzen, leicht zu reparieren! ☀️",
+        "tagline": "Schneesicher! ❄️"
+      },
+      "riggenbach": {
+        "explanationShort": "Das ist das älteste Bergbahnsystem in Europa! Es sieht aus wie eine Leiter, die auf dem Boden liegt, mit runden Metallstangen. 🪜",
+        "steepDangerText": "Die allerersten Züge waren superschwer und die Gleise verbogen und zerbrachen unter ihrem Gewicht!",
+        "solutionText": "Riggenbachs tolle Idee: Bau eine starke Leiter aus zwei Metallschienen mit runden Sprossen dazwischen. Das Zahnrad des Zuges rollt auf diesen Sprossen wie beim Leiterklettern! 🪜",
+        "tagline": "Die allererste! 🪜"
+      },
+      "von_roll": {
+        "explanationShort": "Das ist das neueste und modernste System! Es wird aus einem grossen Stück superstarkem Stahl gemacht – keine Schrauben oder Bolzen nötig! 🔧",
+        "steepDangerText": "Alte Gleissysteme mit vielen kleinen Teilen gingen immer wieder kaputt, weil moderne Züge so schwer und schnell sind!",
+        "solutionText": "Von Rolls Lösung: Die ganze Schiene aus EINEM Stück superstärkem Stahl machen, mit computergesteuerten Maschinen. Nichts kann sich lockern! 💎",
+        "tagline": "Supermodern! 🔧"
+      }
+    },
+    "quiz_questions": {
+      "q1": {
+        "question": "Welcher Zug kann den steilsten Berg hinauffahren?",
+        "options": ["Strub-Zug", "Locher-Zug", "Abt-Zug", "Riggenbach-Zug"],
+        "explanation": "Der Locher-Zug fährt den Pilatus hinauf – so steil, dass es fast wie eine Wand ist! 48% steil! 🏔️"
+      },
+      "q2": {
+        "question": "Was macht das Locher-System so besonders?",
+        "options": ["Es hat Flügel", "Es benutzt Magnete", "Seine Räder greifen die Schiene von der Seite", "Es fährt unter Wasser"],
+        "explanation": "Der Locher-Zug hat seitliche Räder, die die Schiene von beiden Seiten packen – wie deine Hände an einer Stange! So rutscht er nie ab! 🤲"
+      },
+      "q3": {
+        "question": "Welches System sieht aus wie eine Leiter auf dem Boden?",
+        "options": ["Riggenbach-System", "Von-Roll-System", "Strub-System", "Abt-System"],
+        "explanation": "Riggenbachs System hat runde Metallstangen zwischen zwei Schienen – genau wie die Sprossen einer Leiter! 🪜"
+      },
+      "q4": {
+        "question": "Warum benutzt das Abt-System ZWEI Zahnstangen?",
+        "options": [
+          "Weil eine zum Hochfahren und eine zum Runterfahren ist",
+          "Damit der Zug immer festen Halt hat und ruhig fährt",
+          "Weil es cooler aussieht",
+          "Um mehr Lärm zu machen"
+        ],
+        "explanation": "Zwei Zahnstangen, ein bisschen versetzt, bedeuten, dass der Zug immer mindestens ein Rad fest im Griff hat. Kein Ruckeln, kein Rutschen! 🧩"
+      },
+      "q5": {
+        "question": "Was ist besonders an der Von-Roll-Schiene?",
+        "options": [
+          "Sie ist aus Gummi",
+          "Sie ist aus EINEM grossen Stück superstärkem Stahl gemacht",
+          "Sie muss jeden Tag angemalt werden",
+          "Sie funktioniert nur im Sommer"
+        ],
+        "explanation": "Die Von-Roll-Schiene wird aus einem riesigen Stahlblock von einer computergesteuerten Maschine geschnitzt. Keine Schrauben, keine Bolzen – superstark! 💪"
+      }
     }
   }
 }

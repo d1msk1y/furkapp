@@ -65,6 +65,10 @@
     "theme_section": "APPEARANCE",
     "theme_light": "LIGHT",
     "theme_dark": "DARK",
+    "child_mode_section": "CHILD MODE",
+    "child_mode_title": "ENABLE CHILD MODE",
+    "status_on": "ON",
+    "status_off": "OFF",
     "save_button": "CONFIRM",
     "onboarding_subtitle": "WELCOME",
     "onboarding_title": "SELECT YOUR PREFERENCES"
@@ -101,18 +105,18 @@
     "abt": {
       "name": "Abt System",
       "type": "Multi-Lamella Rack",
-      "tagline": "Smooth-running & curve-friendly",
-      "famousLine": "Furka-Oberalp Railway",
+      "tagline": "Always in optimal engagement",
+      "famousLine": "Brienz Rothorn Railway",
       "explanationShort": "System invented by Roman Abt, using two or three offset, narrow rack plates. It runs extremely smoothly and provides continuous tooth contact.",
-      "steepDangerText": "With simple racks, tooth transitions often cause jolting, loud impacts and increased wear on the locomotive gear wheels.",
+      "steepDangerText": "On simple racks in steep sections, the gear wheel tended to climb onto the rack and then re-engage. The consequences were major damage to both the rack and gear wheel.",
       "solutionText": "Abt's ingenious answer: Offset thinner lamellae. While one gear wheel is just leaving a gap, the second gear wheel, offset slightly, is already fully engaging in the adjacent lamella.",
-      "historyAndPurpose": "Roman Abt was a student of Riggenbach. He designed this innovation to reduce the cost of manufacturing heavy solid rails. The Abt rack can be bent wonderfully, making it ideal for tight curve radii as well. It is the backbone of the historic Furka-Oberalp mountain route.",
+      "historyAndPurpose": "Roman Abt was a student of Riggenbach and learned his trade in his workshops in Olten. He designed the offset lamellae to prevent the dreaded climbing of the gear wheel. The system was used on many Swiss mountain railways and even on broad-gauge railways in South America. In Switzerland, only the two-lamella design is used. The Brienz Rothorn Railway is the only line to reach the maximum gradient of 250 ‰ on average.",
       "stats": {
         "max_gradient": "Max. Gradient",
         "tooth_pitch": "Tooth Pitch",
         "rack_material": "Rack Material",
         "gauge": "Gauge",
-        "max_gradient_value": "110 ‰ (11 %)",
+        "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
         "rack_material_value": "Special Rolled Steel",
         "gauge_value": "1000 mm (Metre Gauge)"
@@ -246,6 +250,80 @@
         "It requires three gear wheels stacked on top of each other"
       ],
       "explanation": "The modern Von Roll system maximises reliability by eliminating gaps and rivets. A high-strength single block of steel is directly pre-milled."
+    }
+  },
+  "child_mode": {
+    "badge": "🚂 FOR YOUNG EXPLORERS",
+    "detail_danger_label": "THE PROBLEM",
+    "detail_solution_label": "THE CLEVER FIX",
+    "systems": {
+      "locher": {
+        "explanationShort": "This is the coolest train system ever! It goes up the super steep Pilatus mountain – almost like climbing a wall! 🏔️",
+        "steepDangerText": "The mountain is SO steep that normal train wheels would just slip off the rails. Imagine trying to climb a really steep slide!",
+        "solutionText": "The clever trick: Instead of wheels on top, this train has sideways wheels that grab the rail from both sides – like your hands grabbing a pole! It can never fall off! 🎉",
+        "tagline": "The steepest train! 🏔️"
+      },
+      "abt": {
+        "explanationShort": "This smart system uses two tooth-bars side by side, but slightly shifted. This way, the train always has a good grip! 💪",
+        "steepDangerText": "On old single rail systems, the gear wheel sometimes jumped up and damaged things. That was really dangerous!",
+        "solutionText": "Roman Abt's smart idea: Use TWO toothed bars next to each other, shifted a tiny bit. When one wheel leaves a gap, the other is already firmly gripping! 🧩",
+        "tagline": "Double the grip! 💪"
+      },
+      "strub": {
+        "explanationShort": "This system is super simple and works great in winter snow! The teeth are carved right into one strong rail. ❄️",
+        "steepDangerText": "In winter, complicated rail systems get filled with snow and ice. The train can't move safely anymore! ⛄",
+        "solutionText": "Emil Strub made it simple: just one strong rail with teeth cut into the top. Snow slides right off! Easy to clean, easy to fix! ☀️",
+        "tagline": "Snow-proof! ❄️"
+      },
+      "riggenbach": {
+        "explanationShort": "This is the oldest mountain railway system in Europe! It looks like a ladder lying on the ground with round metal bars. 🪜",
+        "steepDangerText": "Very early trains were super heavy and the tracks would bend and break under their weight!",
+        "solutionText": "Riggenbach's great idea: Build a strong ladder from two metal bars with round rungs between them. The train's gear wheel rolls on these rungs like climbing a ladder! 🪜",
+        "tagline": "The first ever! 🪜"
+      },
+      "von_roll": {
+        "explanationShort": "This is the newest and most modern system! It's made from one big piece of super strong steel – no screws or bolts needed! 🔧",
+        "steepDangerText": "Old track systems with many small parts kept breaking because modern trains are so heavy and fast!",
+        "solutionText": "Von Roll's solution: Make the whole rail from ONE piece of super-strong steel using computer-controlled machines. Nothing can come loose! 💎",
+        "tagline": "Super modern! 🔧"
+      }
+    },
+    "quiz_questions": {
+      "q1": {
+        "question": "Which train can climb the steepest mountain?",
+        "options": ["Strub Train", "Locher Train", "Abt Train", "Riggenbach Train"],
+        "explanation": "The Locher train climbs Mount Pilatus – it's so steep it's almost like going up a wall! 48% steep! 🏔️"
+      },
+      "q2": {
+        "question": "What makes the Locher system special?",
+        "options": ["It has wings", "It uses magnets", "Its wheels grab the rail from the sides", "It goes underwater"],
+        "explanation": "The Locher train has sideways wheels that grab the rail from both sides – like your hands holding a pole! That way it never slips! 🤲"
+      },
+      "q3": {
+        "question": "Which system looks like a ladder lying on the ground?",
+        "options": ["Riggenbach System", "Von Roll System", "Strub System", "Abt System"],
+        "explanation": "Riggenbach's system has round metal bars between two rails – just like the rungs of a ladder! 🪜"
+      },
+      "q4": {
+        "question": "Why does the Abt system use TWO toothed bars?",
+        "options": [
+          "Because one bar is for going up and one for going down",
+          "So the train always has a firm grip and rides smoothly",
+          "Because it looks cooler that way",
+          "To make more noise"
+        ],
+        "explanation": "Two bars shifted a little bit means the train always has at least one wheel firmly gripping. No bumps, no slipping! 🧩"
+      },
+      "q5": {
+        "question": "What is special about the Von Roll rail?",
+        "options": [
+          "It's made of rubber",
+          "It's made from ONE big piece of super-strong steel",
+          "It needs to be painted every day",
+          "It only works in summer"
+        ],
+        "explanation": "The Von Roll rail is carved from one huge block of steel by a computer-controlled machine. No screws, no bolts – super strong! 💪"
+      }
     }
   }
 }

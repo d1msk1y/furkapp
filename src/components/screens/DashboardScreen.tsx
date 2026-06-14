@@ -8,6 +8,7 @@ import Button from '../ui/Button';
 import SystemIcon from '../ui/SystemIcon';
 import InclineGauge from '../ui/InclineGauge';
 import { useLanguage } from '../../features/i18n/useLanguage';
+import { useChildMode } from '../../features/childMode/useChildMode';
 
 interface DashboardScreenProps {
   readonly onSelectSystem: (id: ZahnradSystem['id']) => void;
@@ -26,6 +27,7 @@ export default function DashboardScreen({
 }: Readonly<DashboardScreenProps>) {
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const { t } = useLanguage();
+  const { isChildMode } = useChildMode();
 
   const handleCardClick = (systemId: ZahnradSystem['id']) => {
     setActiveCardId(systemId);
@@ -85,7 +87,7 @@ export default function DashboardScreen({
                       isFlashing ? 'text-white' : 'text-iron-dark'
                     }`}
                   >
-                    {t(`systems.${system.id}.tagline`)}
+                    {isChildMode ? t(`child_mode.systems.${system.id}.tagline`) : t(`systems.${system.id}.tagline`)}
                   </span>
                   <span
                     className={`text-xs font-mono uppercase tracking-wider font-extrabold mt-1 flex items-center gap-1 truncate ${

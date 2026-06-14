@@ -23,6 +23,7 @@ import InclineGauge from '../ui/InclineGauge';
 import StatTile from '../ui/StatTile';
 import SystemBlueprint from '../diagrams/SystemBlueprint';
 import { useLanguage } from '../../features/i18n/useLanguage';
+import { useChildMode } from '../../features/childMode/useChildMode';
 
 function statIcon(label: string) {
   const l = label.toLowerCase();
@@ -44,6 +45,13 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
   const [showHistory, setShowHistory] = useState(false);
   const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null);
   const { t } = useLanguage();
+  const { isChildMode } = useChildMode();
+
+  // In child mode, use simplified text from child_mode namespace; otherwise use normal system text
+  const txt = (field: string) =>
+    isChildMode
+      ? t(`child_mode.systems.${system.id}.${field}`)
+      : t(`systems.${system.id}.${field}`);
 
   const STAT_KEYS = ['max_gradient', 'tooth_pitch', 'rack_material', 'gauge'] as const;
 
@@ -92,49 +100,58 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
         onHotspotClick={setSelectedHotspot}
       />
 
-      {/* Toggle Bar */}
-      <section
-        className="bg-cement-sand border-b-[3px] border-iron-dark p-4 sticky top-0 z-10 flex justify-between items-center cursor-pointer"
-        onClick={() => setShowTechDetails(!showTechDetails)}
-      >
-        <span className="text-sm font-black uppercase tracking-wider text-iron-dark flex items-center gap-1.5">
-          <Info size={16} className="text-primary-red" />
-          {t('detail.show_tech')}
-        </span>
+      {/* Toggle Bar – hidden in child mode */}
+      {!isChildMode && (
+        <section
+          className="bg-cement-sand border-b-[3px] border-iron-dark p-4 sticky top-0 z-10 flex justify-between items-center cursor-pointer"
+          onClick={() => setShowTechDetails(!showTechDetails)}
+        >
+          <span className="text-sm font-black uppercase tracking-wider text-iron-dark flex items-center gap-1.5">
+            <Info size={16} className="text-primary-red" />
+            {t('detail.show_tech')}
+          </span>
 
-        <div className="relative inline-block w-16 h-8 align-middle select-none">
-          <input
-            type="checkbox"
-            name="toggle"
-            id="tech-toggle"
-            checked={showTechDetails}
-            onChange={(e) => setShowTechDetails(e.target.checked)}
-            onClick={(e) => e.stopPropagation()}
-            className="absolute block w-8 h-8 rounded-none border-[3px] border-iron-dark bg-cement-light appearance-none cursor-pointer z-20 checked:translate-x-6.5 transition-transform duration-100 ease-out"
-          />
-          <label
-            htmlFor="tech-toggle"
-            aria-label={t('detail.show_tech')}
-            onClick={(e) => e.stopPropagation()}
-            className={`block overflow-hidden h-8 rounded-none border-[3px] border-iron-dark cursor-pointer transition-colors duration-100 ${
-              showTechDetails ? 'bg-ink' : 'bg-cement-light'
-            }`}
-          />
-        </div>
-      </section>
+          <div className="relative inline-block w-16 h-8 align-middle select-none">
+            <input
+              type="checkbox"
+              name="toggle"
+              id="tech-toggle"
+              checked={showTechDetails}
+              onChange={(e) => setShowTechDetails(e.target.checked)}
+              onClick={(e) => e.stopPropagation()}
+              className="absolute block w-8 h-8 rounded-none border-[3px] border-iron-dark bg-cement-light appearance-none cursor-pointer z-20 checked:translate-x-6.5 transition-transform duration-100 ease-out"
+            />
+            <label
+              htmlFor="tech-toggle"
+              aria-label={t('detail.show_tech')}
+              onClick={(e) => e.stopPropagation()}
+              className={`block overflow-hidden h-8 rounded-none border-[3px] border-iron-dark cursor-pointer transition-colors duration-100 ${
+                showTechDetails ? 'bg-ink' : 'bg-cement-light'
+              }`}
+            />
+          </div>
+        </section>
+      )}
 
       {/* Content Area */}
       <main className="grow bg-cement-sand p-6">
-        {!showTechDetails && (
+        {(!showTechDetails || isChildMode) && (
           <motion.div
             className="space-y-5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
+            {/* Child mode badge */}
+            {isChildMode && (
+              <Badge variant="pine" className="px-2.5 py-1 text-[11px]">
+                {t('child_mode.badge')}
+              </Badge>
+            )}
+
             {/* Lead sentence */}
-            <p className="text-base sm:text-lg font-bold leading-[140%] text-iron-dark">
-              {t(`systems.${system.id}.explanationShort`)}
+            <p className={`font-bold leading-[140%] text-iron-dark ${isChildMode ? 'text-lg sm:text-xl' : 'text-base sm:text-lg'}`}>
+              {txt('explanationShort')}
             </p>
 
             {/* Visual Gefahr -> Lösung panel */}
@@ -145,11 +162,11 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
                     <AlertTriangle size={18} strokeWidth={2.5} className="text-white" />
                   </span>
                   <span className="text-sm font-black uppercase tracking-widest text-primary-red">
-                    {t('detail.danger_label')}
+                    {isChildMode ? t('child_mode.detail_danger_label') : t('detail.danger_label')}
                   </span>
                 </div>
-                <p className="text-sm sm:text-base font-medium leading-[145%] text-iron-dark">
-                  {t(`systems.${system.id}.steepDangerText`)}
+                <p className={`font-medium leading-[145%] text-iron-dark ${isChildMode ? 'text-base sm:text-lg' : 'text-sm sm:text-base'}`}>
+                  {txt('steepDangerText')}
                 </p>
               </div>
 
@@ -165,42 +182,44 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
                     <Wrench size={18} strokeWidth={2.5} className="text-white" />
                   </span>
                   <span className="text-sm font-black uppercase tracking-widest text-pine">
-                    {t('detail.solution_label')}
+                    {isChildMode ? t('child_mode.detail_solution_label') : t('detail.solution_label')}
                   </span>
                 </div>
-                <p className="text-sm sm:text-base font-medium leading-[145%] text-iron-dark">
-                  {t(`systems.${system.id}.solutionText`)}
+                <p className={`font-medium leading-[145%] text-iron-dark ${isChildMode ? 'text-base sm:text-lg' : 'text-sm sm:text-base'}`}>
+                  {txt('solutionText')}
                 </p>
               </div>
             </div>
 
-            {/* Collapsible history */}
-            <div className="border-[3px] border-iron-dark bg-cement-light shadow-hard-sm">
-              <button
-                type="button"
-                onClick={() => setShowHistory((v) => !v)}
-                aria-expanded={showHistory}
-                className="w-full flex items-center justify-between px-4 py-3 cursor-pointer"
-              >
-                <span className="text-sm font-mono font-black uppercase text-primary-red tracking-wider">
-                  {t('detail.history_label')}
-                </span>
-                <ChevronDown
-                  size={18}
-                  strokeWidth={3}
-                  className={`text-iron-dark transition-transform duration-150 ${showHistory ? 'rotate-180' : ''}`}
-                />
-              </button>
-              {showHistory && (
-                <motion.p
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  className="px-4 pb-4 text-sm leading-relaxed text-neutral-600 font-normal border-t-2 border-iron-dark pt-3"
+            {/* Collapsible history – hidden in child mode */}
+            {!isChildMode && (
+              <div className="border-[3px] border-iron-dark bg-cement-light shadow-hard-sm">
+                <button
+                  type="button"
+                  onClick={() => setShowHistory((v) => !v)}
+                  aria-expanded={showHistory}
+                  className="w-full flex items-center justify-between px-4 py-3 cursor-pointer"
                 >
-                  {t(`systems.${system.id}.historyAndPurpose`)}
-                </motion.p>
-              )}
-            </div>
+                  <span className="text-sm font-mono font-black uppercase text-primary-red tracking-wider">
+                    {t('detail.history_label')}
+                  </span>
+                  <ChevronDown
+                    size={18}
+                    strokeWidth={3}
+                    className={`text-iron-dark transition-transform duration-150 ${showHistory ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {showHistory && (
+                  <motion.p
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    className="px-4 pb-4 text-sm leading-relaxed text-neutral-600 font-normal border-t-2 border-iron-dark pt-3"
+                  >
+                    {t(`systems.${system.id}.historyAndPurpose`)}
+                  </motion.p>
+                )}
+              </div>
+            )}
           </motion.div>
         )}
 
