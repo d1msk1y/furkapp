@@ -101,18 +101,18 @@
     "abt": {
       "name": "Système Abt",
       "type": "Crémaillère multilame",
-      "tagline": "Silencieux & adaptable aux courbes",
-      "famousLine": "Chemin de fer Furka-Oberalp",
+      "tagline": "Toujours en prise optimale",
+      "famousLine": "Chemin de fer du Brienz Rothorn",
       "explanationShort": "Système inventé par Roman Abt, utilisant deux ou trois plaques de crémaillère étroites décalées. Il fonctionne de manière extrêmement fluide et offre un contact dentaire continu.",
-      "steepDangerText": "Avec des crémaillères simples, les transitions de dents provoquent souvent des secousses, des chocs bruyants et une usure accrue des roues dentées de la locomotive.",
+      "steepDangerText": "Sur les crémaillères simples dans les sections raides, la roue dentée avait tendance à monter sur la crémaillère puis à s'engager à nouveau. Les conséquences étaient des dommages importants à la crémaillère et à la roue dentée.",
       "solutionText": "La réponse ingénieuse d'Abt: Des lamelles plus minces décalées. Pendant qu'une roue dentée quitte un espace, la deuxième roue dentée, légèrement décalée, s'engage déjà complètement dans la lamelle adjacente.",
-      "historyAndPurpose": "Roman Abt était l'élève de Riggenbach. Il a conçu cette innovation pour réduire les coûts de fabrication des rails massifs lourds. La crémaillère Abt peut être magnifiquement courbée, ce qui la rend idéale pour les rayons de courbure serrés. Elle est l'épine dorsale de la ligne historique de montagne Furka-Oberalp.",
+      "historyAndPurpose": "Roman Abt était l'élève de Riggenbach et a appris son métier dans ses ateliers d'Olten. Il a conçu les lamelles décalées pour empêcher la montée redoutée de la roue dentée. Le système a été utilisé sur de nombreux chemins de fer de montagne suisses et même sur des voies larges en Amérique du Sud. En Suisse, seule la version à deux lamelles est utilisée. Le chemin de fer du Brienz Rothorn est la seule ligne à atteindre la pente maximale de 250 ‰ en moyenne.",
       "stats": {
         "max_gradient": "Pente max.",
         "tooth_pitch": "Pas de dent",
         "rack_material": "Matériau crémaillère",
         "gauge": "Écartement",
-        "max_gradient_value": "110 ‰ (11 %)",
+        "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
         "rack_material_value": "Acier laminé spécial",
         "gauge_value": "1000 mm (voie métrique)"

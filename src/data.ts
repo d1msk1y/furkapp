@@ -177,43 +177,43 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
     id: 'von_roll',
     name: 'Von Roll System',
     developed: '1900-er',
-    type: 'Flacheisen-Ergänzungssystem',
-    explanationShort: 'Das System Von Roll ist kein eigenständiges Zahnstangensystem, sondern eine Ergänzung zu Riggenbach und Strub. Es vereinfacht mit geraden flachen Eisenstücken vor allem den Einbau von Zahnstangenweichen erheblich.',
-    steepDangerText: 'Die Weichen bei Zahnradbahnen nach Riggenbach und Strub waren ausgesprochen kompliziert zu bauen und zu unterhalten, was den Betrieb verteuerte und Störanfälligkeit erhöhte.',
-    solutionText: 'Von Rolls Lösung: Statt Leiterzahnstange oder Keilschiene kommt ein einfaches, gerades flaches Eisen zum Einsatz. Die Zahnteilung entspricht exakt jener von Riggenbach und Strub, was eine direkte Kombination ermöglicht. Im Weichenbereich lässt sich dieses Flacheisen viel leichter montieren.',
+    type: 'Monoblock-Vollstahlprofil',
+    explanationShort: 'Eine moderne und hochentwickelte Optimierung für heutige Bergbahnen. Es ist voll kompatibel zu Abt, besteht aber aus einem einzigen monolithischen Gusselement.',
+    steepDangerText: 'Das Aufkommen schwerster Güter- und Personenströme beansprucht die historischen, mehrteiligen Schiebeleitern so massiv, dass der Wartungsaufwand explodiert.',
+    solutionText: 'Von Rolls Schweizer Ingenieursleistung: Eine komplett im Walzwerk gegossene massive Einzelschiene mit vertikaler Fräsverzahnung. Keine Schweissnähte, keine Nieten, kein Lockern.',
     techStats: [
-      { label: 'Max. Steigung', value: '250 ‰ (25 %)' },
-      { label: 'Zahnteilung', value: '100 mm' },
-      { label: 'Material Zahnstange', value: 'Flachstahl' },
-      { label: 'Spurweite', value: '1000 mm / 1435 mm' }
+      { label: 'Max. Steigung', value: '150 ‰ (15 %)' },
+      { label: 'Zahnteilung', value: '120 mm' },
+      { label: 'Material Zahnstange', value: 'Hochfester Vergütungsstahl' },
+      { label: 'Spurweite', value: '1000 mm' }
     ],
     hotspots: [
       {
-        id: 'flacheisen',
-        title: 'Einfaches Flacheisen',
-        description: 'Statt einer Leiterkonstruktion oder einer Keilschiene wird ein simples, gerades Flacheisen mit eingefrästen Zähnen verwendet. Das reduziert die Fertigungskosten und vereinfacht die Montage erheblich.',
+        id: 'monoblock',
+        title: 'Fugenlose Vollstahlschiene',
+        description: 'Es gibt keine einzelnen Platten oder Bolzen mehr. Die Zähne sind mit CNC-Präzision direkt aus einer extrem harten, gegossenen Stahlschiene gefräst.',
         top: '28%',
         left: '20%'
       },
       {
-        id: 'weichenbereich',
-        title: 'Vereinfachte Weichen',
-        description: 'Der eigentliche Zweck des Systems: Im Bereich von Weichen lässt sich die gerade Flacheisen-Zahnstange viel einfacher verlegen als die komplizierte Leiterkonstruktion nach Riggenbach. Heute werden neue Weichen fast ausschliesslich nach Von Roll ausgerüstet.',
-        top: '55%',
-        left: '48%'
-      },
-      {
-        id: 'kompatibilitaet',
-        title: 'Kompatibilität mit Riggenbach & Strub',
-        description: 'Die Zahnteilung des Von-Roll-Systems entspricht exakt jener von Riggenbach und Strub. Dadurch können alle drei Systeme auf derselben Strecke kombiniert werden, ohne dass die Lokomotive gewechselt werden muss.',
+        id: 'abt_kompatibel',
+        title: 'Universal-Verzahnung',
+        description: 'Durch ausgeklügelte Abmessungen können Loks mit Abt-Zahnrädern diese moderne Von-Roll-Zahnstange anstandslos befahren. Perfekt für Strecken-Teilerneuerungen.',
         top: '40%',
         left: '75%'
+      },
+      {
+        id: 'lange_lebensdauer',
+        title: 'Verschleissfreie Legierung',
+        description: 'Dank modernster Oberflächenhärtung trotzt dieses System extremsten Bremsreibungswärmen ohne thermischen Schock oder Geometrieverzug.',
+        top: '55%',
+        left: '48%'
       }
     ],
-    historyAndPurpose: 'Die Firma Von Roll entstand 1803 und fertigte in der Region Gussprodukte und Baukomponenten. Man vereinfachte die bestehenden Zahnstangen von Riggenbach und Strub, indem man ein einfaches flaches Eisen verwendete. Das System war nie als Ersatz gedacht, sondern als Ergänzung – insbesondere zur Lösung der komplizierten Weichenproblematik. Es wurde bei der Appenzellerbahn, der Ouchy–Lausanne-Flon (eingestellt) und der Zentralbahn (Strecke nach Engelberg) eingesetzt.',
-    maxGradientPercent: 25,
-    famousLine: 'Appenzellerbahn / Zentralbahn',
-    tagline: 'Die Weichenlösung',
+    historyAndPurpose: 'Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen. Es lässt sich extrem schnell verlegen, widersteht modernsten 100-Tonnen-Triebzügen spielend und ist heute das am häufigsten verbaute Zahnstangen-Modernisierungskit.',
+    maxGradientPercent: 15,
+    famousLine: 'Moderne Bergbahnen',
+    tagline: 'Fugenloser Vollstahl',
     iconKey: 'monoblock'
   }
 ];
@@ -254,14 +254,14 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 5,
-    question: 'Wofür wurde das System Von Roll hauptsächlich entwickelt?',
+    question: 'Welches Kriterium charakterisiert die moderne Schiene von Von Roll?',
     options: [
-      'Als vollständiger Ersatz für das System Riggenbach auf steilen Strecken',
-      'Für den Einsatz auf Breitspur-Zahnradbahnen in Südamerika',
-      'Zur Vereinfachung der Zahnstangenweichen bei bestehenden Bahnen',
-      'Als erstes System mit horizontalem Zahneingriff'
+      'Sie besteht aus elastischem Hartgummi',
+      'Sie ist ein CNC-gefrästes, monolithisches Funder-Vollstahlprofil ohne Nieten',
+      'Sie muss täglich manuell mit Sand bestreut werden',
+      'Sie benötigt drei Zahnräder übereinander'
     ],
-    correctOptionIndex: 2, // Zur Vereinfachung der Zahnstangenweichen
-    explanation: 'Das System Von Roll war nie als eigenständiges Streckensystem geplant. Ein simples flaches Eisen ersetzt im Weichenbereich die komplizierte Leiterkonstruktion nach Riggenbach – und wird dort bis heute fast ausschliesslich verbaut.'
+    correctOptionIndex: 1, // Sie ist ein CNC-gefrästes, monolithisches Funder-Vollstahlprofil ohne Nieten
+    explanation: 'Das moderne Von Roll System maximiert die Zuverlässigkeit, indem es Fugen und Nieten eliminiert. Ein hochfester Einblockstahl wird direkt vorgefräst.'
   }
 ];

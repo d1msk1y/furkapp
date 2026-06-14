@@ -101,18 +101,18 @@
     "abt": {
       "name": "Abt System",
       "type": "Multi-Lamella Rack",
-      "tagline": "Smooth-running & curve-friendly",
-      "famousLine": "Furka-Oberalp Railway",
+      "tagline": "Always in optimal engagement",
+      "famousLine": "Brienz Rothorn Railway",
       "explanationShort": "System invented by Roman Abt, using two or three offset, narrow rack plates. It runs extremely smoothly and provides continuous tooth contact.",
-      "steepDangerText": "With simple racks, tooth transitions often cause jolting, loud impacts and increased wear on the locomotive gear wheels.",
+      "steepDangerText": "On simple racks in steep sections, the gear wheel tended to climb onto the rack and then re-engage. The consequences were major damage to both the rack and gear wheel.",
       "solutionText": "Abt's ingenious answer: Offset thinner lamellae. While one gear wheel is just leaving a gap, the second gear wheel, offset slightly, is already fully engaging in the adjacent lamella.",
-      "historyAndPurpose": "Roman Abt was a student of Riggenbach. He designed this innovation to reduce the cost of manufacturing heavy solid rails. The Abt rack can be bent wonderfully, making it ideal for tight curve radii as well. It is the backbone of the historic Furka-Oberalp mountain route.",
+      "historyAndPurpose": "Roman Abt was a student of Riggenbach and learned his trade in his workshops in Olten. He designed the offset lamellae to prevent the dreaded climbing of the gear wheel. The system was used on many Swiss mountain railways and even on broad-gauge railways in South America. In Switzerland, only the two-lamella design is used. The Brienz Rothorn Railway is the only line to reach the maximum gradient of 250 ‰ on average.",
       "stats": {
         "max_gradient": "Max. Gradient",
         "tooth_pitch": "Tooth Pitch",
         "rack_material": "Rack Material",
         "gauge": "Gauge",
-        "max_gradient_value": "110 ‰ (11 %)",
+        "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
         "rack_material_value": "Special Rolled Steel",
         "gauge_value": "1000 mm (Metre Gauge)"

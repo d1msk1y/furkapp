@@ -101,18 +101,18 @@
     "abt": {
       "name": "Abt System",
       "type": "Mehrlamellige Steilbahnstange",
-      "tagline": "Laufruhig & kurvenfreudig",
-      "famousLine": "Furka-Oberalp-Bahn",
+      "tagline": "Stets im optimalen Eingriff",
+      "famousLine": "Brienz-Rothorn-Bahn",
       "explanationShort": "Von Roman Abt erfundenes System, das zwei oder drei versetzte, schmale Zahnstangenplatten nutzt. Es läuft extrem laufruhig und bietet stetigen Zahnkontakt.",
-      "steepDangerText": "Bei einfachen Zahnstangen kommt es bei Zahnübergängen oft zu Ruckeln, lauten Schlägen und erhöhtem Verschleiss an den Zahnrädern der Lok.",
+      "steepDangerText": "Bei einfachen Zahnstangen in steilen Abschnitten neigte das Zahnrad dazu, auf die Zahnstange aufzuklettern und dann wieder einzugreifen. Die Folgen waren grosse Schäden an Zahnstange und Zahnrad.",
       "solutionText": "Abts geniale Antwort: Versetzte dünnere Lamellen. Während das eine Zahnrad gerade eine Lücke verlässt, greift das zweite Zahnrad ein Stück versetzt bereits voll in die Nachbarlamelle.",
-      "historyAndPurpose": "Roman Abt war Schüler von Riggenbach. Er entwarf diese Innovation, um die Kosten für die Herstellung schwerer massiver Schienen zu senken. Die Abt-Zahnstange lässt sich wunderbar biegen, wodurch sie sich auch für enge Kurvenradien hervorragend eignet. Sie ist das Rückgrat der historischen Furka-Oberalp-Bergstrecke.",
+      "historyAndPurpose": "Roman Abt war Schüler von Riggenbach und lernte sein Handwerk in dessen Werkstätten in Olten. Er entwarf die versetzten Lamellen, um das gefürchtete Aufklettern des Zahnrades zu verhindern. Das System wurde bei vielen Schweizer Bergbahnen und sogar auf Breitspurbahnen in Südamerika eingesetzt. In der Schweiz wird ausschliesslich die zweilamellige Ausführung verwendet. Die Brienz-Rothorn-Bahn erreicht als einzige Bahn die maximale Steigung von durchschnittlich 250 ‰.",
       "stats": {
         "max_gradient": "Max. Steigung",
         "tooth_pitch": "Zahnteilung",
         "rack_material": "Material Zahnstange",
         "gauge": "Spurweite",
-        "max_gradient_value": "110 ‰ (11 %)",
+        "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
         "rack_material_value": "Spezial-Walzstahl",
         "gauge_value": "1000 mm (Meterspur)"
