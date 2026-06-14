@@ -65,6 +65,10 @@
     "theme_section": "APPARENCE",
     "theme_light": "CLAIR",
     "theme_dark": "SOMBRE",
+    "child_mode_section": "MODE ENFANT",
+    "child_mode_title": "ACTIVER LE MODE ENFANT",
+    "status_on": "ACTIVÉ",
+    "status_off": "DÉSACTIVÉ",
     "save_button": "CONFIRMER",
     "onboarding_subtitle": "BIENVENUE",
     "onboarding_title": "CHOISISSEZ VOS PRÉFÉRENCES"
@@ -246,6 +250,80 @@
         "Il nécessite trois roues dentées empilées les unes sur les autres"
       ],
       "explanation": "Le système moderne Von Roll maximise la fiabilité en éliminant les joints et les rivets. Un bloc d'acier haute résistance est directement pré-fraisé."
+    }
+  },
+  "child_mode": {
+    "badge": "🚂 POUR JEUNES EXPLORATEURS",
+    "detail_danger_label": "LE PROBLÈME",
+    "detail_solution_label": "L'ASTUCE GÉNIALE",
+    "systems": {
+      "locher": {
+        "explanationShort": "C'est le système de train le plus cool de tous ! Il monte le Pilatus super raide – presque comme grimper un mur ! 🏔️",
+        "steepDangerText": "La montagne est TELLEMENT raide que les roues normales glisseraient des rails. Imagine essayer de monter un toboggan super raide !",
+        "solutionText": "L'astuce géniale : Au lieu de roues au-dessus, ce train a des roues latérales qui agrippent le rail des deux côtés – comme tes mains qui tiennent une barre ! Il ne peut jamais tomber ! 🎉",
+        "tagline": "Le train le plus raide ! 🏔️"
+      },
+      "abt": {
+        "explanationShort": "Ce système malin utilise deux barres à dents côte à côte, légèrement décalées. Ainsi, le train a toujours une bonne prise ! 💪",
+        "steepDangerText": "Sur les anciens systèmes simples, la roue dentée sautait parfois et cassait des choses. C'était vraiment dangereux !",
+        "solutionText": "L'idée maligne de Roman Abt : Utiliser DEUX barres à dents l'une à côté de l'autre, décalées d'un petit peu. Quand une roue quitte un espace, l'autre agrippe déjà fermement ! 🧩",
+        "tagline": "Double prise ! 💪"
+      },
+      "strub": {
+        "explanationShort": "Ce système est super simple et marche très bien dans la neige d'hiver ! Les dents sont taillées directement dans un rail solide. ❄️",
+        "steepDangerText": "En hiver, les systèmes de rails compliqués se remplissent de neige et de glace. Le train ne peut plus avancer en sécurité ! ⛄",
+        "solutionText": "Emil Strub a fait simple : juste un rail solide avec des dents taillées au-dessus. La neige glisse toute seule ! Facile à nettoyer, facile à réparer ! ☀️",
+        "tagline": "Anti-neige ! ❄️"
+      },
+      "riggenbach": {
+        "explanationShort": "C'est le plus ancien système de chemin de fer de montagne en Europe ! Il ressemble à une échelle posée au sol avec des barres rondes en métal. 🪜",
+        "steepDangerText": "Les tout premiers trains étaient super lourds et les rails se tordaient et se cassaient sous leur poids !",
+        "solutionText": "La super idée de Riggenbach : Construire une échelle solide avec deux barres en métal et des barreaux ronds entre elles. La roue dentée du train roule sur ces barreaux comme en montant une échelle ! 🪜",
+        "tagline": "La toute première ! 🪜"
+      },
+      "von_roll": {
+        "explanationShort": "C'est le système le plus nouveau et le plus moderne ! Il est fait d'un seul gros morceau d'acier super solide – pas besoin de vis ni de boulons ! 🔧",
+        "steepDangerText": "Les anciens systèmes avec beaucoup de petites pièces cassaient tout le temps parce que les trains modernes sont si lourds et rapides !",
+        "solutionText": "La solution Von Roll : Fabriquer tout le rail à partir d'UN SEUL morceau d'acier super solide avec des machines contrôlées par ordinateur. Rien ne peut se desserrer ! 💎",
+        "tagline": "Super moderne ! 🔧"
+      }
+    },
+    "quiz_questions": {
+      "q1": {
+        "question": "Quel train peut monter la montagne la plus raide ?",
+        "options": ["Train Strub", "Train Locher", "Train Abt", "Train Riggenbach"],
+        "explanation": "Le train Locher monte le Pilate – c'est tellement raide que c'est presque comme un mur ! 48% de pente ! 🏔️"
+      },
+      "q2": {
+        "question": "Qu'est-ce qui rend le système Locher spécial ?",
+        "options": ["Il a des ailes", "Il utilise des aimants", "Ses roues agrippent le rail par les côtés", "Il va sous l'eau"],
+        "explanation": "Le train Locher a des roues latérales qui agrippent le rail des deux côtés – comme tes mains qui tiennent une barre ! Il ne glisse jamais ! 🤲"
+      },
+      "q3": {
+        "question": "Quel système ressemble à une échelle posée au sol ?",
+        "options": ["Système Riggenbach", "Système Von Roll", "Système Strub", "Système Abt"],
+        "explanation": "Le système de Riggenbach a des barres rondes en métal entre deux rails – exactement comme les barreaux d'une échelle ! 🪜"
+      },
+      "q4": {
+        "question": "Pourquoi le système Abt utilise-t-il DEUX barres à dents ?",
+        "options": [
+          "Parce qu'une barre est pour monter et une pour descendre",
+          "Pour que le train ait toujours une prise ferme et roule en douceur",
+          "Parce que ça a l'air plus cool",
+          "Pour faire plus de bruit"
+        ],
+        "explanation": "Deux barres décalées d'un petit peu signifie que le train a toujours au moins une roue qui agrippe fermement. Pas de secousses, pas de glissade ! 🧩"
+      },
+      "q5": {
+        "question": "Qu'est-ce qui est spécial dans le rail Von Roll ?",
+        "options": [
+          "Il est en caoutchouc",
+          "Il est fait d'UN SEUL gros morceau d'acier super solide",
+          "Il faut le peindre chaque jour",
+          "Il ne marche qu'en été"
+        ],
+        "explanation": "Le rail Von Roll est taillé dans un énorme bloc d'acier par une machine contrôlée par ordinateur. Pas de vis, pas de boulons – super solide ! 💪"
+      }
     }
   }
 }
