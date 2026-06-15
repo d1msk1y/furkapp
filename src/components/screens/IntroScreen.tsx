@@ -91,15 +91,14 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
             <span>{t('intro.explore_button')}</span>
             <ArrowRight size={28} strokeWidth={3} className="animate-pulse" />
           </Button>
-          <button
-            type="button"
+          <Button
+            variant="secondary"
             onClick={onOpenSettings}
             aria-label={t('common.settings')}
-            className="aspect-square h-16 shrink-0 flex items-center justify-center border-[3px] border-iron-dark bg-cement-light hover:bg-cement-sand active:translate-x-[4px] active:translate-y-[4px] transition-all duration-75 cursor-pointer"
-            style={{ boxShadow: '4px 4px 0px var(--app-shadow-color)' }}
+            className="aspect-square h-16 shrink-0 flex items-center justify-center p-0"
           >
             <SlidersHorizontal size={22} strokeWidth={3} className="text-iron-dark" />
-          </button>
+          </Button>
         </div>
       </div>
     </ScreenContainer>

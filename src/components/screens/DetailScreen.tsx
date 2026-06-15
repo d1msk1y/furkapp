@@ -14,7 +14,7 @@ import {
   Layers,
   MoveHorizontal,
 } from 'lucide-react';
-import { ZahnradSystem, Hotspot } from '../../types';
+import { ZahnradSystem, Hotspot, SystemId } from '../../types';
 import ScreenContainer from '../layout/ScreenContainer';
 import Button from '../ui/Button';
 import Modal from '../ui/Modal';
@@ -37,7 +37,7 @@ function statIcon(label: string) {
 interface DetailScreenProps {
   readonly system: ZahnradSystem;
   readonly onBackToDashboard: () => void;
-  readonly onStartQuiz: () => void;
+  readonly onStartQuiz: (systemId: SystemId) => void;
 }
 
 export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }: Readonly<DetailScreenProps>) {
@@ -257,7 +257,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
           <Button
             variant="primary"
             className="w-full h-16 text-xl flex items-center justify-center gap-2"
-            onClick={onStartQuiz}
+            onClick={() => onStartQuiz(system.id)}
           >
             <HelpCircle size={22} strokeWidth={3} />
             {t('detail.quiz_cta')}

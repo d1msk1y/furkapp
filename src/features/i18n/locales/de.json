@@ -19,8 +19,8 @@
   "dashboard": {
     "title": "DIE 5 ZAHNRADSYSTEME",
     "back_label": "Zurück zur Startseite",
-    "quiz_cta": "WISSEN TESTEN",
-    "quiz_highscore": "BEST: {{score}} / {{total}}"
+    "achievements_cta": "ERFOLGE ANZEIGEN",
+    "achievements_units": "{{count}} / {{total}} EINHEITEN"
   },
   "detail": {
     "back_label": "Zurück zur Auswahl",
@@ -29,7 +29,7 @@
     "danger_label": "Die Gefahr",
     "solution_label": "Die Lösung",
     "history_label": "Historische Details",
-    "quiz_cta": "WISSEN TESTEN",
+    "quiz_cta": "QUIZ STARTEN",
     "stats_note": "HINWEIS: Alle Toleranz-Angaben basieren auf den Originalzeichnungen und Archivbeständen der Furka-Oberalp-Bahngesellschaft aus dem späten 19. Jahrhundert.",
     "hotspot_hint": "ROTE HOTSPOTS TIPPFÄHIG"
   },
@@ -43,11 +43,31 @@
     "result_perfect": "PERFEKTES ERGEBNIS!",
     "result_good": "GUT GEMACHT!",
     "result_ok": "WEITER ÜBEN!",
+    "result_achievement_earned": "🎉 ERFOLGSEINHEIT VERDIENT!",
+    "result_achievement_missed": "Erreiche mindestens 3/5 um eine Einheit zu verdienen.",
     "restart_button": "NEU STARTEN",
     "back_to_dashboard": "ZURÜCK ZUR ÜBERSICHT",
     "correct_label": "RICHTIG",
     "wrong_label": "FALSCH",
     "explanation_prefix": "ERKLÄRUNG:"
+  },
+  "achievements": {
+    "title": "ERFOLGE",
+    "back_label": "Zurück",
+    "total_units": "{{count}} / {{total}} ERFOLGSEINHEITEN",
+    "not_attempted": "NICHT VERSUCHT",
+    "best_score": "BEST: {{score}} / {{total}}",
+    "earned": "VERDIENT",
+    "locked": "GESPERRT",
+    "start_quiz": "QUIZ STARTEN",
+    "prizes_title": "PREISE",
+    "prize_units_required": "{{count}} EINHEITEN BENÖTIGT",
+    "prize_bronze_name": "BRONZE-TICKET",
+    "prize_bronze_desc": "Dein erster Schritt in die alpine Ingenieurskunst – du hast Grundwissen über ein Zahnradsystem bewiesen!",
+    "prize_silver_name": "SILBER-PASS",
+    "prize_silver_desc": "Ein erfahrener Bergbahn-Enthusiast – drei Systeme gemeistert! Die Hälfte des Berges liegt hinter dir.",
+    "prize_gold_name": "GOLDENER GIPFELPASS",
+    "prize_gold_desc": "Die ultimative Auszeichnung – alle fünf Zahnradsysteme gemeistert! Du bist ein wahrer Schweizer Bahnexperte."
   },
   "error": {
     "badge": "DOKUMENTATION INSTABIL",
@@ -215,41 +235,141 @@
       }
     }
   },
-  "quiz_questions": {
-    "q1": {
-      "question": "Welches System überwindet die grösste Steigung im Alpenraum?",
-      "options": ["System Strub", "System Locher", "System Abt", "System Riggenbach"],
-      "explanation": "Das System Locher hält mit schwindelerregenden 48% (480 ‰) Steigung an der weltberühmten Pilatusbahn den absoluten Weltrekord!"
+  "system_quiz": {
+    "locher": {
+      "q1": {
+        "question": "Welche maximale Steigung kann das Locher-System überwinden?",
+        "options": ["250 ‰ (25%)", "480 ‰ (48%)", "350 ‰ (35%)", "150 ‰ (15%)"],
+        "explanation": "Das Locher-System an der Pilatusbahn hält mit 480 ‰ (48%) den absoluten Weltrekord – die steilste Zahnradbahn der Erde!"
+      },
+      "q2": {
+        "question": "Wie greifen die Zahnräder beim System Locher ein?",
+        "options": ["Vertikal von oben", "Schräg im 45°-Winkel", "Horizontal von den Seiten", "Magnetisch von unten"],
+        "explanation": "Zwei horizontal montierte Zahnräder greifen von links und rechts in die mittlere Zahnstange. Das verhindert das Herausspringen des Zahnrads absolut."
+      },
+      "q3": {
+        "question": "Wie breit ist die Spurweite der Pilatusbahn?",
+        "options": ["800 mm", "1000 mm", "1435 mm", "600 mm"],
+        "explanation": "Die Pilatusbahn verwendet eine 800 mm Spurweite – schmaler als üblich, um das extrem steile und kurvige Berggelände zu bewältigen."
+      },
+      "q4": {
+        "question": "Welche Sicherheitseinrichtung verhindert das Abheben der Lok vom Gleis?",
+        "options": ["Magnetschlösser", "Schwere Ballastgewichte", "Führungsrollen, die unter die Zahnstange greifen", "An den Berg verankerte Stahlseile"],
+        "explanation": "Untere Flansch-Führungsrollen greifen physisch unter den Zahnstangenkopf und machen ein Abheben selbst bei extremem Wind unmöglich."
+      },
+      "q5": {
+        "question": "Wer erfand das Locher-System?",
+        "options": ["Niklaus Riggenbach", "Roman Abt", "Emil Strub", "Eduard Locher"],
+        "explanation": "Eduard Locher, ein renommierter Zürcher Ingenieur, erfand dieses revolutionäre horizontale Zahnradsystem speziell für die Pilatusbahn im Jahr 1889."
+      }
     },
-    "q2": {
-      "question": "Wie greifen die Zahnräder beim legendären System Locher ein?",
-      "options": ["Vertikal von oben", "Schräg im 45°-Winkel", "Horizontal von den Seiten", "Gar nicht, es funktioniert magnetisch"],
-      "explanation": "Zwei horizontal montierte Zahnräder greifen von links und rechts in die mittlere Zahnstange. Das verhindert das Herausspringen des Zahnrads absolut."
+    "abt": {
+      "q1": {
+        "question": "Warum entwickelte Roman Abt versetzte Lamellenplatten?",
+        "options": ["Um Gewicht im Kessel einzusparen", "Damit immer ein Zahn voll eingreift und extreme Laufruhe entsteht", "Um Weichen wegzulassen", "Um Schmieröl einzusparen"],
+        "explanation": "Der Versatz sorgt dafür, dass die Zahnradübergänge kontinuierlich fliessend ohne ruckelnde Leerläufe stattfinden – ein Meilenstein der Laufruhe."
+      },
+      "q2": {
+        "question": "Wer war Roman Abts Lehrer im Eisenbahnwesen?",
+        "options": ["Niklaus Riggenbach", "Eduard Locher", "Emil Strub", "Gottlieb Daimler"],
+        "explanation": "Roman Abt war Schüler von Riggenbach und lernte sein Handwerk in dessen Werkstätten in Olten, bevor er sein eigenes verbessertes System entwickelte."
+      },
+      "q3": {
+        "question": "Wie viele Lamellenplatten verwendet die Schweizer Variante des Abt-Systems?",
+        "options": ["Eine", "Vier", "Zwei", "Drei"],
+        "explanation": "In der Schweiz wird ausschliesslich die zweilamellige Ausführung verwendet, obwohl es weltweit auch dreilamellige Varianten gibt."
+      },
+      "q4": {
+        "question": "Welche berühmte Schweizer Bahn nutzt das Abt-System bei maximaler Steigung?",
+        "options": ["Pilatusbahn", "Brienz-Rothorn-Bahn", "Jungfraubahn", "Rigibahn"],
+        "explanation": "Die Brienz-Rothorn-Bahn erreicht als einzige Bahn die maximale Steigung des Abt-Systems von durchschnittlich 250 ‰."
+      },
+      "q5": {
+        "question": "Welches Problem löst das versetzte Abt-Design?",
+        "options": ["Aufklettern des Zahnrads auf die Zahnstange", "Schneeansammlung", "Korrosion der Gleise", "Übermässiger Lärm"],
+        "explanation": "Das gefürchtete 'Aufklettern' – bei dem das Zahnrad über die Zahnstange springt und schwere Schäden verursacht – wird durch die versetzten Lamellen mit stetigem Eingriff verhindert."
+      }
     },
-    "q3": {
-      "question": "Welches Zahnradsystem ist wegen seiner leiterähnlichen Form mit Rundbolzen bekannt?",
-      "options": ["System Riggenbach", "System Von Roll", "System Strub", "System Abt"],
-      "explanation": "Niklaus Riggenbachs System nutzt ein offenes Stahlbett mit runden Sprossenbolzen, durch das Schnee und Geröll ungestört hindurchfallen können."
+    "strub": {
+      "q1": {
+        "question": "Was macht das Strub-System ideal für den Winterbetrieb?",
+        "options": ["Eingebaute Heizung", "Eingeschlossene Tunnelstrecken", "Offene Bauweise ermöglicht einfache Schneeräumung", "Frostschutzbeschichtung"],
+        "explanation": "Die offene Oberflächenform des Strub-Systems ermöglicht es, Schnee leicht abzukehren – ideal für ganzjährigen Tourismus auch in harten alpinen Wintern."
+      },
+      "q2": {
+        "question": "Welche berühmte Bahn führte das Strub-System ein?",
+        "options": ["Jungfraubahn", "Pilatusbahn", "Rigibahn", "Brienz-Rothorn-Bahn"],
+        "explanation": "Das Strub-System feierte seine Premiere an der legendären Jungfraubahn – eine der ikonischsten Bergbahnen der Welt."
+      },
+      "q3": {
+        "question": "Wie werden die Zähne beim Strub-System hergestellt?",
+        "options": ["Separat gegossen und verschraubt", "Direkt in den massiven Schienenkopf gefräst", "Auf eine Grundplatte geschweisst", "Aus Einzelteilen geschmiedet"],
+        "explanation": "Die Zähne werden direkt in den breiten, massiven Kopf einer gewalzten Breitfussschiene gefräst – ein minimalistisches und wirtschaftliches Einteile-Design."
+      },
+      "q4": {
+        "question": "Welche Sicherheitseinrichtung nutzt die konischen Seiten des Strub-Schienenkopfs?",
+        "options": ["Nur dekorativ", "Wasserablaufrinnen", "Windabweiser", "Not-Sicherheitszangen, die sich um den Kopf verkeilen"],
+        "explanation": "Sicherheits-Notzangen greifen bei Gefahr um den konischen Schienenkopf und verkeilen sich bombenfest, was ein Umstürzen verhindert."
+      },
+      "q5": {
+        "question": "Was war Emil Strubs Hauptdesignpriorität?",
+        "options": ["Wirtschaftlichkeit und Hochgebirgstauglichkeit", "Maximale Geschwindigkeit", "Ästhetisches Erscheinungsbild", "Kompatibilität mit Dampfloks"],
+        "explanation": "Emil Strub legte den Fokus auf Wirtschaftlichkeit und Hochgebirgstauglichkeit und schuf das minimalistischste und kosteneffizienteste Zahnradsystem seiner Epoche."
+      }
     },
-    "q4": {
-      "question": "Warum entwickelte Roman Abt das System mit mehreren versetzten Lamellenplatten?",
-      "options": [
-        "Um Gewicht im Lokomotivkessel einzusparen",
-        "Damit immer ein Zahn voll eingreift und extreme Laufruhe entsteht",
-        "Ausschliesslich um Weichen wegzulassen",
-        "Um Schmieröl an den Triebachsen einzusparen"
-      ],
-      "explanation": "Der Versatz der Schienenlamellen sorgt dafür, dass die Zahnradübergänge kontinuierlich fliessend ohne ruckelnde Leerläufe stattfinden. Ein Meilenstein der Ergonomie!"
+    "riggenbach": {
+      "q1": {
+        "question": "Welches Zahnradsystem ähnelt einer Leiter mit runden Bolzensprossen?",
+        "options": ["Riggenbach System", "Von Roll System", "Strub System", "Abt System"],
+        "explanation": "Riggenbachs System nutzt ein offenes Stahlbett mit runden Sprossenbolzen zwischen zwei U-Profilen – was ihm das typische Leiter-Aussehen verleiht."
+      },
+      "q2": {
+        "question": "In welchem Jahr fuhr die erste europäische Bergbahn?",
+        "options": ["1850", "1863", "1871", "1889"],
+        "explanation": "1871 wurde die Rigibahn – mit Riggenbachs System – zur ersten Bergbahn Europas, ein absoluter Meilenstein der Schweizer Eisenbahngeschichte."
+      },
+      "q3": {
+        "question": "Welchen Vorteil bietet die hohle Leiterkonstruktion?",
+        "options": ["Gewichtsreduzierung", "Selbstreinigung – Geröll fällt hindurch", "Bessere Aerodynamik", "Schalldämpfung"],
+        "explanation": "Da die Leiter unten hohl ist, fallen lose Kieselsteine und klebriger Matsch einfach durch das Zahnbett hindurch – ein selbstreinigendes Design."
+      },
+      "q4": {
+        "question": "Was war Niklaus Riggenbachs Position bei der Centralbahn?",
+        "options": ["Betriebsleiter", "Chefbuchhalter", "Stationsvorsteher", "Lokführer"],
+        "explanation": "Niklaus Riggenbach war der geniale Betriebsleiter der Centralbahn in Basel, als er seine Zahnradtechnik patentieren liess, um den Rigi-Berg zu bezwingen."
+      },
+      "q5": {
+        "question": "Aus welchem Material bestanden die originalen Riggenbach-Sprossen?",
+        "options": ["Aluminium", "Kupfer", "Holz", "Geschmiedetes Schmiedeeisen und Stahl"],
+        "explanation": "Die Sprossen waren solide geschmiedete Rundstahlbolzen (ursprünglich Schmiedeeisen), die exakt im Zahnabstand horizontal eingepasst waren."
+      }
     },
-    "q5": {
-      "question": "Welches Kriterium charakterisiert die moderne Schiene von Von Roll?",
-      "options": [
-        "Sie besteht aus elastischem Hartgummi",
-        "Sie ist ein CNC-gefrästes, monolithisches Funder-Vollstahlprofil ohne Nieten",
-        "Sie muss täglich manuell mit Sand bestreut werden",
-        "Sie benötigt drei Zahnräder übereinander"
-      ],
-      "explanation": "Das moderne Von Roll System maximiert die Zuverlässigkeit, indem es Fugen und Nieten eliminiert. Ein hochfester Einblockstahl wird direkt vorgefräst."
+    "von_roll": {
+      "q1": {
+        "question": "Was unterscheidet das Von Roll System grundlegend von älteren Systemen?",
+        "options": ["Es nutzt Gummizähne", "Es ist ein monolithisches Gusselement ohne Einzelteile", "Es benötigt drei Zahnräder", "Es funktioniert nur auf ebenem Gelände"],
+        "explanation": "Das Von Roll System ist eine komplett im Walzwerk gegossene massive Einzelschiene mit vertikaler Fräsverzahnung – keine Schweissnähte, keine Nieten, kein Lockern."
+      },
+      "q2": {
+        "question": "Mit welchem älteren System ist Von Roll voll kompatibel?",
+        "options": ["Abt System", "Riggenbach System", "Locher System", "Strub System"],
+        "explanation": "Durch ausgeklügelte Abmessungen können Loks mit Abt-Zahnrädern diese moderne Von-Roll-Zahnstange anstandslos befahren – perfekt für schrittweise Streckenmodernisierung."
+      },
+      "q3": {
+        "question": "Wie werden die Zähne beim Von Roll System hergestellt?",
+        "options": ["Von Hand geschmiedet", "3D-gedruckt aus Titan", "CNC-Präzisionsfräsung aus Gussstahl", "Lasergeschnitten aus Kohlefaser"],
+        "explanation": "Die Zähne werden mit CNC-Präzision direkt aus einer extrem harten, gegossenen Stahlschiene gefräst – modernste Fertigung für maximale Genauigkeit und Haltbarkeit."
+      },
+      "q4": {
+        "question": "Welches Unternehmen produziert heute das Von Roll System?",
+        "options": ["Stadler Rail", "Tenconi (ehemals Von Roll)", "Bombardier", "Siemens"],
+        "explanation": "Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen."
+      },
+      "q5": {
+        "question": "Welche maximale Steigung unterstützt das Von Roll System?",
+        "options": ["480 ‰ (48%)", "250 ‰ (25%)", "100 ‰ (10%)", "150 ‰ (15%)"],
+        "explanation": "Das Von Roll System unterstützt bis zu 150 ‰ (15%) Steigung – konzipiert für moderne, schwere Bergbahnen statt extreme Steilstrecken."
+      }
     }
   },
   "child_mode": {
@@ -288,41 +408,141 @@
         "tagline": "Supermodern! 🔧"
       }
     },
-    "quiz_questions": {
-      "q1": {
-        "question": "Welcher Zug kann den steilsten Berg hinauffahren?",
-        "options": ["Strub-Zug", "Locher-Zug", "Abt-Zug", "Riggenbach-Zug"],
-        "explanation": "Der Locher-Zug fährt den Pilatus hinauf – so steil, dass es fast wie eine Wand ist! 48% steil! 🏔️"
+    "system_quiz": {
+      "locher": {
+        "q1": {
+          "question": "Wie steil kann der Locher-Zug fahren?",
+          "options": ["Ein bisschen steil", "Super mega steil – 48%!", "Gar nicht steil", "Nur mittel steil"],
+          "explanation": "Der Locher-Zug fährt den Pilatus mit 48% hinauf – das ist fast wie eine Wand hochfahren! 🏔️"
+        },
+        "q2": {
+          "question": "Was macht das Locher-System so besonders?",
+          "options": ["Es hat Flügel", "Es benutzt Magnete", "Seine Räder greifen die Schiene von der Seite", "Es fährt unter Wasser"],
+          "explanation": "Der Locher-Zug hat seitliche Räder, die die Schiene von beiden Seiten packen – wie deine Hände an einer Stange! 🤲"
+        },
+        "q3": {
+          "question": "Wie breit sind die Locher-Zuggleise?",
+          "options": ["800 mm – ziemlich schmal!", "Richtig breit!", "So breit wie eine Strasse", "Winzig wie bei einer Spielzeugeisenbahn"],
+          "explanation": "Die Gleise sind 800 mm breit – schmaler als normal, damit der Zug auf den steilen Berg passt! 🚂"
+        },
+        "q4": {
+          "question": "Was verhindert, dass der Zug bei starkem Wind abhebt?",
+          "options": ["Magie", "Schwere Steine oben drauf", "Spezielle Rollen, die unter die Schiene greifen", "Klebstoff"],
+          "explanation": "Spezielle Rollen greifen unter die Schiene, sodass der Zug nie abheben kann – auch bei supersturmigem Wetter! 💨"
+        },
+        "q5": {
+          "question": "Wer hat dieses tolle Zugsystem erfunden?",
+          "options": ["Ein Pirat", "Ein Bäcker", "Ein Zauberer", "Eduard Locher – ein cleverer Ingenieur!"],
+          "explanation": "Eduard Locher war ein superschlauer Ingenieur aus Zürich, der das 1889 erfunden hat! 🧠"
+        }
       },
-      "q2": {
-        "question": "Was macht das Locher-System so besonders?",
-        "options": ["Es hat Flügel", "Es benutzt Magnete", "Seine Räder greifen die Schiene von der Seite", "Es fährt unter Wasser"],
-        "explanation": "Der Locher-Zug hat seitliche Räder, die die Schiene von beiden Seiten packen – wie deine Hände an einer Stange! So rutscht er nie ab! 🤲"
+      "abt": {
+        "q1": {
+          "question": "Warum benutzt das Abt-System ZWEI Zahnstangen?",
+          "options": ["Weil eine zum Hochfahren und eine zum Runterfahren ist", "Damit der Zug immer festen Halt hat und ruhig fährt", "Weil es cooler aussieht", "Um mehr Lärm zu machen"],
+          "explanation": "Zwei Zahnstangen, ein bisschen versetzt, bedeuten, dass der Zug immer mindestens ein Rad fest im Griff hat. Kein Ruckeln, kein Rutschen! 🧩"
+        },
+        "q2": {
+          "question": "Wer hat Roman Abt das Zugbauen beigebracht?",
+          "options": ["Niklaus Riggenbach!", "Sein Haushund", "Niemand, er konnte es einfach", "Ein Weltraum-Alien"],
+          "explanation": "Roman Abt hat von Niklaus Riggenbach in seiner Werkstatt gelernt – und dann sein eigenes noch besseres System gemacht! 📚"
+        },
+        "q3": {
+          "question": "Was war das GROSSE Problem bei alten Einschienen-Systemen?",
+          "options": ["Sie waren zu leise", "Sie waren zu bunt", "Das Zahnrad sprang hoch und machte Sachen kaputt!", "Sie rochen komisch"],
+          "explanation": "Das Zahnrad sprang manchmal von der Schiene hoch – sehr gefährlich! Abts Zwei-Schienen-System hat das für immer gelöst! ✅"
+        },
+        "q4": {
+          "question": "Welcher Bergzug fährt mit dem Abt-System?",
+          "options": ["Pilatuszug", "Brienz-Rothorn-Zug! 🏔️", "Ein U-Boot", "Ein Raumschiff"],
+          "explanation": "Die Brienz-Rothorn-Bahn nutzt das Abt-System und fährt bis zu 250 ‰ Steigung hinauf! 🏔️"
+        },
+        "q5": {
+          "question": "Wie macht das Abt-System die Fahrt ruhig?",
+          "options": ["Ein Rad hat immer festen Griff an den Zähnen!", "Es schwebt auf Luft", "Es benutzt Kissen", "Es fährt superlangsa"],
+          "explanation": "Weil die Stangen versetzt sind, greift immer ein Rad perfekt – kein Ruckeln! Geschmeidig wie Butter! 🧈"
+        }
       },
-      "q3": {
-        "question": "Welches System sieht aus wie eine Leiter auf dem Boden?",
-        "options": ["Riggenbach-System", "Von-Roll-System", "Strub-System", "Abt-System"],
-        "explanation": "Riggenbachs System hat runde Metallstangen zwischen zwei Schienen – genau wie die Sprossen einer Leiter! 🪜"
+      "strub": {
+        "q1": {
+          "question": "Warum ist das Strub-System toll im Winter?",
+          "options": ["Es hat eine Heizung", "Es versteckt sich unter der Erde", "Schnee rutscht vom einfachen offenen Design ab!", "Es funktioniert nur im Sommer"],
+          "explanation": "Die Strub-Schiene ist so einfach und offen, dass Schnee einfach abrutscht! Perfekt für schneebedeckte Berge! ❄️"
+        },
+        "q2": {
+          "question": "Welche berühmte Bahn nutzt das Strub-System?",
+          "options": ["Die Jungfraubahn!", "Die Mond-Bahn", "Der Pizza-Express", "Der Unterwasser-Zug"],
+          "explanation": "Die superberühmte Jungfraubahn in der Schweiz nutzt Strubs cleveres System! 🏔️"
+        },
+        "q3": {
+          "question": "Wie werden die Zähne an einer Strub-Schiene gemacht?",
+          "options": ["Mit Superkleber angeklebt", "Direkt in eine starke Schiene geschnitzt!", "Aufgemalt", "Aus Schokolade gemacht"],
+          "explanation": "Die Zähne werden direkt in die Oberseite einer grossen, starken Schiene geschnitzt – einfach und robust! 💪"
+        },
+        "q4": {
+          "question": "Was passiert im Notfall bei einem Strub-Zug?",
+          "options": ["Der Zug fliegt weg", "Alle springen ab", "Der Zug wird unsichtbar", "Spezielle Zangen greifen die Schiene superfest!"],
+          "explanation": "Notzangen greifen um den Schienenkopf und halten superfest – der Zug kann nie umkippen! 🦾"
+        },
+        "q5": {
+          "question": "Was war Emil Strubs grosse Idee?",
+          "options": ["Halte es einfach und mach es bergtauglich!", "Mach es so kompliziert wie möglich", "Benutze nur Gummi", "Bau es aus Papier"],
+          "explanation": "Emil Strub wollte alles einfach und robust halten – perfekt für Hochgebirgsbahnen! 🎯"
+        }
       },
-      "q4": {
-        "question": "Warum benutzt das Abt-System ZWEI Zahnstangen?",
-        "options": [
-          "Weil eine zum Hochfahren und eine zum Runterfahren ist",
-          "Damit der Zug immer festen Halt hat und ruhig fährt",
-          "Weil es cooler aussieht",
-          "Um mehr Lärm zu machen"
-        ],
-        "explanation": "Zwei Zahnstangen, ein bisschen versetzt, bedeuten, dass der Zug immer mindestens ein Rad fest im Griff hat. Kein Ruckeln, kein Rutschen! 🧩"
+      "riggenbach": {
+        "q1": {
+          "question": "Wie sieht das Riggenbach-System aus?",
+          "options": ["Wie eine Leiter auf dem Boden! 🪜", "Wie eine Schlange", "Wie ein Regenbogen", "Wie ein Raumschiff"],
+          "explanation": "Riggenbachs System hat runde Metallstangen zwischen zwei Schienen – genau wie die Sprossen einer Leiter! 🪜"
+        },
+        "q2": {
+          "question": "Wann fuhr der erste Bergzug in Europa?",
+          "options": ["Letzte Woche", "Im Jahr 2000", "Im Jahr 1871!", "Vor den Dinosauriern"],
+          "explanation": "1871 wurde die Rigibahn die allererste Bergbahn in ganz Europa! 🎉"
+        },
+        "q3": {
+          "question": "Was kann das Leiter-Design Cooles?",
+          "options": ["Es leuchtet im Dunkeln", "Steine und Matsch fallen durch – Selbstreinigung!", "Es singt Lieder", "Es wechselt die Farbe"],
+          "explanation": "Weil die Leiter unten hohl ist, fallen Steine und Matsch einfach durch – sie reinigt sich selbst! 🧹"
+        },
+        "q4": {
+          "question": "Wo hat Riggenbach gearbeitet?",
+          "options": ["Bei der Centralbahn in Basel!", "In einer Pizzeria", "In einem Raumschiff", "In einer Spielzeugfabrik"],
+          "explanation": "Niklaus Riggenbach war der clevere Chef bei der Centralbahn in Basel! 🚂"
+        },
+        "q5": {
+          "question": "Woraus bestehen die Sprossen?",
+          "options": ["Plastik", "Holz", "Papier", "Starkes geschmiedetes Eisen und Stahl!"],
+          "explanation": "Die Sprossen sind aus superstarkem geschmiedetem Eisen und Stahl – sie halten richtig schwere Züge aus! 💪"
+        }
       },
-      "q5": {
-        "question": "Was ist besonders an der Von-Roll-Schiene?",
-        "options": [
-          "Sie ist aus Gummi",
-          "Sie ist aus EINEM grossen Stück superstärkem Stahl gemacht",
-          "Sie muss jeden Tag angemalt werden",
-          "Sie funktioniert nur im Sommer"
-        ],
-        "explanation": "Die Von-Roll-Schiene wird aus einem riesigen Stahlblock von einer computergesteuerten Maschine geschnitzt. Keine Schrauben, keine Bolzen – superstark! 💪"
+      "von_roll": {
+        "q1": {
+          "question": "Was ist besonders an der Von-Roll-Schiene?",
+          "options": ["Sie ist aus Gummi", "Sie ist aus EINEM grossen Stück superstärkem Stahl gemacht!", "Sie muss jeden Tag angemalt werden", "Sie funktioniert nur im Sommer"],
+          "explanation": "Die Von-Roll-Schiene wird aus einem riesigen Stahlblock von einer computergesteuerten Maschine geschnitzt. Keine Schrauben, keine Bolzen – superstark! 💪"
+        },
+        "q2": {
+          "question": "Können alte Abt-Züge auf Von-Roll-Gleisen fahren?",
+          "options": ["Ja! Sie passen perfekt!", "Auf keinen Fall!", "Nur dienstags", "Nur rückwärts"],
+          "explanation": "Von-Roll-Gleise sind clever designed, sodass alte Abt-Züge auch darauf fahren können – superschlau! 🧠"
+        },
+        "q3": {
+          "question": "Wie hilft ein Computer beim Bau von Von-Roll-Schienen?",
+          "options": ["Er spielt Spiele darauf", "Er schreibt E-Mails", "Er schneidet die Zähne mit CNC-Maschinen präzise!", "Er malt sie in hübschen Farben an"],
+          "explanation": "CNC bedeutet Computergesteuerte Numerische Steuerung – ein Computer sagt einer Maschine genau, wo jeder Zahn geschnitten werden muss. Superpräzise! 🤖"
+        },
+        "q4": {
+          "question": "Welche Firma baut heute Von-Roll-Schienen?",
+          "options": ["Eine Spielzeugfirma", "Tenconi!", "Eine Lebensmittelfirma", "Eine Weltraumagentur"],
+          "explanation": "Die Firma heisst jetzt Tenconi – sie machen die modernsten Zahnschienen der Schweiz! 🏭"
+        },
+        "q5": {
+          "question": "Warum gehen Von-Roll-Schienen nicht leicht kaputt?",
+          "options": ["Weil sie magisch sind", "Weil jemand sie den ganzen Tag beobachtet", "Weil sie aus Gelee sind", "Weil sie EIN Stück superharten Stahl ohne Schwachstellen sind!"],
+          "explanation": "Ohne Schrauben, Bolzen oder Verbindungen gibt es KEINE Schwachstellen, wo die Schiene brechen könnte. Ein Stück = superstark! 💎"
+        }
       }
     }
   }

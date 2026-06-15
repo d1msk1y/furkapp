@@ -19,8 +19,8 @@
   "dashboard": {
     "title": "THE 5 RACK SYSTEMS",
     "back_label": "Back to Start",
-    "quiz_cta": "TEST YOUR KNOWLEDGE",
-    "quiz_highscore": "BEST: {{score}} / {{total}}"
+    "achievements_cta": "VIEW ACHIEVEMENTS",
+    "achievements_units": "{{count}} / {{total}} UNITS"
   },
   "detail": {
     "back_label": "Back to Selection",
@@ -29,7 +29,7 @@
     "danger_label": "THE DANGER",
     "solution_label": "THE SOLUTION",
     "history_label": "Historical Details",
-    "quiz_cta": "TEST YOUR KNOWLEDGE",
+    "quiz_cta": "START QUIZ",
     "stats_note": "NOTE: All tolerance figures are based on the original drawings and archive holdings of the Furka-Oberalp Railway Company from the late 19th century.",
     "hotspot_hint": "RED HOTSPOTS TAPPABLE"
   },
@@ -43,11 +43,31 @@
     "result_perfect": "PERFECT SCORE!",
     "result_good": "WELL DONE!",
     "result_ok": "KEEP PRACTISING!",
+    "result_achievement_earned": "🎉 ACHIEVEMENT UNIT EARNED!",
+    "result_achievement_missed": "Score at least 3/5 to earn a unit.",
     "restart_button": "RESTART",
     "back_to_dashboard": "BACK TO OVERVIEW",
     "correct_label": "CORRECT",
     "wrong_label": "INCORRECT",
     "explanation_prefix": "EXPLANATION:"
+  },
+  "achievements": {
+    "title": "ACHIEVEMENTS",
+    "back_label": "Back",
+    "total_units": "{{count}} / {{total}} ACHIEVEMENT UNITS",
+    "not_attempted": "NOT ATTEMPTED",
+    "best_score": "BEST: {{score}} / {{total}}",
+    "earned": "EARNED",
+    "locked": "LOCKED",
+    "start_quiz": "START QUIZ",
+    "prizes_title": "PRIZES",
+    "prize_units_required": "{{count}} UNITS REQUIRED",
+    "prize_bronze_name": "BRONZE TICKET",
+    "prize_bronze_desc": "Your first step into alpine engineering mastery — you've proven basic knowledge of a rack system!",
+    "prize_silver_name": "SILVER PASS",
+    "prize_silver_desc": "An experienced alpine railway enthusiast — three systems conquered! Half the mountain is behind you.",
+    "prize_gold_name": "GOLDEN SUMMIT PASS",
+    "prize_gold_desc": "The ultimate achievement — all five rack systems mastered! You are a true Swiss railway expert."
   },
   "error": {
     "badge": "DOCUMENTATION UNSTABLE",
@@ -215,41 +235,141 @@
       }
     }
   },
-  "quiz_questions": {
-    "q1": {
-      "question": "Which system overcomes the greatest gradient in the Alpine region?",
-      "options": ["Strub System", "Locher System", "Abt System", "Riggenbach System"],
-      "explanation": "The Locher System holds the absolute world record with a dizzying 48% (480 ‰) gradient on the world-famous Pilatus Railway!"
+  "system_quiz": {
+    "locher": {
+      "q1": {
+        "question": "What is the maximum gradient the Locher system can overcome?",
+        "options": ["250 ‰ (25%)", "480 ‰ (48%)", "350 ‰ (35%)", "150 ‰ (15%)"],
+        "explanation": "The Locher system on the Pilatus Railway holds the world record at 480 ‰ (48%) – the steepest rack railway on Earth!"
+      },
+      "q2": {
+        "question": "How do the gear wheels engage in the Locher system?",
+        "options": ["Vertically from above", "Diagonally at 45°", "Horizontally from the sides", "Magnetically from below"],
+        "explanation": "Two horizontally mounted gear wheels engage from left and right into the central rack, preventing the gear from ever jumping out."
+      },
+      "q3": {
+        "question": "What is the gauge (track width) of the Pilatus Railway?",
+        "options": ["800 mm", "1000 mm", "1435 mm", "600 mm"],
+        "explanation": "The Pilatus Railway uses an 800 mm gauge – narrower than standard to navigate the extremely steep and winding mountain terrain."
+      },
+      "q4": {
+        "question": "What safety feature prevents the locomotive from lifting off the track?",
+        "options": ["Magnetic locks", "Heavy ballast weights", "Guide rollers gripping under the rack", "Steel cables anchored to the mountain"],
+        "explanation": "Lower flange guide rollers grip physically under the rack head, making it impossible for the vehicle to lift off even in extreme wind gusts."
+      },
+      "q5": {
+        "question": "Who invented the Locher system?",
+        "options": ["Niklaus Riggenbach", "Roman Abt", "Emil Strub", "Eduard Locher"],
+        "explanation": "Eduard Locher, a renowned Zurich engineer, invented this revolutionary horizontal rack system specifically for the Pilatus Railway in 1889."
+      }
     },
-    "q2": {
-      "question": "How do the gear wheels engage in the legendary Locher System?",
-      "options": ["Vertically from above", "Diagonally at 45° angle", "Horizontally from the sides", "Not at all, it works magnetically"],
-      "explanation": "Two horizontally mounted gear wheels engage from left and right into the central rack. This absolutely prevents the gear wheel from jumping out."
+    "abt": {
+      "q1": {
+        "question": "Why did Roman Abt develop offset lamella plates?",
+        "options": ["To save weight in the boiler", "So that a tooth is always fully engaged for smooth running", "To eliminate switches", "To save lubricating oil"],
+        "explanation": "The offset ensures that gear wheel transitions happen continuously without jerky idle strokes – a milestone in smooth mountain railway operation."
+      },
+      "q2": {
+        "question": "Who was Roman Abt's teacher in railway engineering?",
+        "options": ["Niklaus Riggenbach", "Eduard Locher", "Emil Strub", "Gottlieb Daimler"],
+        "explanation": "Roman Abt was a student of Riggenbach and learned his trade in Riggenbach's workshops in Olten before developing his own improved system."
+      },
+      "q3": {
+        "question": "How many lamella plates does the Swiss variant of the Abt system use?",
+        "options": ["One", "Four", "Two", "Three"],
+        "explanation": "In Switzerland, exclusively the two-lamella design is used, though three-lamella variants exist elsewhere in the world."
+      },
+      "q4": {
+        "question": "Which famous Swiss railway uses the Abt system at maximum gradient?",
+        "options": ["Pilatus Railway", "Brienz Rothorn Railway", "Jungfrau Railway", "Rigi Railway"],
+        "explanation": "The Brienz Rothorn Railway is the only line to reach the Abt system's maximum gradient of 250 ‰ on average."
+      },
+      "q5": {
+        "question": "What problem does the Abt offset design solve?",
+        "options": ["Gear wheel climbing off the rack", "Snow accumulation", "Track corrosion", "Excessive noise"],
+        "explanation": "The dreaded 'climbing' problem — where the gear wheel would jump onto the rack and cause major damage — is eliminated by the offset lamellae ensuring continuous engagement."
+      }
     },
-    "q3": {
-      "question": "Which rack system is known for its ladder-like form with round bolts?",
-      "options": ["Riggenbach System", "Von Roll System", "Strub System", "Abt System"],
-      "explanation": "Niklaus Riggenbach's system uses an open steel bed with round rung bolts, through which snow and scree can fall through undisturbed."
+    "strub": {
+      "q1": {
+        "question": "What makes the Strub system ideal for winter operation?",
+        "options": ["Built-in heaters", "Enclosed tunnel tracks", "Open surface design allows easy snow removal", "Anti-freeze coating"],
+        "explanation": "The Strub system's open surface design means snow can be easily swept away, making it ideal for year-round tourism even in harsh alpine winters."
+      },
+      "q2": {
+        "question": "Which famous railway premiered the Strub system?",
+        "options": ["Jungfrau Railway", "Pilatus Railway", "Rigi Railway", "Brienz Rothorn Railway"],
+        "explanation": "The Strub system celebrated its premiere on the legendary Jungfrau Railway, one of the most iconic mountain railways in the world."
+      },
+      "q3": {
+        "question": "How are the teeth created in the Strub system?",
+        "options": ["Cast separately and bolted on", "Milled directly into the solid rail head", "Welded onto a base plate", "Forged from individual metal pieces"],
+        "explanation": "The teeth are milled directly into the wide, massive head of a rolled broad-foot rail — a minimalist and economical single-piece design."
+      },
+      "q4": {
+        "question": "What safety feature uses the conical sides of the Strub rail head?",
+        "options": ["Decorative purpose only", "Water drainage channels", "Wind deflectors", "Emergency safety clamps that wedge around the head"],
+        "explanation": "Safety emergency clamps grip around the conical rail head in case of danger, wedging themselves bomb-proof to prevent the carriage from tipping."
+      },
+      "q5": {
+        "question": "What was Emil Strub's main design priority?",
+        "options": ["Economic efficiency and high-altitude suitability", "Maximum speed capability", "Aesthetic appearance", "Compatibility with steam engines"],
+        "explanation": "Emil Strub focused on economic efficiency and high-altitude suitability, creating the most minimalist and cost-effective rack system of its era."
+      }
     },
-    "q4": {
-      "question": "Why did Roman Abt develop the system with several offset lamella plates?",
-      "options": [
-        "To save weight in the locomotive boiler",
-        "So that a tooth is always fully engaged and extreme smoothness results",
-        "Solely to eliminate switches",
-        "To save lubricating oil on the drive axles"
-      ],
-      "explanation": "The offset of the rail lamellae ensures that gear wheel transitions happen continuously and smoothly without jerky idle strokes. A milestone in ergonomics!"
+    "riggenbach": {
+      "q1": {
+        "question": "Which rack system resembles a ladder with round bolt rungs?",
+        "options": ["Riggenbach System", "Von Roll System", "Strub System", "Abt System"],
+        "explanation": "Riggenbach's system uses an open steel bed with round rung bolts between two U-profiles — giving it the distinctive ladder-like appearance."
+      },
+      "q2": {
+        "question": "In which year did the first European mountain railway operate?",
+        "options": ["1850", "1863", "1871", "1889"],
+        "explanation": "In 1871, the Rigi Railway — using Riggenbach's system — became the first mountain railway in Europe, a milestone in Swiss railway history."
+      },
+      "q3": {
+        "question": "What advantage does the hollow ladder design provide?",
+        "options": ["Reduced weight", "Self-cleaning — debris falls through", "Better aerodynamics", "Sound dampening"],
+        "explanation": "Since the ladder is hollow at the bottom, loose pebbles and sticky mud simply fall through the tooth bed, preventing tooth jams — a self-cleaning design."
+      },
+      "q4": {
+        "question": "What was Niklaus Riggenbach's role at the Centralbahn?",
+        "options": ["Operations Manager", "Chief Accountant", "Station Master", "Locomotive Driver"],
+        "explanation": "Niklaus Riggenbach was the brilliant Operations Manager of the Centralbahn in Basel when he patented his rack railway technique to conquer Mount Rigi."
+      },
+      "q5": {
+        "question": "What material were the original Riggenbach rungs made from?",
+        "options": ["Aluminium", "Copper", "Wood", "Forged wrought iron and steel"],
+        "explanation": "The rungs were solid forged round steel bolts (originally wrought iron), precisely fitted horizontally at the tooth spacing for smooth gear engagement."
+      }
     },
-    "q5": {
-      "question": "Which criterion characterises the modern Von Roll rail?",
-      "options": [
-        "It consists of elastic hard rubber",
-        "It is a CNC-milled, monolithic solid steel profile without rivets",
-        "It must be manually sanded daily",
-        "It requires three gear wheels stacked on top of each other"
-      ],
-      "explanation": "The modern Von Roll system maximises reliability by eliminating gaps and rivets. A high-strength single block of steel is directly pre-milled."
+    "von_roll": {
+      "q1": {
+        "question": "What makes the Von Roll system fundamentally different from older systems?",
+        "options": ["It uses rubber teeth", "It is a single monolithic cast element with no separate parts", "It requires three gears", "It only works on flat terrain"],
+        "explanation": "The Von Roll system is a completely mill-cast single rail with vertical milled teeth — no welds, no rivets, no loosening of parts."
+      },
+      "q2": {
+        "question": "With which older system is Von Roll fully compatible?",
+        "options": ["Abt System", "Riggenbach System", "Locher System", "Strub System"],
+        "explanation": "Through sophisticated dimensions, locomotives with Abt gear wheels can easily traverse the modern Von Roll rack — perfect for gradual track modernisation."
+      },
+      "q3": {
+        "question": "How are the teeth manufactured in the Von Roll system?",
+        "options": ["Hand-forged by blacksmiths", "3D-printed in titanium", "CNC-precision milled from cast steel", "Laser-cut from carbon fibre"],
+        "explanation": "The teeth are CNC-precision milled directly from an extremely hard, cast steel rail — modern manufacturing for maximum accuracy and durability."
+      },
+      "q4": {
+        "question": "What company produces the Von Roll system today?",
+        "options": ["Stadler Rail", "Tenconi (formerly Von Roll)", "Bombardier", "Siemens"],
+        "explanation": "The Von Roll company (now Tenconi) standardised this system to bring Swiss mountain railways into the 21st century."
+      },
+      "q5": {
+        "question": "What is the maximum gradient the Von Roll system supports?",
+        "options": ["480 ‰ (48%)", "250 ‰ (25%)", "100 ‰ (10%)", "150 ‰ (15%)"],
+        "explanation": "The Von Roll system supports up to 150 ‰ (15%) gradient — designed for modern heavy-duty mountain railways rather than extreme steep gradients."
+      }
     }
   },
   "child_mode": {
@@ -288,41 +408,141 @@
         "tagline": "Super modern! 🔧"
       }
     },
-    "quiz_questions": {
-      "q1": {
-        "question": "Which train can climb the steepest mountain?",
-        "options": ["Strub Train", "Locher Train", "Abt Train", "Riggenbach Train"],
-        "explanation": "The Locher train climbs Mount Pilatus – it's so steep it's almost like going up a wall! 48% steep! 🏔️"
+    "system_quiz": {
+      "locher": {
+        "q1": {
+          "question": "How steep can the Locher train climb?",
+          "options": ["A little steep", "Super duper steep – 48%!", "Not steep at all", "Only medium steep"],
+          "explanation": "The Locher train climbs Mount Pilatus at 48% – that's almost like going up a wall! 🏔️"
+        },
+        "q2": {
+          "question": "What makes the Locher system special?",
+          "options": ["It has wings", "It uses magnets", "Its wheels grab the rail from the sides", "It goes underwater"],
+          "explanation": "The Locher train has sideways wheels that grab the rail from both sides – like your hands holding a pole! 🤲"
+        },
+        "q3": {
+          "question": "How wide are the Locher train tracks?",
+          "options": ["800 mm – quite narrow!", "Really wide!", "Same as a road", "Tiny like a toy train"],
+          "explanation": "The tracks are 800 mm wide – narrower than normal so the train can fit on the steep mountain! 🚂"
+        },
+        "q4": {
+          "question": "What stops the train from flying off in strong wind?",
+          "options": ["Magic", "Heavy rocks on top", "Special rollers that grab underneath the rail", "Glue"],
+          "explanation": "Special rollers grab under the rail so the train can never lift off – even in super windy weather! 💨"
+        },
+        "q5": {
+          "question": "Who invented this amazing train system?",
+          "options": ["A pirate", "A baker", "A wizard", "Eduard Locher – a clever engineer!"],
+          "explanation": "Eduard Locher was a super smart engineer from Zurich who invented this in 1889! 🧠"
+        }
       },
-      "q2": {
-        "question": "What makes the Locher system special?",
-        "options": ["It has wings", "It uses magnets", "Its wheels grab the rail from the sides", "It goes underwater"],
-        "explanation": "The Locher train has sideways wheels that grab the rail from both sides – like your hands holding a pole! That way it never slips! 🤲"
+      "abt": {
+        "q1": {
+          "question": "Why does the Abt system use TWO toothed bars?",
+          "options": ["Because one is for going up and one for going down", "So the train always has a firm grip and rides smoothly", "Because it looks cooler that way", "To make more noise"],
+          "explanation": "Two bars shifted a little bit means the train always has at least one wheel firmly gripping. No bumps, no slipping! 🧩"
+        },
+        "q2": {
+          "question": "Who taught Roman Abt about trains?",
+          "options": ["Niklaus Riggenbach!", "His pet dog", "Nobody, he was born knowing", "A space alien"],
+          "explanation": "Roman Abt learned from Niklaus Riggenbach in his workshop – then made his own even better system! 📚"
+        },
+        "q3": {
+          "question": "What was the BIG problem with old single-bar systems?",
+          "options": ["They were too quiet", "They were too colourful", "The gear wheel would jump up and break things!", "They smelled funny"],
+          "explanation": "The gear wheel would sometimes jump up off the rail – very dangerous! Abt's two-bar system fixed that forever! ✅"
+        },
+        "q4": {
+          "question": "Which mountain train uses the Abt system?",
+          "options": ["Pilatus train", "Brienz Rothorn train! 🏔️", "A submarine", "A spaceship"],
+          "explanation": "The Brienz Rothorn Railway uses the Abt system to climb up to 250 ‰ steepness! 🏔️"
+        },
+        "q5": {
+          "question": "How does the Abt system make the ride smooth?",
+          "options": ["One wheel always has a firm grip on the teeth!", "It floats on air", "It uses pillows", "It goes super slowly"],
+          "explanation": "Because the bars are shifted, one wheel is always perfectly gripping – so no bumping! Smooth like butter! 🧈"
+        }
       },
-      "q3": {
-        "question": "Which system looks like a ladder lying on the ground?",
-        "options": ["Riggenbach System", "Von Roll System", "Strub System", "Abt System"],
-        "explanation": "Riggenbach's system has round metal bars between two rails – just like the rungs of a ladder! 🪜"
+      "strub": {
+        "q1": {
+          "question": "Why is the Strub system great in winter?",
+          "options": ["It has a heater", "It hides underground", "Snow slides off the simple open design!", "It only works in summer"],
+          "explanation": "The Strub rail is so simple and open that snow just slides right off! Perfect for snowy mountains! ❄️"
+        },
+        "q2": {
+          "question": "Which famous railway uses the Strub system?",
+          "options": ["The Jungfrau Railway!", "The Moon Railway", "The Pizza Express", "The Underwater Train"],
+          "explanation": "The super famous Jungfrau Railway in Switzerland uses Strub's clever system! 🏔️"
+        },
+        "q3": {
+          "question": "How are the teeth made on a Strub rail?",
+          "options": ["Glued on with superglue", "Carved directly into one strong rail!", "Painted on", "Made from chocolate"],
+          "explanation": "The teeth are carved right into the top of one big, strong rail – simple and tough! 💪"
+        },
+        "q4": {
+          "question": "What happens in an emergency on a Strub train?",
+          "options": ["The train flies away", "Everyone jumps off", "The train turns invisible", "Special clamps grab the rail super tight!"],
+          "explanation": "Emergency clamps grab around the rail head and hold on super tight – the train can never tip over! 🦾"
+        },
+        "q5": {
+          "question": "What was Emil Strub's big idea?",
+          "options": ["Keep it simple and make it work in the mountains!", "Make it as complicated as possible", "Use only rubber", "Build it from paper"],
+          "explanation": "Emil Strub wanted to keep things simple and tough – perfect for high mountain railways! 🎯"
+        }
       },
-      "q4": {
-        "question": "Why does the Abt system use TWO toothed bars?",
-        "options": [
-          "Because one bar is for going up and one for going down",
-          "So the train always has a firm grip and rides smoothly",
-          "Because it looks cooler that way",
-          "To make more noise"
-        ],
-        "explanation": "Two bars shifted a little bit means the train always has at least one wheel firmly gripping. No bumps, no slipping! 🧩"
+      "riggenbach": {
+        "q1": {
+          "question": "What does the Riggenbach system look like?",
+          "options": ["A ladder lying on the ground! 🪜", "A snake", "A rainbow", "A spaceship"],
+          "explanation": "Riggenbach's system has round metal bars between two rails – just like the rungs of a ladder! 🪜"
+        },
+        "q2": {
+          "question": "When did the first mountain train in Europe start running?",
+          "options": ["Last week", "In the year 2000", "In 1871!", "Before dinosaurs"],
+          "explanation": "In 1871, the Rigi Railway became the very FIRST mountain railway in all of Europe! 🎉"
+        },
+        "q3": {
+          "question": "What cool thing can the ladder design do?",
+          "options": ["It glows in the dark", "Rocks and mud fall through it – self-cleaning!", "It sings songs", "It changes colour"],
+          "explanation": "Because the ladder is hollow at the bottom, stones and mud fall right through – it cleans itself! 🧹"
+        },
+        "q4": {
+          "question": "Where did Riggenbach work?",
+          "options": ["At the Centralbahn in Basel!", "At a pizza shop", "In a spaceship", "At a toy factory"],
+          "explanation": "Niklaus Riggenbach was the clever boss at the Centralbahn railway company in Basel! 🚂"
+        },
+        "q5": {
+          "question": "What are the rungs made of?",
+          "options": ["Plastic", "Wood", "Paper", "Strong forged iron and steel!"],
+          "explanation": "The rungs are made from super strong forged iron and steel – they can hold up really heavy trains! 💪"
+        }
       },
-      "q5": {
-        "question": "What is special about the Von Roll rail?",
-        "options": [
-          "It's made of rubber",
-          "It's made from ONE big piece of super-strong steel",
-          "It needs to be painted every day",
-          "It only works in summer"
-        ],
-        "explanation": "The Von Roll rail is carved from one huge block of steel by a computer-controlled machine. No screws, no bolts – super strong! 💪"
+      "von_roll": {
+        "q1": {
+          "question": "What is special about the Von Roll rail?",
+          "options": ["It's made of rubber", "It's made from ONE big piece of super-strong steel!", "It needs to be painted every day", "It only works in summer"],
+          "explanation": "The Von Roll rail is carved from one huge block of steel by a computer-controlled machine. No screws, no bolts – super strong! 💪"
+        },
+        "q2": {
+          "question": "Can old Abt trains use Von Roll tracks?",
+          "options": ["Yes! They fit perfectly!", "No way!", "Only on Tuesdays", "Only backwards"],
+          "explanation": "Von Roll tracks are cleverly designed so that old Abt trains can use them too – super smart! 🧠"
+        },
+        "q3": {
+          "question": "How does a computer help make Von Roll rails?",
+          "options": ["It plays games on them", "It writes emails", "It precisely cuts the teeth with CNC machines!", "It paints them pretty colours"],
+          "explanation": "CNC means Computer Numerical Control – a computer tells a machine exactly where to cut each tooth. Super precise! 🤖"
+        },
+        "q4": {
+          "question": "What company makes Von Roll rails now?",
+          "options": ["A toy company", "Tenconi!", "A food company", "A space agency"],
+          "explanation": "The company is now called Tenconi – they make the most modern rack rails in Switzerland! 🏭"
+        },
+        "q5": {
+          "question": "Why don't Von Roll rails break easily?",
+          "options": ["Because they're magical", "Because someone watches them all day", "Because they're made of jelly", "Because they're ONE piece of super-hard steel with no weak spots!"],
+          "explanation": "With no screws, bolts, or joins, there are NO weak spots where the rail could break. One piece = super strong! 💎"
+        }
       }
     }
   }

@@ -15,41 +15,28 @@ import IntroScreen from './components/screens/IntroScreen';
 import DashboardScreen from './components/screens/DashboardScreen';
 import DetailScreen from './components/screens/DetailScreen';
 import QuizScreen from './components/screens/QuizScreen';
+import AchievementsScreen from './components/screens/AchievementsScreen';
 import NetworkErrorScreen from './components/screens/NetworkErrorScreen';
-import ThemeModeToggleButton from './features/theme/ThemeModeToggleButton';
 import { useThemeMode } from './features/theme/useThemeMode';
+import { useAchievements } from './features/achievements/useAchievements';
 import SettingsModal from './components/ui/SettingsModal';
 import Button from './components/ui/Button';
 import { SlidersHorizontal } from 'lucide-react';
 
-type ScreenType = 'intro' | 'dashboard' | 'detail' | 'quiz' | 'error';
+type ScreenType = 'intro' | 'dashboard' | 'detail' | 'quiz' | 'achievements' | 'error';
 
 export default function App() {
   const [screen, setScreen] = useState<ScreenType>('intro');
   const [selectedSystemId, setSelectedSystemId] = useState<ZahnradSystem['id'] | null>(null);
   const { isDarkMode, toggleTheme } = useThemeMode();
+  const { progress, totalUnits, recordQuizResult } = useAchievements();
 
   // Settings modal state
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [isOnboarding, setIsOnboarding] = useState(false);
 
-  // Persistence for user score state
-  const [quizHighScore, setQuizHighScore] = useState<number | null>(null);
-
   // High altitude network interruption state tracking (manually simulation & recovery)
   const [backtargetScreen, setBacktargetScreen] = useState<ScreenType>('dashboard');
-
-  // Load highscore state from localStorage safely on client boot
-  useEffect(() => {
-    try {
-      const savedScore = localStorage.getItem('fo_quiz_highscore');
-      if (savedScore !== null) {
-        setQuizHighScore(Number.parseInt(savedScore, 10));
-      }
-    } catch (e) {
-      console.warn('Storage-Zugriff nicht verfügbar:', e);
-    }
-  }, []);
 
   // Show onboarding modal on first visit
   useEffect(() => {
@@ -74,18 +61,6 @@ export default function App() {
       setIsOnboarding(false);
     }
     setSettingsOpen(false);
-  };
-
-  const handleQuizFinished = (score: number) => {
-    setQuizHighScore((prev) => {
-      const newHigh = prev === null ? score : Math.max(prev, score);
-      try {
-        localStorage.setItem('fo_quiz_highscore', newHigh.toString());
-      } catch (e) {
-        console.warn('Fehler beim Speichern des Scores:', e);
-      }
-      return newHigh;
-    });
   };
 
   // Helper function to handle navigation with error simulation
@@ -135,8 +110,9 @@ export default function App() {
             <DashboardScreen 
               onSelectSystem={(id) => navigateTo('detail', id)}
               onGoBackToIntro={() => navigateTo('intro')}
-              onStartQuiz={() => navigateTo('quiz')}
-              quizHighScore={quizHighScore}
+              onOpenAchievements={() => navigateTo('achievements')}
+              totalUnits={totalUnits}
+              progress={progress}
               headerRightAction={
                 <div className="flex items-center gap-1">              
                   <Button
@@ -156,14 +132,26 @@ export default function App() {
             <DetailScreen 
               system={currentSystem}
               onBackToDashboard={() => navigateTo('dashboard')}
-              onStartQuiz={() => navigateTo('quiz')}
+              onStartQuiz={(id) => navigateTo('quiz', id)}
             />
           )}
 
-          {screen === 'quiz' && (
+          {screen === 'quiz' && selectedSystemId && (
             <QuizScreen 
+              systemId={selectedSystemId}
               onGoBackToDashboard={() => navigateTo('dashboard')}
-              onQuizFinished={handleQuizFinished}
+              onQuizFinished={(id, score) => {
+                recordQuizResult(id, score);
+              }}
+            />
+          )}
+
+          {screen === 'achievements' && (
+            <AchievementsScreen
+              progress={progress}
+              totalUnits={totalUnits}
+              onBack={() => navigateTo('dashboard')}
+              onStartQuiz={(id) => navigateTo('quiz', id)}
             />
           )}
 
