@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import {
   HelpCircle,
@@ -24,6 +24,7 @@ import StatTile from '../ui/StatTile';
 import SystemBlueprint from '../diagrams/SystemBlueprint';
 import { useLanguage } from '../../features/i18n/useLanguage';
 import { useChildMode } from '../../features/childMode/useChildMode';
+import { useScreenReader, speakText, extractAccessibleText } from '../../features/accessibility/useScreenReader';
 
 function statIcon(label: string) {
   const l = label.toLowerCase();
@@ -44,8 +45,40 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
   const [showTechDetails, setShowTechDetails] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
   const [selectedHotspot, setSelectedHotspot] = useState<Hotspot | null>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { isChildMode } = useChildMode();
+  const { isScreenReaderEnabled } = useScreenReader();
+
+  useEffect(() => {
+    if (!isScreenReaderEnabled) return;
+    if (showTechDetails) {
+      setTimeout(() => {
+        const el = document.getElementById('tech-details-container');
+        if (el) speakText(extractAccessibleText(el), language);
+      }, 300);
+    }
+  }, [showTechDetails, isScreenReaderEnabled, language]);
+
+  useEffect(() => {
+    if (!isScreenReaderEnabled) return;
+    if (showHistory) {
+      setTimeout(() => {
+        const el = document.getElementById('history-details-container');
+        if (el) speakText(extractAccessibleText(el), language);
+      }, 300);
+    }
+  }, [showHistory, isScreenReaderEnabled, language]);
+
+  useEffect(() => {
+    if (!isScreenReaderEnabled) return;
+    if (selectedHotspot) {
+      setTimeout(() => {
+        const title = t(`systems.${system.id}.hotspots.${selectedHotspot.id}_title`);
+        const desc = t(`systems.${system.id}.hotspots.${selectedHotspot.id}_desc`);
+        speakText(`${title}. ... ${desc}`, language);
+      }, 300);
+    }
+  }, [selectedHotspot, isScreenReaderEnabled, language, system.id, t]);
 
   // In child mode, use simplified text from child_mode namespace; otherwise use normal system text
   const txt = (field: string) =>
@@ -211,6 +244,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
                 </button>
                 {showHistory && (
                   <motion.p
+                    id="history-details-container"
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
                     className="px-4 pb-4 text-sm leading-relaxed text-neutral-600 font-normal border-t-2 border-iron-dark pt-3"
@@ -225,6 +259,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
 
         {showTechDetails && (
           <motion.div
+            id="tech-details-container"
             className="grid grid-cols-2 gap-4"
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}

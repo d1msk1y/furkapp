@@ -87,6 +87,8 @@
     "theme_dark": "DARK",
     "child_mode_section": "CHILD MODE",
     "child_mode_title": "ENABLE CHILD MODE",
+    "accessibility_section": "ACCESSIBILITY",
+    "screen_reader_title": "SCREEN READER",
     "status_on": "ON",
     "status_off": "OFF",
     "save_button": "CONFIRM",

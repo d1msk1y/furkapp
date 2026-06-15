@@ -87,6 +87,8 @@
     "theme_dark": "DUNKEL",
     "child_mode_section": "KINDERMODUS",
     "child_mode_title": "KINDERMODUS AKTIVIEREN",
+    "accessibility_section": "BARRIEREFREIHEIT",
+    "screen_reader_title": "VORLESEFUNKTION",
     "status_on": "AN",
     "status_off": "AUS",
     "save_button": "BESTÄTIGEN",

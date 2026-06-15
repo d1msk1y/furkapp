@@ -5,6 +5,7 @@ import { SUPPORTED_LANGUAGES, SupportedLanguage } from '../../features/i18n/i18n
 import { useLanguage } from '../../features/i18n/useLanguage';
 import { useThemeMode } from '../../features/theme/useThemeMode';
 import { useChildMode } from '../../features/childMode/useChildMode';
+import { useScreenReader } from '../../features/accessibility/useScreenReader';
 import Button from './Button';
 import IconBox from './IconBox';
 import Badge from './Badge';
@@ -20,6 +21,7 @@ export default function SettingsModal({ isOpen, onClose, isOnboarding = false }:
   const { t, language, setLanguage } = useLanguage();
   const { isDarkMode, toggleTheme } = useThemeMode();
   const { isChildMode, toggleChildMode } = useChildMode();
+  const { isScreenReaderEnabled, toggleScreenReader } = useScreenReader();
 
   const handleLanguageSelect = (lang: SupportedLanguage) => {
     setLanguage(lang);
@@ -137,6 +139,32 @@ export default function SettingsModal({ isOpen, onClose, isOnboarding = false }:
                       <span>{t('settings.child_mode_title')}</span>
                       <span className={`text-[10px] font-mono font-extrabold tracking-widest uppercase ${isChildMode ? 'text-primary-red' : 'text-iron-dark/50'}`}>
                         {isChildMode ? t('settings.status_on') : t('settings.status_off')}
+                      </span>
+                    </button>
+                  </div>
+                )}
+
+                {/* Accessibility Section */}
+                {!isOnboarding && (
+                  <div>
+                    <Badge variant="outline" className="mb-3 text-[10px]">
+                      {t('settings.accessibility_section')}
+                    </Badge>
+
+                    <button
+                      type="button"
+                      onClick={() => toggleScreenReader()}
+                      className={`flex items-center justify-between w-full px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm mb-6
+                        ${isScreenReaderEnabled
+                          ? 'bg-ink text-white shadow-[3px_3px_0px_0px_var(--app-shadow-color)]'
+                          : 'bg-cement-sand text-iron-dark hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] shadow-[3px_3px_0px_0px_var(--app-shadow-color)] active:shadow-none'
+                        }`}
+                    >
+                      <span className="flex items-center gap-2">
+                        {t('settings.screen_reader_title')}
+                      </span>
+                      <span className={`text-[10px] font-mono font-extrabold tracking-widest uppercase ${isScreenReaderEnabled ? 'text-primary-red' : 'text-iron-dark/50'}`}>
+                        {isScreenReaderEnabled ? t('settings.status_on') : t('settings.status_off')}
                       </span>
                     </button>
                   </div>
