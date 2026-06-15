@@ -32,11 +32,6 @@ export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: 
         />
       )}
 
-      {/* Floating schematic label */}
-      <div className="absolute top-4 left-4 z-10 px-2 py-1 bg-white border-2 border-iron-dark font-mono text-[9px] font-bold text-neutral-500 uppercase tracking-widest">
-        FOTO // {systemId.toUpperCase()}-01
-      </div>
-
       {/* Hotspot dots */}
       {hotspots.map((hotspot) => (
         <button
