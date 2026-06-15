@@ -41,8 +41,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
             </Badge>
 
             <h1 className="text-4xl xs:text-5xl font-extrabold tracking-tighter uppercase leading-[0.95] text-iron-dark mb-6">
-              {t('intro.title_line1')} <br />
-              <span className="text-primary-red">{t('intro.title_line2')}</span>
+              {t('intro.title_line1')} <span className="text-primary-red">{t('intro.title_line2')}</span>
             </h1>
           </motion.div>
 
