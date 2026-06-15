@@ -32,10 +32,26 @@ export interface ZahnradSystem {
   iconKey: 'horizontal' | 'layers' | 'monohead' | 'ladder' | 'monoblock';
 }
 
+export type SystemId = ZahnradSystem['id'];
+
 export interface QuizQuestion {
   id: number;
   question: string;
   options: string[];
   correctOptionIndex: number;
   explanation: string;
+}
+
+export interface SystemAchievement {
+  bestScore: number;
+  earned: boolean;
+}
+
+export type AchievementProgress = Record<SystemId, SystemAchievement>;
+
+export interface Prize {
+  requiredUnits: number;
+  nameKey: string;
+  descKey: string;
+  icon: string;
 }

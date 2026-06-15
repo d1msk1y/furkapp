@@ -1,49 +1,6 @@
-import { ZahnradSystem, QuizQuestion } from './types';
+import { ZahnradSystem, QuizQuestion, SystemId, AchievementProgress, Prize } from './types';
 
 export const SYSTEM_DATA: ZahnradSystem[] = [
-  {
-    id: 'locher',
-    name: 'Locher System',
-    developed: '1889',
-    type: 'Horizontale Eingriffe',
-    explanationShort: 'Das von Eduard Locher entwickelte System wurde speziell für die Pilatusbahn konstruiert, die steilste Zahnradbahn der Welt (bis zu 48% Neigung).',
-    steepDangerText: 'Bei dieser extremen Steigung bestand die Gefahr, dass die Zahnräder herkömmlicher Systeme durch den enormen Druck aus der Zahnstange springen.',
-    solutionText: 'Lochers geniale Lösung: Zwei horizontal rotierende Zahnräder, die seitlich in eine Zahnstange mit beidseitiger Verzahnung eingreifen. Führungsrollen unterhalb der Zahnstange verriegeln das Fahrzeug sicher mit dem Gleis.',
-    techStats: [
-      { label: 'Max. Steigung', value: '480 ‰ (48 %)' },
-      { label: 'Zahnteilung', value: '120 mm' },
-      { label: 'Material Zahnstange', value: 'Gegossener Stahl' },
-      { label: 'Spurweite', value: '800 mm' }
-    ],
-    hotspots: [
-      {
-        id: 'zahnstange',
-        title: 'Doppelseitige Zahnstange',
-        description: 'Eine flach liegende Stahlschiene mit rechtwinkligen Zähnen auf beiden Seiten. Da sie in der Mitte verlegt ist, ermöglicht sie die Nutzung von zwei symmetrisch angeordneten Getrieben.',
-        top: '45%',
-        left: '10%'
-      },
-      {
-        id: 'treibraeder',
-        title: 'Horizontale Treibräder',
-        description: 'Zwei Getriebezahnräder drehen sich flach über den Schienen und greifen von den Seiten her zu. Dadurch heben sich die seitlichen Abdrängkräfte mechanisch auf und verhindern ein Klettern.',
-        top: '72%',
-        left: '48%'
-      },
-      {
-        id: 'fuehrung',
-        title: 'Sicherheits-Führungsrollen',
-        description: 'Untere Flanschrollen greifen physisch unter den Kopf der Locher-Zahnstange. Selbst bei extremen Erschütterungen im Wind ist ein Abheben oder Entgleisen der Lok unmöglich.',
-        top: '40%',
-        left: '78%'
-      }
-    ],
-    historyAndPurpose: 'Eduard Locher war ein renommierter Zürcher Ingenieur. Die Pilatusbahn galt damals als absolut unbaubar. Herkömmliche Systeme wie Riggenbach oder Abt scheiterten an der extremen Hangneigung: vertikale Zahnräder wären bei 48% einfach über die Zähne gesprungen. Lochers unkonventionelle horizontale Idee revolutionierte den alpinen Schienentransport.',
-    maxGradientPercent: 48,
-    famousLine: 'Pilatusbahn',
-    tagline: 'Steilste Bahn der Welt',
-    iconKey: 'horizontal'
-  },
   {
     id: 'abt',
     name: 'Abt System',
@@ -86,6 +43,49 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
     famousLine: 'Brienz-Rothorn-Bahn',
     tagline: 'Stets im optimalen Eingriff',
     iconKey: 'layers'
+  },
+  {
+    id: 'locher',
+    name: 'Locher System',
+    developed: '1889',
+    type: 'Horizontale Eingriffe',
+    explanationShort: 'Das von Eduard Locher entwickelte System wurde speziell für die Pilatusbahn konstruiert, die steilste Zahnradbahn der Welt (bis zu 48% Neigung).',
+    steepDangerText: 'Bei dieser extremen Steigung bestand die Gefahr, dass die Zahnräder herkömmlicher Systeme durch den enormen Druck aus der Zahnstange springen.',
+    solutionText: 'Lochers geniale Lösung: Zwei horizontal rotierende Zahnräder, die seitlich in eine Zahnstange mit beidseitiger Verzahnung eingreifen. Führungsrollen unterhalb der Zahnstange verriegeln das Fahrzeug sicher mit dem Gleis.',
+    techStats: [
+      { label: 'Max. Steigung', value: '480 ‰ (48 %)' },
+      { label: 'Zahnteilung', value: '120 mm' },
+      { label: 'Material Zahnstange', value: 'Gegossener Stahl' },
+      { label: 'Spurweite', value: '800 mm' }
+    ],
+    hotspots: [
+      {
+        id: 'zahnstange',
+        title: 'Doppelseitige Zahnstange',
+        description: 'Eine flach liegende Stahlschiene mit rechtwinkligen Zähnen auf beiden Seiten. Da sie in der Mitte verlegt ist, ermöglicht sie die Nutzung von zwei symmetrisch angeordneten Getrieben.',
+        top: '45%',
+        left: '10%'
+      },
+      {
+        id: 'treibraeder',
+        title: 'Horizontale Treibräder',
+        description: 'Zwei Getriebezahnräder drehen sich flach über den Schienen und greifen von den Seiten her zu. Dadurch heben sich die seitlichen Abdrängkräfte mechanisch auf und verhindern ein Klettern.',
+        top: '72%',
+        left: '48%'
+      },
+      {
+        id: 'fuehrung',
+        title: 'Sicherheits-Führungsrollen',
+        description: 'Untere Flanschrollen greifen physisch unter den Kopf der Locher-Zahnstange. Selbst bei extremen Erschütterungen im Wind ist ein Abheben oder Entgleisen der Lok unmöglich.',
+        top: '40%',
+        left: '78%'
+      }
+    ],
+    historyAndPurpose: 'Eduard Locher war ein renommierter Zürcher Ingenieur. Die Pilatusbahn galt damals als absolut unbaubar. Herkömmliche Systeme wie Riggenbach oder Abt scheiterten an der extremen Hangneigung: vertikale Zahnräder wären bei 48% einfach über die Zähne gesprungen. Lochers unkonventionelle horizontale Idee revolutionierte den alpinen Schienentransport.',
+    maxGradientPercent: 48,
+    famousLine: 'Pilatusbahn',
+    tagline: 'Steilste Bahn der Welt',
+    iconKey: 'horizontal'
   },
   {
     id: 'strub',
@@ -218,50 +218,64 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
   }
 ];
 
-export const QUIZ_QUESTIONS: QuizQuestion[] = [
-  {
-    id: 1,
-    question: 'Welches System überwindet die grösste Steigung im Alpenraum?',
-    options: ['System Strub', 'System Locher', 'System Abt', 'System Riggenbach'],
-    correctOptionIndex: 1, // System Locher
-    explanation: 'Das System Locher hält mit schwindelerregenden 48% (480 ‰) Steigung an der weltberühmten Pilatusbahn den absoluten Weltrekord!'
-  },
-  {
-    id: 2,
-    question: 'Wie greifen die Zahnräder beim legendären System Locher ein?',
-    options: ['Vertikal von oben', 'Schräg im 45°-Winkel', 'Horizontal von den Seiten', 'Gar nicht, es funktioniert magnetisch'],
-    correctOptionIndex: 2, // Horizontal von den Seiten
-    explanation: 'Zwei horizontal montierte Zahnräder greifen von links und rechts in die mittlere Zahnstange. Das verhindert das Herausspringen des Zahnrads absolut.'
-  },
-  {
-    id: 3,
-    question: 'Welches Zahnradsystem ist wegen seiner leiterähnlichen Form mit Rundbolzen bekannt?',
-    options: ['System Riggenbach', 'System Von Roll', 'System Strub', 'System Abt'],
-    correctOptionIndex: 0, // System Riggenbach
-    explanation: 'Niklaus Riggenbachs System nutzt ein offenes Stahlbett mit runden Sprossenbolzen, durch das Schnee und Geröll ungestört hindurchfallen können.'
-  },
-  {
-    id: 4,
-    question: 'Warum entwickelte Roman Abt das System mit mehreren versetzten Lamellenplatten?',
-    options: [
-      'Um Gewicht im Lokomotivkessel einzusparen',
-      'Damit immer ein Zahn voll eingreift und extreme Laufruhe entsteht',
-      'Ausschliesslich um Weichen wegzulassen',
-      'Um Schmieröl an den Triebachsen einzusparen'
-    ],
-    correctOptionIndex: 1, // Damit immer ein Zahn voll eingreift und extreme Laufruhe entsteht
-    explanation: 'Der Versatz der Schienenlamellen sorgt dafür, dass die Zahnradübergänge kontinuierlich fliessend ohne ruckelnde Leerläufe stattfinden. Ein Meilenstein der Ergonomie!'
-  },
-  {
-    id: 5,
-    question: 'Welches Kriterium charakterisiert die moderne Schiene von Von Roll?',
-    options: [
-      'Sie besteht aus elastischem Hartgummi',
-      'Sie ist ein CNC-gefrästes, monolithisches Funder-Vollstahlprofil ohne Nieten',
-      'Sie muss täglich manuell mit Sand bestreut werden',
-      'Sie benötigt drei Zahnräder übereinander'
-    ],
-    correctOptionIndex: 1, // Sie ist ein CNC-gefrästes, monolithisches Funder-Vollstahlprofil ohne Nieten
-    explanation: 'Das moderne Von Roll System maximiert die Zuverlässigkeit, indem es Fugen und Nieten eliminiert. Ein hochfester Einblockstahl wird direkt vorgefräst.'
-  }
+/** Per-system quiz questions. Each system has exactly 5 questions. */
+export const SYSTEM_QUIZ_QUESTIONS: Record<SystemId, QuizQuestion[]> = {
+  locher: [
+    { id: 1, question: '', options: ['', '', '', ''], correctOptionIndex: 1, explanation: '' },
+    { id: 2, question: '', options: ['', '', '', ''], correctOptionIndex: 2, explanation: '' },
+    { id: 3, question: '', options: ['', '', '', ''], correctOptionIndex: 0, explanation: '' },
+    { id: 4, question: '', options: ['', '', '', ''], correctOptionIndex: 2, explanation: '' },
+    { id: 5, question: '', options: ['', '', '', ''], correctOptionIndex: 3, explanation: '' },
+  ],
+  abt: [
+    { id: 1, question: '', options: ['', '', '', ''], correctOptionIndex: 1, explanation: '' },
+    { id: 2, question: '', options: ['', '', '', ''], correctOptionIndex: 0, explanation: '' },
+    { id: 3, question: '', options: ['', '', '', ''], correctOptionIndex: 2, explanation: '' },
+    { id: 4, question: '', options: ['', '', '', ''], correctOptionIndex: 1, explanation: '' },
+    { id: 5, question: '', options: ['', '', '', ''], correctOptionIndex: 0, explanation: '' },
+  ],
+  strub: [
+    { id: 1, question: '', options: ['', '', '', ''], correctOptionIndex: 2, explanation: '' },
+    { id: 2, question: '', options: ['', '', '', ''], correctOptionIndex: 0, explanation: '' },
+    { id: 3, question: '', options: ['', '', '', ''], correctOptionIndex: 1, explanation: '' },
+    { id: 4, question: '', options: ['', '', '', ''], correctOptionIndex: 3, explanation: '' },
+    { id: 5, question: '', options: ['', '', '', ''], correctOptionIndex: 0, explanation: '' },
+  ],
+  riggenbach: [
+    { id: 1, question: '', options: ['', '', '', ''], correctOptionIndex: 0, explanation: '' },
+    { id: 2, question: '', options: ['', '', '', ''], correctOptionIndex: 2, explanation: '' },
+    { id: 3, question: '', options: ['', '', '', ''], correctOptionIndex: 1, explanation: '' },
+    { id: 4, question: '', options: ['', '', '', ''], correctOptionIndex: 0, explanation: '' },
+    { id: 5, question: '', options: ['', '', '', ''], correctOptionIndex: 3, explanation: '' },
+  ],
+  von_roll: [
+    { id: 1, question: '', options: ['', '', '', ''], correctOptionIndex: 1, explanation: '' },
+    { id: 2, question: '', options: ['', '', '', ''], correctOptionIndex: 0, explanation: '' },
+    { id: 3, question: '', options: ['', '', '', ''], correctOptionIndex: 2, explanation: '' },
+    { id: 4, question: '', options: ['', '', '', ''], correctOptionIndex: 1, explanation: '' },
+    { id: 5, question: '', options: ['', '', '', ''], correctOptionIndex: 3, explanation: '' },
+  ],
+};
+
+/** Number of questions per system quiz. */
+export const QUESTIONS_PER_SYSTEM = 5;
+
+/** Minimum correct answers to earn 1 achievement unit. */
+export const ACHIEVEMENT_THRESHOLD = 3;
+
+/** Prize tiers unlocked by accumulating achievement units. */
+export const PRIZES: Prize[] = [
+  { requiredUnits: 1, nameKey: 'achievements.prize_bronze_name', descKey: 'achievements.prize_bronze_desc', icon: '🎫' },
+  { requiredUnits: 3, nameKey: 'achievements.prize_silver_name', descKey: 'achievements.prize_silver_desc', icon: '🥈' },
+  { requiredUnits: 5, nameKey: 'achievements.prize_gold_name', descKey: 'achievements.prize_gold_desc', icon: '🏆' },
 ];
+
+/** Default empty achievement state for all systems. */
+export const INITIAL_ACHIEVEMENT_PROGRESS: AchievementProgress = {
+  locher: { bestScore: 0, earned: false },
+  abt: { bestScore: 0, earned: false },
+  strub: { bestScore: 0, earned: false },
+  riggenbach: { bestScore: 0, earned: false },
+  von_roll: { bestScore: 0, earned: false },
+};
+
