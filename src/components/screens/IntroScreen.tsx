@@ -65,7 +65,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
             {[
               { icon: Layers, value: '5', labelKey: 'intro.stat_systems' },
               { icon: TrendingUp, value: '48%', labelKey: 'intro.stat_steepest' },
-              { icon: History, value: "1863\u2013heute", labelKey: 'intro.stat_era' },
+              { icon: History, value: t('intro.stat_era_value'), labelKey: 'intro.stat_era' },
             ].map((stat) => (
               <div
                 key={stat.labelKey}
