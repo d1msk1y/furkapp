@@ -19,6 +19,8 @@ import AchievementsScreen from './components/screens/AchievementsScreen';
 import NetworkErrorScreen from './components/screens/NetworkErrorScreen';
 import { useThemeMode } from './features/theme/useThemeMode';
 import { useAchievements } from './features/achievements/useAchievements';
+import { useScreenReader, speakText, cancelSpeech, extractAccessibleText } from './features/accessibility/useScreenReader';
+import { useLanguage } from './features/i18n/useLanguage';
 import SettingsModal from './components/ui/SettingsModal';
 import Button from './components/ui/Button';
 import { SlidersHorizontal } from 'lucide-react';
@@ -30,6 +32,8 @@ export default function App() {
   const [selectedSystemId, setSelectedSystemId] = useState<ZahnradSystem['id'] | null>(null);
   const { isDarkMode, toggleTheme } = useThemeMode();
   const { progress, totalUnits, recordQuizResult } = useAchievements();
+  const { isScreenReaderEnabled } = useScreenReader();
+  const { language } = useLanguage();
 
   // Settings modal state
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -37,6 +41,27 @@ export default function App() {
 
   // High altitude network interruption state tracking (manually simulation & recovery)
   const [backtargetScreen, setBacktargetScreen] = useState<ScreenType>('dashboard');
+
+  // Screen Reader global observer
+  useEffect(() => {
+    if (!isScreenReaderEnabled) {
+      cancelSpeech();
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      const container = document.getElementById('screen-content');
+      if (container) {
+        const textWithPauses = extractAccessibleText(container);
+        speakText(textWithPauses, language);
+      }
+    }, 600); // Wait for transition animation to complete
+
+    return () => {
+      clearTimeout(timer);
+      cancelSpeech();
+    };
+  }, [screen, selectedSystemId, isScreenReaderEnabled, language]);
 
   // Show onboarding modal on first visit
   useEffect(() => {
@@ -91,6 +116,7 @@ export default function App() {
       {/* Absolute parent grid with simple screen routing logic */}
       <AnimatePresence mode="wait">
         <motion.div
+          id="screen-content"
           key={screen + (selectedSystemId || '')}
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
