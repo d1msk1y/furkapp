@@ -87,6 +87,8 @@
     "theme_dark": "SOMBRE",
     "child_mode_section": "MODE ENFANT",
     "child_mode_title": "ACTIVER LE MODE ENFANT",
+    "accessibility_section": "ACCESSIBILITÉ",
+    "screen_reader_title": "LECTEUR D'ÉCRAN",
     "status_on": "ACTIVÉ",
     "status_off": "DÉSACTIVÉ",
     "save_button": "CONFIRMER",
