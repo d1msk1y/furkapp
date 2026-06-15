@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Check, AlertTriangle, RotateCcw, Award } from 'lucide-react';
-import { QUIZ_QUESTIONS } from '../../data';
-import { QuizQuestion } from '../../types';
+import { SYSTEM_QUIZ_QUESTIONS, QUESTIONS_PER_SYSTEM, ACHIEVEMENT_THRESHOLD } from '../../data';
+import { QuizQuestion, SystemId } from '../../types';
 import ScreenContainer from '../layout/ScreenContainer';
 import Header from '../layout/Header';
 import Button from '../ui/Button';
@@ -15,11 +15,15 @@ import { useLanguage } from '../../features/i18n/useLanguage';
 import { useChildMode } from '../../features/childMode/useChildMode';
 
 interface QuizScreenProps {
+  readonly systemId: SystemId;
   readonly onGoBackToDashboard: () => void;
-  readonly onQuizFinished: (score: number) => void;
+  readonly onQuizFinished: (systemId: SystemId, score: number) => void;
 }
 
-export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Readonly<QuizScreenProps>) {
+export default function QuizScreen({ systemId, onGoBackToDashboard, onQuizFinished }: Readonly<QuizScreenProps>) {
+  const questions = SYSTEM_QUIZ_QUESTIONS[systemId];
+  const totalQuestions = questions.length;
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null);
   const [isFrozen, setIsFrozen] = useState(false);
@@ -29,9 +33,9 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
   const { t } = useLanguage();
   const { isChildMode } = useChildMode();
 
-  const rawQuestion: QuizQuestion = QUIZ_QUESTIONS[currentQuestionIndex];
+  const rawQuestion: QuizQuestion = questions[currentQuestionIndex];
   const qKey = `q${rawQuestion.id}`;
-  const quizNs = isChildMode ? 'child_mode.quiz_questions' : 'quiz_questions';
+  const quizNs = isChildMode ? `child_mode.system_quiz.${systemId}` : `system_quiz.${systemId}`;
   const currentQuestion = {
     ...rawQuestion,
     question: t(`${quizNs}.${qKey}.question`),
@@ -56,13 +60,13 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
         setFlashScreen(false);
 
         const nextIndex = currentQuestionIndex + 1;
-        if (nextIndex < QUIZ_QUESTIONS.length) {
+        if (nextIndex < totalQuestions) {
           setCurrentQuestionIndex(nextIndex);
           setSelectedOptionIndex(null);
           setIsFrozen(false);
         } else {
           setQuizComplete(true);
-          onQuizFinished(score + (isCorrect ? 1 : 0));
+          onQuizFinished(systemId, score + (isCorrect ? 1 : 0));
         }
       }, 150);
     }, 900);
@@ -104,11 +108,17 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
     return { blockStyle, numStyle };
   };
 
+  const earnedUnit = score >= ACHIEVEMENT_THRESHOLD;
+
   return (
     <ScreenContainer
       className={`overflow-hidden transition-opacity duration-150 ${flashScreen ? 'opacity-20' : 'opacity-100'}`}
     >
-      <Header title={t('quiz.title')} onBack={onGoBackToDashboard} backLabel={t('quiz.back_label')} />
+      <Header
+        title={`${t(`systems.${systemId}.name`).toUpperCase()} — ${t('quiz.title')}`}
+        onBack={onGoBackToDashboard}
+        backLabel={t('quiz.back_label')}
+      />
 
       {quizComplete ? (
         /* Results screen */
@@ -120,7 +130,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
           >
             {/* Alpine summit accent */}
             <Ridgeline
-              className={`${score >= 3 ? 'text-pine' : 'text-primary-red'} -mx-6 sm:-mx-8 -mt-6 sm:-mt-8 w-[calc(100%+3rem)] sm:w-[calc(100%+4rem)] mb-6`}
+              className={`${score >= ACHIEVEMENT_THRESHOLD ? 'text-pine' : 'text-primary-red'} -mx-6 sm:-mx-8 -mt-6 sm:-mt-8 w-[calc(100%+3rem)] sm:w-[calc(100%+4rem)] mb-6`}
               height={36}
               flip
             />
@@ -134,29 +144,38 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
             </h2>
 
             <Badge variant="light" className="mb-6 px-2.5 py-1">
-              EXP_RESULT_LOG_M322
+              {t(`systems.${systemId}.name`).toUpperCase()}
             </Badge>
 
             {/* Score block */}
-            <div className="border-heavy-double bg-cement-light p-6 w-full max-w-xs shadow-hard-sm mb-6 flex flex-col items-center justify-center">
+            <div className="border-heavy-double bg-cement-light p-6 w-full max-w-xs shadow-hard-sm mb-4 flex flex-col items-center justify-center">
               <span className="block text-sm font-mono font-black text-neutral-500 uppercase">
-                {t('quiz.result_score', { score, total: 5 })}
+                {t('quiz.result_score', { score, total: QUESTIONS_PER_SYSTEM })}
               </span>
               <span className="block text-6xl font-black text-primary-red tracking-tighter mt-1 mb-1">
-                {score} / 5
+                {score} / {QUESTIONS_PER_SYSTEM}
               </span>
               <span
                 className="block text-sm font-black text-iron-dark tracking-widest uppercase font-mono bg-cement-sand border-2 border-iron-dark px-3 py-1 mt-2"
                 style={{ boxShadow: '2px 2px 0px var(--app-shadow-color)' }}
               >
-                {Math.round((score / 5) * 100)}%
+                {Math.round((score / QUESTIONS_PER_SYSTEM) * 100)}%
               </span>
             </div>
 
+            {/* Achievement feedback */}
+            <div className={`w-full max-w-xs px-4 py-2.5 mb-4 text-center font-mono text-sm font-black uppercase border-2 ${
+              earnedUnit
+                ? 'bg-pine text-white border-pine-light'
+                : 'bg-cement-sand text-neutral-500 border-neutral-300'
+            }`}>
+              {earnedUnit ? t('quiz.result_achievement_earned') : t('quiz.result_achievement_missed')}
+            </div>
+
             <p className="text-sm font-bold tracking-tight uppercase leading-[140%] text-neutral-700 mb-8 max-w-xs">
-              {score === 5 && t('quiz.result_perfect')}
-              {score >= 3 && score < 5 && t('quiz.result_good')}
-              {score < 3 && t('quiz.result_ok')}
+              {score === QUESTIONS_PER_SYSTEM && t('quiz.result_perfect')}
+              {score >= ACHIEVEMENT_THRESHOLD && score < QUESTIONS_PER_SYSTEM && t('quiz.result_good')}
+              {score < ACHIEVEMENT_THRESHOLD && t('quiz.result_ok')}
             </p>
 
             {/* Action buttons */}
@@ -176,10 +195,10 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
         <main className="flex-1 flex flex-col w-full relative pb-6 justify-between">
           {/* Progress + Question */}
           <div className="flex flex-col p-6 pb-2">
-            <ProgressBar total={QUIZ_QUESTIONS.length} current={currentQuestionIndex} />
+            <ProgressBar total={totalQuestions} current={currentQuestionIndex} />
 
             <div className="text-right font-mono text-xs font-black uppercase text-neutral-400 mb-2 mt-8">
-              {t('quiz.question_label', { current: currentQuestionIndex + 1, total: QUIZ_QUESTIONS.length })}
+              {t('quiz.question_label', { current: currentQuestionIndex + 1, total: totalQuestions })}
             </div>
 
             {/* Question banner */}
@@ -188,7 +207,7 @@ export default function QuizScreen({ onGoBackToDashboard, onQuizFinished }: Read
                 {currentQuestion.question}
               </h2>
               <div className="absolute -top-3.5 -left-3 px-2 py-0.5 bg-ink text-white font-mono text-[11px] tracking-wider uppercase border border-white">
-                EXAM_SYS_M322
+                {t(`systems.${systemId}.name`).toUpperCase()}
               </div>
             </Card>
           </div>
