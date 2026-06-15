@@ -19,8 +19,8 @@
   "dashboard": {
     "title": "LES 5 SYSTÈMES À CRÉMAILLÈRE",
     "back_label": "Retour au départ",
-    "quiz_cta": "TESTER SES CONNAISSANCES",
-    "quiz_highscore": "MEILLEUR: {{score}} / {{total}}"
+    "achievements_cta": "VOIR LES SUCCÈS",
+    "achievements_units": "{{count}} / {{total}} UNITÉS"
   },
   "detail": {
     "back_label": "Retour à la sélection",
@@ -29,7 +29,7 @@
     "danger_label": "LE DANGER",
     "solution_label": "LA SOLUTION",
     "history_label": "Détails historiques",
-    "quiz_cta": "TESTER SES CONNAISSANCES",
+    "quiz_cta": "DÉMARRER LE QUIZ",
     "stats_note": "NOTE: Toutes les données de tolérance sont basées sur les dessins originaux et les fonds d'archives de la Compagnie du chemin de fer Furka-Oberalp de la fin du 19e siècle.",
     "hotspot_hint": "POINTS CHAUDS ROUGES CLIQUABLES"
   },
@@ -43,11 +43,31 @@
     "result_perfect": "SCORE PARFAIT!",
     "result_good": "BIEN JOUÉ!",
     "result_ok": "CONTINUEZ À PRATIQUER!",
+    "result_achievement_earned": "🎉 UNITÉ DE SUCCÈS OBTENUE!",
+    "result_achievement_missed": "Obtenez au moins 3/5 pour gagner une unité.",
     "restart_button": "RECOMMENCER",
     "back_to_dashboard": "RETOUR À L'APERÇU",
     "correct_label": "CORRECT",
     "wrong_label": "INCORRECT",
     "explanation_prefix": "EXPLICATION:"
+  },
+  "achievements": {
+    "title": "SUCCÈS",
+    "back_label": "Retour",
+    "total_units": "{{count}} / {{total}} UNITÉS DE SUCCÈS",
+    "not_attempted": "PAS ENCORE TENTÉ",
+    "best_score": "MEILLEUR: {{score}} / {{total}}",
+    "earned": "OBTENU",
+    "locked": "VERROUILLÉ",
+    "start_quiz": "DÉMARRER LE QUIZ",
+    "prizes_title": "RÉCOMPENSES",
+    "prize_units_required": "{{count}} UNITÉS REQUISES",
+    "prize_bronze_name": "BILLET BRONZE",
+    "prize_bronze_desc": "Votre premier pas dans la maîtrise de l'ingénierie alpine – vous avez prouvé vos connaissances de base sur un système à crémaillère !",
+    "prize_silver_name": "PASS ARGENT",
+    "prize_silver_desc": "Un passionné expérimenté des chemins de fer alpins – trois systèmes conquis ! La moitié de la montagne est derrière vous.",
+    "prize_gold_name": "PASS SOMMET D'OR",
+    "prize_gold_desc": "L'accomplissement ultime – les cinq systèmes à crémaillère maîtrisés ! Vous êtes un véritable expert ferroviaire suisse."
   },
   "error": {
     "badge": "DOCUMENTATION INSTABLE",
@@ -215,41 +235,141 @@
       }
     }
   },
-  "quiz_questions": {
-    "q1": {
-      "question": "Quel système surmonte la plus grande pente dans la région alpine?",
-      "options": ["Système Strub", "Système Locher", "Système Abt", "Système Riggenbach"],
-      "explanation": "Le Système Locher détient le record mondial absolu avec une pente vertigineuse de 48% (480 ‰) sur le célèbre chemin de fer du Pilate!"
+  "system_quiz": {
+    "locher": {
+      "q1": {
+        "question": "Quelle pente maximale le système Locher peut-il surmonter ?",
+        "options": ["250 ‰ (25%)", "480 ‰ (48%)", "350 ‰ (35%)", "150 ‰ (15%)"],
+        "explanation": "Le système Locher sur le chemin de fer du Pilate détient le record mondial à 480 ‰ (48%) – le chemin de fer à crémaillère le plus raide de la Terre !"
+      },
+      "q2": {
+        "question": "Comment les roues dentées s'engagent-elles dans le système Locher ?",
+        "options": ["Verticalement par le haut", "En diagonale à 45°", "Horizontalement par les côtés", "Magnétiquement par le bas"],
+        "explanation": "Deux roues dentées montées horizontalement s'engagent de gauche et de droite dans la crémaillère centrale, empêchant la roue de jamais sauter."
+      },
+      "q3": {
+        "question": "Quel est l'écartement des voies du chemin de fer du Pilate ?",
+        "options": ["800 mm", "1000 mm", "1435 mm", "600 mm"],
+        "explanation": "Le chemin de fer du Pilate utilise un écartement de 800 mm – plus étroit que la norme pour naviguer le terrain montagneux extrêmement raide et sinueux."
+      },
+      "q4": {
+        "question": "Quel dispositif de sécurité empêche la locomotive de se soulever des rails ?",
+        "options": ["Verrouillages magnétiques", "Lourds poids de lestage", "Galets de guidage agrippant sous la crémaillère", "Câbles d'acier ancrés à la montagne"],
+        "explanation": "Des galets guides à bride inférieure agrippent physiquement sous la tête de la crémaillère, rendant impossible le soulèvement du véhicule même par vent extrême."
+      },
+      "q5": {
+        "question": "Qui a inventé le système Locher ?",
+        "options": ["Niklaus Riggenbach", "Roman Abt", "Emil Strub", "Eduard Locher"],
+        "explanation": "Eduard Locher, un ingénieur zurichois réputé, a inventé ce système révolutionnaire de crémaillère horizontale spécialement pour le chemin de fer du Pilate en 1889."
+      }
     },
-    "q2": {
-      "question": "Comment les roues dentées s'engagent-elles dans le légendaire Système Locher?",
-      "options": ["Verticalement par le haut", "En diagonale à 45°", "Horizontalement par les côtés", "Pas du tout, ça fonctionne magnétiquement"],
-      "explanation": "Deux roues dentées montées horizontalement s'engagent de gauche et de droite dans la crémaillère centrale. Cela empêche absolument la roue dentée de sauter."
+    "abt": {
+      "q1": {
+        "question": "Pourquoi Roman Abt a-t-il développé des plaques lamellaires décalées ?",
+        "options": ["Pour économiser du poids dans la chaudière", "Pour qu'une dent soit toujours pleinement engagée et assure une marche fluide", "Pour éliminer les aiguillages", "Pour économiser l'huile lubrifiante"],
+        "explanation": "Le décalage garantit que les transitions des roues dentées se font de manière continue sans marche à vide saccadée – une avancée majeure en matière de roulement fluide."
+      },
+      "q2": {
+        "question": "Qui était le professeur de Roman Abt en ingénierie ferroviaire ?",
+        "options": ["Niklaus Riggenbach", "Eduard Locher", "Emil Strub", "Gottlieb Daimler"],
+        "explanation": "Roman Abt était l'élève de Riggenbach et a appris son métier dans ses ateliers d'Olten avant de développer son propre système amélioré."
+      },
+      "q3": {
+        "question": "Combien de plaques lamellaires la variante suisse du système Abt utilise-t-elle ?",
+        "options": ["Une", "Quatre", "Deux", "Trois"],
+        "explanation": "En Suisse, seule la version à deux lamelles est utilisée, bien que des variantes à trois lamelles existent ailleurs dans le monde."
+      },
+      "q4": {
+        "question": "Quel célèbre chemin de fer suisse utilise le système Abt à pente maximale ?",
+        "options": ["Chemin de fer du Pilate", "Chemin de fer du Brienz Rothorn", "Chemin de fer de la Jungfrau", "Chemin de fer du Rigi"],
+        "explanation": "Le chemin de fer du Brienz Rothorn est la seule ligne à atteindre la pente maximale du système Abt de 250 ‰ en moyenne."
+      },
+      "q5": {
+        "question": "Quel problème la conception décalée Abt résout-elle ?",
+        "options": ["La montée de la roue dentée sur la crémaillère", "L'accumulation de neige", "La corrosion des voies", "Le bruit excessif"],
+        "explanation": "Le problème redouté de la 'montée' – où la roue dentée saute sur la crémaillère et cause des dommages importants – est éliminé par les lamelles décalées assurant un engagement continu."
+      }
     },
-    "q3": {
-      "question": "Quel système à crémaillère est connu pour sa forme en échelle avec des boulons ronds?",
-      "options": ["Système Riggenbach", "Système Von Roll", "Système Strub", "Système Abt"],
-      "explanation": "Le système de Niklaus Riggenbach utilise un lit en acier ouvert avec des boulons à barreaux ronds, à travers lequel la neige et les débris peuvent tomber librement."
+    "strub": {
+      "q1": {
+        "question": "Qu'est-ce qui rend le système Strub idéal pour l'exploitation hivernale ?",
+        "options": ["Chauffages intégrés", "Voies en tunnel fermées", "La conception ouverte permet un déneigement facile", "Revêtement antigel"],
+        "explanation": "La conception ouverte du système Strub permet de balayer facilement la neige – idéal pour le tourisme toute l'année même lors d'hivers alpins rigoureux."
+      },
+      "q2": {
+        "question": "Quel célèbre chemin de fer a inauguré le système Strub ?",
+        "options": ["Chemin de fer de la Jungfrau", "Chemin de fer du Pilate", "Chemin de fer du Rigi", "Chemin de fer du Brienz Rothorn"],
+        "explanation": "Le système Strub a fait ses débuts sur le légendaire chemin de fer de la Jungfrau – l'un des chemins de fer de montagne les plus emblématiques au monde."
+      },
+      "q3": {
+        "question": "Comment les dents sont-elles créées dans le système Strub ?",
+        "options": ["Coulées séparément et boulonnées", "Fraisées directement dans la tête massive du rail", "Soudées sur une plaque de base", "Forgées à partir de pièces individuelles"],
+        "explanation": "Les dents sont fraisées directement dans la tête large et massive d'un rail à semelle laminé – une conception minimaliste et économique en une seule pièce."
+      },
+      "q4": {
+        "question": "Quel dispositif de sécurité utilise les côtés coniques de la tête de rail Strub ?",
+        "options": ["Uniquement décoratif", "Canaux de drainage", "Déflecteurs de vent", "Pinces de sécurité d'urgence qui se coincent autour de la tête"],
+        "explanation": "Les pinces de sécurité d'urgence saisissent la tête de rail conique en cas de danger et se coincent solidement pour empêcher le basculement du wagon."
+      },
+      "q5": {
+        "question": "Quelle était la priorité principale de conception d'Emil Strub ?",
+        "options": ["Efficacité économique et aptitude aux hautes altitudes", "Capacité de vitesse maximale", "Apparence esthétique", "Compatibilité avec les machines à vapeur"],
+        "explanation": "Emil Strub s'est concentré sur l'efficacité économique et l'aptitude aux hautes altitudes, créant le système à crémaillère le plus minimaliste et rentable de son époque."
+      }
     },
-    "q4": {
-      "question": "Pourquoi Roman Abt a-t-il développé le système avec plusieurs plaques lamellaires décalées?",
-      "options": [
-        "Pour économiser du poids dans la chaudière de la locomotive",
-        "Pour qu'une dent soit toujours pleinement engagée et une extrême fluidité en résulte",
-        "Uniquement pour éliminer les aiguillages",
-        "Pour économiser l'huile lubrifiante sur les essieux moteurs"
-      ],
-      "explanation": "Le décalage des lamelles de rail garantit que les transitions de roues dentées se font de manière continue et fluide sans marche à vide saccadée. Une étape importante en ergonomie!"
+    "riggenbach": {
+      "q1": {
+        "question": "Quel système à crémaillère ressemble à une échelle avec des barreaux ronds ?",
+        "options": ["Système Riggenbach", "Système Von Roll", "Système Strub", "Système Abt"],
+        "explanation": "Le système de Riggenbach utilise un lit en acier ouvert avec des barreaux ronds entre deux profilés en U – lui donnant son aspect distinctif en échelle."
+      },
+      "q2": {
+        "question": "En quelle année le premier chemin de fer de montagne européen a-t-il fonctionné ?",
+        "options": ["1850", "1863", "1871", "1889"],
+        "explanation": "En 1871, le chemin de fer du Rigi – utilisant le système de Riggenbach – est devenu le premier chemin de fer de montagne d'Europe, un jalon dans l'histoire ferroviaire suisse."
+      },
+      "q3": {
+        "question": "Quel avantage offre la conception en échelle creuse ?",
+        "options": ["Poids réduit", "Autonettoyant – les débris tombent à travers", "Meilleure aérodynamique", "Amortissement du bruit"],
+        "explanation": "Comme l'échelle est creuse en bas, les cailloux et la boue tombent simplement à travers le lit de dents, empêchant les blocages – une conception autonettoyante."
+      },
+      "q4": {
+        "question": "Quel était le rôle de Niklaus Riggenbach à la Centralbahn ?",
+        "options": ["Directeur d'exploitation", "Comptable en chef", "Chef de gare", "Conducteur de locomotive"],
+        "explanation": "Niklaus Riggenbach était le brillant directeur d'exploitation de la Centralbahn à Bâle lorsqu'il a fait breveter sa technique de chemin de fer à crémaillère pour conquérir le mont Rigi."
+      },
+      "q5": {
+        "question": "En quel matériau étaient faits les barreaux originaux de Riggenbach ?",
+        "options": ["Aluminium", "Cuivre", "Bois", "Fer forgé et acier"],
+        "explanation": "Les barreaux étaient des boulons d'acier ronds forgés solides (à l'origine en fer forgé), ajustés horizontalement avec précision à l'espacement des dents pour un engagement fluide."
+      }
     },
-    "q5": {
-      "question": "Quel critère caractérise le rail moderne Von Roll?",
-      "options": [
-        "Il est composé de caoutchouc dur élastique",
-        "C'est un profil en acier massif monolithique fraisé CNC sans rivets",
-        "Il doit être sablé manuellement quotidiennement",
-        "Il nécessite trois roues dentées empilées les unes sur les autres"
-      ],
-      "explanation": "Le système moderne Von Roll maximise la fiabilité en éliminant les joints et les rivets. Un bloc d'acier haute résistance est directement pré-fraisé."
+    "von_roll": {
+      "q1": {
+        "question": "Qu'est-ce qui rend le système Von Roll fondamentalement différent des anciens systèmes ?",
+        "options": ["Il utilise des dents en caoutchouc", "C'est un élément coulé monolithique unique sans pièces séparées", "Il nécessite trois engrenages", "Il ne fonctionne que sur terrain plat"],
+        "explanation": "Le système Von Roll est un rail unique massif entièrement coulé avec des dents fraisées verticalement – pas de soudures, pas de rivets, pas de desserrement de pièces."
+      },
+      "q2": {
+        "question": "Avec quel ancien système Von Roll est-il entièrement compatible ?",
+        "options": ["Système Abt", "Système Riggenbach", "Système Locher", "Système Strub"],
+        "explanation": "Grâce à des dimensions sophistiquées, les locomotives avec roues dentées Abt peuvent facilement circuler sur la crémaillère Von Roll moderne – parfait pour la modernisation progressive des voies."
+      },
+      "q3": {
+        "question": "Comment les dents sont-elles fabriquées dans le système Von Roll ?",
+        "options": ["Forgées à la main par des forgerons", "Imprimées en 3D en titane", "Fraisées avec précision CNC à partir d'acier coulé", "Découpées au laser en fibre de carbone"],
+        "explanation": "Les dents sont fraisées avec précision CNC directement à partir d'un rail en acier coulé extrêmement dur – fabrication moderne pour une précision et une durabilité maximales."
+      },
+      "q4": {
+        "question": "Quelle entreprise produit aujourd'hui le système Von Roll ?",
+        "options": ["Stadler Rail", "Tenconi (anciennement Von Roll)", "Bombardier", "Siemens"],
+        "explanation": "La société Von Roll (aujourd'hui Tenconi) a standardisé ce système pour amener les chemins de fer de montagne suisses au 21e siècle."
+      },
+      "q5": {
+        "question": "Quelle est la pente maximale supportée par le système Von Roll ?",
+        "options": ["480 ‰ (48%)", "250 ‰ (25%)", "100 ‰ (10%)", "150 ‰ (15%)"],
+        "explanation": "Le système Von Roll supporte jusqu'à 150 ‰ (15%) de pente – conçu pour les chemins de fer de montagne modernes lourds plutôt que pour des pentes extrêmes."
+      }
     }
   },
   "child_mode": {
@@ -288,41 +408,41 @@
         "tagline": "Super moderne ! 🔧"
       }
     },
-    "quiz_questions": {
-      "q1": {
-        "question": "Quel train peut monter la montagne la plus raide ?",
-        "options": ["Train Strub", "Train Locher", "Train Abt", "Train Riggenbach"],
-        "explanation": "Le train Locher monte le Pilate – c'est tellement raide que c'est presque comme un mur ! 48% de pente ! 🏔️"
+    "system_quiz": {
+      "locher": {
+        "q1": { "question": "Quelle pente le train Locher peut-il grimper ?", "options": ["Un peu raide", "Méga raide – 48% !", "Pas raide du tout", "Moyennement raide"], "explanation": "Le train Locher grimpe le Pilate à 48% – c'est presque comme monter un mur ! 🏔️" },
+        "q2": { "question": "Qu'est-ce qui rend le système Locher spécial ?", "options": ["Il a des ailes", "Il utilise des aimants", "Ses roues agrippent le rail par les côtés", "Il va sous l'eau"], "explanation": "Le train Locher a des roues latérales qui agrippent le rail des deux côtés – comme tes mains ! 🤲" },
+        "q3": { "question": "Quelle est la largeur des voies du train Locher ?", "options": ["800 mm – assez étroit !", "Vraiment large !", "Aussi large qu'une route", "Minuscule comme un train jouet"], "explanation": "Les voies font 800 mm – plus étroites que d'habitude pour que le train passe sur la montagne raide ! 🚂" },
+        "q4": { "question": "Qu'empêche le train de s'envoler par grand vent ?", "options": ["De la magie", "De gros cailloux dessus", "Des rouleaux spéciaux qui agrippent sous le rail", "De la colle"], "explanation": "Des rouleaux spéciaux agrippent sous le rail pour que le train ne puisse jamais se soulever ! 💨" },
+        "q5": { "question": "Qui a inventé ce système génial ?", "options": ["Un pirate", "Un boulanger", "Un sorcier", "Eduard Locher – un ingénieur brillant !"], "explanation": "Eduard Locher était un ingénieur super intelligent de Zurich qui a inventé ça en 1889 ! 🧠" }
       },
-      "q2": {
-        "question": "Qu'est-ce qui rend le système Locher spécial ?",
-        "options": ["Il a des ailes", "Il utilise des aimants", "Ses roues agrippent le rail par les côtés", "Il va sous l'eau"],
-        "explanation": "Le train Locher a des roues latérales qui agrippent le rail des deux côtés – comme tes mains qui tiennent une barre ! Il ne glisse jamais ! 🤲"
+      "abt": {
+        "q1": { "question": "Pourquoi le système Abt utilise-t-il DEUX barres à dents ?", "options": ["Parce qu'une est pour monter et une pour descendre", "Pour que le train ait toujours une prise ferme", "Parce que c'est plus joli", "Pour faire plus de bruit"], "explanation": "Deux barres décalées = le train a toujours au moins une roue qui agrippe fermement. Pas de secousses ! 🧩" },
+        "q2": { "question": "Qui a appris à Roman Abt à construire des trains ?", "options": ["Niklaus Riggenbach !", "Son chien", "Personne", "Un extraterrestre"], "explanation": "Roman Abt a appris de Niklaus Riggenbach – puis il a fait un système encore meilleur ! 📚" },
+        "q3": { "question": "Quel était le GROS problème des anciens systèmes à une barre ?", "options": ["Ils étaient trop silencieux", "Ils étaient trop colorés", "La roue dentée sautait et cassait des choses !", "Ils sentaient bizarre"], "explanation": "La roue dentée sautait parfois – très dangereux ! Le système Abt à deux barres a réglé ça pour toujours ! ✅" },
+        "q4": { "question": "Quel train de montagne utilise le système Abt ?", "options": ["Train du Pilate", "Train du Brienz Rothorn ! 🏔️", "Un sous-marin", "Une fusée"], "explanation": "Le chemin de fer du Brienz Rothorn utilise le système Abt pour grimper à 250 ‰ ! 🏔️" },
+        "q5": { "question": "Comment le système Abt rend-il le trajet fluide ?", "options": ["Une roue a toujours une prise ferme !", "Il flotte dans l'air", "Il utilise des coussins", "Il va super lentement"], "explanation": "Parce que les barres sont décalées, une roue agrippe toujours parfaitement – pas de secousses ! 🧈" }
       },
-      "q3": {
-        "question": "Quel système ressemble à une échelle posée au sol ?",
-        "options": ["Système Riggenbach", "Système Von Roll", "Système Strub", "Système Abt"],
-        "explanation": "Le système de Riggenbach a des barres rondes en métal entre deux rails – exactement comme les barreaux d'une échelle ! 🪜"
+      "strub": {
+        "q1": { "question": "Pourquoi le système Strub est-il génial en hiver ?", "options": ["Il a un chauffage", "Il se cache sous terre", "La neige glisse de la conception simple !", "Il ne marche qu'en été"], "explanation": "Le rail Strub est tellement simple que la neige glisse toute seule ! Parfait pour les montagnes enneigées ! ❄️" },
+        "q2": { "question": "Quel célèbre chemin de fer utilise le système Strub ?", "options": ["Le chemin de fer de la Jungfrau !", "Le train lunaire", "Le Pizza Express", "Le train sous-marin"], "explanation": "Le super célèbre chemin de fer de la Jungfrau utilise le système de Strub ! 🏔️" },
+        "q3": { "question": "Comment sont faites les dents d'un rail Strub ?", "options": ["Collées avec de la super colle", "Taillées directement dans un rail solide !", "Peintes", "Faites en chocolat"], "explanation": "Les dents sont taillées directement dans un gros rail solide – simple et costaud ! 💪" },
+        "q4": { "question": "Que se passe-t-il en cas d'urgence sur un train Strub ?", "options": ["Le train s'envole", "Tout le monde saute", "Le train devient invisible", "Des pinces spéciales agrippent le rail super fort !"], "explanation": "Des pinces d'urgence agrippent le rail et tiennent super fort – le train ne peut jamais basculer ! 🦾" },
+        "q5": { "question": "Quelle était la grande idée d'Emil Strub ?", "options": ["Faire simple et adapter à la montagne !", "Faire le plus compliqué possible", "Utiliser que du caoutchouc", "Construire en papier"], "explanation": "Emil Strub voulait garder les choses simples et robustes – parfait pour les chemins de fer de montagne ! 🎯" }
       },
-      "q4": {
-        "question": "Pourquoi le système Abt utilise-t-il DEUX barres à dents ?",
-        "options": [
-          "Parce qu'une barre est pour monter et une pour descendre",
-          "Pour que le train ait toujours une prise ferme et roule en douceur",
-          "Parce que ça a l'air plus cool",
-          "Pour faire plus de bruit"
-        ],
-        "explanation": "Deux barres décalées d'un petit peu signifie que le train a toujours au moins une roue qui agrippe fermement. Pas de secousses, pas de glissade ! 🧩"
+      "riggenbach": {
+        "q1": { "question": "À quoi ressemble le système Riggenbach ?", "options": ["Une échelle posée au sol ! 🪜", "Un serpent", "Un arc-en-ciel", "Un vaisseau spatial"], "explanation": "Le système Riggenbach a des barres rondes entre deux rails – comme les barreaux d'une échelle ! 🪜" },
+        "q2": { "question": "Quand le premier train de montagne en Europe a-t-il roulé ?", "options": ["La semaine dernière", "En 2000", "En 1871 !", "Avant les dinosaures"], "explanation": "En 1871, le chemin de fer du Rigi est devenu le tout PREMIER train de montagne en Europe ! 🎉" },
+        "q3": { "question": "Que peut faire le design en échelle de cool ?", "options": ["Il brille dans le noir", "Les cailloux tombent à travers – autonettoyant !", "Il chante", "Il change de couleur"], "explanation": "Comme l'échelle est creuse en bas, les cailloux tombent à travers – elle se nettoie toute seule ! 🧹" },
+        "q4": { "question": "Où travaillait Riggenbach ?", "options": ["À la Centralbahn à Bâle !", "Dans une pizzeria", "Dans un vaisseau spatial", "Dans une usine de jouets"], "explanation": "Niklaus Riggenbach était le patron brillant de la Centralbahn à Bâle ! 🚂" },
+        "q5": { "question": "En quoi sont faits les barreaux ?", "options": ["Plastique", "Bois", "Papier", "Fer forgé et acier super solides !"], "explanation": "Les barreaux sont en fer forgé et acier super solides – ils peuvent supporter des trains très lourds ! 💪" }
       },
-      "q5": {
-        "question": "Qu'est-ce qui est spécial dans le rail Von Roll ?",
-        "options": [
-          "Il est en caoutchouc",
-          "Il est fait d'UN SEUL gros morceau d'acier super solide",
-          "Il faut le peindre chaque jour",
-          "Il ne marche qu'en été"
-        ],
-        "explanation": "Le rail Von Roll est taillé dans un énorme bloc d'acier par une machine contrôlée par ordinateur. Pas de vis, pas de boulons – super solide ! 💪"
+      "von_roll": {
+        "q1": { "question": "Qu'est-ce qui est spécial dans le rail Von Roll ?", "options": ["Il est en caoutchouc", "Il est fait d'UN SEUL gros morceau d'acier super solide !", "Il faut le peindre chaque jour", "Il ne marche qu'en été"], "explanation": "Le rail Von Roll est taillé dans un énorme bloc d'acier par une machine – pas de vis, pas de boulons ! 💪" },
+        "q2": { "question": "Les anciens trains Abt peuvent-ils rouler sur les voies Von Roll ?", "options": ["Oui ! Ça marche parfaitement !", "Pas du tout !", "Seulement le mardi", "Seulement en marche arrière"], "explanation": "Les voies Von Roll sont conçues pour que les anciens trains Abt puissent aussi les utiliser – super malin ! 🧠" },
+        "q3": { "question": "Comment un ordinateur aide-t-il à fabriquer les rails Von Roll ?", "options": ["Il joue à des jeux dessus", "Il écrit des e-mails", "Il coupe les dents avec des machines CNC !", "Il les peint en jolies couleurs"], "explanation": "CNC veut dire Commande Numérique par Ordinateur – un ordinateur dit à une machine exactement où couper chaque dent ! 🤖" },
+        "q4": { "question": "Quelle entreprise fabrique les rails Von Roll aujourd'hui ?", "options": ["Un fabricant de jouets", "Tenconi !", "Une entreprise alimentaire", "Une agence spatiale"], "explanation": "L'entreprise s'appelle maintenant Tenconi – ils fabriquent les crémaillères les plus modernes de Suisse ! 🏭" },
+        "q5": { "question": "Pourquoi les rails Von Roll ne cassent-ils pas facilement ?", "options": ["Parce qu'ils sont magiques", "Parce que quelqu'un les surveille", "Parce qu'ils sont en gelée", "Parce qu'ils sont UN morceau d'acier super dur sans points faibles !"], "explanation": "Sans vis, boulons ni joints, il n'y a PAS de points faibles. Un seul morceau = super solide ! 💎" }
       }
     }
   }
