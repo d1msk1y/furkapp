@@ -73,9 +73,8 @@ export default function DashboardScreen({
               >
                 {/* Identity icon */}
                 <div
-                  className={`shrink-0 h-14 w-14 flex items-center justify-center border-heavy-sm rounded-sm transition-colors ${
-                    isFlashing ? 'bg-cement-light text-iron-dark' : 'bg-cement-sand text-iron-dark'
-                  }`}
+                  className={`shrink-0 h-14 w-14 flex items-center justify-center border-heavy-sm rounded-sm transition-colors ${isFlashing ? 'bg-cement-light text-iron-dark' : 'bg-cement-sand text-iron-dark'
+                    }`}
                 >
                   <SystemIcon iconKey={system.iconKey} size={26} strokeWidth={2.5} />
                 </div>
@@ -86,16 +85,15 @@ export default function DashboardScreen({
                     {system.id === 'von_roll' ? 'VON ROLL' : system.id.toUpperCase()}
                   </h3>
                   <span
-                    className={`text-sm font-bold tracking-tight leading-tight truncate mt-1 ${
-                      isFlashing ? 'text-white' : 'text-iron-dark'
-                    }`}
+                    className={`text-sm font-bold tracking-tight leading-tight truncate mt-1 ${isFlashing ? 'text-white' : 'text-iron-dark'
+                      }`}
                   >
                     {isChildMode ? t(`child_mode.systems.${system.id}.tagline`) : t(`systems.${system.id}.tagline`)}
                   </span>
                   <span
-                    className={`text-xs font-mono uppercase tracking-wider font-extrabold mt-1 flex items-center gap-1 truncate ${
-                      isFlashing ? 'text-white/85' : 'text-slate-stone'
-                    }`}
+                    aria-hidden="true"
+                    className={`text-xs font-mono uppercase tracking-wider font-extrabold mt-1 flex items-center gap-1 truncate ${isFlashing ? 'text-white/85' : 'text-slate-stone'
+                      }`}
                   >
                     <Mountain size={10} strokeWidth={2.5} className={isFlashing ? 'text-white' : 'text-primary-red'} />
                     {t(`systems.${system.id}.famousLine`)} • {system.developed}
@@ -103,7 +101,7 @@ export default function DashboardScreen({
                 </div>
 
                 {/* Incline gauge + gradient */}
-                <div className="flex flex-col items-center shrink-0">
+                <div aria-hidden="true" className="flex flex-col items-center shrink-0">
                   <InclineGauge percent={system.maxGradientPercent} compact />
                   <span className={`text-sm font-black tracking-tight leading-none mt-0.5 ${isFlashing ? 'text-white' : 'text-primary-red'}`}>
                     {system.maxGradientPercent}%
@@ -111,11 +109,10 @@ export default function DashboardScreen({
                 </div>
 
                 <div
-                  className={`shrink-0 h-12 w-12 flex items-center justify-center border-heavy rounded-sm transition-all duration-75 ${
-                    isFlashing
+                  className={`shrink-0 h-12 w-12 flex items-center justify-center border-heavy rounded-sm transition-all duration-75 ${isFlashing
                       ? 'bg-cement-light shadow-none translate-x-1 translate-y-1'
                       : 'bg-cement-light shadow-hard'
-                  }`}
+                    }`}
                 >
                   <ArrowRight size={26} strokeWidth={3} className="text-primary-red" />
                 </div>
@@ -138,11 +135,10 @@ export default function DashboardScreen({
             {SYSTEM_DATA.map((sys) => (
               <div
                 key={sys.id}
-                className={`w-6 h-3 border transition-colors ${
-                  progress[sys.id].earned
+                className={`w-6 h-3 border transition-colors ${progress[sys.id].earned
                     ? 'bg-pine border-pine-light'
                     : 'bg-neutral-800 border-neutral-600'
-                }`}
+                  }`}
               />
             ))}
           </div>
