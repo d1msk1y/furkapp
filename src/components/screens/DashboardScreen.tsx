@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import { ArrowRight, BookOpen, Trophy, Mountain } from 'lucide-react';
+import { ArrowRight, Trophy, Mountain } from 'lucide-react';
 import { SYSTEM_DATA } from '../../data';
 import { ZahnradSystem } from '../../types';
 import ScreenContainer from '../layout/ScreenContainer';
@@ -9,20 +9,23 @@ import SystemIcon from '../ui/SystemIcon';
 import InclineGauge from '../ui/InclineGauge';
 import { useLanguage } from '../../features/i18n/useLanguage';
 import { useChildMode } from '../../features/childMode/useChildMode';
+import { AchievementProgress } from '../../types';
 
 interface DashboardScreenProps {
   readonly onSelectSystem: (id: ZahnradSystem['id']) => void;
   readonly onGoBackToIntro: () => void;
-  readonly onStartQuiz: () => void;
-  readonly quizHighScore: number | null;
+  readonly onOpenAchievements: () => void;
+  readonly totalUnits: number;
+  readonly progress: AchievementProgress;
   readonly headerRightAction?: ReactNode;
 }
 
 export default function DashboardScreen({
   onSelectSystem,
   onGoBackToIntro,
-  onStartQuiz,
-  quizHighScore,
+  onOpenAchievements,
+  totalUnits,
+  progress,
   headerRightAction,
 }: Readonly<DashboardScreenProps>) {
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
@@ -122,26 +125,38 @@ export default function DashboardScreen({
         </main>
       </div>
 
-      {/* Quiz launch footer */}
+      {/* Achievements footer */}
       <footer className="p-6 bg-ink border-t-[3px] border-iron-dark flex flex-col gap-4">
-        {quizHighScore !== null && (
-          <div className="flex items-center justify-between border-2 border-primary-red bg-neutral-900 px-4 py-2 text-white font-mono text-sm uppercase">
-            <span className="flex items-center gap-2">
-              <Trophy size={14} className="text-primary-red" />
-              {t('dashboard.quiz_highscore', { score: quizHighScore, total: 5 })}
-            </span>
+        {/* Achievement progress bar */}
+        <div className="flex items-center justify-between border-2 border-primary-red bg-neutral-900 px-4 py-2.5 text-white">
+          <span className="flex items-center gap-2 font-mono text-sm font-black uppercase">
+            <Trophy size={14} className="text-primary-red" />
+            {t('dashboard.achievements_units', { count: totalUnits, total: SYSTEM_DATA.length })}
+          </span>
+          {/* Mini progress segments */}
+          <div className="flex gap-1">
+            {SYSTEM_DATA.map((sys) => (
+              <div
+                key={sys.id}
+                className={`w-6 h-3 border transition-colors ${
+                  progress[sys.id].earned
+                    ? 'bg-pine border-pine-light'
+                    : 'bg-neutral-800 border-neutral-600'
+                }`}
+              />
+            ))}
           </div>
-        )}
+        </div>
 
         <Button
           variant="cta"
           className="bg-cement-light text-iron-dark hover:bg-cement-sand border-iron-dark"
           shadowColor="#f22b0d"
-          onClick={onStartQuiz}
+          onClick={onOpenAchievements}
         >
           <span className="flex items-center gap-2">
-            <BookOpen size={24} strokeWidth={3} className="text-primary-red" />
-            {t('dashboard.quiz_cta')}
+            <Trophy size={24} strokeWidth={3} className="text-primary-red" />
+            {t('dashboard.achievements_cta')}
           </span>
           <ArrowRight size={26} strokeWidth={3} />
         </Button>
