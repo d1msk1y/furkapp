@@ -52,7 +52,7 @@ export default function Button({
 
   return (
     <button
-      className={`transition-all duration-75 cursor-pointer active:[box-shadow:none]! ${variantStyles[variant]} ${size ? sizeStyles[size] : ''} ${className}`}
+      className={`transition-all duration-75 delay-200 active:duration-0 active:delay-0 cursor-pointer active:[box-shadow:none]! ${variantStyles[variant]} ${size ? sizeStyles[size] : ''} ${className}`}
       style={{ boxShadow: shadow, ...style }}
       {...props}
     >
