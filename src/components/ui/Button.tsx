@@ -12,7 +12,7 @@ type ButtonProps = ComponentProps<'button'> & {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary-red text-white border-[3px] border-iron-dark font-bold uppercase tracking-wider hover:bg-swiss-orange active:translate-x-[4px] active:translate-y-[4px] active:shadow-none',
+    'bg-primary-red text-white border-[3px] border-iron-dark font-bold uppercase tracking-wider hover:bg-primary-red active:translate-x-[4px] active:translate-y-[4px] active:shadow-none',
   secondary:
     'bg-cement-light text-iron-dark border-[3px] border-iron-dark font-bold uppercase tracking-wider hover:bg-cement-sand active:translate-x-[4px] active:translate-y-[4px] active:shadow-none',
   icon:

@@ -18,12 +18,21 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
 
       <div className="flex-1 flex flex-col">
         {/* Hero Image */}
-        <div className="w-full h-[40vh] bg-neutral-900 overflow-hidden relative border-b-[3px] border-iron-dark flex flex-col justify-end">
+        <div className="w-full h-[20vh] md:h-[40vh] bg-neutral-900 overflow-hidden relative border-b-[3px] border-iron-dark flex flex-col justify-end">
           <img
             src="./hero-intro.jpg"
             alt="Swiss Alps mountain landscape"
             className="absolute inset-0 w-full h-full object-cover select-none"
           />
+
+          {/* Logo overlay */}
+          <div className="absolute bottom-2 left-2 z-10 bg-white p-2 border-[3px] border-iron-dark">
+            <img
+              src="./DFB-Logo.svg"
+              alt="DFB Logo"
+              className="h-12 md:h-18 w-auto"
+            />
+          </div>
 
           <div className="w-full h-1/4 bg-linear-to-t from-black to-transparent absolute bottom-0 left-0" />
         </div>
@@ -86,7 +95,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
       {/* CTA Footer */}
       <div className="p-6 bg-cement-light border-t-[3px] border-iron-dark sticky bottom-0 z-10">
         <div className="flex gap-3 items-stretch">
-          <Button variant="cta" className="bg-primary-red text-white hover:bg-swiss-orange flex-1" onClick={onExplore}>
+          <Button variant="cta" className="bg-primary-red text-white hover:bg-primary-red flex-1" onClick={onExplore}>
             <span>{t('intro.explore_button')}</span>
             <ArrowRight size={28} strokeWidth={3} className="animate-pulse" />
           </Button>

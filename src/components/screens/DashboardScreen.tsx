@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import { ArrowRight, Trophy, Mountain } from 'lucide-react';
+import { ArrowRight, Trophy, Mountain, Calendar } from 'lucide-react';
 import { SYSTEM_DATA } from '../../data';
 import { ZahnradSystem } from '../../types';
 import ScreenContainer from '../layout/ScreenContainer';
@@ -95,8 +95,8 @@ export default function DashboardScreen({
                     className={`text-xs font-mono uppercase tracking-wider font-extrabold mt-1 flex items-center gap-1 truncate ${isFlashing ? 'text-white/85' : 'text-slate-stone'
                       }`}
                   >
-                    <Mountain size={10} strokeWidth={2.5} className={isFlashing ? 'text-white' : 'text-primary-red'} />
-                    {t(`systems.${system.id}.famousLine`)} • {system.developed}
+                    <Calendar size={10} strokeWidth={2.5} className={isFlashing ? 'text-white' : 'text-primary-red'} />
+                    {system.developed}
                   </span>
                 </div>
 
@@ -110,8 +110,8 @@ export default function DashboardScreen({
 
                 <div
                   className={`shrink-0 h-12 w-12 flex items-center justify-center border-heavy rounded-sm transition-all duration-75 ${isFlashing
-                      ? 'bg-cement-light shadow-none translate-x-1 translate-y-1'
-                      : 'bg-cement-light shadow-hard'
+                    ? 'bg-cement-light shadow-none translate-x-1 translate-y-1'
+                    : 'bg-cement-light shadow-hard'
                     }`}
                 >
                   <ArrowRight size={26} strokeWidth={3} className="text-primary-red" />
@@ -124,25 +124,6 @@ export default function DashboardScreen({
 
       {/* Achievements footer */}
       <footer className="p-6 bg-ink border-t-[3px] border-iron-dark flex flex-col gap-4">
-        {/* Achievement progress bar */}
-        <div className="flex items-center justify-between border-2 border-primary-red bg-neutral-900 px-4 py-2.5 text-white">
-          <span className="flex items-center gap-2 font-mono text-sm font-black uppercase">
-            <Trophy size={14} className="text-primary-red" />
-            {t('dashboard.achievements_units', { count: totalUnits, total: SYSTEM_DATA.length })}
-          </span>
-          {/* Mini progress segments */}
-          <div className="flex gap-1">
-            {SYSTEM_DATA.map((sys) => (
-              <div
-                key={sys.id}
-                className={`w-6 h-3 border transition-colors ${progress[sys.id].earned
-                    ? 'bg-pine border-pine-light'
-                    : 'bg-neutral-800 border-neutral-600'
-                  }`}
-              />
-            ))}
-          </div>
-        </div>
 
         <Button
           variant="cta"
