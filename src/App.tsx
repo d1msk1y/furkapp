@@ -125,7 +125,7 @@ export default function App() {
           className="w-full grow flex"
         >
           {screen === 'intro' && (
-            <IntroScreen 
+            <IntroScreen
               onExplore={() => navigateTo('dashboard')}
               onSimulateError={() => triggerSimulationError('intro')}
               onOpenSettings={() => setSettingsOpen(true)}
@@ -133,14 +133,14 @@ export default function App() {
           )}
 
           {screen === 'dashboard' && (
-            <DashboardScreen 
+            <DashboardScreen
               onSelectSystem={(id) => navigateTo('detail', id)}
               onGoBackToIntro={() => navigateTo('intro')}
               onOpenAchievements={() => navigateTo('achievements')}
               totalUnits={totalUnits}
               progress={progress}
               headerRightAction={
-                <div className="flex items-center gap-1">              
+                <div className="flex items-center gap-1">
                   <Button
                     variant="icon"
                     size="sm"
@@ -155,7 +155,7 @@ export default function App() {
           )}
 
           {screen === 'detail' && (
-            <DetailScreen 
+            <DetailScreen
               system={currentSystem}
               onBackToDashboard={() => navigateTo('dashboard')}
               onStartQuiz={(id) => navigateTo('quiz', id)}
@@ -163,7 +163,7 @@ export default function App() {
           )}
 
           {screen === 'quiz' && selectedSystemId && (
-            <QuizScreen 
+            <QuizScreen
               systemId={selectedSystemId}
               onGoBackToDashboard={() => navigateTo('dashboard')}
               onQuizFinished={(id, score) => {
@@ -182,7 +182,7 @@ export default function App() {
           )}
 
           {screen === 'error' && (
-            <NetworkErrorScreen 
+            <NetworkErrorScreen
               onResolveSuccess={resolveErrorSuccess}
             />
           )}

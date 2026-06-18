@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 :root,
@@ -12,10 +12,10 @@
   --app-muted: #5b6670;
   --app-muted-soft: #6f7782;
   --app-shadow-color: #0d0d0d;
-  --theme-glacier: #2b6f8c;
-  --theme-glacier-light: #d7ecf2;
-  --theme-pine: #1f4d3a;
-  --theme-pine-light: #2f6b50;
+  --theme-glacier: #143a84;
+  --theme-glacier-light: #c2c9d4;
+  --theme-pine: #124e33;
+  --theme-pine-light: #d3daa9;
 }
 
 .theme-dark {
@@ -28,10 +28,10 @@
   --app-muted: #b8c3ce;
   --app-muted-soft: #9aa8b5;
   --app-shadow-color: #050607;
-  --theme-glacier: #5ea1bf;
-  --theme-glacier-light: #1f2b33;
-  --theme-pine: #458d6e;
-  --theme-pine-light: #5ba384;
+  --theme-glacier: #143a84;
+  --theme-glacier-light: #c2c9d4;
+  --theme-pine: #124e33;
+  --theme-pine-light: #d3daa9;
 
   /* Improve default Tailwind neutral readability in dark mode. */
   --color-neutral-900: #11161b;
@@ -44,25 +44,30 @@
 }
 
 @theme {
-  --color-primary-red: #f22b0d;
-  --color-swiss-orange: #FF2300;
+  --color-primary-red: #a31a1b;
+  --color-swiss-orange: #fec905;
   --color-ink: #0D0D0D;
   --color-cement-light: var(--app-surface);
   --color-cement-sand: var(--app-bg);
   --color-iron-dark: var(--app-text);
 
   /* Alpine accent palette — layered UNDER the red railway signal accent */
-  --color-pine: var(--theme-pine);       /* deep forest green */
+  --color-pine: var(--theme-pine);
+  /* deep forest green */
   --color-pine-light: var(--theme-pine-light);
   --color-glacier: var(--theme-glacier);
   --color-glacier-light: var(--theme-glacier-light);
-  --color-snow: #eef3f5;       /* cold snow white */
-  --color-slate-stone: var(--app-muted);/* weathered stone gray */
-  --color-amber-wood: #b5751f; /* warm timber / chalet accent */
+  --color-snow: #eef3f5;
+  /* cold snow white */
+  --color-slate-stone: var(--app-muted);
+  /* weathered stone gray */
+  --color-amber-wood: #b5751f;
+  /* warm timber / chalet accent */
 
-  --font-sans: "Space Grotesk", "Inter", sans-serif;
+  --font-sans: "Kepler Std", "Kepler", serif;
+  --font-heading: "DIN Condensed", "DIN", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  
+
   --shadow-hard: 4px 4px 0px 0px var(--app-shadow-color);
   --shadow-hard-lg: 6px 6px 0px 0px var(--app-shadow-color);
   --shadow-hard-sm: 2px 2px 0px 0px var(--app-shadow-color);
@@ -72,15 +77,19 @@
   .border-heavy {
     border: 3px solid var(--app-border);
   }
+
   .border-heavy-double {
     border: 6px solid var(--app-border);
   }
+
   .border-heavy-sm {
     border: 2px solid var(--app-border);
   }
+
   .border-bottom-heavy {
     border-bottom: 3px solid var(--app-border);
   }
+
   .text-label {
     font-family: var(--font-mono);
     font-size: 9px;
@@ -90,6 +99,7 @@
   }
 }
 
+html,
 body {
   font-family: var(--font-sans);
   background-color: var(--app-bg);
@@ -100,17 +110,29 @@ body {
   transition: background-color 160ms ease-out, color 160ms ease-out;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
 /* Custom scroll bar for industrial look */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--app-bg);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--app-border);
   border-radius: 0px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #f22b0d;
+  background: var(--color-primary-red);
 }

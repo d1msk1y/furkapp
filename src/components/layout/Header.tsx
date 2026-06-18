@@ -29,7 +29,7 @@ export default function Header({
         <ChevronLeft size={22} strokeWidth={3} className="text-iron-dark" />
       </Button>
 
-      <h2 className="font-sans font-black text-xl tracking-tight uppercase flex-1 text-center">
+      <h2 className="font-heading font-black text-xl tracking-tight uppercase flex-1 text-center">
         {title}
       </h2>
 

@@ -47,7 +47,7 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
                 {t('error.badge')}
               </Badge>
 
-              <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-iron-dark leading-tight font-sans">
+              <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-iron-dark leading-tight font-heading">
                 {t('error.title')}
               </h1>
 

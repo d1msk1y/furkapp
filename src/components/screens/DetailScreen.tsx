@@ -107,19 +107,9 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
               {t(`systems.${system.id}.name`)}
             </h2>
             <p className="text-sm font-mono font-bold uppercase tracking-widest text-primary-red mt-1">
-              {t('detail.developed')} {system.developed} • {t(`systems.${system.id}.type`).toUpperCase()}
+              {t(`systems.${system.id}.type`).toUpperCase()}
             </p>
           </div>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2 mt-4">
-          <Badge variant="pine" className="px-2 py-1">
-            <Mountain size={11} strokeWidth={2.5} />
-            {t(`systems.${system.id}.famousLine`).toUpperCase()}
-          </Badge>
-          <Badge variant="glacier" className="px-2 py-1">
-            {t(`systems.${system.id}.tagline`).toUpperCase()}
-          </Badge>
         </div>
 
         {/* Incline gauge — turns the gradient into a real slope */}
@@ -158,9 +148,8 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
               htmlFor="tech-toggle"
               aria-label={t('detail.show_tech')}
               onClick={(e) => e.stopPropagation()}
-              className={`block overflow-hidden h-8 rounded-none border-[3px] border-iron-dark cursor-pointer transition-colors duration-100 ${
-                showTechDetails ? 'bg-ink' : 'bg-cement-light'
-              }`}
+              className={`block overflow-hidden h-8 rounded-none border-[3px] border-iron-dark cursor-pointer transition-colors duration-100 ${showTechDetails ? 'bg-ink' : 'bg-cement-light'
+                }`}
             />
           </div>
         </section>

@@ -203,7 +203,7 @@ export default function QuizScreen({ systemId, onGoBackToDashboard, onQuizFinish
 
             {/* Question banner */}
             <Card shadow="sm" className="flex items-center justify-center min-h-40 p-5 relative bg-cement-light">
-              <h2 className="font-sans font-black text-2xl sm:text-3xl leading-[1.1] text-center uppercase tracking-tight text-iron-dark overflow-wrap-break-word">
+              <h2 className="font-heading font-black text-2xl sm:text-3xl leading-[1.1] text-center uppercase tracking-tight text-iron-dark overflow-wrap-break-word">
                 {currentQuestion.question}
               </h2>
               <div className="absolute -top-3.5 -left-3 px-2 py-0.5 bg-ink text-white font-mono text-[11px] tracking-wider uppercase border border-white">
@@ -233,7 +233,7 @@ export default function QuizScreen({ systemId, onGoBackToDashboard, onQuizFinish
                   <span className={`font-mono font-black text-lg sm:text-xl mr-5 shrink-0 transition-colors ${numStyle}`}>
                     {labelNum}
                   </span>
-                  <span className="font-sans font-black text-base tracking-wide uppercase truncate">
+                  <span className="font-heading font-black text-base tracking-wide uppercase truncate">
                     {option}
                   </span>
 
