@@ -123,7 +123,7 @@ export default function DashboardScreen({
       </div>
 
       {/* Achievements footer */}
-      <footer className="p-6 bg-ink border-t-[3px] border-iron-dark flex flex-col gap-4">
+      <footer className="pl-2 pr-3 pt-2 pb-4 bg-ink border-t-[3px] border-iron-dark flex flex-col gap-4">
 
         <Button
           variant="cta"

@@ -276,7 +276,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
       </main>
 
       {/* Fixed bottom CTA */}
-      <div className="fixed bottom-0 left-0 w-full bg-cement-sand border-t-[3px] border-iron-dark p-4 z-20 flex justify-center">
+      <div className="fixed bottom-0 left-0 w-full bg-cement-sand border-t-[3px] border-iron-dark p-6 z-20 flex justify-center">
         <div className="w-full max-w-2xl px-2">
           <Button
             variant="primary"

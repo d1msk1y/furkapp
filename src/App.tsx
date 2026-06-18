@@ -112,7 +112,7 @@ export default function App() {
   const currentSystem = SYSTEM_DATA.find((sys) => sys.id === selectedSystemId) || SYSTEM_DATA[0];
 
   return (
-    <div className="min-h-screen bg-cement-sand text-iron-dark select-none selection:bg-primary-red selection:text-white flex flex-col items-center">
+    <div className="min-h-[100dvh] bg-cement-sand text-iron-dark select-none selection:bg-primary-red selection:text-white flex flex-col items-center">
       {/* Absolute parent grid with simple screen routing logic */}
       <AnimatePresence mode="wait">
         <motion.div

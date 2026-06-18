@@ -24,7 +24,7 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
   };
 
   return (
-    <div className="min-h-screen bg-cement-sand flex flex-col justify-center items-center p-6 select-none relative w-full">
+    <div className="min-h-[100dvh] bg-cement-sand flex flex-col justify-center items-center p-6 select-none relative w-full">
       {/* Alpine ridgeline silhouette — "lost signal in the mountains" */}
       <div className="absolute bottom-0 left-0 w-full pointer-events-none select-none">
         <Ridgeline className="text-slate-stone opacity-15" height={140} withTrack />
