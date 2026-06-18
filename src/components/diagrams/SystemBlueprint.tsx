@@ -10,11 +10,11 @@ interface SystemBlueprintProps {
 
 // Actual photos — filenames as uploaded (rigenbach.png has a typo upstream)
 const photoMap: Record<string, string> = {
-  abt: './systemPictures/abt.png',
-  locher: './systemPictures/locher.png',
-  strub: './systemPictures/strub.png',
-  riggenbach: './systemPictures/rigenbach.png',
-  von_roll: './systemPictures/vonroll.png',
+  abt: 'abt',
+  locher: 'locher',
+  strub: 'strub',
+  riggenbach: 'rigenbach',
+  von_roll: 'vonroll',
 };
 
 export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: Readonly<SystemBlueprintProps>) {
@@ -24,12 +24,24 @@ export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: 
   return (
     <section className="relative w-full h-80 border-b-[3px] border-iron-dark bg-white overflow-hidden select-none">
       {photo && (
-        <img
-          src={photo}
-          alt={systemId}
-          className="absolute inset-0 w-full h-full object-cover"
-          draggable={false}
-        />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={`./systemPictures/${photo}-400w.webp 400w, ./systemPictures/${photo}-800w.webp 800w, ./systemPictures/${photo}-1200w.webp 1200w`}
+            sizes="100vw"
+          />
+          <source
+            type="image/png"
+            srcSet={`./systemPictures/${photo}-400w.png 400w, ./systemPictures/${photo}-800w.png 800w, ./systemPictures/${photo}-1200w.png 1200w`}
+            sizes="100vw"
+          />
+          <img
+            src={`./systemPictures/${photo}.png`}
+            alt={systemId}
+            className="absolute inset-0 w-full h-full object-cover"
+            draggable={false}
+          />
+        </picture>
       )}
 
       {/* Hotspot dots */}

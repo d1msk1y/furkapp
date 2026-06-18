@@ -19,11 +19,23 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
       <div className="flex-1 flex flex-col">
         {/* Hero Image */}
         <div className="w-full h-[20vh] md:h-[40vh] bg-neutral-900 overflow-hidden relative border-b-[3px] border-iron-dark flex flex-col justify-end">
-          <img
-            src="./hero-intro.jpg"
-            alt="Swiss Alps mountain landscape"
-            className="absolute inset-0 w-full h-full object-cover select-none"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="./hero-intro-400w.webp 400w, ./hero-intro-800w.webp 800w, ./hero-intro-1200w.webp 1200w"
+              sizes="100vw"
+            />
+            <source
+              type="image/jpeg"
+              srcSet="./hero-intro-400w.jpg 400w, ./hero-intro-800w.jpg 800w, ./hero-intro-1200w.jpg 1200w"
+              sizes="100vw"
+            />
+            <img
+              src="./hero-intro.jpg"
+              alt="Swiss Alps mountain landscape"
+              className="absolute inset-0 w-full h-full object-cover select-none"
+            />
+          </picture>
 
           {/* Logo overlay */}
           <div className="absolute bottom-2 left-2 z-10 bg-white p-2 border-[3px] border-iron-dark">
