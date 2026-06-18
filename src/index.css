@@ -12,6 +12,10 @@
   --app-muted: #5b6670;
   --app-muted-soft: #6f7782;
   --app-shadow-color: #0d0d0d;
+  --theme-glacier: #2b6f8c;
+  --theme-glacier-light: #d7ecf2;
+  --theme-pine: #1f4d3a;
+  --theme-pine-light: #2f6b50;
 }
 
 .theme-dark {
@@ -24,6 +28,10 @@
   --app-muted: #b8c3ce;
   --app-muted-soft: #9aa8b5;
   --app-shadow-color: #050607;
+  --theme-glacier: #5ea1bf;
+  --theme-glacier-light: #1f2b33;
+  --theme-pine: #458d6e;
+  --theme-pine-light: #5ba384;
 
   /* Improve default Tailwind neutral readability in dark mode. */
   --color-neutral-900: #11161b;
@@ -44,10 +52,10 @@
   --color-iron-dark: var(--app-text);
 
   /* Alpine accent palette — layered UNDER the red railway signal accent */
-  --color-pine: #1f4d3a;       /* deep forest green */
-  --color-pine-light: #2f6b50;
-  --color-glacier: #2b6f8c;    /* cold alpine lake / sky blue */
-  --color-glacier-light: #d7ecf2;
+  --color-pine: var(--theme-pine);       /* deep forest green */
+  --color-pine-light: var(--theme-pine-light);
+  --color-glacier: var(--theme-glacier);
+  --color-glacier-light: var(--theme-glacier-light);
   --color-snow: #eef3f5;       /* cold snow white */
   --color-slate-stone: var(--app-muted);/* weathered stone gray */
   --color-amber-wood: #b5751f; /* warm timber / chalet accent */

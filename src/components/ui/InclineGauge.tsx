@@ -1,3 +1,5 @@
+import { useLanguage } from '../../features/i18n/useLanguage';
+
 interface InclineGaugeProps {
   /** Gradient in percent (e.g. 48 for the Pilatusbahn). */
   readonly percent: number;
@@ -12,6 +14,7 @@ interface InclineGaugeProps {
  * (angle = atan(percent / 100)) for authenticity.
  */
 export default function InclineGauge({ percent, compact = false, className = '' }: InclineGaugeProps) {
+  const { t } = useLanguage();
   const baseX = 8;
   const baseY = 54;
   const baseLen = 84;
@@ -21,9 +24,9 @@ export default function InclineGauge({ percent, compact = false, className = '' 
   const angleDeg = Math.round((Math.atan(percent / 100) * 180) / Math.PI);
 
   // Train marker position along the slope.
-  const t = 0.6;
-  const trainX = baseX + baseLen * t;
-  const trainY = baseY - rise * t;
+  const trainT = 0.6;
+  const trainX = baseX + baseLen * trainT;
+  const trainY = baseY - rise * trainT;
 
   const Slope = (
     <svg viewBox="0 0 100 60" className="w-full h-full block" fill="none" aria-hidden="true">
@@ -57,14 +60,14 @@ export default function InclineGauge({ percent, compact = false, className = '' 
     <div className={`flex items-stretch gap-4 ${className}`}>
       <div className="relative h-24 flex-1 border-[3px] border-iron-dark bg-cement-light shadow-hard-sm">
         {Slope}
-        <span className="absolute top-1.5 left-2 text-label text-slate-stone">MAX. STEIGUNG</span>
+        <span className="absolute top-1.5 left-2 text-label text-slate-stone">{t('common.max_gradient')}</span>
       </div>
       <div className="flex flex-col items-center justify-center border-[3px] border-iron-dark bg-ink px-4 shadow-hard-sm">
         <span className="text-4xl font-black text-primary-red leading-none tracking-tighter">
           {percent}%
         </span>
         <span className="text-[11px] font-mono font-black uppercase tracking-widest text-white/70 mt-1">
-          ≈ {angleDeg}° NEIGUNG
+          {t('common.incline_approx', { angle: angleDeg })}
         </span>
       </div>
     </div>

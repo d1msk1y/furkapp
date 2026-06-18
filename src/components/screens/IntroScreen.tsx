@@ -20,7 +20,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
         {/* Hero Image */}
         <div className="w-full h-[40vh] bg-neutral-900 overflow-hidden relative border-b-[3px] border-iron-dark flex flex-col justify-end">
           <img
-            src="/hero-intro.jpg"
+            src="./hero-intro.jpg"
             alt="Swiss Alps mountain landscape"
             className="absolute inset-0 w-full h-full object-cover select-none"
           />
@@ -41,8 +41,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
             </Badge>
 
             <h1 className="text-4xl xs:text-5xl font-extrabold tracking-tighter uppercase leading-[0.95] text-iron-dark mb-6">
-              {t('intro.title_line1')} <br />
-              <span className="text-primary-red">{t('intro.title_line2')}</span>
+              {t('intro.title_line1')} <span className="text-primary-red">{t('intro.title_line2')}</span>
             </h1>
           </motion.div>
 
@@ -65,7 +64,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
             {[
               { icon: Layers, value: '5', labelKey: 'intro.stat_systems' },
               { icon: TrendingUp, value: '48%', labelKey: 'intro.stat_steepest' },
-              { icon: History, value: "1863\u2013heute", labelKey: 'intro.stat_era' },
+              { icon: History, value: t('intro.stat_era_value'), labelKey: 'intro.stat_era' },
             ].map((stat) => (
               <div
                 key={stat.labelKey}

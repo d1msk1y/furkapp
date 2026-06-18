@@ -3,7 +3,9 @@
     "back": "Retour",
     "retry": "Réessayer",
     "close": "Fermer",
-    "settings": "Paramètres"
+    "settings": "Paramètres",
+    "max_gradient": "PENTE MAX.",
+    "incline_approx": "≈ {{angle}}° INCLINAISON"
   },
   "intro": {
     "badge": "EXPOSITION DU CENTENAIRE",
@@ -13,6 +15,7 @@
     "stat_systems": "Systèmes",
     "stat_steepest": "le plus raide",
     "stat_era": "Époque",
+    "stat_era_value": "1863\u2013aujourd'hui",
     "explore_button": "EXPLORER LES SYSTÈMES",
     "error_sim_button": "SIMULER ERREUR SIGNAL"
   },

@@ -3,7 +3,9 @@
     "back": "Back",
     "retry": "Try Again",
     "close": "Close",
-    "settings": "Settings"
+    "settings": "Settings",
+    "max_gradient": "MAX. GRADIENT",
+    "incline_approx": "≈ {{angle}}° INCLINE"
   },
   "intro": {
     "badge": "100-YEAR ANNIVERSARY EXHIBITION",
@@ -13,6 +15,7 @@
     "stat_systems": "Systems",
     "stat_steepest": "steepest",
     "stat_era": "Era",
+    "stat_era_value": "1863\u2013today",
     "explore_button": "EXPLORE SYSTEMS",
     "error_sim_button": "SIMULATE SIGNAL ERROR"
   },

@@ -9,7 +9,7 @@ interface BadgeProps {
 const variantStyles = {
   dark: 'bg-ink text-white',
   light: 'bg-cement-light border border-iron-dark text-neutral-600',
-  outline: 'bg-red-50 border border-primary-red text-primary-red',
+  outline: 'bg-primary-red/10 border border-primary-red text-primary-red',
   pine: 'bg-pine text-white border border-iron-dark',
   glacier: 'bg-glacier-light border border-iron-dark text-glacier',
 };

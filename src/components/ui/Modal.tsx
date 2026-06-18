@@ -52,9 +52,6 @@ export default function Modal({
                   </h3>
                 </div>
 
-                <Button variant="icon" size="sm" onClick={onClose} aria-label="Schließen">
-                  <X size={20} strokeWidth={3} className="text-iron-dark" />
-                </Button>
               </div>
 
               <div className="w-full h-0.75 bg-ink mb-4" />

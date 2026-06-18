@@ -3,7 +3,9 @@
     "back": "Zurück",
     "retry": "Erneut versuchen",
     "close": "Schließen",
-    "settings": "Einstellungen"
+    "settings": "Einstellungen",
+    "max_gradient": "MAX. STEIGUNG",
+    "incline_approx": "≈ {{angle}}° NEIGUNG"
   },
   "intro": {
     "badge": "100-JAHRE-FEST JUBILÄUMSEXPOSITION",
@@ -13,6 +15,7 @@
     "stat_systems": "Systeme",
     "stat_steepest": "steilste",
     "stat_era": "Epoche",
+    "stat_era_value": "1863\u2013heute",
     "explore_button": "SYSTEME ERKUNDEN",
     "error_sim_button": "SIGNALFEHLER SIMULIEREN"
   },
