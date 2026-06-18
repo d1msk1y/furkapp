@@ -192,12 +192,6 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
                 </p>
               </div>
 
-              <div className="flex justify-center">
-                <span className="flex items-center justify-center h-8 w-8 bg-ink rounded-full">
-                  <ArrowDown size={18} strokeWidth={3} className="text-white" />
-                </span>
-              </div>
-
               <div className="bg-cement-light border-[3px] border-iron-dark shadow-hard-sm p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="flex items-center justify-center h-8 w-8 bg-pine border-2 border-iron-dark shrink-0">

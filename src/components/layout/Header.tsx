@@ -26,7 +26,7 @@ export default function Header({
       } ${className}`}
     >
       <Button variant="icon" size="sm" onClick={onBack} aria-label={backLabel}>
-        <ChevronLeft size={22} strokeWidth={3} className="text-iron-dark" />
+        <ChevronLeft size={22} strokeWidth={3} className="text-iron-dark" aria-hidden="true" />
       </Button>
 
       <h2 className="font-heading font-black text-xl tracking-tight uppercase flex-1 text-center">

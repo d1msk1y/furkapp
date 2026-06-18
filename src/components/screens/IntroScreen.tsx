@@ -44,7 +44,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
           >
-            <Badge variant="dark" className="mb-4 text-[11px] px-2 py-1">
+            <Badge variant="dark" aria-hidden="true" className="mb-4 text-[11px] px-2 py-1">
               <HardHat size={12} className="text-primary-red" />
               {t('intro.badge')}
             </Badge>
@@ -77,7 +77,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
             ].map((stat) => (
               <div
                 key={stat.labelKey}
-                className="flex flex-col items-center text-center bg-cement-light border-[3px] border-iron-dark shadow-hard-sm p-3"
+                className="flex flex-col items-center text-center bg-cement-light border-[3px] border-iron-dark p-3"
               >
                 <stat.icon size={20} strokeWidth={2.5} className="text-primary-red mb-2" />
                 <span className="text-xl xs:text-2xl font-black tracking-tighter leading-none text-iron-dark">
@@ -105,7 +105,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
             aria-label={t('common.settings')}
             className="aspect-square h-16 shrink-0 flex items-center justify-center p-0"
           >
-            <SlidersHorizontal size={22} strokeWidth={3} className="text-iron-dark" />
+            <SlidersHorizontal size={22} strokeWidth={3} className="text-iron-dark" aria-hidden="true" />
           </Button>
         </div>
       </div>

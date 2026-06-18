@@ -34,8 +34,8 @@ export function extractAccessibleText(element: HTMLElement): string {
   // Clean up
   document.body.removeChild(clone);
 
-  // Replace layout newlines with an ellipsis and space to force a natural pause in TTS
-  return text.replace(/\n+/g, '... ');
+  // Replace layout newlines with a comma and space to force a natural pause in TTS without reading 'dot'
+  return text.replace(/\n+/g, ', ');
 }
 
 export function speakText(text: string, lang: string = 'en') {

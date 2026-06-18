@@ -226,19 +226,19 @@ export default function QuizScreen({ systemId, onGoBackToDashboard, onQuizFinish
                   onClick={() => handleOptionClick(index)}
                   disabled={isFrozen}
                   aria-label={`Auswahl ${index + 1}: ${option}`}
-                  className={`group relative flex items-center w-full h-19 sm:h-21 text-left px-5 cursor-pointer border-[3px] transition-all duration-75 ${blockStyle} ${
+                  className={`group relative flex items-center w-full min-h-[4.75rem] sm:min-h-[5.25rem] py-3 text-left px-5 cursor-pointer border-[3px] transition-all duration-75 ${blockStyle} ${
                     isFrozen ? '' : 'shadow-hard active:translate-x-1 active:translate-y-1 active:shadow-none bg-cement-light hover:border-primary-red'
                   }`}
                 >
                   <span className={`font-mono font-black text-lg sm:text-xl mr-5 shrink-0 transition-colors ${numStyle}`}>
                     {labelNum}
                   </span>
-                  <span className="font-heading font-black text-base tracking-wide uppercase truncate">
+                  <span className="font-heading font-black text-base tracking-wide uppercase pr-10">
                     {option}
                   </span>
 
                   {isFrozen && isSelected && (
-                    <div className="absolute right-5 shrink-0">
+                    <div className="absolute right-5 top-1/2 -translate-y-1/2 shrink-0">
                       {isCorrectTarget ? (
                         <div className="bg-cement-light text-iron-dark border-2 border-iron-dark p-1 rounded-sm">
                           <Check size={16} strokeWidth={3} className="text-green-600" />

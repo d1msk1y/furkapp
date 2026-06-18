@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode, HTMLAttributes } from 'react';
 
-interface BadgeProps {
+interface BadgeProps extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode;
   variant?: 'dark' | 'light' | 'outline' | 'pine' | 'glacier';
   className?: string;
@@ -14,10 +14,11 @@ const variantStyles = {
   glacier: 'bg-glacier-light border border-iron-dark text-glacier',
 };
 
-export default function Badge({ children, variant = 'dark', className = '' }: BadgeProps) {
+export default function Badge({ children, variant = 'dark', className = '', ...props }: BadgeProps) {
   return (
     <span
       className={`inline-flex items-center gap-1 text-[11px] font-mono font-black uppercase tracking-widest px-2 py-0.5 ${variantStyles[variant]} ${className}`}
+      {...props}
     >
       {children}
     </span>
