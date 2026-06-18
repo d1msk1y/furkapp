@@ -20,7 +20,7 @@ export default function IntroScreen({ onExplore, onSimulateError, onOpenSettings
         {/* Hero Image */}
         <div className="w-full h-[40vh] bg-neutral-900 overflow-hidden relative border-b-[3px] border-iron-dark flex flex-col justify-end">
           <img
-            src="/hero-intro.jpg"
+            src="./hero-intro.jpg"
             alt="Swiss Alps mountain landscape"
             className="absolute inset-0 w-full h-full object-cover select-none"
           />

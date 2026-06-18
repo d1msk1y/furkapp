@@ -10,11 +10,11 @@ interface SystemBlueprintProps {
 
 // Actual photos — filenames as uploaded (rigenbach.png has a typo upstream)
 const photoMap: Record<string, string> = {
-  abt: '/systemPictures/abt.png',
-  locher: '/systemPictures/locher.png',
-  strub: '/systemPictures/strub.png',
-  riggenbach: '/systemPictures/rigenbach.png',
-  von_roll: '/systemPictures/vonroll.png',
+  abt: './systemPictures/abt.png',
+  locher: './systemPictures/locher.png',
+  strub: './systemPictures/strub.png',
+  riggenbach: './systemPictures/rigenbach.png',
+  von_roll: './systemPictures/vonroll.png',
 };
 
 export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: Readonly<SystemBlueprintProps>) {
