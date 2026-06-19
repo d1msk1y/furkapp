@@ -96,7 +96,7 @@ export default function NetworkErrorScreen({ onResolveSuccess }: Readonly<Networ
               </p>
 
               <p className="text-sm text-neutral-400 font-mono mt-3 uppercase">
-                PINGE BASISSTATION MUTTHORNHOF // BANDBREITE OPTIMIERT
+                {t('error.reconnecting_debug')}
               </p>
             </Card>
 

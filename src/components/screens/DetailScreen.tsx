@@ -288,7 +288,7 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
         isOpen={!!selectedHotspot}
         onClose={() => setSelectedHotspot(null)}
         title={selectedHotspot ? t(`systems.${system.id}.hotspots.${selectedHotspot.id}_title`) : ''}
-        subtitle="BUILT FOR STEEP ROUTES"
+        subtitle={t('detail.hotspot_subtitle')}
         footerAction={
           <button
             onClick={() => setSelectedHotspot(null)}
