@@ -254,9 +254,28 @@ export default function QuizScreen({ systemId, onGoBackToDashboard, onQuizFinish
             })}
           </div>
 
-          {/* Evaluation hint */}
-          <div className="h-8 px-6 font-mono text-center text-sm text-neutral-400 uppercase font-bold flex items-center justify-center">
-            {isFrozen && t('quiz.evaluating')}
+          {/* Evaluation hint / answer feedback */}
+          <div className="px-6 pb-4 min-h-[4rem] font-mono text-sm uppercase font-bold flex flex-col gap-1 justify-center">
+            {isFrozen && selectedOptionIndex !== null && (() => {
+              const isCorrect = selectedOptionIndex === currentQuestion.correctOptionIndex;
+              return (
+                <>
+                  <div className={`flex items-center gap-2 text-base font-black ${isCorrect ? 'text-pine' : 'text-primary-red'}`}>
+                    {isCorrect
+                      ? <Check size={16} strokeWidth={3} className="shrink-0" />
+                      : <AlertTriangle size={16} strokeWidth={3} className="shrink-0" />
+                    }
+                    {isCorrect ? t('quiz.correct_label') : t('quiz.wrong_label')}
+                  </div>
+                  {currentQuestion.explanation && (
+                    <p className="text-xs text-neutral-500 normal-case font-normal leading-relaxed">
+                      <span className="font-black uppercase text-neutral-400">{t('quiz.explanation_prefix')}</span>{' '}
+                      {currentQuestion.explanation}
+                    </p>
+                  )}
+                </>
+              );
+            })()}
           </div>
         </main>
       )}
