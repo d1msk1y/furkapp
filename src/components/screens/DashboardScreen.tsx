@@ -1,5 +1,5 @@
 import { ReactNode, useState } from 'react';
-import { ArrowRight, Trophy, Mountain, Calendar } from 'lucide-react';
+import { ArrowRight, Trophy, Mountain, Calendar, House } from 'lucide-react';
 import { SYSTEM_DATA } from '../../data';
 import { ZahnradSystem } from '../../types';
 import ScreenContainer from '../layout/ScreenContainer';
@@ -48,6 +48,7 @@ export default function DashboardScreen({
           title={t('dashboard.title')}
           onBack={onGoBackToIntro}
           backLabel={t('dashboard.back_label')}
+          BackIcon={House}
           rightAction={headerRightAction}
           className="p-5"
         />

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, ElementType } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import Button from '../ui/Button';
 
@@ -9,15 +9,18 @@ interface HeaderProps {
   rightAction?: ReactNode;
   sticky?: boolean;
   className?: string;
+  /** Optional icon component for the back button. Defaults to ChevronLeft. Use House for a home icon (NF3). */
+  BackIcon?: ElementType;
 }
 
 export default function Header({
   title,
   onBack,
-  backLabel = 'Zurück',
+  backLabel = 'Back',
   rightAction,
   sticky = false,
   className = '',
+  BackIcon = ChevronLeft,
 }: HeaderProps) {
   return (
     <header
@@ -26,7 +29,7 @@ export default function Header({
       } ${className}`}
     >
       <Button variant="icon" size="sm" onClick={onBack} aria-label={backLabel}>
-        <ChevronLeft size={22} strokeWidth={3} className="text-iron-dark" aria-hidden="true" />
+        <BackIcon size={22} strokeWidth={3} className="text-iron-dark" aria-hidden="true" />
       </Button>
 
       <h2 className="font-heading font-black text-xl tracking-tight uppercase flex-1 text-center">
