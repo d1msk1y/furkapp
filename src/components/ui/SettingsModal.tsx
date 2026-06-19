@@ -1,3 +1,4 @@
+import { useRef, useEffect, useId } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Settings, X, Sun, Moon } from 'lucide-react';
 import 'flag-icons/css/flag-icons.min.css';
@@ -22,6 +23,57 @@ export default function SettingsModal({ isOpen, onClose, isOnboarding = false }:
   const { isDarkMode, toggleTheme } = useThemeMode();
   const { isChildMode, toggleChildMode } = useChildMode();
   const { isScreenReaderEnabled, toggleScreenReader } = useScreenReader();
+  const modalRef = useRef<HTMLDivElement>(null);
+  const titleId = useId();
+  const prevFocusRef = useRef<HTMLElement | null>(null);
+
+  // Move focus into the dialog on open; restore on close
+  useEffect(() => {
+    if (isOpen) {
+      prevFocusRef.current = document.activeElement as HTMLElement;
+      const timer = setTimeout(() => {
+        const focusables = (modalRef.current as HTMLDivElement | null)?.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        (focusables?.[0] as HTMLElement | undefined)?.focus();
+      }, 50);
+      return () => clearTimeout(timer);
+    } else {
+      (prevFocusRef.current as HTMLElement | null)?.focus();
+    }
+  }, [isOpen]);
+
+  // Focus trap + Escape to close
+  useEffect(() => {
+    if (!isOpen || isOnboarding) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusable = Array.from(
+          (modalRef.current as HTMLDivElement | null)?.querySelectorAll<HTMLElement>(
+            'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          ) ?? []
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0] as HTMLElement;
+        const last = focusable[focusable.length - 1] as HTMLElement;
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, isOnboarding, onClose]);
 
   const handleLanguageSelect = (lang: SupportedLanguage) => {
     setLanguage(lang);
@@ -51,7 +103,13 @@ export default function SettingsModal({ isOpen, onClose, isOnboarding = false }:
             transition={{ type: 'spring', damping: 28, stiffness: 260 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-5 pointer-events-none"
           >
-            <div className="w-full max-w-sm pointer-events-auto bg-cement-light border-[3px] border-iron-dark shadow-[6px_6px_0px_0px_var(--app-shadow-color)] flex flex-col">
+            <div
+              ref={modalRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={titleId}
+              className="w-full max-w-sm pointer-events-auto bg-cement-light border-[3px] border-iron-dark shadow-[6px_6px_0px_0px_var(--app-shadow-color)] flex flex-col"
+            >
 
               {/* Header */}
               <div className="flex items-center justify-between p-5 border-b-[3px] border-iron-dark">
@@ -63,7 +121,7 @@ export default function SettingsModal({ isOpen, onClose, isOnboarding = false }:
                     <span className="block text-[10px] font-mono font-extrabold tracking-widest uppercase text-primary-red">
                       {isOnboarding ? t('settings.onboarding_subtitle') : t('settings.subtitle')}
                     </span>
-                    <h2 className="text-lg font-black uppercase tracking-tight text-iron-dark leading-none">
+                    <h2 id={titleId} className="text-lg font-black uppercase tracking-tight text-iron-dark leading-none">
                       {isOnboarding ? t('settings.onboarding_title') : t('settings.title')}
                     </h2>
                   </div>
