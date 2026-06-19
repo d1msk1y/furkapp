@@ -3,6 +3,7 @@
     "back": "Zurück",
     "retry": "Erneut versuchen",
     "close": "Schließen",
+    "continue": "Weiter",
     "settings": "Einstellungen",
     "max_gradient": "MAX. STEIGUNG",
     "incline_approx": "≈ {{angle}}° NEIGUNG"

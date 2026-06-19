@@ -25,9 +25,6 @@ export default function SettingsModal({ isOpen, onClose, isOnboarding = false }:
 
   const handleLanguageSelect = (lang: SupportedLanguage) => {
     setLanguage(lang);
-    if (isOnboarding) {
-      onClose();
-    }
   };
 
   return (
@@ -121,91 +118,85 @@ export default function SettingsModal({ isOpen, onClose, isOnboarding = false }:
                 </div>
 
                 {/* Child Mode Section */}
-                {!isOnboarding && (
-                  <div>
-                    <Badge variant="outline" className="mb-3 text-[10px]">
-                      {t('settings.child_mode_section')}
-                    </Badge>
+                <div>
+                  <Badge variant="outline" className="mb-3 text-[10px]">
+                    {t('settings.child_mode_section')}
+                  </Badge>
 
-                    <button
-                      type="button"
-                      onClick={() => toggleChildMode()}
-                      className={`flex items-center justify-between w-full px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm mb-6
-                        ${isChildMode
-                          ? 'bg-ink text-white shadow-[3px_3px_0px_0px_var(--app-shadow-color)]'
-                          : 'bg-cement-sand text-iron-dark hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] shadow-[3px_3px_0px_0px_var(--app-shadow-color)] active:shadow-none'
-                        }`}
-                    >
-                      <span>{t('settings.child_mode_title')}</span>
-                      <span className={`text-[10px] font-mono font-extrabold tracking-widest uppercase ${isChildMode ? 'text-primary-red' : 'text-iron-dark/50'}`}>
-                        {isChildMode ? t('settings.status_on') : t('settings.status_off')}
-                      </span>
-                    </button>
-                  </div>
-                )}
+                  <button
+                    type="button"
+                    onClick={() => toggleChildMode()}
+                    className={`flex items-center justify-between w-full px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm mb-6
+                      ${isChildMode
+                        ? 'bg-ink text-white shadow-[3px_3px_0px_0px_var(--app-shadow-color)]'
+                        : 'bg-cement-sand text-iron-dark hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] shadow-[3px_3px_0px_0px_var(--app-shadow-color)] active:shadow-none'
+                      }`}
+                  >
+                    <span>{t('settings.child_mode_title')}</span>
+                    <span className={`text-[10px] font-mono font-extrabold tracking-widest uppercase ${isChildMode ? 'text-primary-red' : 'text-iron-dark/50'}`}>
+                      {isChildMode ? t('settings.status_on') : t('settings.status_off')}
+                    </span>
+                  </button>
+                </div>
 
                 {/* Accessibility Section */}
-                {!isOnboarding && (
-                  <div>
-                    <Badge variant="outline" className="mb-3 text-[10px]">
-                      {t('settings.accessibility_section')}
-                    </Badge>
+                <div>
+                  <Badge variant="outline" className="mb-3 text-[10px]">
+                    {t('settings.accessibility_section')}
+                  </Badge>
 
+                  <button
+                    type="button"
+                    onClick={() => toggleScreenReader()}
+                    className={`flex items-center justify-between w-full px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm mb-6
+                      ${isScreenReaderEnabled
+                        ? 'bg-ink text-white shadow-[3px_3px_0px_0px_var(--app-shadow-color)]'
+                        : 'bg-cement-sand text-iron-dark hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] shadow-[3px_3px_0px_0px_var(--app-shadow-color)] active:shadow-none'
+                      }`}
+                  >
+                    <span className="flex items-center gap-2">
+                      {t('settings.screen_reader_title')}
+                    </span>
+                    <span className={`text-[10px] font-mono font-extrabold tracking-widest uppercase ${isScreenReaderEnabled ? 'text-primary-red' : 'text-iron-dark/50'}`}>
+                      {isScreenReaderEnabled ? t('settings.status_on') : t('settings.status_off')}
+                    </span>
+                  </button>
+                </div>
+
+                {/* Theme Section */}
+                <div>
+                  <Badge variant="outline" className="mb-3 text-[10px]">
+                    {t('settings.theme_section')}
+                  </Badge>
+
+                  <div className="grid grid-cols-2 gap-2">
                     <button
                       type="button"
-                      onClick={() => toggleScreenReader()}
-                      className={`flex items-center justify-between w-full px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm mb-6
-                        ${isScreenReaderEnabled
+                      onClick={() => !isDarkMode || toggleTheme()}
+                      className={`flex items-center justify-center gap-2 px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm
+                        ${!isDarkMode
                           ? 'bg-ink text-white shadow-[3px_3px_0px_0px_var(--app-shadow-color)]'
                           : 'bg-cement-sand text-iron-dark hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] shadow-[3px_3px_0px_0px_var(--app-shadow-color)] active:shadow-none'
                         }`}
                     >
-                      <span className="flex items-center gap-2">
-                        {t('settings.screen_reader_title')}
-                      </span>
-                      <span className={`text-[10px] font-mono font-extrabold tracking-widest uppercase ${isScreenReaderEnabled ? 'text-primary-red' : 'text-iron-dark/50'}`}>
-                        {isScreenReaderEnabled ? t('settings.status_on') : t('settings.status_off')}
-                      </span>
+                      <Sun size={16} strokeWidth={2.5} />
+                      {t('settings.theme_light')}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => isDarkMode || toggleTheme()}
+                      className={`flex items-center justify-center gap-2 px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm
+                        ${isDarkMode
+                          ? 'bg-ink text-white shadow-[3px_3px_0px_0px_var(--app-shadow-color)]'
+                          : 'bg-cement-sand text-iron-dark hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] shadow-[3px_3px_0px_0px_var(--app-shadow-color)] active:shadow-none'
+                        }`}
+                    >
+                      <Moon size={16} strokeWidth={2.5} />
+                      {t('settings.theme_dark')}
                     </button>
                   </div>
-                )}
-
-                {/* Theme Section */}
-                {!isOnboarding && (
-                  <div>
-                    <Badge variant="outline" className="mb-3 text-[10px]">
-                      {t('settings.theme_section')}
-                    </Badge>
-
-                    <div className="grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
-                        onClick={() => !isDarkMode || toggleTheme()}
-                        className={`flex items-center justify-center gap-2 px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm
-                          ${!isDarkMode
-                            ? 'bg-ink text-white shadow-[3px_3px_0px_0px_var(--app-shadow-color)]'
-                            : 'bg-cement-sand text-iron-dark hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] shadow-[3px_3px_0px_0px_var(--app-shadow-color)] active:shadow-none'
-                          }`}
-                      >
-                        <Sun size={16} strokeWidth={2.5} />
-                        {t('settings.theme_light')}
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => isDarkMode || toggleTheme()}
-                        className={`flex items-center justify-center gap-2 px-4 py-3 border-[3px] border-iron-dark transition-all duration-75 cursor-pointer select-none font-black uppercase tracking-wide text-sm
-                          ${isDarkMode
-                            ? 'bg-ink text-white shadow-[3px_3px_0px_0px_var(--app-shadow-color)]'
-                            : 'bg-cement-sand text-iron-dark hover:bg-cement-light active:translate-x-[2px] active:translate-y-[2px] shadow-[3px_3px_0px_0px_var(--app-shadow-color)] active:shadow-none'
-                          }`}
-                      >
-                        <Moon size={16} strokeWidth={2.5} />
-                        {t('settings.theme_dark')}
-                      </button>
-                    </div>
-                  </div>
-                )}
+                </div>
               </div>
 
               {/* Footer divider */}
@@ -214,9 +205,9 @@ export default function SettingsModal({ isOpen, onClose, isOnboarding = false }:
               {/* Footer action */}
               {isOnboarding && (
                 <div className="p-4 bg-cement-sand">
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-iron-dark/60 text-center">
-                    {t('settings.language_section')} · {t('settings.theme_section')}
-                  </p>
+                  <Button variant="primary" className="w-full" onClick={onClose}>
+                    {t('common.continue')}
+                  </Button>
                 </div>
               )}
             </div>

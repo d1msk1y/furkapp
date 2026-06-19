@@ -3,6 +3,7 @@
     "back": "Retour",
     "retry": "Réessayer",
     "close": "Fermer",
+    "continue": "Continuer",
     "settings": "Paramètres",
     "max_gradient": "PENTE MAX.",
     "incline_approx": "≈ {{angle}}° INCLINAISON"
