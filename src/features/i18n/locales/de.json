@@ -34,7 +34,9 @@
     "history_label": "Historische Details",
     "quiz_cta": "QUIZ STARTEN",
     "stats_note": "HINWEIS: Alle Toleranz-Angaben basieren auf den Originalzeichnungen und Archivbeständen der Furka-Oberalp-Bahngesellschaft aus dem späten 19. Jahrhundert.",
-    "hotspot_hint": "ROTE HOTSPOTS TIPPFÄHIG"
+    "hotspot_hint": "ROTE HOTSPOTS TIPPFÄHIG",
+    "photo_alt": "Foto des {{system}}-Systems mit markierten Hotspots",
+    "hotspot_subtitle": "Konstruktionsdetail"
   },
   "quiz": {
     "title": "WISSENSQUIZ",
@@ -79,7 +81,8 @@
     "description": "Analyse: In alpinen Bergregionen der Furka-Bergstrecke kommt es regelmässig zu schwankenden Netzabdeckungen.",
     "retry_button": "ERNEUT VERSUCHEN",
     "reconnecting_title": "VERBINDUNG WIRD HERGESTELLT...",
-    "reconnecting_info": "ALPINE FREQUENZEN WERDEN GESCANNT..."
+    "reconnecting_info": "ALPINE FREQUENZEN WERDEN GESCANNT...",
+    "reconnecting_debug": "SCANNE BASISSTATION // NETZFREQUENZ WIRD OPTIMIERT"
   },
   "settings": {
     "subtitle": "EINSTELLUNGEN",
