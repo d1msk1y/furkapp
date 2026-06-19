@@ -37,7 +37,7 @@ export default function SystemBlueprint({ systemId, hotspots, onHotspotClick }: 
           />
           <img
             src={`./systemPictures/${photo}.png`}
-            alt={systemId}
+            alt={t('detail.photo_alt', { system: t(`systems.${systemId}.name`) })}
             className="absolute inset-0 w-full h-full object-cover"
             draggable={false}
           />
