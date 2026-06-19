@@ -35,6 +35,11 @@ export default function App() {
   const { isScreenReaderEnabled } = useScreenReader();
   const { language } = useLanguage();
 
+  // Keep the <html lang> attribute in sync with the active language so AT and TTS use the correct language
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   // Settings modal state
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [isOnboarding, setIsOnboarding] = useState(false);
