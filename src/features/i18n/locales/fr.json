@@ -35,7 +35,9 @@
     "history_label": "Détails historiques",
     "quiz_cta": "DÉMARRER LE QUIZ",
     "stats_note": "NOTE: Toutes les données de tolérance sont basées sur les dessins originaux et les fonds d'archives de la Compagnie du chemin de fer Furka-Oberalp de la fin du 19e siècle.",
-    "hotspot_hint": "POINTS CHAUDS ROUGES CLIQUABLES"
+    "hotspot_hint": "POINTS CHAUDS ROUGES CLIQUABLES",
+    "photo_alt": "Photo du système {{system}} avec les points d'intérêt mis en évidence",
+    "hotspot_subtitle": "Détail de Construction"
   },
   "quiz": {
     "title": "QUIZ DE CONNAISSANCES",
@@ -80,7 +82,8 @@
     "description": "Analyse: Dans les régions montagneuses alpines de la ligne de montagne Furka, des variations de couverture réseau se produisent régulièrement.",
     "retry_button": "RÉESSAYER",
     "reconnecting_title": "RECONNEXION EN COURS...",
-    "reconnecting_info": "SCAN DES FRÉQUENCES ALPINES..."
+    "reconnecting_info": "SCAN DES FRÉQUENCES ALPINES...",
+    "reconnecting_debug": "ANALYSE DE LA STATION DE BASE // FRÉQUENCE RÉSEAU OPTIMISÉE"
   },
   "settings": {
     "subtitle": "PRÉFÉRENCES",

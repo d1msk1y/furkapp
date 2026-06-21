@@ -35,7 +35,9 @@
     "history_label": "Historical Details",
     "quiz_cta": "START QUIZ",
     "stats_note": "NOTE: All tolerance figures are based on the original drawings and archive holdings of the Furka-Oberalp Railway Company from the late 19th century.",
-    "hotspot_hint": "RED HOTSPOTS TAPPABLE"
+    "hotspot_hint": "RED HOTSPOTS TAPPABLE",
+    "photo_alt": "Photo of the {{system}} system with highlighted hotspots",
+    "hotspot_subtitle": "Construction Detail"
   },
   "quiz": {
     "title": "KNOWLEDGE QUIZ",
@@ -80,7 +82,8 @@
     "description": "Analysis: In alpine mountain regions of the Furka mountain route, fluctuating network coverage occurs regularly.",
     "retry_button": "TRY AGAIN",
     "reconnecting_title": "RECONNECTING...",
-    "reconnecting_info": "SCANNING ALPINE FREQUENCIES..."
+    "reconnecting_info": "SCANNING ALPINE FREQUENCIES...",
+    "reconnecting_debug": "SCANNING BASE STATION // NETWORK FREQUENCY OPTIMISED"
   },
   "settings": {
     "subtitle": "PREFERENCES",

@@ -1,7 +1,5 @@
-import { ReactNode } from 'react';
+import { ReactNode, useRef, useEffect, useId } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X } from 'lucide-react';
-import Button from './Button';
 
 interface ModalProps {
   readonly isOpen: boolean;
@@ -20,6 +18,58 @@ export default function Modal({
   children,
   footerAction,
 }: Readonly<ModalProps>) {
+  const modalRef = useRef<HTMLDivElement>(null);
+  const titleId = useId();
+  const prevFocusRef = useRef<HTMLElement | null>(null);
+
+  // Move focus into the modal on open; restore it on close
+  useEffect(() => {
+    if (isOpen) {
+      prevFocusRef.current = document.activeElement as HTMLElement;
+      const timer = setTimeout(() => {
+        const focusables = (modalRef.current as HTMLDivElement | null)?.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        (focusables?.[0] as HTMLElement | undefined)?.focus();
+      }, 50);
+      return () => clearTimeout(timer);
+    } else {
+      (prevFocusRef.current as HTMLElement | null)?.focus();
+    }
+  }, [isOpen]);
+
+  // Focus trap + Escape to close
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusable = Array.from(
+          (modalRef.current as HTMLDivElement | null)?.querySelectorAll<HTMLElement>(
+            'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          ) ?? []
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0] as HTMLElement;
+        const last = focusable[focusable.length - 1] as HTMLElement;
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -29,10 +79,15 @@ export default function Modal({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
+            aria-hidden="true"
             className="fixed inset-0 bg-ink/55 z-40 cursor-pointer"
           />
 
           <motion.div
+            ref={modalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={titleId}
             initial={{ y: '100%' }}
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
@@ -47,7 +102,7 @@ export default function Modal({
                       {subtitle}
                     </span>
                   )}
-                  <h3 className="text-2xl font-black uppercase tracking-tight text-iron-dark">
+                  <h3 id={titleId} className="text-2xl font-black uppercase tracking-tight text-iron-dark">
                     {title}
                   </h3>
                 </div>
