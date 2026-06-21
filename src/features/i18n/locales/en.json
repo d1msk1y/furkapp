@@ -34,7 +34,7 @@
     "solution_label": "THE SOLUTION",
     "history_label": "Historical Details",
     "quiz_cta": "START QUIZ",
-    "stats_note": "NOTE: All tolerance figures are based on the original drawings and archive holdings of the Furka-Oberalp Railway Company from the late 19th century.",
+    "stats_note": "NOTE: Technical specifications are based on historical sources and documented specifications for each rack system.",
     "hotspot_hint": "RED HOTSPOTS TAPPABLE",
     "photo_alt": "Photo of the {{system}} system with highlighted hotspots",
     "hotspot_subtitle": "Construction Detail"
@@ -148,7 +148,7 @@
         "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
         "rack_material_value": "Special Rolled Steel",
-        "gauge_value": "1000 mm (Metre Gauge)"
+        "gauge_value": "800 mm (BRB) / 1000 mm"
       },
       "hotspots": {
         "lamellen_title": "Offset Lamella Bars",
@@ -217,30 +217,30 @@
     },
     "von_roll": {
       "name": "Von Roll System",
-      "type": "Monoblock Solid Steel Profile",
-      "tagline": "Seamless solid steel",
-      "famousLine": "Modern Mountain Railways",
-      "explanationShort": "A modern and highly developed optimisation for today's mountain railways. It is fully compatible with Abt, but consists of a single monolithic cast element.",
-      "steepDangerText": "The advent of the heaviest freight and passenger flows stresses the historical multi-part slide ladders so massively that maintenance costs explode.",
-      "solutionText": "Von Roll's Swiss engineering achievement: A completely mill-cast single rail with vertical milled teeth. No welds, no rivets, no loosening.",
-      "historyAndPurpose": "The Von Roll company (now Tenconi) standardised this system to bring Swiss mountain railways into the 21st century. It can be laid extremely quickly, easily withstands the most modern 100-tonne trains and is today the most widely installed rack modernisation kit.",
+      "type": "Lamella Rack",
+      "tagline": "Standard since the 20th century",
+      "famousLine": "Zentralbahn (Engelberg) / Appenzell Railway",
+      "explanationShort": "The Von Roll lamella rack – also called the Lamella system – consists of a single flat steel blade with vertical teeth. Developed as a complement and replacement for the Riggenbach and Strub rack, it is today the most widely used rack type in the world.",
+      "steepDangerText": "The rolled head-profile rails used in the Strub system eventually became unavailable. At the same time, switches for Riggenbach and Strub racks were very complex and expensive to build.",
+      "solutionText": "Von Roll's answer: a simple flat steel blade with machined teeth – similar in shape to the Abt system but wider. Switches are far simpler to build with this profile. Compatible with Riggenbach and Strub locomotives.",
+      "historyAndPurpose": "The Von Roll company has its roots in 1803 and grew into one of Switzerland's most important industrial groups. The lamella rack named after the company was never intended as a standalone system – rather as a complement to Riggenbach and Strub, primarily to simplify the complex switches. Today, virtually all new rack rails are built on the lamella principle. Railways equipped with Riggenbach or Strub racks already use lamella-style elements in their switches.",
       "stats": {
         "max_gradient": "Max. Gradient",
         "tooth_pitch": "Tooth Pitch",
         "rack_material": "Rack Material",
         "gauge": "Gauge",
-        "max_gradient_value": "150 ‰ (15 %)",
+        "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
-        "rack_material_value": "High-Strength Tempered Steel",
-        "gauge_value": "1000 mm"
+        "rack_material_value": "Rolled steel (flat profile)",
+        "gauge_value": "800 – 1435 mm"
       },
       "hotspots": {
-        "monoblock_title": "Seamless Solid Steel Rail",
-        "monoblock_desc": "There are no longer individual plates or bolts. The teeth are CNC-precision milled directly from an extremely hard cast steel rail.",
-        "abt_kompatibel_title": "Universal Gear Profile",
-        "abt_kompatibel_desc": "Through sophisticated dimensions, locomotives with Abt gear wheels can easily traverse this modern Von Roll rack. Perfect for partial track renewals.",
-        "lange_lebensdauer_title": "Wear-Resistant Alloy",
-        "lange_lebensdauer_desc": "Thanks to the most modern surface hardening, this system withstands extreme braking friction heat without thermal shock or geometric distortion."
+        "monoblock_title": "Single Flat Steel Blade",
+        "monoblock_desc": "Instead of a ladder or wedge rail: a single flat steel blade with vertically machined teeth. Wider than a single Abt lamella, simpler to manufacture than a Riggenbach ladder.",
+        "abt_kompatibel_title": "Compatible with Riggenbach & Strub",
+        "abt_kompatibel_desc": "Locomotives built for Riggenbach or Strub racks can run on the lamella rail – as long as Strub safety jaws are not in use. This allows gradual track renewals.",
+        "lange_lebensdauer_title": "Simpler Switches",
+        "lange_lebensdauer_desc": "The key breakthrough of the Von Roll system: the flat profile is far easier to install in switch areas than the complex Riggenbach ladder. Almost all new rack railway switches are now built on this principle."
       }
     }
   },
@@ -355,29 +355,29 @@
     },
     "von_roll": {
       "q1": {
-        "question": "What makes the Von Roll system fundamentally different from older systems?",
-        "options": ["It uses rubber teeth", "It is a single monolithic cast element with no separate parts", "It requires three gears", "It only works on flat terrain"],
-        "explanation": "The Von Roll system is a completely mill-cast single rail with vertical milled teeth — no welds, no rivets, no loosening of parts."
+        "question": "For what purpose was the Von Roll lamella rack originally developed?",
+        "options": ["As a replacement for the Locher system", "As a complement to simplify Riggenbach and Strub switches", "As a completely independent new system", "For broad-gauge railways in South America"],
+        "explanation": "The lamella rack was never planned as a standalone system, but as a complement – above all to simplify the complex switches required by Riggenbach and Strub racks."
       },
       "q2": {
-        "question": "With which older system is Von Roll fully compatible?",
-        "options": ["Abt System", "Riggenbach System", "Locher System", "Strub System"],
-        "explanation": "Through sophisticated dimensions, locomotives with Abt gear wheels can easily traverse the modern Von Roll rack — perfect for gradual track modernisation."
+        "question": "With which systems is the Von Roll lamella rack compatible?",
+        "options": ["Riggenbach and Strub vehicles", "Locher vehicles only", "Brand new vehicles only", "No older vehicle"],
+        "explanation": "Vehicles for Riggenbach and Strub lines can run on the lamella rail – as long as Strub safety jaws are not used. Perfect for gradual track modernisation."
       },
       "q3": {
-        "question": "How are the teeth manufactured in the Von Roll system?",
-        "options": ["Hand-forged by blacksmiths", "3D-printed in titanium", "CNC-precision milled from cast steel", "Laser-cut from carbon fibre"],
-        "explanation": "The teeth are CNC-precision milled directly from an extremely hard, cast steel rail — modern manufacturing for maximum accuracy and durability."
+        "question": "What does a Von Roll lamella rack look like?",
+        "options": ["Like a ladder with round bolts", "Like a complex three-lamella system", "A single flat steel blade with vertical teeth", "A hollow tube with external teeth"],
+        "explanation": "The lamella rack is a single flat steel blade – similar to the Abt system but wider. No ladder structure, no wedge rail."
       },
       "q4": {
-        "question": "What company produces the Von Roll system today?",
-        "options": ["Stadler Rail", "Tenconi (formerly Von Roll)", "Bombardier", "Siemens"],
-        "explanation": "The Von Roll company (now Tenconi) standardised this system to bring Swiss mountain railways into the 21st century."
+        "question": "When were the foundations of the Von Roll company established?",
+        "options": ["1945", "1803", "In the year 2000", "1896"],
+        "explanation": "The Von Roll company has its roots in 1803, growing into one of Switzerland's most important industrial companies."
       },
       "q5": {
-        "question": "What is the maximum gradient the Von Roll system supports?",
-        "options": ["480 ‰ (48%)", "250 ‰ (25%)", "100 ‰ (10%)", "150 ‰ (15%)"],
-        "explanation": "The Von Roll system supports up to 150 ‰ (15%) gradient — designed for modern heavy-duty mountain railways rather than extreme steep gradients."
+        "question": "Where is the Von Roll lamella principle most commonly found today?",
+        "options": ["Only on the Pilatus Railway", "Only on decommissioned lines", "On narrow-gauge lines in South America", "In the switches of railways with Riggenbach or Strub racks"],
+        "explanation": "The lamella principle has become dominant particularly in switch construction. Today, almost all new rack railway switches are built on this principle."
       }
     }
   },
@@ -411,10 +411,10 @@
         "tagline": "The first ever! 🪜"
       },
       "von_roll": {
-        "explanationShort": "This is the newest and most modern system! It's made from one big piece of super strong steel – no screws or bolts needed! 🔧",
-        "steepDangerText": "Old track systems with many small parts kept breaking because modern trains are so heavy and fast!",
-        "solutionText": "Von Roll's solution: Make the whole rail from ONE piece of super-strong steel using computer-controlled machines. Nothing can come loose! 💎",
-        "tagline": "Super modern! 🔧"
+        "explanationShort": "This system is made from a single flat steel blade – simple and clever! It was invented to make switches on rack railways much easier. ⚙️",
+        "steepDangerText": "The old rack rails stopped being made and the switches were very complicated and expensive to build!",
+        "solutionText": "Von Roll's solution: a simple flat steel blade with teeth – no ladder, no clamp system. The switches are much simpler! 🔧",
+        "tagline": "Simple and clever! ⚙️"
       }
     },
     "system_quiz": {
@@ -528,29 +528,29 @@
       },
       "von_roll": {
         "q1": {
-          "question": "What is special about the Von Roll rail?",
-          "options": ["It's made of rubber", "It's made from ONE big piece of super-strong steel!", "It needs to be painted every day", "It only works in summer"],
-          "explanation": "The Von Roll rail is carved from one huge block of steel by a computer-controlled machine. No screws, no bolts – super strong! 💪"
+          "question": "What was the Von Roll lamella system built to do?",
+          "options": ["Replace the Pilatus Railway", "Make switches on rack railways simpler!", "Go faster", "Have more colours"],
+          "explanation": "The Von Roll system makes switches on rack railways much simpler! ⚙️"
         },
         "q2": {
-          "question": "Can old Abt trains use Von Roll tracks?",
-          "options": ["Yes! They fit perfectly!", "No way!", "Only on Tuesdays", "Only backwards"],
-          "explanation": "Von Roll tracks are cleverly designed so that old Abt trains can use them too – super smart! 🧠"
+          "question": "Which old systems can work with the lamella rack?",
+          "options": ["Riggenbach and Strub!", "Locher only", "Nothing at all", "Only brand new trains"],
+          "explanation": "Trains for Riggenbach and Strub lines can run on the lamella rail! 🚂"
         },
         "q3": {
-          "question": "How does a computer help make Von Roll rails?",
-          "options": ["It plays games on them", "It writes emails", "It precisely cuts the teeth with CNC machines!", "It paints them pretty colours"],
-          "explanation": "CNC means Computer Numerical Control – a computer tells a machine exactly where to cut each tooth. Super precise! 🤖"
+          "question": "What does a lamella rack look like?",
+          "options": ["Like a ladder", "Like a pipe", "Like a single flat steel blade!", "Like a triangle"],
+          "explanation": "The lamella rack is a simple flat steel blade – no complicated structure! 💪"
         },
         "q4": {
-          "question": "What company makes Von Roll rails now?",
-          "options": ["A toy company", "Tenconi!", "A food company", "A space agency"],
-          "explanation": "The company is now called Tenconi – they make the most modern rack rails in Switzerland! 🏭"
+          "question": "When was the Von Roll company founded?",
+          "options": ["In the year 2000", "In 1803!", "Yesterday", "In 1900"],
+          "explanation": "The Von Roll company has existed since 1803 – that's very old! 🏭"
         },
         "q5": {
-          "question": "Why don't Von Roll rails break easily?",
-          "options": ["Because they're magical", "Because someone watches them all day", "Because they're made of jelly", "Because they're ONE piece of super-hard steel with no weak spots!"],
-          "explanation": "With no screws, bolts, or joins, there are NO weak spots where the rail could break. One piece = super strong! 💎"
+          "question": "Where do you see the Von Roll principle most today?",
+          "options": ["Only on the Pilatus Railway", "Nowhere anymore", "Only in museums", "In the switches of almost all rack railways!"],
+          "explanation": "Almost all new switches on rack railways today use the Von Roll lamella principle! ⚙️"
         }
       }
     }

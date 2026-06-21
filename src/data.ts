@@ -190,7 +190,7 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
       }
     ],
     historyAndPurpose: 'Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen. Es lässt sich extrem schnell verlegen, widersteht modernsten 100-Tonnen-Triebzügen spielend und ist heute das am häufigsten verbaute Zahnstangen-Modernisierungskit.',
-    maxGradientPercent: 15,
+    maxGradientPercent: 25,
     famousLine: 'Moderne Bergbahnen',
     tagline: 'Fugenloser Vollstahl',
     iconKey: 'monoblock'

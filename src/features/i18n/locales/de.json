@@ -34,7 +34,7 @@
     "solution_label": "Die Lösung",
     "history_label": "Historische Details",
     "quiz_cta": "QUIZ STARTEN",
-    "stats_note": "HINWEIS: Alle Toleranz-Angaben basieren auf den Originalzeichnungen und Archivbeständen der Furka-Oberalp-Bahngesellschaft aus dem späten 19. Jahrhundert.",
+    "stats_note": "HINWEIS: Die technischen Angaben basieren auf historischen Quellen und dokumentierten Spezifikationen der jeweiligen Zahnradsysteme.",
     "hotspot_hint": "ROTE HOTSPOTS TIPPFÄHIG",
     "photo_alt": "Foto des {{system}}-Systems mit markierten Hotspots",
     "hotspot_subtitle": "Konstruktionsdetail"
@@ -148,7 +148,7 @@
         "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
         "rack_material_value": "Spezial-Walzstahl",
-        "gauge_value": "1000 mm (Meterspur)"
+        "gauge_value": "800 mm (BRB) / 1000 mm"
       },
       "hotspots": {
         "lamellen_title": "Versetzte Lamellenstangen",
@@ -217,30 +217,30 @@
     },
     "von_roll": {
       "name": "Von Roll System",
-      "type": "Monoblock-Vollstahlprofil",
-      "tagline": "Fugenloser Vollstahl",
-      "famousLine": "Moderne Bergbahnen",
-      "explanationShort": "Eine moderne und hochentwickelte Optimierung für heutige Bergbahnen. Es ist voll kompatibel zu Abt, besteht aber aus einem einzigen monolithischen Gusselement.",
-      "steepDangerText": "Das Aufkommen schwerster Güter- und Personenströme beansprucht die historischen, mehrteiligen Schiebeleitern so massiv, dass der Wartungsaufwand explodiert.",
-      "solutionText": "Von Rolls Schweizer Ingenieursleistung: Eine komplett im Walzwerk gegossene massive Einzelschiene mit vertikaler Fräsverzahnung. Keine Schweissnähte, keine Nieten, kein Lockern.",
-      "historyAndPurpose": "Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen. Es lässt sich extrem schnell verlegen, widersteht modernsten 100-Tonnen-Triebzügen spielend und ist heute das am häufigsten verbaute Zahnstangen-Modernisierungskit.",
+      "type": "Lamellenstange",
+      "tagline": "Standard seit dem 20. Jahrhundert",
+      "famousLine": "Zentralbahn (Engelberg) / Appenzellerbahn",
+      "explanationShort": "Die Von-Roll-Lamellenstange – auch Lamella-System genannt – besteht aus einem einzigen flachen Stahlblatt mit vertikaler Verzahnung. Entwickelt als Ergänzung und Ersatz für Riggenbach- und Strub-Zahnstangen, ist sie heute der weltweit am häufigsten verlegte Zahnstangentyp.",
+      "steepDangerText": "Die gewalzten Kopfschienen nach Strub wurden mit der Zeit nicht mehr hergestellt. Zudem waren die Weichen für Riggenbach- und Strub-Zahnstangen ausgesprochen aufwändig und teuer zu bauen.",
+      "solutionText": "Von Rolls Antwort: Ein einfaches, flaches Stahlblatt mit eingefrästen Zähnen – ähnlich dem Abt-System, aber breiter. Weichen lassen sich damit viel einfacher bauen. Das System ist mit Riggenbach- und Strub-Fahrzeugen kompatibel.",
+      "historyAndPurpose": "Die Firma Von Roll hat ihre Wurzeln im Jahr 1803 und wurde zu einem der wichtigsten Schweizer Industrieunternehmen. Die nach ihr benannte Lamellenstange war ursprünglich nie als eigenständiges System gedacht, sondern als Ergänzung zu Riggenbach und Strub – vor allem um die aufwändigen Weichen zu vereinfachen. Heute werden neue Zahnstangen nahezu ausschliesslich nach dem Lamella-Prinzip gebaut. Bahnen mit Riggenbach- oder Strub-Zahnstangen verwenden bei ihren Weichen bereits seit Langem Lamella-Elemente.",
       "stats": {
         "max_gradient": "Max. Steigung",
         "tooth_pitch": "Zahnteilung",
         "rack_material": "Material Zahnstange",
         "gauge": "Spurweite",
-        "max_gradient_value": "150 ‰ (15 %)",
+        "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
-        "rack_material_value": "Hochfester Vergütungsstahl",
-        "gauge_value": "1000 mm"
+        "rack_material_value": "Walzstahl (Flachprofil)",
+        "gauge_value": "800 – 1435 mm"
       },
       "hotspots": {
-        "monoblock_title": "Fugenlose Vollstahlschiene",
-        "monoblock_desc": "Es gibt keine einzelnen Platten oder Bolzen mehr. Die Zähne sind mit CNC-Präzision direkt aus einer extrem harten, gegossenen Stahlschiene gefräst.",
-        "abt_kompatibel_title": "Universal-Verzahnung",
-        "abt_kompatibel_desc": "Durch ausgeklügelte Abmessungen können Loks mit Abt-Zahnrädern diese moderne Von-Roll-Zahnstange anstandslos befahren. Perfekt für Strecken-Teilerneuerungen.",
-        "lange_lebensdauer_title": "Verschleissfreie Legierung",
-        "lange_lebensdauer_desc": "Dank modernster Oberflächenhärtung trotzt dieses System extremsten Bremsreibungswärmen ohne thermischen Schock oder Geometrieverzug."
+        "monoblock_title": "Einteiliges Flachstahlblatt",
+        "monoblock_desc": "Statt einer Leiter oder einer Keilschiene: ein einzelnes flaches Stahlblatt mit vertikal eingefrästen Zähnen. Breiter als eine Abt-Lamelle, einfacher herzustellen als eine Riggenbach-Leiter.",
+        "abt_kompatibel_title": "Kompatibel mit Riggenbach & Strub",
+        "abt_kompatibel_desc": "Lokomotiven für Riggenbach- oder Strub-Strecken können die Lamellenstange befahren – sofern keine Strub-Sicherheitszangen genutzt werden. Das ermöglicht schrittweise Streckenerneuerungen.",
+        "lange_lebensdauer_title": "Vereinfachte Weichen",
+        "lange_lebensdauer_desc": "Der eigentliche Durchbruch des Von-Roll-Systems: Das flache Profil lässt sich in Weichenbereichen viel einfacher verlegen als die komplizierte Riggenbach-Leiter. Heute sind fast alle neuen Zahnstangenweichen nach diesem Prinzip gebaut."
       }
     }
   },
@@ -355,29 +355,29 @@
     },
     "von_roll": {
       "q1": {
-        "question": "Was unterscheidet das Von Roll System grundlegend von älteren Systemen?",
-        "options": ["Es nutzt Gummizähne", "Es ist ein monolithisches Gusselement ohne Einzelteile", "Es benötigt drei Zahnräder", "Es funktioniert nur auf ebenem Gelände"],
-        "explanation": "Das Von Roll System ist eine komplett im Walzwerk gegossene massive Einzelschiene mit vertikaler Fräsverzahnung – keine Schweissnähte, keine Nieten, kein Lockern."
+        "question": "Für welchen Zweck wurde das Von-Roll-Lamella-System ursprünglich entwickelt?",
+        "options": ["Als Ersatz für das Locher-System", "Als Ergänzung für Riggenbach- und Strub-Weichen", "Als komplett unabhängiges neues System", "Für Breitspurbahnen in Südamerika"],
+        "explanation": "Das Lamella-System war nie als eigenständiges System geplant, sondern als Ergänzung – vor allem um die aufwändigen Weichen nach Riggenbach und Strub zu vereinfachen."
       },
       "q2": {
-        "question": "Mit welchem älteren System ist Von Roll voll kompatibel?",
-        "options": ["Abt System", "Riggenbach System", "Locher System", "Strub System"],
-        "explanation": "Durch ausgeklügelte Abmessungen können Loks mit Abt-Zahnrädern diese moderne Von-Roll-Zahnstange anstandslos befahren – perfekt für schrittweise Streckenmodernisierung."
+        "question": "Mit welchen Systemen ist das Von-Roll-Lamella-System kompatibel?",
+        "options": ["Riggenbach- und Strub-Fahrzeuge", "Nur Locher-Fahrzeuge", "Nur nagelneue Fahrzeuge", "Keine älteren Fahrzeuge"],
+        "explanation": "Fahrzeuge für Riggenbach- und Strub-Strecken können die Lamellenstange befahren – sofern keine Strub-Sicherheitszangen genutzt werden. Perfekt für schrittweise Streckenerneuerungen."
       },
       "q3": {
-        "question": "Wie werden die Zähne beim Von Roll System hergestellt?",
-        "options": ["Von Hand geschmiedet", "3D-gedruckt aus Titan", "CNC-Präzisionsfräsung aus Gussstahl", "Lasergeschnitten aus Kohlefaser"],
-        "explanation": "Die Zähne werden mit CNC-Präzision direkt aus einer extrem harten, gegossenen Stahlschiene gefräst – modernste Fertigung für maximale Genauigkeit und Haltbarkeit."
+        "question": "Wie ist eine Von-Roll-Lamellenstange aufgebaut?",
+        "options": ["Wie eine Leiter mit runden Bolzen", "Als komplexes Dreilamellen-System", "Als einzelnes flaches Stahlblatt mit vertikalen Zähnen", "Als hohles Rohr mit Aussenverzahnung"],
+        "explanation": "Die Lamellenstange besteht aus einem einzigen flachen Stahlblatt – ähnlich dem Abt-System, aber breiter. Kein Leiteraufbau, keine Keilschiene."
       },
       "q4": {
-        "question": "Welches Unternehmen produziert heute das Von Roll System?",
-        "options": ["Stadler Rail", "Tenconi (ehemals Von Roll)", "Bombardier", "Siemens"],
-        "explanation": "Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen."
+        "question": "Wann wurden die Grundlagen des Von-Roll-Unternehmens gelegt?",
+        "options": ["1945", "1803", "Im Jahr 2000", "1896"],
+        "explanation": "Die Firma Von Roll hat ihre Wurzeln im Jahr 1803 und entwickelte sich zu einem der wichtigsten Schweizer Industrieunternehmen."
       },
       "q5": {
-        "question": "Welche maximale Steigung unterstützt das Von Roll System?",
-        "options": ["480 ‰ (48%)", "250 ‰ (25%)", "100 ‰ (10%)", "150 ‰ (15%)"],
-        "explanation": "Das Von Roll System unterstützt bis zu 150 ‰ (15%) Steigung – konzipiert für moderne, schwere Bergbahnen statt extreme Steilstrecken."
+        "question": "Wo sieht man das Von-Roll-Lamella-Prinzip heute am häufigsten?",
+        "options": ["Ausschliesslich auf der Pilatusbahn", "Nur noch auf eingestellten Strecken", "Auf Schmalspurstrecken in Südamerika", "In Weichen von Bahnen mit Riggenbach- oder Strub-Zahnstangen"],
+        "explanation": "Das Lamella-Prinzip hat sich vor allem im Weichenbau durchgesetzt. Heute sind neue Zahnstangenweichen nahezu ausschliesslich nach diesem Prinzip gebaut."
       }
     }
   },
@@ -411,10 +411,10 @@
         "tagline": "Die allererste! 🪜"
       },
       "von_roll": {
-        "explanationShort": "Das ist das neueste und modernste System! Es wird aus einem grossen Stück superstarkem Stahl gemacht – keine Schrauben oder Bolzen nötig! 🔧",
-        "steepDangerText": "Alte Gleissysteme mit vielen kleinen Teilen gingen immer wieder kaputt, weil moderne Züge so schwer und schnell sind!",
-        "solutionText": "Von Rolls Lösung: Die ganze Schiene aus EINEM Stück superstärkem Stahl machen, mit computergesteuerten Maschinen. Nichts kann sich lockern! 💎",
-        "tagline": "Supermodern! 🔧"
+        "explanationShort": "Dieses System besteht aus einem einzigen flachen Stahlblatt – einfach und clever! Es wurde erfunden, damit Zahnradbahnen viel einfachere Weichen bekommen. ⚙️",
+        "steepDangerText": "Die alten Zahnschienen wurden irgendwann nicht mehr hergestellt. Und die Weichen waren sehr kompliziert und teuer!",
+        "solutionText": "Von Rolls Lösung: Ein einfaches, flaches Stahlblatt mit Zähnen – kein Leiteraufbau, kein kompliziertes Zangensystem. Die Weichen sind viel einfacher! 🔧",
+        "tagline": "Einfach und clever! ⚙️"
       }
     },
     "system_quiz": {
@@ -528,29 +528,29 @@
       },
       "von_roll": {
         "q1": {
-          "question": "Was ist besonders an der Von-Roll-Schiene?",
-          "options": ["Sie ist aus Gummi", "Sie ist aus EINEM grossen Stück superstärkem Stahl gemacht!", "Sie muss jeden Tag angemalt werden", "Sie funktioniert nur im Sommer"],
-          "explanation": "Die Von-Roll-Schiene wird aus einem riesigen Stahlblock von einer computergesteuerten Maschine geschnitzt. Keine Schrauben, keine Bolzen – superstark! 💪"
+          "question": "Wozu wurde das Von-Roll-Lamella-System gebaut?",
+          "options": ["Um die Pilatusbahn zu ersetzen", "Um Weichen für Zahnradbahnen einfacher zu machen!", "Um schneller zu fahren", "Um mehr Farben zu haben"],
+          "explanation": "Das Von-Roll-System macht die Weichen bei Zahnradbahnen viel einfacher! ⚙️"
         },
         "q2": {
-          "question": "Können alte Abt-Züge auf Von-Roll-Gleisen fahren?",
-          "options": ["Ja! Sie passen perfekt!", "Auf keinen Fall!", "Nur dienstags", "Nur rückwärts"],
-          "explanation": "Von-Roll-Gleise sind clever designed, sodass alte Abt-Züge auch darauf fahren können – superschlau! 🧠"
+          "question": "Mit welchen alten Systemen kann das Lamella-System zusammenarbeiten?",
+          "options": ["Riggenbach und Strub!", "Nur mit Locher", "Mit gar nichts", "Nur mit neuen Zügen"],
+          "explanation": "Züge für Riggenbach- und Strub-Strecken können die Lamellenstange befahren! 🚂"
         },
         "q3": {
-          "question": "Wie hilft ein Computer beim Bau von Von-Roll-Schienen?",
-          "options": ["Er spielt Spiele darauf", "Er schreibt E-Mails", "Er schneidet die Zähne mit CNC-Maschinen präzise!", "Er malt sie in hübschen Farben an"],
-          "explanation": "CNC bedeutet Computergesteuerte Numerische Steuerung – ein Computer sagt einer Maschine genau, wo jeder Zahn geschnitten werden muss. Superpräzise! 🤖"
+          "question": "Wie sieht eine Lamellenstange aus?",
+          "options": ["Wie eine Leiter", "Wie ein Rohr", "Wie ein einzelnes flaches Stahlblatt!", "Wie ein Dreieck"],
+          "explanation": "Die Lamellenstange ist ein einfaches flaches Stahlblatt – kein komplizierter Aufbau! 💪"
         },
         "q4": {
-          "question": "Welche Firma baut heute Von-Roll-Schienen?",
-          "options": ["Eine Spielzeugfirma", "Tenconi!", "Eine Lebensmittelfirma", "Eine Weltraumagentur"],
-          "explanation": "Die Firma heisst jetzt Tenconi – sie machen die modernsten Zahnschienen der Schweiz! 🏭"
+          "question": "Wann entstand das Unternehmen Von Roll?",
+          "options": ["Im Jahr 2000", "Im Jahr 1803!", "Gestern", "Im Jahr 1900"],
+          "explanation": "Die Firma Von Roll gibt es schon seit 1803 – das ist sehr alt! 🏭"
         },
         "q5": {
-          "question": "Warum gehen Von-Roll-Schienen nicht leicht kaputt?",
-          "options": ["Weil sie magisch sind", "Weil jemand sie den ganzen Tag beobachtet", "Weil sie aus Gelee sind", "Weil sie EIN Stück superharten Stahl ohne Schwachstellen sind!"],
-          "explanation": "Ohne Schrauben, Bolzen oder Verbindungen gibt es KEINE Schwachstellen, wo die Schiene brechen könnte. Ein Stück = superstark! 💎"
+          "question": "Wo sieht man das Von-Roll-Prinzip heute am meisten?",
+          "options": ["Nur auf der Pilatusbahn", "Nirgendwo mehr", "Nur im Museum", "In den Weichen von fast allen Zahnradbahnen!"],
+          "explanation": "Fast alle neuen Weichen bei Zahnradbahnen benutzen heute das Lamella-Prinzip von Von Roll! ⚙️"
         }
       }
     }

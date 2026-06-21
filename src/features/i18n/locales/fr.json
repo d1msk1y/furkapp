@@ -34,7 +34,7 @@
     "solution_label": "LA SOLUTION",
     "history_label": "Détails historiques",
     "quiz_cta": "DÉMARRER LE QUIZ",
-    "stats_note": "NOTE: Toutes les données de tolérance sont basées sur les dessins originaux et les fonds d'archives de la Compagnie du chemin de fer Furka-Oberalp de la fin du 19e siècle.",
+    "stats_note": "NOTE : Les données techniques sont basées sur des sources historiques et les spécifications documentées de chaque système à crémaillère.",
     "hotspot_hint": "POINTS CHAUDS ROUGES CLIQUABLES",
     "photo_alt": "Photo du système {{system}} avec les points d'intérêt mis en évidence",
     "hotspot_subtitle": "Détail de Construction"
@@ -148,7 +148,7 @@
         "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
         "rack_material_value": "Acier laminé spécial",
-        "gauge_value": "1000 mm (voie métrique)"
+        "gauge_value": "800 mm (BRB) / 1000 mm"
       },
       "hotspots": {
         "lamellen_title": "Barres lamellaires décalées",
@@ -217,30 +217,30 @@
     },
     "von_roll": {
       "name": "Système Von Roll",
-      "type": "Profil en acier massif monobloc",
-      "tagline": "Acier massif sans joints",
-      "famousLine": "Chemins de fer de montagne modernes",
-      "explanationShort": "Une optimisation moderne et très développée pour les chemins de fer de montagne actuels. Il est entièrement compatible avec Abt, mais se compose d'un seul élément coulé monolithique.",
-      "steepDangerText": "L'avènement des flux de marchandises et de passagers les plus lourds sollicite tellement les échelles coulissantes historiques à plusieurs parties que les coûts de maintenance explosent.",
-      "solutionText": "La réalisation d'ingénierie suisse de Von Roll: Un rail unique massif entièrement coulé en laminoir avec une denture verticale fraisée. Pas de soudures, pas de rivets, pas de desserrement.",
-      "historyAndPurpose": "La société Von Roll (aujourd'hui Tenconi) a standardisé ce système pour amener les chemins de fer de montagne suisses au 21e siècle. Il peut être posé extrêmement rapidement, résiste facilement aux trains les plus modernes de 100 tonnes et est aujourd'hui le kit de modernisation de crémaillère le plus installé.",
+      "type": "Crémaillère lamellaire",
+      "tagline": "Standard depuis le 20e siècle",
+      "famousLine": "Zentralbahn (Engelberg) / Chemin de fer d'Appenzell",
+      "explanationShort": "La crémaillère lamellaire Von Roll – aussi appelée système Lamella – se compose d'une unique lame plate en acier avec des dents verticales. Développée comme complément et remplacement des crémaillères Riggenbach et Strub, c'est aujourd'hui le type de crémaillère le plus posé dans le monde.",
+      "steepDangerText": "Les rails à tête laminée du système Strub ont fini par ne plus être fabriqués. De plus, les aiguillages pour crémaillères Riggenbach et Strub étaient très complexes et coûteux à construire.",
+      "solutionText": "La réponse de Von Roll : une simple lame plate en acier avec des dents fraisées – similaire au système Abt mais plus large. Les aiguillages sont bien plus simples avec ce profil. Compatible avec les locomotives Riggenbach et Strub.",
+      "historyAndPurpose": "La société Von Roll a ses racines en 1803 et est devenue l'un des plus importants groupes industriels suisses. La crémaillère lamellaire qui porte son nom n'était jamais prévue comme système indépendant – plutôt comme un complément à Riggenbach et Strub, surtout pour simplifier les aiguillages complexes. Aujourd'hui, pratiquement toutes les nouvelles crémaillères sont construites selon le principe lamellaire. Les chemins de fer équipés de crémaillères Riggenbach ou Strub utilisent déjà des éléments lamellaires dans leurs aiguillages.",
       "stats": {
         "max_gradient": "Pente max.",
         "tooth_pitch": "Pas de dent",
         "rack_material": "Matériau crémaillère",
         "gauge": "Écartement",
-        "max_gradient_value": "150 ‰ (15 %)",
+        "max_gradient_value": "250 ‰ (25 %)",
         "tooth_pitch_value": "120 mm",
-        "rack_material_value": "Acier trempé haute résistance",
-        "gauge_value": "1000 mm"
+        "rack_material_value": "Acier laminé (profil plat)",
+        "gauge_value": "800 – 1435 mm"
       },
       "hotspots": {
-        "monoblock_title": "Rail en acier massif sans joints",
-        "monoblock_desc": "Il n'y a plus de plaques ou de boulons individuels. Les dents sont fraisées avec précision CNC directement à partir d'un rail en acier coulé extrêmement dur.",
-        "abt_kompatibel_title": "Profil denté universel",
-        "abt_kompatibel_desc": "Grâce à des dimensions sophistiquées, les locomotives avec roues dentées Abt peuvent facilement circuler sur cette crémaillère Von Roll moderne. Parfait pour les renouvellements partiels de voie.",
-        "lange_lebensdauer_title": "Alliage résistant à l'usure",
-        "lange_lebensdauer_desc": "Grâce à la durcissement de surface le plus moderne, ce système résiste aux chaleurs de friction de freinage les plus extrêmes sans choc thermique ni distorsion géométrique."
+        "monoblock_title": "Lame plate en acier unique",
+        "monoblock_desc": "Pas d'échelle, pas de rail en coin : une simple lame plate en acier avec des dents verticales fraisées. Plus large qu'une lamelle Abt, plus simple à fabriquer qu'une échelle Riggenbach.",
+        "abt_kompatibel_title": "Compatible avec Riggenbach et Strub",
+        "abt_kompatibel_desc": "Les locomotives conçues pour les crémaillères Riggenbach ou Strub peuvent circuler sur le rail lamellaire – à condition de ne pas utiliser les pinces de sécurité Strub. Cela permet des renouvellements progressifs.",
+        "lange_lebensdauer_title": "Aiguillages simplifiés",
+        "lange_lebensdauer_desc": "La véritable percée du système Von Roll : le profil plat est bien plus facile à poser dans les zones d'aiguillage que l'échelle Riggenbach. Presque tous les nouveaux aiguillages à crémaillère sont aujourd'hui construits selon ce principe."
       }
     }
   },
@@ -355,29 +355,29 @@
     },
     "von_roll": {
       "q1": {
-        "question": "Qu'est-ce qui rend le système Von Roll fondamentalement différent des anciens systèmes ?",
-        "options": ["Il utilise des dents en caoutchouc", "C'est un élément coulé monolithique unique sans pièces séparées", "Il nécessite trois engrenages", "Il ne fonctionne que sur terrain plat"],
-        "explanation": "Le système Von Roll est un rail unique massif entièrement coulé avec des dents fraisées verticalement – pas de soudures, pas de rivets, pas de desserrement de pièces."
+        "question": "Dans quel but la crémaillère lamellaire Von Roll a-t-elle été développée à l'origine ?",
+        "options": ["Comme remplacement du système Locher", "Comme complément pour simplifier les aiguillages Riggenbach et Strub", "Comme système totalement indépendant", "Pour les voies à écartement large en Amérique du Sud"],
+        "explanation": "La crémaillère lamellaire n'était jamais prévue comme système indépendant, mais comme complément – surtout pour simplifier les aiguillages complexes des crémaillères Riggenbach et Strub."
       },
       "q2": {
-        "question": "Avec quel ancien système Von Roll est-il entièrement compatible ?",
-        "options": ["Système Abt", "Système Riggenbach", "Système Locher", "Système Strub"],
-        "explanation": "Grâce à des dimensions sophistiquées, les locomotives avec roues dentées Abt peuvent facilement circuler sur la crémaillère Von Roll moderne – parfait pour la modernisation progressive des voies."
+        "question": "Avec quels systèmes la crémaillère lamellaire Von Roll est-elle compatible ?",
+        "options": ["Les véhicules Riggenbach et Strub", "Uniquement les véhicules Locher", "Uniquement les nouveaux véhicules", "Aucun ancien véhicule"],
+        "explanation": "Les véhicules pour lignes Riggenbach et Strub peuvent circuler sur le rail lamellaire – à condition de ne pas utiliser les pinces Strub. Parfait pour la modernisation progressive."
       },
       "q3": {
-        "question": "Comment les dents sont-elles fabriquées dans le système Von Roll ?",
-        "options": ["Forgées à la main par des forgerons", "Imprimées en 3D en titane", "Fraisées avec précision CNC à partir d'acier coulé", "Découpées au laser en fibre de carbone"],
-        "explanation": "Les dents sont fraisées avec précision CNC directement à partir d'un rail en acier coulé extrêmement dur – fabrication moderne pour une précision et une durabilité maximales."
+        "question": "À quoi ressemble une crémaillère lamellaire Von Roll ?",
+        "options": ["À une échelle avec des boulons ronds", "À un système complexe à trois lamelles", "À une lame plate unique en acier avec des dents verticales", "À un tube creux avec des dents extérieures"],
+        "explanation": "La crémaillère lamellaire est une lame plate unique en acier – similaire au système Abt mais plus large. Pas d'échelle, pas de rail en coin."
       },
       "q4": {
-        "question": "Quelle entreprise produit aujourd'hui le système Von Roll ?",
-        "options": ["Stadler Rail", "Tenconi (anciennement Von Roll)", "Bombardier", "Siemens"],
-        "explanation": "La société Von Roll (aujourd'hui Tenconi) a standardisé ce système pour amener les chemins de fer de montagne suisses au 21e siècle."
+        "question": "Quand les fondements de l'entreprise Von Roll ont-ils été établis ?",
+        "options": ["1945", "1803", "En l'an 2000", "1896"],
+        "explanation": "La société Von Roll a ses racines en 1803, devenant l'un des plus importants groupes industriels suisses."
       },
       "q5": {
-        "question": "Quelle est la pente maximale supportée par le système Von Roll ?",
-        "options": ["480 ‰ (48%)", "250 ‰ (25%)", "100 ‰ (10%)", "150 ‰ (15%)"],
-        "explanation": "Le système Von Roll supporte jusqu'à 150 ‰ (15%) de pente – conçu pour les chemins de fer de montagne modernes lourds plutôt que pour des pentes extrêmes."
+        "question": "Où retrouve-t-on le plus souvent le principe lamellaire Von Roll aujourd'hui ?",
+        "options": ["Uniquement sur le chemin de fer du Pilate", "Uniquement sur des lignes désaffectées", "Sur des lignes à voie étroite en Amérique du Sud", "Dans les aiguillages des chemins de fer à crémaillères Riggenbach ou Strub"],
+        "explanation": "Le principe lamellaire s'est imposé avant tout dans la construction d'aiguillages. Aujourd'hui, presque tous les nouveaux aiguillages à crémaillère sont construits selon ce principe."
       }
     }
   },
@@ -411,10 +411,10 @@
         "tagline": "La toute première ! 🪜"
       },
       "von_roll": {
-        "explanationShort": "C'est le système le plus nouveau et le plus moderne ! Il est fait d'un seul gros morceau d'acier super solide – pas besoin de vis ni de boulons ! 🔧",
-        "steepDangerText": "Les anciens systèmes avec beaucoup de petites pièces cassaient tout le temps parce que les trains modernes sont si lourds et rapides !",
-        "solutionText": "La solution Von Roll : Fabriquer tout le rail à partir d'UN SEUL morceau d'acier super solide avec des machines contrôlées par ordinateur. Rien ne peut se desserrer ! 💎",
-        "tagline": "Super moderne ! 🔧"
+        "explanationShort": "Ce système est fait d'une seule lame plate en acier – simple et malin ! Il a été inventé pour rendre les aiguillages des chemins de fer à crémaillère beaucoup plus simples. ⚙️",
+        "steepDangerText": "Les anciennes crémaillères ne se fabriquaient plus et les aiguillages étaient très compliqués et coûteux !",
+        "solutionText": "La solution Von Roll : une simple lame plate en acier avec des dents – pas d'échelle, pas de système de pinces. Les aiguillages sont bien plus simples ! 🔧",
+        "tagline": "Simple et malin ! ⚙️"
       }
     },
     "system_quiz": {
@@ -447,11 +447,11 @@
         "q5": { "question": "En quoi sont faits les barreaux ?", "options": ["Plastique", "Bois", "Papier", "Fer forgé et acier super solides !"], "explanation": "Les barreaux sont en fer forgé et acier super solides – ils peuvent supporter des trains très lourds ! 💪" }
       },
       "von_roll": {
-        "q1": { "question": "Qu'est-ce qui est spécial dans le rail Von Roll ?", "options": ["Il est en caoutchouc", "Il est fait d'UN SEUL gros morceau d'acier super solide !", "Il faut le peindre chaque jour", "Il ne marche qu'en été"], "explanation": "Le rail Von Roll est taillé dans un énorme bloc d'acier par une machine – pas de vis, pas de boulons ! 💪" },
-        "q2": { "question": "Les anciens trains Abt peuvent-ils rouler sur les voies Von Roll ?", "options": ["Oui ! Ça marche parfaitement !", "Pas du tout !", "Seulement le mardi", "Seulement en marche arrière"], "explanation": "Les voies Von Roll sont conçues pour que les anciens trains Abt puissent aussi les utiliser – super malin ! 🧠" },
-        "q3": { "question": "Comment un ordinateur aide-t-il à fabriquer les rails Von Roll ?", "options": ["Il joue à des jeux dessus", "Il écrit des e-mails", "Il coupe les dents avec des machines CNC !", "Il les peint en jolies couleurs"], "explanation": "CNC veut dire Commande Numérique par Ordinateur – un ordinateur dit à une machine exactement où couper chaque dent ! 🤖" },
-        "q4": { "question": "Quelle entreprise fabrique les rails Von Roll aujourd'hui ?", "options": ["Un fabricant de jouets", "Tenconi !", "Une entreprise alimentaire", "Une agence spatiale"], "explanation": "L'entreprise s'appelle maintenant Tenconi – ils fabriquent les crémaillères les plus modernes de Suisse ! 🏭" },
-        "q5": { "question": "Pourquoi les rails Von Roll ne cassent-ils pas facilement ?", "options": ["Parce qu'ils sont magiques", "Parce que quelqu'un les surveille", "Parce qu'ils sont en gelée", "Parce qu'ils sont UN morceau d'acier super dur sans points faibles !"], "explanation": "Sans vis, boulons ni joints, il n'y a PAS de points faibles. Un seul morceau = super solide ! 💎" }
+        "q1": { "question": "Pour quoi le système Von Roll a-t-il été créé ?", "options": ["Remplacer le chemin de fer du Pilate", "Rendre les aiguillages plus simples !", "Aller plus vite", "Avoir plus de couleurs"], "explanation": "Le système Von Roll rend les aiguillages des chemins de fer à crémaillère beaucoup plus simples ! ⚙️" },
+        "q2": { "question": "Avec quels anciens systèmes le rail lamellaire peut-il fonctionner ?", "options": ["Riggenbach et Strub !", "Seulement Locher", "Rien du tout", "Seulement les nouveaux trains"], "explanation": "Les trains pour Riggenbach et Strub peuvent rouler sur le rail lamellaire ! 🚂" },
+        "q3": { "question": "À quoi ressemble un rail lamellaire ?", "options": ["À une échelle", "À un tube", "À une lame plate en acier !", "À un triangle"], "explanation": "Le rail lamellaire est une simple lame plate en acier – aucun truc compliqué ! 💪" },
+        "q4": { "question": "Quand l'entreprise Von Roll a-t-elle été fondée ?", "options": ["En l'an 2000", "En 1803 !", "Hier", "En 1900"], "explanation": "L'entreprise Von Roll existe depuis 1803 – c'est très ancien ! 🏭" },
+        "q5": { "question": "Où voit-on le plus le principe Von Roll aujourd'hui ?", "options": ["Seulement sur le Pilate", "Nulle part", "Seulement au musée", "Dans les aiguillages de presque tous les chemins de fer à crémaillère !"], "explanation": "Presque tous les nouveaux aiguillages utilisent le principe lamellaire Von Roll ! ⚙️" }
       }
     }
   }
