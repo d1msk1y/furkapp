@@ -24,13 +24,6 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         left: '50%'
       },
       {
-        id: 'geteiltes_zahnrad',
-        title: 'Geteilte Antriebszahnräder',
-        description: 'Das Antriebszahnrad der Lokomotive besteht ebenfalls aus zwei physisch versetzten Zahnkränzen, die präzise zu den versetzten Schienenlamellen passen.',
-        top: '70%',
-        left: '60%'
-      },
-      {
         id: 'laufruhe',
         title: 'Ununterbrochener Kraftfluss',
         description: 'Durch den Versatz ist zu jeder Millisekunden-Fahrtzeit immer mindestens ein Triebzahn voll belastet im Eingriff. Das eleminiert Vibrationen fast vollständig.',
@@ -64,21 +57,14 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         title: 'Doppelseitige Zahnstange',
         description: 'Eine flach liegende Stahlschiene mit rechtwinkligen Zähnen auf beiden Seiten. Da sie in der Mitte verlegt ist, ermöglicht sie die Nutzung von zwei symmetrisch angeordneten Getrieben.',
         top: '45%',
-        left: '10%'
+        left: '48%'
       },
       {
         id: 'treibraeder',
         title: 'Horizontale Treibräder',
         description: 'Zwei Getriebezahnräder drehen sich flach über den Schienen und greifen von den Seiten her zu. Dadurch heben sich die seitlichen Abdrängkräfte mechanisch auf und verhindern ein Klettern.',
-        top: '72%',
-        left: '48%'
-      },
-      {
-        id: 'fuehrung',
-        title: 'Sicherheits-Führungsrollen',
-        description: 'Untere Flanschrollen greifen physisch unter den Kopf der Locher-Zahnstange. Selbst bei extremen Erschütterungen im Wind ist ein Abheben oder Entgleisen der Lok unmöglich.',
-        top: '40%',
-        left: '78%'
+        top: '42%',
+        left: '25%'
       }
     ],
     historyAndPurpose: 'Eduard Locher war ein renommierter Zürcher Ingenieur. Die Pilatusbahn galt damals als absolut unbaubar. Herkömmliche Systeme wie Riggenbach oder Abt scheiterten an der extremen Hangneigung: vertikale Zahnräder wären bei 48% einfach über die Zähne gesprungen. Lochers unkonventionelle horizontale Idee revolutionierte den alpinen Schienentransport.',
@@ -156,7 +142,7 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         id: 'sprossen',
         title: 'Rundbolzen-Sprossen',
         description: 'Solide geschmiedete Rundstahlbolzen, die exakt im Zahnabstand horizontal eingepasst sind. Das Lok-Zahnrad wälzt sich äusserst geschmeidig auf diesen runden Pins ab.',
-        top: '75%',
+        top: '60%',
         left: '55%'
       },
       {
@@ -164,7 +150,7 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         title: 'Selbstreinigendes Schotterbett',
         description: 'Da die Leiter unten hohl ist, fallen lose Kieselsteine und klebriger Matsch einfach durch das Zahnbett hindurch ab. Das verhindert Zahnsperren.',
         top: '25%',
-        left: '55%'
+        left: '48%'
       }
     ],
     historyAndPurpose: 'Niklaus Riggenbach, der geniale Betriebsleiter der Centralbahn in Basel, liess sich diese Technik patentieren, als er den Rigi-Berg bezwingen wollte. 1871 fuhr dort die erste Bergbahn Europas. Es war der absolute Meilenstein der Schweizer Eisenbahngeschichte.',
@@ -192,22 +178,15 @@ export const SYSTEM_DATA: ZahnradSystem[] = [
         id: 'monoblock',
         title: 'Fugenlose Vollstahlschiene',
         description: 'Es gibt keine einzelnen Platten oder Bolzen mehr. Die Zähne sind mit CNC-Präzision direkt aus einer extrem harten, gegossenen Stahlschiene gefräst.',
-        top: '28%',
-        left: '20%'
+        top: '45%',
+        left: '50%'
       },
       {
         id: 'abt_kompatibel',
         title: 'Universal-Verzahnung',
         description: 'Durch ausgeklügelte Abmessungen können Loks mit Abt-Zahnrädern diese moderne Von-Roll-Zahnstange anstandslos befahren. Perfekt für Strecken-Teilerneuerungen.',
-        top: '40%',
-        left: '75%'
-      },
-      {
-        id: 'lange_lebensdauer',
-        title: 'Verschleissfreie Legierung',
-        description: 'Dank modernster Oberflächenhärtung trotzt dieses System extremsten Bremsreibungswärmen ohne thermischen Schock oder Geometrieverzug.',
-        top: '55%',
-        left: '48%'
+        top: '12%',
+        left: '40s%'
       }
     ],
     historyAndPurpose: 'Die Firma Von Roll (heute Tenconi) hat dieses System standardisiert, um Schweizer Bergbahnen ins 21. Jahrhundert zu führen. Es lässt sich extrem schnell verlegen, widersteht modernsten 100-Tonnen-Triebzügen spielend und ist heute das am häufigsten verbaute Zahnstangen-Modernisierungskit.',
