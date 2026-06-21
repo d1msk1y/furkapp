@@ -248,13 +248,13 @@ export default function DetailScreen({ system, onBackToDashboard, onStartQuiz }:
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.15 }}
           >
-            {system.techStats.map((stat, i) => {
+            {Array.from({ length: system.statCount }, (_, i) => {
               const statKey = STAT_KEYS[i] ?? 'max_gradient';
               const label = t(`systems.${system.id}.stats.${statKey}`);
               const value = t(`systems.${system.id}.stats.${statKey}_value`);
               return (
                 <StatTile
-                  key={stat.label}
+                  key={statKey}
                   icon={statIcon(label)}
                   label={label}
                   value={value}
