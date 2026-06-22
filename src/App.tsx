@@ -5,10 +5,11 @@
 
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import { Routes, Route, Navigate, useNavigate, useLocation, useParams } from 'react-router-dom';
 
 // Data & Helpers
 import { SYSTEM_DATA } from './data';
-import { ZahnradSystem } from './types';
+import { SystemId } from './types';
 
 // Screen Modules
 import IntroScreen from './components/screens/IntroScreen';
@@ -25,11 +26,12 @@ import SettingsModal from './components/ui/SettingsModal';
 import Button from './components/ui/Button';
 import { SlidersHorizontal } from 'lucide-react';
 
-type ScreenType = 'intro' | 'dashboard' | 'detail' | 'quiz' | 'achievements' | 'error';
+const SYSTEM_IDS = new Set<string>(SYSTEM_DATA.map((sys) => sys.id));
+const isValidSystemId = (id: string | undefined): id is SystemId => !!id && SYSTEM_IDS.has(id);
 
 export default function App() {
-  const [screen, setScreen] = useState<ScreenType>('intro');
-  const [selectedSystemId, setSelectedSystemId] = useState<ZahnradSystem['id'] | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
   const { isDarkMode, toggleTheme } = useThemeMode();
   const { progress, totalUnits, recordQuizResult } = useAchievements();
   const { isScreenReaderEnabled } = useScreenReader();
@@ -44,8 +46,10 @@ export default function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [isOnboarding, setIsOnboarding] = useState(false);
 
-  // High altitude network interruption state tracking (manually simulation & recovery)
-  const [backtargetScreen, setBacktargetScreen] = useState<ScreenType>('dashboard');
+  // High altitude network interruption state tracking (manual simulation & recovery).
+  // The error screen is a transient overlay, not a route — the URL is preserved so
+  // resolving simply clears the overlay and reveals the screen we were already on.
+  const [errorActive, setErrorActive] = useState(false);
 
   // Screen Reader global observer
   useEffect(() => {
@@ -66,7 +70,7 @@ export default function App() {
       clearTimeout(timer);
       cancelSpeech();
     };
-  }, [screen, selectedSystemId, isScreenReaderEnabled, language]);
+  }, [location.pathname, errorActive, isScreenReaderEnabled, language]);
 
   // Show onboarding modal on first visit
   useEffect(() => {
@@ -93,103 +97,107 @@ export default function App() {
     setSettingsOpen(false);
   };
 
-  // Helper function to handle navigation with error simulation
-  const navigateTo = (target: ScreenType, systemId: ZahnradSystem['id'] | null = null) => {
-    // Record screen system payload
-    if (systemId) {
-      setSelectedSystemId(systemId);
-    }
+  // Manually force offline error simulation overlay.
+  const triggerSimulationError = () => setErrorActive(true);
 
-    setScreen(target);
+  // Successfully reestablished network simulation sequence inside error page.
+  const resolveErrorSuccess = () => setErrorActive(false);
+
+  // --- Route wrappers: bridge URL <-> existing screen callback props ---
+
+  const DetailRoute = () => {
+    const { systemId } = useParams();
+    if (!isValidSystemId(systemId)) return <Navigate to="/dashboard" replace />;
+    const system = SYSTEM_DATA.find((sys) => sys.id === systemId)!;
+    return (
+      <DetailScreen
+        system={system}
+        onBackToDashboard={() => navigate('/dashboard')}
+        onStartQuiz={(id) => navigate(`/quiz/${id}`)}
+      />
+    );
   };
 
-  // Manually force offline error simulation mode
-  const triggerSimulationError = (currentActiveScreen: ScreenType) => {
-    setBacktargetScreen(currentActiveScreen);
-    setScreen('error');
+  const QuizRoute = () => {
+    const { systemId } = useParams();
+    if (!isValidSystemId(systemId)) return <Navigate to="/dashboard" replace />;
+    return (
+      <QuizScreen
+        systemId={systemId}
+        onGoBackToDashboard={() => navigate('/dashboard')}
+        onQuizFinished={(id, score) => {
+          recordQuizResult(id, score);
+        }}
+      />
+    );
   };
-
-  // Successfully restablished network simulation sequence inside error page
-  const resolveErrorSuccess = () => {
-    setScreen(backtargetScreen);
-  };
-
-  const currentSystem = SYSTEM_DATA.find((sys) => sys.id === selectedSystemId) || SYSTEM_DATA[0];
 
   return (
     <div className="min-h-[100dvh] bg-cement-sand text-iron-dark select-none selection:bg-primary-red selection:text-white flex flex-col items-center">
-      {/* Absolute parent grid with simple screen routing logic */}
+      {/* Animated screen transitions keyed on the active route (or the error overlay). */}
       <AnimatePresence mode="wait">
         <motion.div
           id="screen-content"
-          key={screen + (selectedSystemId || '')}
+          key={errorActive ? 'error' : location.pathname}
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -5 }}
           transition={{ duration: 0.18 }}
           className="w-full grow flex"
         >
-          {screen === 'intro' && (
-            <IntroScreen
-              onExplore={() => navigateTo('dashboard')}
-              onSimulateError={() => triggerSimulationError('intro')}
-              onOpenSettings={() => setSettingsOpen(true)}
-            />
-          )}
-
-          {screen === 'dashboard' && (
-            <DashboardScreen
-              onSelectSystem={(id) => navigateTo('detail', id)}
-              onGoBackToIntro={() => navigateTo('intro')}
-              onOpenAchievements={() => navigateTo('achievements')}
-              totalUnits={totalUnits}
-              progress={progress}
-              headerRightAction={
-                <div className="flex items-center gap-1">
-                  <Button
-                    variant="icon"
-                    size="sm"
-                    onClick={() => setSettingsOpen(true)}
-                    aria-label="Settings"
-                  >
-                    <SlidersHorizontal size={18} strokeWidth={3} className="text-iron-dark" />
-                  </Button>
-                </div>
-              }
-            />
-          )}
-
-          {screen === 'detail' && (
-            <DetailScreen
-              system={currentSystem}
-              onBackToDashboard={() => navigateTo('dashboard')}
-              onStartQuiz={(id) => navigateTo('quiz', id)}
-            />
-          )}
-
-          {screen === 'quiz' && selectedSystemId && (
-            <QuizScreen
-              systemId={selectedSystemId}
-              onGoBackToDashboard={() => navigateTo('dashboard')}
-              onQuizFinished={(id, score) => {
-                recordQuizResult(id, score);
-              }}
-            />
-          )}
-
-          {screen === 'achievements' && (
-            <AchievementsScreen
-              progress={progress}
-              totalUnits={totalUnits}
-              onBack={() => navigateTo('dashboard')}
-              onStartQuiz={(id) => navigateTo('quiz', id)}
-            />
-          )}
-
-          {screen === 'error' && (
-            <NetworkErrorScreen
-              onResolveSuccess={resolveErrorSuccess}
-            />
+          {errorActive ? (
+            <NetworkErrorScreen onResolveSuccess={resolveErrorSuccess} />
+          ) : (
+            <Routes location={location}>
+              <Route
+                path="/"
+                element={
+                  <IntroScreen
+                    onExplore={() => navigate('/dashboard')}
+                    onSimulateError={triggerSimulationError}
+                    onOpenSettings={() => setSettingsOpen(true)}
+                  />
+                }
+              />
+              <Route
+                path="/dashboard"
+                element={
+                  <DashboardScreen
+                    onSelectSystem={(id) => navigate(`/detail/${id}`)}
+                    onGoBackToIntro={() => navigate('/')}
+                    onOpenAchievements={() => navigate('/achievements')}
+                    totalUnits={totalUnits}
+                    progress={progress}
+                    headerRightAction={
+                      <div className="flex items-center gap-1">
+                        <Button
+                          variant="icon"
+                          size="sm"
+                          onClick={() => setSettingsOpen(true)}
+                          aria-label="Settings"
+                        >
+                          <SlidersHorizontal size={18} strokeWidth={3} className="text-iron-dark" />
+                        </Button>
+                      </div>
+                    }
+                  />
+                }
+              />
+              <Route path="/detail/:systemId" element={<DetailRoute />} />
+              <Route path="/quiz/:systemId" element={<QuizRoute />} />
+              <Route
+                path="/achievements"
+                element={
+                  <AchievementsScreen
+                    progress={progress}
+                    totalUnits={totalUnits}
+                    onBack={() => navigate('/dashboard')}
+                    onStartQuiz={(id) => navigate(`/quiz/${id}`)}
+                  />
+                }
+              />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
           )}
         </motion.div>
       </AnimatePresence>
